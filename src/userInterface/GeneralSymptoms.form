@@ -26,31 +26,38 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="General_symptoms" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox13" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="SymptomsPresent_general" min="-2" max="-2" attributes="0"/>
+                          <Component id="FamilyHis_check" min="-2" max="-2" attributes="0"/>
+                          <Component id="EducationalLevel_check" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="Behaviour_check" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="EmtionalInst_check" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="RightWords_check" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ForgetPersonalInfo_check" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="FacialExp_check" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jCheckBox7" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox8" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox9" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox10" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox11" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox12" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox14" min="-2" max="-2" attributes="0"/>
+                          <Component id="PlanningDifficulty_check" min="-2" max="-2" attributes="0"/>
+                          <Component id="ForgetRecentInfo_check" min="-2" max="-2" attributes="0"/>
+                          <Component id="SleepPatterns_check" min="-2" max="-2" attributes="0"/>
+                          <Component id="Smell_check" min="-2" max="-2" attributes="0"/>
+                          <Component id="Incontinence_check" min="-2" max="-2" attributes="0"/>
+                          <Component id="Chemicals_check" min="-2" max="-2" attributes="0"/>
+                          <Component id="Smoking_check" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
               <EmptySpace pref="102" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="Back_general" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="Next_general" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -58,51 +65,56 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="General_symptoms" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <Component id="SymptomsPresent_general" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="FamilyHis_check" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PlanningDifficulty_check" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="EducationalLevel_check" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ForgetRecentInfo_check" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="SleepPatterns_check" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Behaviour_check" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="EmtionalInst_check" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Smell_check" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox11" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="RightWords_check" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Incontinence_check" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox12" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ForgetPersonalInfo_check" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Chemicals_check" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox13" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox14" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="FacialExp_check" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Smoking_check" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="104" max="32767" attributes="0"/>
+              <EmptySpace pref="48" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Next_general" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Back_general" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="General_symptoms">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
@@ -110,15 +122,15 @@
         <Property name="text" type="java.lang.String" value="General symptoms"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="FamilyHis_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Family history of disease"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FamilyHis_checkActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="SymptomsPresent_general">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="15" style="0"/>
@@ -126,72 +138,85 @@
         <Property name="text" type="java.lang.String" value="Select the present symptoms"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+    <Component class="javax.swing.JCheckBox" name="EducationalLevel_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Low educational level"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EducationalLevel_checkActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+    <Component class="javax.swing.JCheckBox" name="Behaviour_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Changes in behaviour"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+    <Component class="javax.swing.JCheckBox" name="EmtionalInst_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Emotional instability"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+    <Component class="javax.swing.JCheckBox" name="RightWords_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Difficulties finding the right words"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+    <Component class="javax.swing.JCheckBox" name="ForgetPersonalInfo_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Forget personal information"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox7">
+    <Component class="javax.swing.JCheckBox" name="PlanningDifficulty_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Difficulties planning and organizing"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox8">
+    <Component class="javax.swing.JCheckBox" name="ForgetRecentInfo_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Forget recent information"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox9">
+    <Component class="javax.swing.JCheckBox" name="SleepPatterns_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Changes in sleeping patterns"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox10">
+    <Component class="javax.swing.JCheckBox" name="Smell_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Loss of smell"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox11">
+    <Component class="javax.swing.JCheckBox" name="Incontinence_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Urinary and gastric incontinence"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox12">
+    <Component class="javax.swing.JCheckBox" name="Chemicals_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Expousre to pesticides, herbicides, insecticides, etc"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox13">
+    <Component class="javax.swing.JCheckBox" name="FacialExp_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Loss of facial expression"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox14">
+    <Component class="javax.swing.JCheckBox" name="Smoking_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Smoking"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="Next_general">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Next"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Next_generalActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Back_general">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
     </Component>
   </SubComponents>

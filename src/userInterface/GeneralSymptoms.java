@@ -27,68 +27,79 @@ public class GeneralSymptoms extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel2 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
-        jCheckBox13 = new javax.swing.JCheckBox();
-        jCheckBox14 = new javax.swing.JCheckBox();
+        General_symptoms = new javax.swing.JLabel();
+        FamilyHis_check = new javax.swing.JCheckBox();
+        SymptomsPresent_general = new javax.swing.JLabel();
+        EducationalLevel_check = new javax.swing.JCheckBox();
+        Behaviour_check = new javax.swing.JCheckBox();
+        EmtionalInst_check = new javax.swing.JCheckBox();
+        RightWords_check = new javax.swing.JCheckBox();
+        ForgetPersonalInfo_check = new javax.swing.JCheckBox();
+        PlanningDifficulty_check = new javax.swing.JCheckBox();
+        ForgetRecentInfo_check = new javax.swing.JCheckBox();
+        SleepPatterns_check = new javax.swing.JCheckBox();
+        Smell_check = new javax.swing.JCheckBox();
+        Incontinence_check = new javax.swing.JCheckBox();
+        Chemicals_check = new javax.swing.JCheckBox();
+        FacialExp_check = new javax.swing.JCheckBox();
+        Smoking_check = new javax.swing.JCheckBox();
+        Next_general = new javax.swing.JButton();
+        Back_general = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("General symptoms");
+        General_symptoms.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        General_symptoms.setText("General symptoms");
 
-        jCheckBox1.setText("Family history of disease");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        FamilyHis_check.setText("Family history of disease");
+        FamilyHis_check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                FamilyHis_checkActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        jLabel2.setText("Select the present symptoms");
+        SymptomsPresent_general.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        SymptomsPresent_general.setText("Select the present symptoms");
 
-        jCheckBox2.setText("Low educational level");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        EducationalLevel_check.setText("Low educational level");
+        EducationalLevel_check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                EducationalLevel_checkActionPerformed(evt);
             }
         });
 
-        jCheckBox3.setText("Changes in behaviour");
+        Behaviour_check.setText("Changes in behaviour");
 
-        jCheckBox4.setText("Emotional instability");
+        EmtionalInst_check.setText("Emotional instability");
 
-        jCheckBox5.setText("Difficulties finding the right words");
+        RightWords_check.setText("Difficulties finding the right words");
 
-        jCheckBox6.setText("Forget personal information");
+        ForgetPersonalInfo_check.setText("Forget personal information");
 
-        jCheckBox7.setText("Difficulties planning and organizing");
+        PlanningDifficulty_check.setText("Difficulties planning and organizing");
 
-        jCheckBox8.setText("Forget recent information");
+        ForgetRecentInfo_check.setText("Forget recent information");
 
-        jCheckBox9.setText("Changes in sleeping patterns");
+        SleepPatterns_check.setText("Changes in sleeping patterns");
 
-        jCheckBox10.setText("Loss of smell");
+        Smell_check.setText("Loss of smell");
 
-        jCheckBox11.setText("Urinary and gastric incontinence");
+        Incontinence_check.setText("Urinary and gastric incontinence");
 
-        jCheckBox12.setText("Expousre to pesticides, herbicides, insecticides, etc");
+        Chemicals_check.setText("Expousre to pesticides, herbicides, insecticides, etc");
 
-        jCheckBox13.setText("Loss of facial expression");
+        FacialExp_check.setText("Loss of facial expression");
 
-        jCheckBox14.setText("Smoking");
+        Smoking_check.setText("Smoking");
+
+        Next_general.setText("Next");
+        Next_general.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Next_generalActionPerformed(evt);
+            }
+        });
+
+        Back_general.setText("Back");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,76 +108,90 @@ public class GeneralSymptoms extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(General_symptoms)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox4)
-                            .addComponent(jCheckBox5)
-                            .addComponent(jCheckBox6)
-                            .addComponent(jCheckBox13))
+                            .addComponent(SymptomsPresent_general)
+                            .addComponent(FamilyHis_check)
+                            .addComponent(EducationalLevel_check)
+                            .addComponent(Behaviour_check)
+                            .addComponent(EmtionalInst_check)
+                            .addComponent(RightWords_check)
+                            .addComponent(ForgetPersonalInfo_check)
+                            .addComponent(FacialExp_check))
                         .addGap(100, 100, 100)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox7)
-                            .addComponent(jCheckBox8)
-                            .addComponent(jCheckBox9)
-                            .addComponent(jCheckBox10)
-                            .addComponent(jCheckBox11)
-                            .addComponent(jCheckBox12)
-                            .addComponent(jCheckBox14))))
+                            .addComponent(PlanningDifficulty_check)
+                            .addComponent(ForgetRecentInfo_check)
+                            .addComponent(SleepPatterns_check)
+                            .addComponent(Smell_check)
+                            .addComponent(Incontinence_check)
+                            .addComponent(Chemicals_check)
+                            .addComponent(Smoking_check))))
                 .addContainerGap(102, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Back_general)
+                .addGap(18, 18, 18)
+                .addComponent(Next_general)
+                .addGap(57, 57, 57))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel1)
+                .addComponent(General_symptoms)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addComponent(SymptomsPresent_general)
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox7))
+                    .addComponent(FamilyHis_check)
+                    .addComponent(PlanningDifficulty_check))
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox8))
+                    .addComponent(EducationalLevel_check)
+                    .addComponent(ForgetRecentInfo_check))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox9)
-                    .addComponent(jCheckBox3))
+                    .addComponent(SleepPatterns_check)
+                    .addComponent(Behaviour_check))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox10))
+                    .addComponent(EmtionalInst_check)
+                    .addComponent(Smell_check))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox11))
+                    .addComponent(RightWords_check)
+                    .addComponent(Incontinence_check))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox6)
-                    .addComponent(jCheckBox12))
+                    .addComponent(ForgetPersonalInfo_check)
+                    .addComponent(Chemicals_check))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox13)
-                    .addComponent(jCheckBox14))
-                .addContainerGap(104, Short.MAX_VALUE))
+                    .addComponent(FacialExp_check)
+                    .addComponent(Smoking_check))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Next_general)
+                    .addComponent(Back_general))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void FamilyHis_checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FamilyHis_checkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_FamilyHis_checkActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void EducationalLevel_checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EducationalLevel_checkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_EducationalLevel_checkActionPerformed
+
+    private void Next_generalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_generalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Next_generalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,21 +229,23 @@ public class GeneralSymptoms extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox14;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton Back_general;
+    private javax.swing.JCheckBox Behaviour_check;
+    private javax.swing.JCheckBox Chemicals_check;
+    private javax.swing.JCheckBox EducationalLevel_check;
+    private javax.swing.JCheckBox EmtionalInst_check;
+    private javax.swing.JCheckBox FacialExp_check;
+    private javax.swing.JCheckBox FamilyHis_check;
+    private javax.swing.JCheckBox ForgetPersonalInfo_check;
+    private javax.swing.JCheckBox ForgetRecentInfo_check;
+    private javax.swing.JLabel General_symptoms;
+    private javax.swing.JCheckBox Incontinence_check;
+    private javax.swing.JButton Next_general;
+    private javax.swing.JCheckBox PlanningDifficulty_check;
+    private javax.swing.JCheckBox RightWords_check;
+    private javax.swing.JCheckBox SleepPatterns_check;
+    private javax.swing.JCheckBox Smell_check;
+    private javax.swing.JCheckBox Smoking_check;
+    private javax.swing.JLabel SymptomsPresent_general;
     // End of variables declaration//GEN-END:variables
 }

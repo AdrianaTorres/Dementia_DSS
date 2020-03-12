@@ -27,56 +27,62 @@ public class MotorSymptoms extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        NoCoordination_check = new javax.swing.JCheckBox();
+        NoStand_check = new javax.swing.JCheckBox();
+        Stiffness_check = new javax.swing.JCheckBox();
+        LossBalance_check = new javax.swing.JCheckBox();
+        StraightWalk_check = new javax.swing.JCheckBox();
+        Tremor_check = new javax.swing.JCheckBox();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        Orientation_check = new javax.swing.JLabel();
+        Bradykinesia_check = new javax.swing.JLabel();
+        SymptomsPresent_motor = new javax.swing.JLabel();
+        Motor_symptoms = new javax.swing.JLabel();
+        Next_motor = new javax.swing.JButton();
+        Back_motor = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jCheckBox1.setText("Lack of coordination");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        NoCoordination_check.setText("Lack of coordination");
+        NoCoordination_check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                NoCoordination_checkActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("Unable to stand/walk");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        NoStand_check.setText("Unable to stand/walk");
+        NoStand_check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                NoStand_checkActionPerformed(evt);
             }
         });
 
-        jCheckBox3.setText("Stiffness");
+        Stiffness_check.setText("Stiffness");
 
-        jCheckBox4.setText("Loss of balance");
+        LossBalance_check.setText("Loss of balance");
 
-        jCheckBox5.setText("Unable to walk straight");
+        StraightWalk_check.setText("Unable to walk straight");
 
-        jCheckBox6.setText("Tremor");
+        Tremor_check.setText("Tremor");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "High" }));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "Medium", "High" }));
 
-        jLabel1.setText("Orientation impairment");
+        Orientation_check.setText("Orientation impairment");
 
-        jLabel2.setText("Bradykinesia");
+        Bradykinesia_check.setText("Bradykinesia");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel3.setText("Select the present symptoms:");
+        SymptomsPresent_motor.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        SymptomsPresent_motor.setText("Select the present symptoms:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Motor symptoms");
+        Motor_symptoms.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Motor_symptoms.setText("Motor symptoms");
+
+        Next_motor.setText("Next");
+
+        Back_motor.setText("Back");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,77 +91,87 @@ public class MotorSymptoms extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(SymptomsPresent_motor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addComponent(Motor_symptoms)
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox4))
+                            .addComponent(NoCoordination_check)
+                            .addComponent(NoStand_check)
+                            .addComponent(Stiffness_check)
+                            .addComponent(LossBalance_check))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox5)
-                                    .addComponent(jCheckBox6))
-                                .addGap(58, 58, 58))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 4, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
+                                    .addComponent(Orientation_check)
+                                    .addComponent(Bradykinesia_check))
+                                .addGap(47, 47, 47)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(211, 401, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(StraightWalk_check)
+                                    .addComponent(Tremor_check))
+                                .addGap(18, 18, 18))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Back_motor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Next_motor)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(jLabel4)
+                .addComponent(Motor_symptoms)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox5))
+                .addComponent(SymptomsPresent_motor)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox6))
+                    .addComponent(NoCoordination_check)
+                    .addComponent(StraightWalk_check))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jLabel1)
+                    .addComponent(NoStand_check)
+                    .addComponent(Tremor_check))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Stiffness_check)
+                    .addComponent(Orientation_check)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jLabel2)
+                    .addComponent(LossBalance_check)
+                    .addComponent(Bradykinesia_check)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Next_motor)
+                    .addComponent(Back_motor))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void NoCoordination_checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoCoordination_checkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_NoCoordination_checkActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void NoStand_checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoStand_checkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_NoStand_checkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,17 +209,19 @@ public class MotorSymptoms extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JButton Back_motor;
+    private javax.swing.JLabel Bradykinesia_check;
+    private javax.swing.JCheckBox LossBalance_check;
+    private javax.swing.JLabel Motor_symptoms;
+    private javax.swing.JButton Next_motor;
+    private javax.swing.JCheckBox NoCoordination_check;
+    private javax.swing.JCheckBox NoStand_check;
+    private javax.swing.JLabel Orientation_check;
+    private javax.swing.JCheckBox Stiffness_check;
+    private javax.swing.JCheckBox StraightWalk_check;
+    private javax.swing.JLabel SymptomsPresent_motor;
+    private javax.swing.JCheckBox Tremor_check;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }

@@ -27,47 +27,53 @@ public class OtherPathologies extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
+        Pathologies_symptoms = new javax.swing.JLabel();
+        SymptomsPresent_pathologies = new javax.swing.JLabel();
+        Hyperglycemia_check = new javax.swing.JCheckBox();
+        Insulin_check = new javax.swing.JCheckBox();
+        Hyperlypidemia_check = new javax.swing.JCheckBox();
+        Hypertension_check = new javax.swing.JCheckBox();
+        HeartAttacks_check = new javax.swing.JCheckBox();
+        Diabetes_check = new javax.swing.JCheckBox();
+        Obesity_check = new javax.swing.JCheckBox();
+        Cholesterol_check = new javax.swing.JCheckBox();
+        Arteriosclerosis_check = new javax.swing.JCheckBox();
+        Depression_check = new javax.swing.JCheckBox();
+        Submit_pathologies = new javax.swing.JButton();
+        Back_pathologies = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         setSize(new java.awt.Dimension(0, 0));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Other patologies");
+        Pathologies_symptoms.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Pathologies_symptoms.setText("Other patologies");
 
-        jLabel2.setText("Select the present symptoms:");
+        SymptomsPresent_pathologies.setText("Select the present symptoms:");
 
-        jCheckBox1.setText("Hyperglycemia");
+        Hyperglycemia_check.setText("Hyperglycemia");
 
-        jCheckBox2.setText("Insulin resistance");
+        Insulin_check.setText("Insulin resistance");
 
-        jCheckBox3.setText("Hyperlipidemia");
+        Hyperlypidemia_check.setText("Hyperlipidemia");
 
-        jCheckBox4.setText("Arterial hypertension");
+        Hypertension_check.setText("Arterial hypertension");
 
-        jCheckBox5.setText("Recorded heart/cerebrovascular attacks");
+        HeartAttacks_check.setText("Recorded heart/cerebrovascular attacks");
 
-        jCheckBox6.setText("Diabetes");
+        Diabetes_check.setText("Diabetes");
 
-        jCheckBox7.setText("Obesity");
+        Obesity_check.setText("Obesity");
 
-        jCheckBox8.setText("High cholesterol");
+        Cholesterol_check.setText("High cholesterol");
 
-        jCheckBox9.setText("Arteriosclerosis");
+        Arteriosclerosis_check.setText("Arteriosclerosis");
 
-        jCheckBox10.setText("Depression");
+        Depression_check.setText("Depression");
+
+        Submit_pathologies.setText("Submit");
+
+        Back_pathologies.setText("Back");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,71 +82,83 @@ public class OtherPathologies extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox8))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox9))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox10)))
-                .addContainerGap(290, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(SymptomsPresent_pathologies))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(264, 264, 264)
+                                .addComponent(Pathologies_symptoms))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Hyperglycemia_check))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Insulin_check))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Hyperlypidemia_check))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Hypertension_check))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(HeartAttacks_check))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Diabetes_check))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Obesity_check))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Cholesterol_check))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Arteriosclerosis_check))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(Depression_check)))
+                        .addGap(0, 269, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Back_pathologies)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Submit_pathologies)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(Pathologies_symptoms)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(SymptomsPresent_pathologies)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(Hyperglycemia_check)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox2)
+                .addComponent(Insulin_check)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox3)
+                .addComponent(Hyperlypidemia_check)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox4)
+                .addComponent(Hypertension_check)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox5)
+                .addComponent(HeartAttacks_check)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox6)
+                .addComponent(Diabetes_check)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox7)
+                .addComponent(Obesity_check)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox8)
+                .addComponent(Cholesterol_check)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox9)
+                .addComponent(Arteriosclerosis_check)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox10)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addComponent(Depression_check)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Submit_pathologies)
+                    .addComponent(Back_pathologies))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,17 +200,19 @@ public class OtherPathologies extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JCheckBox Arteriosclerosis_check;
+    private javax.swing.JButton Back_pathologies;
+    private javax.swing.JCheckBox Cholesterol_check;
+    private javax.swing.JCheckBox Depression_check;
+    private javax.swing.JCheckBox Diabetes_check;
+    private javax.swing.JCheckBox HeartAttacks_check;
+    private javax.swing.JCheckBox Hyperglycemia_check;
+    private javax.swing.JCheckBox Hyperlypidemia_check;
+    private javax.swing.JCheckBox Hypertension_check;
+    private javax.swing.JCheckBox Insulin_check;
+    private javax.swing.JCheckBox Obesity_check;
+    private javax.swing.JLabel Pathologies_symptoms;
+    private javax.swing.JButton Submit_pathologies;
+    private javax.swing.JLabel SymptomsPresent_pathologies;
     // End of variables declaration//GEN-END:variables
 }
