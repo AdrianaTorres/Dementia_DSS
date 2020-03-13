@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userInterface;
+package dementia_dss;
 
 /**
  *
@@ -52,27 +52,31 @@ public class Patient {
     String depression;
 
     //sets y gets
-    void setName(String name_) {
+    public void setName(String name_) {
         this.name = name_;
     }
 
-    void setAge(int age_) {
+    public void setAge(int age_) {
         this.age = age_;
     }
 
-    void setSex(String sex_) {
+    public void setSex(String sex_) {
         this.sex = sex_;
     }
 
-    String getName() {
+    public String getName() {
         return this.name;
     }
 
-    int getAge() {
+    public int getAge() {
         return this.age;
     }
 
-    String getSex() {
+    public String getSex() {
         return this.sex;
     }
 }
+
+// ALE: GENERAL SYMPTOMS GETS/SETS Y COGER INFO DE LOS CHECKBOXES (EJEMPLO EN PATIENT INFO)
+// LU: MOTOR SYMPTOMS GETS/SETS, COGER INFO DE LOS CHECKBOXES, CLASE CONEXIÓN CLIPS
+// ADRI: OTHER PATHOLOGIES GETS/SETS, COGER INFO DE LOS CHECKBOXES

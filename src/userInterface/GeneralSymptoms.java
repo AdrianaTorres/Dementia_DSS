@@ -16,6 +16,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
      */
     public GeneralSymptoms() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -100,6 +101,11 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         });
 
         Back_general.setText("Back");
+        Back_general.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_generalActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -191,7 +197,15 @@ public class GeneralSymptoms extends javax.swing.JFrame {
 
     private void Next_generalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_generalActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new MotorSymptoms();
     }//GEN-LAST:event_Next_generalActionPerformed
+
+    private void Back_generalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_generalActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new PatientInfo();
+    }//GEN-LAST:event_Back_generalActionPerformed
 
     /**
      * @param args the command line arguments

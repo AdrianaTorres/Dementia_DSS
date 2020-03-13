@@ -5,6 +5,8 @@
  */
 package userInterface;
 
+import dementia_dss.Patient;
+
 /**
  *
  * @author adria
@@ -16,6 +18,7 @@ public class PatientInfo extends javax.swing.JFrame {
      */
     public PatientInfo() {
         initComponents();
+        setVisible(true);
     }
     public static Patient patient = new Patient();
 
@@ -104,6 +107,9 @@ public class PatientInfo extends javax.swing.JFrame {
         patient.setAge(age);
         String sex = (String) Sex_box.getSelectedItem();
         patient.setSex(sex);
+
+        dispose();
+        new GeneralSymptoms();
     }//GEN-LAST:event_nextPatientInfoActionPerformed
 
     /**

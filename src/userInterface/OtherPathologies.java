@@ -16,6 +16,7 @@ public class OtherPathologies extends javax.swing.JFrame {
      */
     public OtherPathologies() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -74,6 +75,11 @@ public class OtherPathologies extends javax.swing.JFrame {
         Submit_pathologies.setText("Submit");
 
         Back_pathologies.setText("Back");
+        Back_pathologies.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_pathologiesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,6 +169,13 @@ public class OtherPathologies extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Back_pathologiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_pathologiesActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new MotorSymptoms();
+
+    }//GEN-LAST:event_Back_pathologiesActionPerformed
 
     /**
      * @param args the command line arguments

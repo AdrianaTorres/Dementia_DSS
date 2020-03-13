@@ -16,6 +16,7 @@ public class MotorSymptoms extends javax.swing.JFrame {
      */
     public MotorSymptoms() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -86,8 +87,18 @@ public class MotorSymptoms extends javax.swing.JFrame {
         Motor_symptoms.setText("Motor symptoms");
 
         Next_motor.setText("Next");
+        Next_motor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Next_motorActionPerformed(evt);
+            }
+        });
 
         Back_motor.setText("Back");
+        Back_motor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_motorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -175,6 +186,18 @@ public class MotorSymptoms extends javax.swing.JFrame {
         // TODO add your handling code here:
         PatientInfo.patient.getAge();
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void Next_motorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_motorActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new OtherPathologies();
+    }//GEN-LAST:event_Next_motorActionPerformed
+
+    private void Back_motorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_motorActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new GeneralSymptoms();
+    }//GEN-LAST:event_Back_motorActionPerformed
 
     /**
      * @param args the command line arguments

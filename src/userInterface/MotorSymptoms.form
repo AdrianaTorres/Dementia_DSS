@@ -209,11 +209,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Next"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Next_motorActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Back_motor">
       <Properties>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Back_motorActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
