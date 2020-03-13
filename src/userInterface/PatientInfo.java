@@ -17,6 +17,7 @@ public class PatientInfo extends javax.swing.JFrame {
     public PatientInfo() {
         initComponents();
     }
+    public static Patient patient = new Patient();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,6 +34,7 @@ public class PatientInfo extends javax.swing.JFrame {
         Age_enter = new javax.swing.JTextField();
         Sex = new javax.swing.JLabel();
         Sex_box = new javax.swing.JComboBox<>();
+        nextPatientInfo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,12 +46,19 @@ public class PatientInfo extends javax.swing.JFrame {
 
         Sex_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
+        nextPatientInfo.setText("Next");
+        nextPatientInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextPatientInfoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(281, Short.MAX_VALUE)
+                .addContainerGap(326, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Age)
                     .addComponent(Name_Surname)
@@ -59,7 +68,11 @@ public class PatientInfo extends javax.swing.JFrame {
                     .addComponent(Sex_box, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Age_enter)
                     .addComponent(NameSurname_enter))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nextPatientInfo)
+                .addGap(161, 161, 161))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,11 +89,22 @@ public class PatientInfo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Sex)
                     .addComponent(Sex_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nextPatientInfo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nextPatientInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPatientInfoActionPerformed
+        String name = (String) NameSurname_enter.getText();
+        patient.setName(name);
+        Integer age = Integer.parseInt(Age_enter.getText());
+        patient.setAge(age);
+        String sex = (String) Sex_box.getSelectedItem();
+        patient.setSex(sex);
+    }//GEN-LAST:event_nextPatientInfoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,5 +148,6 @@ public class PatientInfo extends javax.swing.JFrame {
     private javax.swing.JLabel Name_Surname;
     private javax.swing.JLabel Sex;
     private javax.swing.JComboBox<String> Sex_box;
+    private javax.swing.JButton nextPatientInfo;
     // End of variables declaration//GEN-END:variables
 }
