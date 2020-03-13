@@ -200,6 +200,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Submit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Submit_pathologiesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Back_pathologies">
       <Properties>
