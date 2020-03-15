@@ -12,7 +12,6 @@ import static userInterface.PatientInfo.patient;
  * @author adria
  */
 public class GeneralSymptoms extends javax.swing.JFrame {
-
     /**
      * Creates new form GeneralSymptoms
      */
@@ -204,49 +203,42 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         } else {
             patient.setFamilyHis("FALSE");
         }
-        
         Boolean lowEducation = EducationalLevel_check.isSelected();
         if (lowEducation) {
             patient.setLowEducation("TRUE");
         } else {
             patient.setLowEducation("FALSE");
         }
-     
         Boolean behaviour = Behaviour_check.isSelected();
         if (behaviour) {
             patient.setBehaviour("TRUE");
         } else {
             patient.setBehaviour("FALSE");
         }
-        
         Boolean emotionalInstability = EmtionalInst_check.isSelected();
         if (emotionalInstability) {
             patient.setEmotionalInstability("TRUE");
         } else {
             patient.setEmotionalInstability("FALSE");
         }
-        
         Boolean rightWords = RightWords_check.isSelected();
         if (rightWords) {
             patient.setRightWords("TRUE");
         } else {
             patient.setRightWords("FALSE");
         }
-        
         Boolean forgetPersonal = ForgetPersonalInfo_check.isSelected();
         if (forgetPersonal) {
             patient.setForgetPersonal("TRUE");
         } else {
             patient.setForgetPersonal("FALSE");
         }
-        
         Boolean facialExp = FacialExp_check.isSelected();
         if (facialExp) {
             patient.setFacialExp("TRUE");
         } else {
             patient.setFacialExp("FALSE");
         }
-        
         Boolean planningOrg = PlanningDifficulty_check.isSelected();
         if (planningOrg) {
             patient.setPlanningOrg("TRUE");
@@ -291,6 +283,8 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         }
         
         dispose();
+        setVisible(false);
+        
         new MotorSymptoms();
     }//GEN-LAST:event_Next_generalActionPerformed
 
@@ -299,7 +293,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         dispose();
         new PatientInfo();
     }//GEN-LAST:event_Back_generalActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */

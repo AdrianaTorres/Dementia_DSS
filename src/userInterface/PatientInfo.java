@@ -110,7 +110,7 @@ public class PatientInfo extends javax.swing.JFrame {
         dispose();
         new GeneralSymptoms();
     }//GEN-LAST:event_nextPatientInfoActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
