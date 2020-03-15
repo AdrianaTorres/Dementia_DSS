@@ -50,7 +50,7 @@ public class Patient {
     String arteriosclerosis;
     String depression;
 
-    //sets y gets
+    // Sets and gets methods:
     public void setName(String name_) {
         this.name = name_;
     }
@@ -61,6 +61,50 @@ public class Patient {
 
     public void setSex(String sex_) {
         this.sex = sex_;
+    }
+    
+    public void setLackCoord(String lackCoord) {
+        this.lack_coord = lackCoord;
+    }
+    
+    public void setStandWalk(String standWalk) {
+        this.stand_walk = standWalk;
+    }
+    
+    public void setStiffness(String stiffness_) {
+        this.stiffness = stiffness_;
+    }
+    
+    public void setLossBalance(String lossBalance) {
+        this.loss_balance = lossBalance;
+    }
+    
+    public void setWalkStraight(String walkStraight) {
+        this.walk_straight = walkStraight;
+    }
+    
+    public void setTremor(String tremor_) {
+        this.tremor = tremor_;
+    }
+    
+    public void setOrientationL(String orientationL) {
+        this.orientation_low = orientationL;
+    }
+    
+    public void setOrientationH(String orientationH) {
+        this.orientation_high = orientationH;
+    }
+    
+    public void setBradykinesiaL(String bradykinesiaL) {
+        this.bradykinesia_low = bradykinesiaL;
+    }
+    
+    public void setBradykinesiaM(String bradykinesiaM) {
+        this.bradykinesia_medium = bradykinesiaM;
+    }
+    
+    public void setBradykinesiaH(String bradykinesiaH) {
+        this.bradykinesia_high = bradykinesiaH;
     }
 
     public void setHyperglycemia(String hyperglycemia_) {
@@ -114,6 +158,50 @@ public class Patient {
     public String getSex() {
         return this.sex;
     }
+    
+    public String getLackCoord () {
+        return this.lack_coord;
+    }
+    
+    public String getStandWalk () {
+        return this.stand_walk;
+    }
+    
+    public String getStiffness () {
+        return this.stiffness;
+    }
+
+    public String getLossBalance () {
+        return this.loss_balance;
+    }
+    
+    public String getWalkStraight () {
+        return this.walk_straight;
+    }
+    
+    public String getTremor () {
+        return this.tremor;
+    }
+    
+    public String getOrientationL () {
+        return this.orientation_low;
+    }
+    
+    public String getOrientationh () {
+        return this.orientation_high;
+    }
+    
+    public String getBradykinesiaL () {
+        return this.bradykinesia_low;
+    }
+    
+    public String getBradykinesiaM () {
+        return this.bradykinesia_medium;
+    }
+    
+    public String getBradykinesiaH () {
+        return this.bradykinesia_high;
+    }
 
     public String getHyperglycemia() {
         return this.hyperglycemia;
@@ -154,6 +242,7 @@ public class Patient {
     public String getDepression() {
         return this.depression;
     }
+    
 }
 
 // ALE: GENERAL SYMPTOMS GETS/SETS Y COGER INFO DE LOS CHECKBOXES (EJEMPLO EN OTHER PATHOLOGIES)

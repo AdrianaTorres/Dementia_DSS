@@ -13,6 +13,7 @@ import dementia_dss.Patient;
  */
 public class PatientInfo extends javax.swing.JFrame {
 
+    public static Patient patient = new Patient();
     /**
      * Creates new form PatientInfo
      */
@@ -20,8 +21,6 @@ public class PatientInfo extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
     }
-    public static Patient patient = new Patient();
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

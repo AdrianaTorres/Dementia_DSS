@@ -5,6 +5,8 @@
  */
 package userInterface;
 
+import static userInterface.PatientInfo.patient;
+
 /**
  *
  * @author adria
@@ -34,10 +36,10 @@ public class MotorSymptoms extends javax.swing.JFrame {
         LossBalance_check = new javax.swing.JCheckBox();
         StraightWalk_check = new javax.swing.JCheckBox();
         Tremor_check = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        Orientation_check = new javax.swing.JLabel();
-        Bradykinesia_check = new javax.swing.JLabel();
+        Orientation_box = new javax.swing.JComboBox<>();
+        Bradykinesia_box = new javax.swing.JComboBox<>();
+        Orientation_label = new javax.swing.JLabel();
+        Bradykinesia_label = new javax.swing.JLabel();
         SymptomsPresent_motor = new javax.swing.JLabel();
         Motor_symptoms = new javax.swing.JLabel();
         Next_motor = new javax.swing.JButton();
@@ -67,18 +69,18 @@ public class MotorSymptoms extends javax.swing.JFrame {
 
         Tremor_check.setText("Tremor");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "High" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        Orientation_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "High" }));
+        Orientation_box.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                Orientation_boxActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "Medium", "High" }));
+        Bradykinesia_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "Medium", "High" }));
 
-        Orientation_check.setText("Orientation impairment");
+        Orientation_label.setText("Orientation impairment");
 
-        Bradykinesia_check.setText("Bradykinesia");
+        Bradykinesia_label.setText("Bradykinesia");
 
         SymptomsPresent_motor.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         SymptomsPresent_motor.setText("Select the present symptoms:");
@@ -122,12 +124,12 @@ public class MotorSymptoms extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Orientation_check)
-                                    .addComponent(Bradykinesia_check))
+                                    .addComponent(Orientation_label)
+                                    .addComponent(Bradykinesia_label))
                                 .addGap(47, 47, 47)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(Bradykinesia_box, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Orientation_box, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(StraightWalk_check)
                             .addComponent(Tremor_check))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -156,14 +158,14 @@ public class MotorSymptoms extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Stiffness_check)
-                    .addComponent(Orientation_check)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Orientation_label)
+                    .addComponent(Orientation_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Bradykinesia_check)
+                    .addComponent(Bradykinesia_label)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(LossBalance_check)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Bradykinesia_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Next_motor)
@@ -182,19 +184,83 @@ public class MotorSymptoms extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NoStand_checkActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void Orientation_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Orientation_boxActionPerformed
         // TODO add your handling code here:
         PatientInfo.patient.getAge();
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_Orientation_boxActionPerformed
 
     private void Next_motorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_motorActionPerformed
-        // TODO add your handling code here:
+        Boolean noCoordination = NoCoordination_check.isSelected();
+        if (noCoordination) {
+            patient.setLackCoord("TRUE");
+        } else {
+            patient.setLackCoord("FALSE");
+        }
+        Boolean noStand = NoStand_check.isSelected();
+        if (noStand) {
+            patient.setStandWalk("TRUE");
+        } else {
+            patient.setStandWalk("FALSE");
+        }
+        Boolean stiffness = Stiffness_check.isSelected();
+        if (stiffness) {
+            patient.setStiffness("TRUE");
+        } else {
+            patient.setStiffness("FALSE");
+        }
+        Boolean lossBalance = LossBalance_check.isSelected();
+        if (lossBalance) {
+            patient.setLossBalance("TRUE");
+        } else {
+            patient.setLossBalance("FALSE");
+        }
+        Boolean straightWalk = StraightWalk_check.isSelected();
+        if (straightWalk) {
+            patient.setWalkStraight("TRUE");
+        } else {
+            patient.setWalkStraight("FALSE");
+        }
+        Boolean tremor = Tremor_check.isSelected();
+        if (tremor) {
+            patient.setTremor("TRUE");
+        } else {
+            patient.setTremor("FALSE");
+        }
+        String orientation = (String) Orientation_box.getSelectedItem();
+        if (orientation.matches("Low")) {
+            patient.setOrientationL(orientation);
+            patient.setOrientationH("None");
+        } else if (orientation.matches("High")) {
+            patient.setOrientationL("None");
+            patient.setOrientationH(orientation);
+        } else {
+            patient.setOrientationL(orientation);
+            patient.setOrientationH(orientation);
+        }
+        String bradykinesia = (String) Bradykinesia_box.getSelectedItem();
+        if (bradykinesia.matches("Low")) {
+            patient.setBradykinesiaL(bradykinesia);
+            patient.setBradykinesiaM("None");
+            patient.setBradykinesiaH("None");
+        } else if (bradykinesia.matches("Medium")) {
+            patient.setBradykinesiaL("None");
+            patient.setBradykinesiaM(orientation);
+            patient.setBradykinesiaH("None");
+        } else if (bradykinesia.matches("High")) {
+            patient.setBradykinesiaL("None");
+            patient.setBradykinesiaM("None");
+            patient.setOrientationH(orientation);
+        } else {
+            patient.setBradykinesiaL("None");
+            patient.setBradykinesiaM("None");
+            patient.setBradykinesiaH("None");
+        }
+        
         dispose();
         new OtherPathologies();
     }//GEN-LAST:event_Next_motorActionPerformed
 
     private void Back_motorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_motorActionPerformed
-        // TODO add your handling code here:
         dispose();
         new GeneralSymptoms();
     }//GEN-LAST:event_Back_motorActionPerformed
@@ -236,18 +302,18 @@ public class MotorSymptoms extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back_motor;
-    private javax.swing.JLabel Bradykinesia_check;
+    private javax.swing.JComboBox<String> Bradykinesia_box;
+    private javax.swing.JLabel Bradykinesia_label;
     private javax.swing.JCheckBox LossBalance_check;
     private javax.swing.JLabel Motor_symptoms;
     private javax.swing.JButton Next_motor;
     private javax.swing.JCheckBox NoCoordination_check;
     private javax.swing.JCheckBox NoStand_check;
-    private javax.swing.JLabel Orientation_check;
+    private javax.swing.JComboBox<String> Orientation_box;
+    private javax.swing.JLabel Orientation_label;
     private javax.swing.JCheckBox Stiffness_check;
     private javax.swing.JCheckBox StraightWalk_check;
     private javax.swing.JLabel SymptomsPresent_motor;
     private javax.swing.JCheckBox Tremor_check;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     // End of variables declaration//GEN-END:variables
 }

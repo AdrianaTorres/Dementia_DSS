@@ -44,13 +44,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Orientation_check" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Bradykinesia_check" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Orientation_label" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Bradykinesia_label" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jComboBox2" min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="Bradykinesia_box" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="Orientation_box" min="-2" pref="74" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="StraightWalk_check" min="-2" max="-2" attributes="0"/>
@@ -89,15 +89,15 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Stiffness_check" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Orientation_check" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Orientation_label" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Orientation_box" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Bradykinesia_check" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="Bradykinesia_label" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="LossBalance_check" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Bradykinesia_box" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
@@ -147,7 +147,7 @@
         <Property name="text" type="java.lang.String" value="Tremor"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="Orientation_box">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -158,13 +158,13 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Orientation_boxActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
+    <Component class="javax.swing.JComboBox" name="Bradykinesia_box">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -179,12 +179,12 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="Orientation_check">
+    <Component class="javax.swing.JLabel" name="Orientation_label">
       <Properties>
         <Property name="text" type="java.lang.String" value="Orientation impairment"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="Bradykinesia_check">
+    <Component class="javax.swing.JLabel" name="Bradykinesia_label">
       <Properties>
         <Property name="text" type="java.lang.String" value="Bradykinesia"/>
       </Properties>
