@@ -11,9 +11,11 @@ package dementia_dss;
  */
 public class Patient {
 
+    // Patient general info variables:
     String name;
     int age;
     String sex;
+    // General symptoms variables:
     String family_his;
     String low_education;
     String behaviour;
@@ -28,6 +30,7 @@ public class Patient {
     String incontinence;
     String exposure;
     String smoking;
+    // Walking symptoms variables:
     String lack_coord;
     String stand_walk;
     String stiffness;
@@ -39,6 +42,7 @@ public class Patient {
     String bradykinesia_low;
     String bradykinesia_medium;
     String bradykinesia_high;
+    // Other pathologies variables:
     String hyperglycemia;
     String hyperlipidemia;
     String insulin;
@@ -50,7 +54,8 @@ public class Patient {
     String arteriosclerosis;
     String depression;
 
-    // Sets and gets methods:
+    // 'SET' AND 'GET' METHODS:
+    // Patient general information 'set' methods:
     public void setName(String name_) {
         this.name = name_;
     }
@@ -63,6 +68,64 @@ public class Patient {
         this.sex = sex_;
     }
     
+    // General symptoms 'set' methods:
+    public void setFamilyHis (String family_his_){
+        this.family_his = family_his_;
+    }
+    
+    public void setLowEducation (String low_education_){
+        this.low_education = low_education_;
+    }
+    
+    public void setBehaviour (String behaviour_){
+        this.behaviour = behaviour_;
+    }
+    
+    public void setEmotionalInstability (String emotional_instability_){
+        this.emotional_instability = emotional_instability_;
+    }
+    
+    public void setRightWords (String right_words_){
+        this.right_words = right_words_;
+    }
+    
+    public void setForgetPersonal (String forget_personal_){
+        this.forget_personal = forget_personal_;
+    }
+    
+    public void setFacialExp (String facial_exp_){
+        this.facial_exp = facial_exp_;
+    }
+    
+    public void setPlanningOrg (String planning_org_){
+        this.planning_org = planning_org_;
+    }
+    
+    public void setForgetRecent (String forget_recent_){
+        this.forget_recent = forget_recent_;
+    }
+    
+    public void setSleepingPattern (String sleeping_pattern_){
+        this.sleeping_pattern = sleeping_pattern_;
+    }
+    
+    public void setLossSmell (String loss_smell_){
+        this.loss_smell = loss_smell_;
+    }
+    
+    public void setIncontinence (String incontinence_){
+        this.incontinence = incontinence_;
+    }
+    
+    public void setExposure (String exposure_){
+        this.exposure = exposure_;
+    }
+    
+    public void setSmoking (String smoking_){
+        this.smoking = smoking_;
+    }
+    
+    // Motor symptoms 'set' methods:
     public void setLackCoord(String lackCoord) {
         this.lack_coord = lackCoord;
     }
@@ -107,6 +170,7 @@ public class Patient {
         this.bradykinesia_high = bradykinesiaH;
     }
 
+    // Other pathologies 'set' methods:
     public void setHyperglycemia(String hyperglycemia_) {
         this.hyperglycemia = hyperglycemia_;
     }
@@ -147,6 +211,7 @@ public class Patient {
         this.depression = depression_;
     }
 
+    // General patient information 'get' methods:
     public String getName() {
         return this.name;
     }
@@ -159,10 +224,69 @@ public class Patient {
         return this.sex;
     }
     
+    // General symptoms 'get' methods:
+    public String getFamilyHis() {
+        return this.family_his;
+    }
+    
+    public String getLowEducation() {
+        return this.low_education;
+    }
+    
+    public String getBehaviour() {
+        return this.behaviour;
+    }
+    
+    public String getEmotionalInstability() {
+        return this.emotional_instability;
+    }
+    
+    public String getRightWords() {
+        return this.right_words;
+    }
+    
+    public String getForgetPersonal() {
+        return this.forget_personal;
+    }
+    
+    public String getFacialExp() {
+        return this.facial_exp;
+    }
+    
+    public String getPlanningOrg() {
+        return this.planning_org;
+    }
+    
+    public String getForgetRecent() {
+        return this.forget_recent;
+    }
+    
+    public String getSleepingPattern() {
+        return this.sleeping_pattern;
+    }
+    
+    public String getLossSmell() {
+        return this.loss_smell;
+    }
+    
+    public String getIncontinence() {
+        return this.incontinence;
+    }
+    
+    public String getExposure() {
+        return this.exposure;
+    }
+    
+    public String getSmoking() {
+        return this.smoking;
+    }
+    
+    
     public String getLackCoord () {
         return this.lack_coord;
     }
     
+    // Motor symptoms 'get' methods:
     public String getStandWalk () {
         return this.stand_walk;
     }
@@ -203,6 +327,7 @@ public class Patient {
         return this.bradykinesia_high;
     }
 
+    // Other pathologies 'get' methods:
     public String getHyperglycemia() {
         return this.hyperglycemia;
     }
@@ -242,9 +367,4 @@ public class Patient {
     public String getDepression() {
         return this.depression;
     }
-    
 }
-
-// ALE: GENERAL SYMPTOMS GETS/SETS Y COGER INFO DE LOS CHECKBOXES (EJEMPLO EN OTHER PATHOLOGIES)
-// LU: MOTOR SYMPTOMS GETS/SETS, COGER INFO DE LOS CHECKBOXES, CLASE CONEXIÓN CLIPS
-// ADRI: OTHER PATHOLOGIES GETS/SETS, COGER INFO DE LOS CHECKBOXES
