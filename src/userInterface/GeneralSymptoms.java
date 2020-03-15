@@ -5,6 +5,8 @@
  */
 package userInterface;
 
+import static userInterface.PatientInfo.patient;
+
 /**
  *
  * @author adria
@@ -196,7 +198,98 @@ public class GeneralSymptoms extends javax.swing.JFrame {
     }//GEN-LAST:event_EducationalLevel_checkActionPerformed
 
     private void Next_generalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_generalActionPerformed
-        // TODO add your handling code here:
+        Boolean familyHis = FamilyHis_check.isSelected();
+        if (familyHis) {
+            patient.setFamilyHis("TRUE");
+        } else {
+            patient.setFamilyHis("FALSE");
+        }
+        
+        Boolean lowEducation = EducationalLevel_check.isSelected();
+        if (lowEducation) {
+            patient.setLowEducation("TRUE");
+        } else {
+            patient.setLowEducation("FALSE");
+        }
+     
+        Boolean behaviour = Behaviour_check.isSelected();
+        if (behaviour) {
+            patient.setBehaviour("TRUE");
+        } else {
+            patient.setBehaviour("FALSE");
+        }
+        
+        Boolean emotionalInstability = EmtionalInst_check.isSelected();
+        if (emotionalInstability) {
+            patient.setEmotionalInstability("TRUE");
+        } else {
+            patient.setEmotionalInstability("FALSE");
+        }
+        
+        Boolean rightWords = RightWords_check.isSelected();
+        if (rightWords) {
+            patient.setRightWords("TRUE");
+        } else {
+            patient.setRightWords("FALSE");
+        }
+        
+        Boolean forgetPersonal = ForgetPersonalInfo_check.isSelected();
+        if (forgetPersonal) {
+            patient.setForgetPersonal("TRUE");
+        } else {
+            patient.setForgetPersonal("FALSE");
+        }
+        
+        Boolean facialExp = FacialExp_check.isSelected();
+        if (facialExp) {
+            patient.setFacialExp("TRUE");
+        } else {
+            patient.setFacialExp("FALSE");
+        }
+        
+        Boolean planningOrg = PlanningDifficulty_check.isSelected();
+        if (planningOrg) {
+            patient.setPlanningOrg("TRUE");
+        } else {
+            patient.setPlanningOrg("FALSE");
+        }
+         Boolean forgetRecent = ForgetRecentInfo_check.isSelected();
+        if (forgetRecent) {
+            patient.setForgetRecent("TRUE");
+        } else {
+            patient.setForgetRecent("FALSE");
+        }
+        Boolean sleepingPattern = SleepPatterns_check.isSelected();
+        if (sleepingPattern) {
+            patient.setSleepingPattern("TRUE");
+        } else {
+            patient.setSleepingPattern("FALSE");
+        }
+        Boolean lossSmell = Smell_check.isSelected();
+        if (lossSmell) {
+            patient.setLossSmell("TRUE");
+        } else {
+            patient.setLossSmell("FALSE");
+        }
+        Boolean incontinence = Incontinence_check.isSelected();
+        if (incontinence) {
+            patient.setIncontinence("TRUE");
+        } else {
+            patient.setIncontinence("FALSE");
+        } 
+        Boolean exposure = Chemicals_check.isSelected();
+        if (exposure) {
+            patient.setExposure("TRUE");
+        } else {
+            patient.setExposure("FALSE");
+        }
+        Boolean smoking = Smoking_check.isSelected();
+        if (smoking) {
+            patient.setSmoking("TRUE");
+        } else {
+            patient.setSmoking("FALSE");
+        }
+        
         dispose();
         new MotorSymptoms();
     }//GEN-LAST:event_Next_generalActionPerformed
