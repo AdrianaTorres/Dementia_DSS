@@ -5,6 +5,8 @@
  */
 package dementia_dss;
 
+import dementia_dss.CLIPS_connection;
+
 /**
  *
  * @author adria
@@ -19,7 +21,7 @@ public class Dementia_DSS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        new CLIPS_connection();
     }
 
 }
