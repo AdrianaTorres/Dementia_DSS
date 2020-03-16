@@ -28,12 +28,6 @@ public class MotorSymptoms extends javax.swing.JFrame {
         if (patient.getStiffness() != null) {
             Stiffness_check.setSelected(true);
         }
-        Orientation_box = new javax.swing.JComboBox<>();
-        Bradykinesia_box = new javax.swing.JComboBox<>();
-        SymptomsPresent_motor = new javax.swing.JLabel();
-        Motor_symptoms = new javax.swing.JLabel();
-        Next_motor = new javax.swing.JButton();
-        Back_motor = new javax.swing.JButton();
         if (patient.getLossBalance() != null) {
             LossBalance_check.setSelected(true);
         }
@@ -43,8 +37,27 @@ public class MotorSymptoms extends javax.swing.JFrame {
         if (patient.getTremor() != null) {
             Tremor_check.setSelected(true);
         }
-        if ((patient.getOrientationL() != null) && (patient.getOrientationh() != null))
-        
+        if ((patient.getOrientationL().matches("None")) && (patient.getOrientationH().matches("None"))) {
+            Orientation_box.setSelectedIndex(0);
+        }
+        if (patient.getOrientationL() != null) {
+            Orientation_box.setSelectedIndex(1);
+        }
+        if (patient.getOrientationH() != null) {
+            Orientation_box.setSelectedIndex(2);
+        }
+        if ((patient.getBradykinesiaL().matches("None")) && (patient.getBradykinesiaM().matches("None")) && (patient.getBradykinesiaH().matches("None"))) {
+            Bradykinesia_box.setSelectedIndex(0);
+        }
+        if (patient.getBradykinesiaL() != null) {
+            Bradykinesia_box.setSelectedIndex(1);
+        }
+        if (patient.getBradykinesiaM() != null) {
+            Bradykinesia_box.setSelectedIndex(2);
+        }
+        if (patient.getBradykinesiaH() != null) {
+            Bradykinesia_box.setSelectedIndex(3);
+        }
     }
 
     /**
