@@ -53,6 +53,10 @@ public class Patient {
     String cholesterol;
     String arteriosclerosis;
     String depression;
+    // Specific Parkinson symptoms:
+    String lossPhysicalAbilities;
+    String tremorUni;
+    String tremorBi;
 
     // 'SET' AND 'GET' METHODS:
     // Patient general information 'set' methods:
@@ -210,6 +214,19 @@ public class Patient {
     public void setDepression(String depression_) {
         this.depression = depression_;
     }
+    
+    // Specific Parkinson symptoms' 'set' methods:
+    public void setLossPhysicalAbilities(String lossPhysicalAbilities_) {
+        this.lossPhysicalAbilities = lossPhysicalAbilities_;
+    }
+    
+    public void setTremorUni (String tremorUni_) {
+        this.tremorUni = tremorUni_;
+    }
+    
+    public void setTremorBi(String tremorBi_) {
+        this.tremorBi = tremorBi_;
+    }
 
     // General patient information 'get' methods:
     public String getName() {
@@ -366,5 +383,18 @@ public class Patient {
 
     public String getDepression() {
         return this.depression;
+    }
+    
+    // Specific Parkinson symptoms' 'get' methods:
+    public String getLossPhysicalAbilities() {
+        return this.lossPhysicalAbilities;
+    }
+    
+    public String getTremorUni() {
+        return this.tremorUni;
+    }
+    
+    public String getTremorBi() {
+        return this.tremorBi;
     }
 }
