@@ -399,7 +399,7 @@ public class Patient {
         return this.orientation_low;
     }
 
-    public String getOrientationh() {
+    public String getOrientationH() {
         return this.orientation_high;
     }
 

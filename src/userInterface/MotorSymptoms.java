@@ -28,12 +28,8 @@ public class MotorSymptoms extends javax.swing.JFrame {
         if (patient.getStiffness() != null) {
             Stiffness_check.setSelected(true);
         }
-        StraightWalk_check = new javax.swing.JCheckBox();
-        Tremor_check = new javax.swing.JCheckBox();
         Orientation_box = new javax.swing.JComboBox<>();
         Bradykinesia_box = new javax.swing.JComboBox<>();
-        Orientation_label = new javax.swing.JLabel();
-        Bradykinesia_label = new javax.swing.JLabel();
         SymptomsPresent_motor = new javax.swing.JLabel();
         Motor_symptoms = new javax.swing.JLabel();
         Next_motor = new javax.swing.JButton();
@@ -41,6 +37,13 @@ public class MotorSymptoms extends javax.swing.JFrame {
         if (patient.getLossBalance() != null) {
             LossBalance_check.setSelected(true);
         }
+        if (patient.getWalkStraight() != null) {
+            StraightWalk_check.setSelected(true);
+        }
+        if (patient.getTremor() != null) {
+            Tremor_check.setSelected(true);
+        }
+        if ((patient.getOrientationL() != null) && (patient.getOrientationh() != null))
         
     }
 
