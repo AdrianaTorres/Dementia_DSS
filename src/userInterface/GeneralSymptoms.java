@@ -291,6 +291,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
     private void Back_generalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_generalActionPerformed
         // TODO add your handling code here:
         dispose();
+        
         new PatientInfo();
     }//GEN-LAST:event_Back_generalActionPerformed
     

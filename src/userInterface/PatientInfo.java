@@ -20,6 +20,9 @@ public class PatientInfo extends javax.swing.JFrame {
     public PatientInfo() {
         initComponents();
         setVisible(true);
+        if (patient.getName() != null) {
+            NameSurname_enter.setText(patient.getName());
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.

@@ -43,6 +43,7 @@ public class Patient {
     String bradykinesia_medium;
     String bradykinesia_high;
     // Other pathologies variables:
+    String downSyndrome;
     String hyperglycemia;
     String hyperlipidemia;
     String insulin;
@@ -180,6 +181,10 @@ public class Patient {
     }
 
     // Other pathologies 'set' methods:
+    public void setDownSyndrome (String downSyndrome_) {
+        this.downSyndrome = downSyndrome_;
+    }
+    
     public void setHyperglycemia(String hyperglycemia_) {
         this.hyperglycemia = hyperglycemia_;
     }
@@ -364,6 +369,10 @@ public class Patient {
     }
 
     // Other pathologies 'get' methods:
+    public String getDownSyndrome () {
+        return this.downSyndrome;
+    }
+    
     public String getHyperglycemia() {
         return this.hyperglycemia;
     }

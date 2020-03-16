@@ -23,8 +23,8 @@ public class CLIPS_connection {
     // Main method runs the application creating a CLIPS environment.
     public void startCLIPS () {
         Environment clips = new Environment();
-        new userInterface.PatientInfo();
-        Patient patient = PatientInfo.patient;
+        //new userInterface.PatientInfo();
+        
         try {
             clips.load("Dementia_DSS_3.clp");
             clips.reset();
@@ -34,7 +34,8 @@ public class CLIPS_connection {
         }
     }
     
-    public void createPatientAssertion () {
-        
+    public void createPatientAssertion (Patient p) {
+        String assertion = "(assert (patient (name " + p.getName() + ")(sex " + p.getSex() + ")(age " + p.getAge() +
+                           ")(familyHistoryOfDisease " + p.getFamilyHis() + ")(downsSyndrome " + p.get;
     }
 }
