@@ -5,6 +5,7 @@
  */
 package userInterface;
 
+import javax.swing.JOptionPane;
 import static userInterface.PatientInfo.patient;
 
 /**
@@ -245,7 +246,8 @@ public class OtherPathologies extends javax.swing.JFrame {
         } else {
             patient.setDepression("FALSE");
         }
-
+        
+        JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ");
     }//GEN-LAST:event_Submit_pathologiesActionPerformed
 
     /**
