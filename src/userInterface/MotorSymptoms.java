@@ -19,43 +19,43 @@ public class MotorSymptoms extends javax.swing.JFrame {
     public MotorSymptoms() {
         initComponents();
         setVisible(true);
-        if (patient.getLackCoord() != null) {
+        if (patient.getLackCoord().equalsIgnoreCase("TRUE")) {
             NoCoordination_check.setSelected(true);
         }
-        if (patient.getStandWalk() != null) {
+        if (patient.getStandWalk().equalsIgnoreCase("TRUE")) {
             NoStand_check.setSelected(true);
         }
-        if (patient.getStiffness() != null) {
+        if (patient.getStiffness().equalsIgnoreCase("TRUE")) {
             Stiffness_check.setSelected(true);
         }
-        if (patient.getLossBalance() != null) {
+        if (patient.getLossBalance().equalsIgnoreCase("TRUE")) {
             LossBalance_check.setSelected(true);
         }
-        if (patient.getWalkStraight() != null) {
+        if (patient.getWalkStraight().equalsIgnoreCase("TRUE")) {
             StraightWalk_check.setSelected(true);
         }
-        if (patient.getTremor() != null) {
+        if (patient.getTremor().equalsIgnoreCase("TRUE")) {
             Tremor_check.setSelected(true);
         }
-        if ((patient.getOrientationL().matches("None")) && (patient.getOrientationH().matches("None"))) {
+        if ((patient.getOrientationL().equalsIgnoreCase("FALSE")) && (patient.getOrientationH().equalsIgnoreCase("FALSE"))) {
             Orientation_box.setSelectedIndex(0);
         }
-        if (patient.getOrientationL() != null) {
+        if (patient.getOrientationL().equalsIgnoreCase("TRUE")) {
             Orientation_box.setSelectedIndex(1);
         }
-        if (patient.getOrientationH() != null) {
+        if (patient.getOrientationH().equalsIgnoreCase("TRUE")) {
             Orientation_box.setSelectedIndex(2);
         }
-        if ((patient.getBradykinesiaL().matches("None")) && (patient.getBradykinesiaM().matches("None")) && (patient.getBradykinesiaH().matches("None"))) {
+        if ((patient.getBradykinesiaL().equalsIgnoreCase("FALSE")) && (patient.getBradykinesiaM().equalsIgnoreCase("FALSE")) && (patient.getBradykinesiaH().equalsIgnoreCase("FALSE"))) {
             Bradykinesia_box.setSelectedIndex(0);
         }
-        if (patient.getBradykinesiaL() != null) {
+        if (patient.getBradykinesiaL().equalsIgnoreCase("TRUE")) {
             Bradykinesia_box.setSelectedIndex(1);
         }
-        if (patient.getBradykinesiaM() != null) {
+        if (patient.getBradykinesiaM().equalsIgnoreCase("TRUE")) {
             Bradykinesia_box.setSelectedIndex(2);
         }
-        if (patient.getBradykinesiaH() != null) {
+        if (patient.getBradykinesiaH().equalsIgnoreCase("TRUE")) {
             Bradykinesia_box.setSelectedIndex(3);
         }
     }

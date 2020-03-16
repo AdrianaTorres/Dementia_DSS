@@ -21,38 +21,107 @@ public class OtherPathologies extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
 
-        if (patient.getDownSyndrome() != null) {
+        if (patient.getDownSyndrome().equalsIgnoreCase("TRUE")) {
             DownSyndrome_check.setSelected(true);
         }
-        if (patient.getHyperglycemia() != null) {
+        if (patient.getHyperglycemia().equalsIgnoreCase("TRUE")) {
             Hyperglycemia_check.setSelected(true);
         }
-        if (patient.getHyperlipidemia() != null) {
+        if (patient.getHyperlipidemia().equalsIgnoreCase("TRUE")) {
             Hyperlypidemia_check.setSelected(true);
         }
-        if (patient.getInsulin() != null) {
+        if (patient.getInsulin().equalsIgnoreCase("TRUE")) {
             Insulin_check.setSelected(true);
         }
-        if (patient.getHypertension() != null) {
+        if (patient.getHypertension().equalsIgnoreCase("TRUE")) {
             Hypertension_check.setSelected(true);
         }
-        if (patient.getHeartCerebro() != null) {
+        if (patient.getHeartCerebro().equalsIgnoreCase("TRUE")) {
             HeartAttacks_check.setSelected(true);
         }
-        if (patient.getDiabetes() != null) {
+        if (patient.getDiabetes().equalsIgnoreCase("TRUE")) {
             Diabetes_check.setSelected(true);
         }
-        if (patient.getObesity() != null) {
+        if (patient.getObesity().equalsIgnoreCase("TRUE")) {
             Obesity_check.setSelected(true);
         }
-        if (patient.getCholesterol() != null) {
+        if (patient.getCholesterol().equalsIgnoreCase("TRUE")) {
             Cholesterol_check.setSelected(true);
         }
-        if (patient.getArteriosclerosis() != null) {
+        if (patient.getArteriosclerosis().equalsIgnoreCase("TRUE")) {
             Arteriosclerosis_check.setSelected(true);
         }
-        if (patient.getDepression() != null) {
+        if (patient.getDepression().equalsIgnoreCase("TRUE")) {
             Depression_check.setSelected(true);
+        }
+    }
+    
+    public void SaveInfo () {
+        Boolean downSyndrome = this.DownSyndrome_check.isSelected();
+        if (downSyndrome) {
+            patient.setDownSyndrome("TRUE");
+        } else {
+            patient.setDownSyndrome("FALSE");
+        }
+        Boolean hyperglycemia = this.Hyperglycemia_check.isSelected();
+        if (hyperglycemia) {
+            patient.setHyperglycemia("TRUE");
+        } else {
+            patient.setHyperglycemia("FALSE");
+        }
+        Boolean insulin = this.Insulin_check.isSelected();
+        if (insulin) {
+            patient.setInsulin("TRUE");
+        } else {
+            patient.setInsulin("FALSE");
+        }
+        Boolean hyperlipidemia = this.Hyperlypidemia_check.isSelected();
+        if (hyperlipidemia) {
+            patient.setHyperlipidemia("TRUE");
+        } else {
+            patient.setHyperlipidemia("FALSE");
+        }
+        Boolean hypertension = this.Hypertension_check.isSelected();
+        if (hypertension) {
+            patient.setHypertension("TRUE");
+        } else {
+            patient.setHyperlipidemia("FALSE");
+        }
+        Boolean heartCerebro = this.HeartAttacks_check.isSelected();
+        if (heartCerebro) {
+            patient.setHeartCerebro("TRUE");
+        } else {
+            patient.setHeartCerebro("FALSE");
+        }
+        Boolean diabetes = this.Diabetes_check.isSelected();
+        if (diabetes) {
+            patient.setDiabetes("TRUE");
+        } else {
+            patient.setDiabetes("FALSE");
+        }
+        Boolean obesity = this.Obesity_check.isSelected();
+        if (obesity) {
+            patient.setObesity("TRUE");
+        } else {
+            patient.setObesity("FALSE");
+        }
+        Boolean cholesterol = this.Cholesterol_check.isSelected();
+        if (cholesterol) {
+            patient.setCholesterol("TRUE");
+        } else {
+            patient.setCholesterol("FALSE");
+        }
+        Boolean arteriosclerosis = this.Arteriosclerosis_check.isSelected();
+        if (arteriosclerosis) {
+            patient.setArteriosclerosis("TRUE");
+        } else {
+            patient.setArteriosclerosis("FALSE");
+        }
+        Boolean depression = this.Depression_check.isSelected();
+        if (depression) {
+            patient.setDepression("TRUE");
+        } else {
+            patient.setDepression("FALSE");
         }
     }
 
@@ -201,10 +270,75 @@ public class OtherPathologies extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back_pathologiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_pathologiesActionPerformed
-        // TODO add your handling code here:
+        SaveInfo();
+        /*Boolean downSyndrome = DownSyndrome_check.isSelected();
+        if (downSyndrome) {
+            patient.setDownSyndrome("TRUE");
+        } else {
+            patient.setDownSyndrome("FALSE");
+        }
+        Boolean hyperglycemia = Hyperglycemia_check.isSelected();
+        if (hyperglycemia) {
+            patient.setHyperglycemia("TRUE");
+        } else {
+            patient.setHyperglycemia("FALSE");
+        }
+        Boolean insulin = Insulin_check.isSelected();
+        if (insulin) {
+            patient.setInsulin("TRUE");
+        } else {
+            patient.setInsulin("FALSE");
+        }
+        Boolean hyperlipidemia = Hyperlypidemia_check.isSelected();
+        if (hyperlipidemia) {
+            patient.setHyperlipidemia("TRUE");
+        } else {
+            patient.setHyperlipidemia("FALSE");
+        }
+        Boolean hypertension = Hypertension_check.isSelected();
+        if (hypertension) {
+            patient.setHypertension("TRUE");
+        } else {
+            patient.setHyperlipidemia("FALSE");
+        }
+        Boolean heartCerebro = HeartAttacks_check.isSelected();
+        if (heartCerebro) {
+            patient.setHeartCerebro("TRUE");
+        } else {
+            patient.setHeartCerebro("FALSE");
+        }
+        Boolean diabetes = Diabetes_check.isSelected();
+        if (diabetes) {
+            patient.setDiabetes("TRUE");
+        } else {
+            patient.setDiabetes("FALSE");
+        }
+        Boolean obesity = Obesity_check.isSelected();
+        if (obesity) {
+            patient.setObesity("TRUE");
+        } else {
+            patient.setObesity("FALSE");
+        }
+        Boolean cholesterol = Cholesterol_check.isSelected();
+        if (cholesterol) {
+            patient.setCholesterol("TRUE");
+        } else {
+            patient.setCholesterol("FALSE");
+        }
+        Boolean arteriosclerosis = Arteriosclerosis_check.isSelected();
+        if (arteriosclerosis) {
+            patient.setArteriosclerosis("TRUE");
+        } else {
+            patient.setArteriosclerosis("FALSE");
+        }
+        Boolean depression = Depression_check.isSelected();
+        if (depression) {
+            patient.setDepression("TRUE");
+        } else {
+            patient.setDepression("FALSE");
+        }*/
         dispose();
         new MotorSymptoms();
-
     }//GEN-LAST:event_Back_pathologiesActionPerformed
 
     private void Submit_pathologiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_pathologiesActionPerformed
@@ -277,7 +411,8 @@ public class OtherPathologies extends javax.swing.JFrame {
 
         CLIPS_connection clipsConnect = new CLIPS_connection();
         clipsConnect.createPatientAssertion(patient);
-
+        
+        dispose();
         //JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ");
     }//GEN-LAST:event_Submit_pathologiesActionPerformed
 

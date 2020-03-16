@@ -18,49 +18,49 @@ public class GeneralSymptoms extends javax.swing.JFrame {
     public GeneralSymptoms() {
         initComponents();
         setVisible(true);
-        if (patient.getFamilyHis() != null){
+        if (patient.getFamilyHis().equalsIgnoreCase("TRUE")){
             FamilyHis_check.setSelected(true);
         }
-        if (patient.getLowEducation() != null){
+        if (patient.getLowEducation().equalsIgnoreCase("TRUE")){
             EducationalLevel_check.setSelected(true);
         }
-        if (patient.getBehaviour() != null){
+        if (patient.getBehaviour().equalsIgnoreCase("TRUE")){
             Behaviour_check.setSelected(true);
         }
-        if (patient.getEmotionalInstability() != null) {
+        if (patient.getEmotionalInstability().equalsIgnoreCase("TRUE")) {
             EmtionalInst_check.setSelected(true);
         }
-        if (patient.getRightWords() != null){
+        if (patient.getRightWords().equalsIgnoreCase("TRUE")){
             RightWords_check.setSelected(true);
         }
-        if (patient.getForgetPersonal() != null){
+        if (patient.getForgetPersonal().equalsIgnoreCase("TRUE")){
             ForgetPersonalInfo_check.setSelected(true);
         }
-        if (patient.getFacialExp() != null){
+        if (patient.getFacialExp().equalsIgnoreCase("TRUE")){
             FacialExp_check.setSelected(true);
         }
-        if (patient.getPlanningOrg() != null){
+        if (patient.getPlanningOrg().equalsIgnoreCase("TRUE")){
             PlanningDifficulty_check.setSelected(true);
         }
-        if (patient.getForgetRecent() != null){
+        if (patient.getForgetRecent().equalsIgnoreCase("TRUE")){
             ForgetRecentInfo_check.setSelected(true);
         }
-        if (patient.getSleepingPattern() != null){
+        if (patient.getSleepingPattern().equalsIgnoreCase("TRUE")){
             SleepPatterns_check.setSelected(true);
         }
-        if (patient.getLossSmell() != null){
+        if (patient.getLossSmell().equalsIgnoreCase("TRUE")){
             Smell_check.setSelected(true);
         }
-        if (patient.getIncontinence() != null){
+        if (patient.getIncontinence().equalsIgnoreCase("TRUE")){
             Incontinence_check.setSelected(true);
         }
-        if(patient.getExposure() != null){
+        if(patient.getExposure().equalsIgnoreCase("TRUE")){
             Chemicals_check.setSelected(true);
         }
-        if (patient.getSmoking() != null){
+        if (patient.getSmoking().equalsIgnoreCase("TRUE")){
             Smoking_check.setSelected(true);
         }
-        if(patient.getDrugConsumption() != null) {
+        if(patient.getDrugConsumption().equalsIgnoreCase("TRUE")) {
             DrugConsumption_check.setSelected(true);
         }
     }
@@ -347,7 +347,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         }
         
         dispose();
-        setVisible(false);
+        //setVisible(false);
         
         new MotorSymptoms();
     }//GEN-LAST:event_Next_generalActionPerformed
