@@ -30,6 +30,7 @@ public class Patient {
     String incontinence;
     String exposure;
     String smoking;
+    String drugConsumption;
     // Walking symptoms variables:
     String lack_coord;
     String stand_walk;
@@ -82,6 +83,7 @@ public class Patient {
         this.incontinence = null;
         this.exposure = null;
         this.smoking = null;
+        this.drugConsumption = null;
         this.lack_coord = null;
         this.stand_walk = null;
         this.stiffness = null;
@@ -181,6 +183,10 @@ public class Patient {
 
     public void setSmoking(String smoking_) {
         this.smoking = smoking_;
+    }
+    
+    public void setDrugConsumption(String drug) {
+        this.drugConsumption = drug;
     }
 
     // Motor symptoms 'set' methods:
@@ -368,6 +374,10 @@ public class Patient {
 
     public String getSmoking() {
         return this.smoking;
+    }
+    
+    public String getDrugConsumption() {
+        return this.drugConsumption;
     }
 
     public String getLackCoord() {

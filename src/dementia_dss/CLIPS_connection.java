@@ -41,6 +41,18 @@ public class CLIPS_connection {
                            ")(recordHeartCerebroAttacks " + p.getHeartCerebro() + ")(diabetes " + p.getDiabetes() + ")(smoking " + p.getSmoking() +
                            ")(obesity " + p.getObesity() + ")(highCholesterol " + p.getCholesterol() + ")(lossOfCoordination " + p.getLackCoord() +
                            ")(arteriosclerosis " + p.getArteriosclerosis() + ")(depression " + p.getDepression() + ")(lowLevelsEducation " + p.getLowEducation() +
-                           ")(difficultiesWords " + p.get;
+                           ")(difficultiesWords " + p.getRightWords() + ")(memoryProblems " + p.getForgetRecent() + ")(organizationProblems " + p.getPlanningOrg() +
+                           ")(forgetPersonalInfo "  + p.getForgetPersonal() + ")(noStandWalk " + p.getStandWalk() + ")(bradykinesiaL " + p.getBradykinesiaL() + 
+                           ")(bradykinesiaM " + p.getBradykinesiaM() + ")(bradykinesiaH " + p.getBradykinesiaH() + ")(orientationImpL " + p.getOrientationL() +
+                           ")(orientationImpH " + p.getOrientationH() + ")((behaviour " + p.getBehaviour() + ")(emotionalInstability " + p.getEmotionalInstability() +
+                           ")(chemicalsExposure " + p.getExposure() + ")(drugConsumption " + p.get
+"(slot tremor)\n" +
+"(slot stiffness)\n" +
+"(slot balanceLoss)\n" +
+"(slot straightWalkingProblems)\n" +
+"(slot smellLoss)\n" +
+"(slot incontinence)\n" +
+"(slot sleepingProblems)\n" +
+"(slot facialExpressionLoss)"
     }
 }

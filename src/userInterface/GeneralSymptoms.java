@@ -18,6 +18,48 @@ public class GeneralSymptoms extends javax.swing.JFrame {
     public GeneralSymptoms() {
         initComponents();
         setVisible(true);
+        if (patient.getFamilyHis() != null){
+            FamilyHis_check.setSelected(true);
+        }
+        if (patient.getLowEducation() != null){
+            EducationalLevel_check.setSelected(true);
+        }
+        if (patient.getBehaviour() != null){
+            EmtionalInst_check.setSelected(true);
+        }
+        if (patient.getRightWords() != null){
+            RightWords_check.setSelected(true);
+        }
+        if (patient.getForgetPersonal() != null){
+            ForgetPersonalInfo_check.setSelected(true);
+        }
+        if (patient.getFacialExp() != null){
+            FacialExp_check.setSelected(true);
+        }
+        if (patient.getPlanningOrg() != null){
+            PlanningDifficulty_check.setSelected(true);
+        }
+        if (patient.getForgetRecent() != null){
+            ForgetRecentInfo_check.setSelected(true);
+        }
+        if (patient.getSleepingPattern() != null){
+            SleepPatterns_check.setSelected(true);
+        }
+        if (patient.getLossSmell() != null){
+            Smell_check.setSelected(true);
+        }
+        if (patient.getIncontinence() != null){
+            Incontinence_check.setSelected(true);
+        }
+        if(patient.getExposure() != null){
+            Chemicals_check.setSelected(true);
+        }
+        if (patient.getSmoking() != null){
+            Smoking_check.setSelected(true);
+        }
+        if(patient.getDrugConsumption() != null) {
+            DrugConsumption_check.setSelected(true);
+        }
     }
 
     /**
@@ -47,6 +89,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         Smoking_check = new javax.swing.JCheckBox();
         Next_general = new javax.swing.JButton();
         Back_general = new javax.swing.JButton();
+        DrugConsumption_check = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,24 +151,32 @@ public class GeneralSymptoms extends javax.swing.JFrame {
             }
         });
 
+        DrugConsumption_check.setText("Drug consumption");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Back_general)
+                .addGap(18, 18, 18)
+                .addComponent(Next_general)
+                .addGap(57, 57, 57))
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(General_symptoms)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SymptomsPresent_general)
                             .addComponent(FamilyHis_check)
                             .addComponent(EducationalLevel_check)
                             .addComponent(Behaviour_check)
                             .addComponent(EmtionalInst_check)
                             .addComponent(RightWords_check)
                             .addComponent(ForgetPersonalInfo_check)
-                            .addComponent(FacialExp_check))
+                            .addComponent(FacialExp_check)
+                            .addComponent(SymptomsPresent_general))
                         .addGap(100, 100, 100)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PlanningDifficulty_check)
@@ -134,55 +185,59 @@ public class GeneralSymptoms extends javax.swing.JFrame {
                             .addComponent(Smell_check)
                             .addComponent(Incontinence_check)
                             .addComponent(Chemicals_check)
-                            .addComponent(Smoking_check))))
+                            .addComponent(Smoking_check)
+                            .addComponent(DrugConsumption_check))))
                 .addContainerGap(97, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Back_general)
-                .addGap(18, 18, 18)
-                .addComponent(Next_general)
-                .addGap(57, 57, 57))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(General_symptoms)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SymptomsPresent_general)
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FamilyHis_check)
-                    .addComponent(PlanningDifficulty_check))
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EducationalLevel_check)
-                    .addComponent(ForgetRecentInfo_check))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SleepPatterns_check)
-                    .addComponent(Behaviour_check))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EmtionalInst_check)
-                    .addComponent(Smell_check))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RightWords_check)
-                    .addComponent(Incontinence_check))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ForgetPersonalInfo_check)
-                    .addComponent(Chemicals_check))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FacialExp_check)
-                    .addComponent(Smoking_check))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Next_general)
-                    .addComponent(Back_general))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SymptomsPresent_general))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(PlanningDifficulty_check)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(FamilyHis_check)
+                        .addGap(13, 13, 13)
+                        .addComponent(EducationalLevel_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(Behaviour_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(EmtionalInst_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(RightWords_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(ForgetPersonalInfo_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(FacialExp_check)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Next_general)
+                            .addComponent(Back_general))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(ForgetRecentInfo_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(SleepPatterns_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(Smell_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(Incontinence_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(Chemicals_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(Smoking_check)
+                        .addGap(18, 18, 18)
+                        .addComponent(DrugConsumption_check)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -281,6 +336,12 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         } else {
             patient.setSmoking("FALSE");
         }
+        Boolean drug = DrugConsumption_check.isSelected();
+        if (drug) {
+            patient.setDrugConsumption("TRUE");
+        } else {
+            patient.setDrugConsumption("FALSE");
+        }
         
         dispose();
         setVisible(false);
@@ -334,6 +395,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
     private javax.swing.JButton Back_general;
     private javax.swing.JCheckBox Behaviour_check;
     private javax.swing.JCheckBox Chemicals_check;
+    private javax.swing.JCheckBox DrugConsumption_check;
     private javax.swing.JCheckBox EducationalLevel_check;
     private javax.swing.JCheckBox EmtionalInst_check;
     private javax.swing.JCheckBox FacialExp_check;
