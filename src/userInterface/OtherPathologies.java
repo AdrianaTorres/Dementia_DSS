@@ -5,7 +5,6 @@
  */
 package userInterface;
 
-import javax.swing.JOptionPane;
 import dementia_dss.CLIPS_connection;
 import static userInterface.PatientInfo.patient;
 
@@ -21,6 +20,40 @@ public class OtherPathologies extends javax.swing.JFrame {
     public OtherPathologies() {
         initComponents();
         setVisible(true);
+
+        if (patient.getDownSyndrome() != null) {
+            DownSyndrome_check.setSelected(true);
+        }
+        if (patient.getHyperglycemia() != null) {
+            Hyperglycemia_check.setSelected(true);
+        }
+        if (patient.getHyperlipidemia() != null) {
+            Hyperlypidemia_check.setSelected(true);
+        }
+        if (patient.getInsulin() != null) {
+            Insulin_check.setSelected(true);
+        }
+        if (patient.getHypertension() != null) {
+            Hypertension_check.setSelected(true);
+        }
+        if (patient.getHeartCerebro() != null) {
+            HeartAttacks_check.setSelected(true);
+        }
+        if (patient.getDiabetes() != null) {
+            Diabetes_check.setSelected(true);
+        }
+        if (patient.getObesity() != null) {
+            Obesity_check.setSelected(true);
+        }
+        if (patient.getCholesterol() != null) {
+            Cholesterol_check.setSelected(true);
+        }
+        if (patient.getArteriosclerosis() != null) {
+            Arteriosclerosis_check.setSelected(true);
+        }
+        if (patient.getDepression() != null) {
+            Depression_check.setSelected(true);
+        }
     }
 
     /**
@@ -241,10 +274,10 @@ public class OtherPathologies extends javax.swing.JFrame {
         } else {
             patient.setDepression("FALSE");
         }
-        
+
         CLIPS_connection clipsConnect = new CLIPS_connection();
         clipsConnect.createPatientAssertion(patient);
-        
+
         //JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ");
     }//GEN-LAST:event_Submit_pathologiesActionPerformed
 
