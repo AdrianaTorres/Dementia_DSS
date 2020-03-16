@@ -54,9 +54,14 @@ public class Patient {
     String arteriosclerosis;
     String depression;
     // Specific Parkinson symptoms:
-    String lossPhysicalAbilities;
     String tremorUni;
     String tremorBi;
+    // Specific Alzheimer symptoms:
+    String stiffnessLow;
+    String stiffnessHigh;
+    String hyperreflexia;
+    // Specific for both (Parkinson and Alzheimer) symptom:
+    String lossPhysicalAbilities;
 
     // 'SET' AND 'GET' METHODS:
     // Patient general information 'set' methods:
@@ -215,17 +220,31 @@ public class Patient {
         this.depression = depression_;
     }
     
-    // Specific Parkinson symptoms' 'set' methods:
-    public void setLossPhysicalAbilities(String lossPhysicalAbilities_) {
-        this.lossPhysicalAbilities = lossPhysicalAbilities_;
-    }
-    
+    // Specific Parkinson symptoms' 'set' methods:    
     public void setTremorUni (String tremorUni_) {
         this.tremorUni = tremorUni_;
     }
     
     public void setTremorBi(String tremorBi_) {
         this.tremorBi = tremorBi_;
+    }
+    
+    // Specific Alzheimer symptoms' 'set' methods:
+    public void setStiffnessL (String stiffnessL) {
+        this.stiffnessLow = stiffnessL;
+    }
+    
+    public void setStiffnessH (String stiffnessH) {
+        this.stiffnessHigh = stiffnessH;
+    }
+    
+    public void setHyperreflexia (String hyperreflexia_) {
+        this.hyperreflexia = hyperreflexia_;
+    }
+    
+    // Specific for both (Parkinson and Alzheimer) symptom' 'set' mehtod:
+    public void setLossPhysicalAbilities(String lossPhysicalAbilities_) {
+        this.lossPhysicalAbilities = lossPhysicalAbilities_;
     }
 
     // General patient information 'get' methods:
@@ -385,16 +404,30 @@ public class Patient {
         return this.depression;
     }
     
-    // Specific Parkinson symptoms' 'get' methods:
-    public String getLossPhysicalAbilities() {
-        return this.lossPhysicalAbilities;
-    }
-    
+    // Specific Parkinson symptoms' 'get' methods: 
     public String getTremorUni() {
         return this.tremorUni;
     }
     
     public String getTremorBi() {
         return this.tremorBi;
+    }
+    
+    // Specific Alzheimer symptoms' 'get' methods:
+    public String getStiffnessL () {
+        return this.stiffnessLow;
+    }
+    
+    public String getStiffnessH () {
+        return this.stiffnessHigh;
+    }
+    
+    public String getHyperreflexia () {
+        return this.hyperreflexia;
+    }
+    
+    // Specific for both (Parkinson and Alzheimer) symptom' 'get' mehtod:
+    public String getLossPhysicalAbilities() {
+        return this.lossPhysicalAbilities;
     }
 }
