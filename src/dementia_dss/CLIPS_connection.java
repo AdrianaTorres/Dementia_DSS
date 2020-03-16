@@ -36,6 +36,11 @@ public class CLIPS_connection {
     
     public void createPatientAssertion (Patient p) {
         String assertion = "(assert (patient (name " + p.getName() + ")(sex " + p.getSex() + ")(age " + p.getAge() +
-                           ")(familyHistoryOfDisease " + p.getFamilyHis() + ")(downsSyndrome " + p.get;
+                           ")(familyHistoryOfDisease " + p.getFamilyHis() + ")(downsSyndrome " + p.getDownSyndrome() + ")(hyperglycemia " + p.getHyperglycemia() +
+                           ")(insulineResistance " + p.getInsulin() + ")(hyperlipidemia " + p.getHyperlipidemia() + ")(arterialHypertension " + p.getHypertension() +
+                           ")(recordHeartCerebroAttacks " + p.getHeartCerebro() + ")(diabetes " + p.getDiabetes() + ")(smoking " + p.getSmoking() +
+                           ")(obesity " + p.getObesity() + ")(highCholesterol " + p.getCholesterol() + ")(lossOfCoordination " + p.getLackCoord() +
+                           ")(arteriosclerosis " + p.getArteriosclerosis() + ")(depression " + p.getDepression() + ")(lowLevelsEducation " + p.getLowEducation() +
+                           ")(difficultiesWords " + p.get;
     }
 }
