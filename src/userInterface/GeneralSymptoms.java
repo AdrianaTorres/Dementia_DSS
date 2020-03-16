@@ -61,7 +61,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         });
 
         SymptomsPresent_general.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        SymptomsPresent_general.setText("Select the present symptoms");
+        SymptomsPresent_general.setText("Select the present symptoms:");
 
         EducationalLevel_check.setText("Low educational level");
         EducationalLevel_check.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +135,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
                             .addComponent(Incontinence_check)
                             .addComponent(Chemicals_check)
                             .addComponent(Smoking_check))))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Back_general)

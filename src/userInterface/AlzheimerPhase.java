@@ -116,25 +116,25 @@ public class AlzheimerPhase extends javax.swing.JFrame {
     }//GEN-LAST:event_LossPhysicalAbilities_checkActionPerformed
 
     private void Submit_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_buttonActionPerformed
-        String stiffnessL = (String) Stiffness_box.getSelectedItem();
-        if (stiffnessL.matches("Low")) {
-            patient.setStiffnessL(stiffnessL);
+        String stiffness = (String) Stiffness_box.getSelectedItem();
+        if (stiffness.matches("Low")) {
+            patient.setStiffnessL(stiffness);
             patient.setStiffnessH("None");
-        } else if (stiffnessL.matches("High")) {
+        } else if (stiffness.matches("High")) {
             patient.setStiffnessL("None");
-            patient.setStiffnessH(stiffnessL);
+            patient.setStiffnessH(stiffness);
         } else {
-            patient.setStiffnessL(stiffnessL);
-            patient.setStiffnessH(stiffnessL);
+            patient.setStiffnessL(stiffness);
+            patient.setStiffnessH(stiffness);
         }
         Boolean hyperreflexia = Hyperreflexia_check.isSelected();
-        if (hyperreflexia == true) {
+        if (hyperreflexia) {
             patient.setHyperreflexia("TRUE");
         } else {
             patient.setHyperreflexia("FALSE");
         }
         Boolean lossPhysicalAbilities = LossPhysicalAbilities_check.isSelected();
-        if (lossPhysicalAbilities == true) {
+        if (lossPhysicalAbilities) {
             patient.setLossPhysicalAbilities("TRUE");
         } else {
             patient.setLossPhysicalAbilities("FALSE");

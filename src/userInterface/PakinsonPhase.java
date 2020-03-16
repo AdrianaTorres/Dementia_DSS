@@ -5,6 +5,9 @@
  */
 package userInterface;
 
+import javax.swing.JOptionPane;
+import static userInterface.PatientInfo.patient;
+
 /**
  *
  * @author Lucia
@@ -16,6 +19,7 @@ public class PakinsonPhase extends javax.swing.JFrame {
      */
     public PakinsonPhase() {
         initComponents();
+        setVisible(true);
     }
 
     /**
@@ -27,21 +31,112 @@ public class PakinsonPhase extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        title_text = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        LossPhysicalAbilities_check = new javax.swing.JCheckBox();
+        Submit_button = new javax.swing.JButton();
+        tremor_title = new javax.swing.JLabel();
+        Tremor_box = new javax.swing.JComboBox<>();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        title_text.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        title_text.setText("Parkinson specific symptoms");
+
+        jLabel2.setText("Select the present symptoms:");
+
+        LossPhysicalAbilities_check.setText("Loss of physical abilities (like swallowing, sitting or talking)");
+        LossPhysicalAbilities_check.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LossPhysicalAbilities_checkActionPerformed(evt);
+            }
+        });
+
+        Submit_button.setText("Submit");
+        Submit_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Submit_buttonActionPerformed(evt);
+            }
+        });
+
+        tremor_title.setText("Tremor");
+
+        Tremor_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Unilateral", "Bilateral" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Submit_button)
+                .addGap(19, 19, 19))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LossPhysicalAbilities_check)
+                            .addComponent(jLabel2)
+                            .addComponent(title_text)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(tremor_title)
+                        .addGap(42, 42, 42)
+                        .addComponent(Tremor_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(title_text)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(LossPhysicalAbilities_check)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tremor_title)
+                    .addComponent(Tremor_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addComponent(Submit_button)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LossPhysicalAbilities_checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LossPhysicalAbilities_checkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LossPhysicalAbilities_checkActionPerformed
+
+    private void Submit_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_buttonActionPerformed
+        /*LossPhysicalAbilities_check = new javax.swing.JCheckBox();
+        Submit_button = new javax.swing.JButton();
+        tremor_title = new javax.swing.JLabel();
+        Tremor_box = new javax.swing.JComboBox<>();*/
+        Boolean lossPhysicalAbilities = LossPhysicalAbilities_check.isSelected();
+        if (lossPhysicalAbilities) {
+            patient.setLossPhysicalAbilities("TRUE");
+        } else {
+            patient.setLossPhysicalAbilities("FALSE");
+        }
+        String tremor = (String) Tremor_box.getSelectedItem();
+        if (tremor.matches("Unilateral")) {
+            patient.setTremorUni(tremor);
+            patient.setTremorBi("None");
+        } else if (tremor.matches("Bilateral")) {
+            patient.setTremorUni("None");
+            patient.setTremorBi(tremor);
+        } else {
+            patient.setTremorUni(tremor);
+            patient.setTremorBi(tremor);
+        }
+        
+        dispose();
+        JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON PHASE ");
+    }//GEN-LAST:event_Submit_buttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +174,11 @@ public class PakinsonPhase extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox LossPhysicalAbilities_check;
+    private javax.swing.JButton Submit_button;
+    private javax.swing.JComboBox<String> Tremor_box;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel title_text;
+    private javax.swing.JLabel tremor_title;
     // End of variables declaration//GEN-END:variables
 }
