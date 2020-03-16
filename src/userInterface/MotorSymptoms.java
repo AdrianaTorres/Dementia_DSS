@@ -267,32 +267,32 @@ public class MotorSymptoms extends javax.swing.JFrame {
         }
         String orientation = (String) Orientation_box.getSelectedItem();
         if (orientation.matches("Low")) {
-            patient.setOrientationL(orientation);
-            patient.setOrientationH("None");
+            patient.setOrientationL("TRUE");
+            patient.setOrientationH("FALSE");
         } else if (orientation.matches("High")) {
-            patient.setOrientationL("None");
-            patient.setOrientationH(orientation);
+            patient.setOrientationL("FALSE");
+            patient.setOrientationH("TRUE");
         } else {
-            patient.setOrientationL(orientation);
-            patient.setOrientationH(orientation);
+            patient.setOrientationL("FALSE");
+            patient.setOrientationH("FALSE");
         }
         String bradykinesia = (String) Bradykinesia_box.getSelectedItem();
         if (bradykinesia.matches("Low")) {
-            patient.setBradykinesiaL(bradykinesia);
-            patient.setBradykinesiaM("None");
-            patient.setBradykinesiaH("None");
+            patient.setBradykinesiaL("TRUE");
+            patient.setBradykinesiaM("FALSE");
+            patient.setBradykinesiaH("FALSE");
         } else if (bradykinesia.matches("Medium")) {
-            patient.setBradykinesiaL("None");
-            patient.setBradykinesiaM(orientation);
-            patient.setBradykinesiaH("None");
+            patient.setBradykinesiaL("FALSE");
+            patient.setBradykinesiaM("TRUE");
+            patient.setBradykinesiaH("FALSE");
         } else if (bradykinesia.matches("High")) {
-            patient.setBradykinesiaL("None");
-            patient.setBradykinesiaM("None");
-            patient.setOrientationH(orientation);
+            patient.setBradykinesiaL("FALSE");
+            patient.setBradykinesiaM("FALSE");
+            patient.setOrientationH("TRUE");
         } else {
-            patient.setBradykinesiaL("None");
-            patient.setBradykinesiaM("None");
-            patient.setBradykinesiaH("None");
+            patient.setBradykinesiaL("FALSE");
+            patient.setBradykinesiaM("FALSE");
+            patient.setBradykinesiaH("FALSE");
         }
         
         dispose();

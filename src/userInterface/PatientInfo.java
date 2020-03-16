@@ -20,19 +20,22 @@ public class PatientInfo extends javax.swing.JFrame {
     public PatientInfo() {
         initComponents();
         setVisible(true);
-        if (patient.getName() != null) {
-            NameSurname_enter.setText(patient.getName());
-        }
-        if (patient.getAge() != 0) {
-            Age_enter.setText(Integer.toString(patient.getAge()));
-        }
-        if (patient.getSex() != null) {
-            if (patient.getSex().matches("Male")) {
-                Sex_box.setSelectedIndex(0);
-            } else {
-                Sex_box.setSelectedIndex(1);
+        if(patient != null) {
+            if (patient.getName() != null) {
+                NameSurname_enter.setText(patient.getName());
+            }
+            if (patient.getAge() != 0) {
+                Age_enter.setText(Integer.toString(patient.getAge()));
+            }
+            if (patient.getSex() != null) {
+                if (patient.getSex().matches("Male")) {
+                    Sex_box.setSelectedIndex(0);
+                } else {
+                    Sex_box.setSelectedIndex(1);
+                }
             }
         }
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.

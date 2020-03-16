@@ -25,6 +25,9 @@ public class GeneralSymptoms extends javax.swing.JFrame {
             EducationalLevel_check.setSelected(true);
         }
         if (patient.getBehaviour() != null){
+            Behaviour_check.setSelected(true);
+        }
+        if (patient.getEmotionalInstability() != null) {
             EmtionalInst_check.setSelected(true);
         }
         if (patient.getRightWords() != null){
