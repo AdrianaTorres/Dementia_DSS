@@ -5,6 +5,7 @@
  */
 package userInterface;
 
+import dementia_dss.Patient;
 import static userInterface.PatientInfo.patient;
 
 /**
@@ -12,56 +13,61 @@ import static userInterface.PatientInfo.patient;
  * @author adria
  */
 public class GeneralSymptoms extends javax.swing.JFrame {
+
     /**
      * Creates new form GeneralSymptoms
      */
     public GeneralSymptoms() {
         initComponents();
         setVisible(true);
-        //hello
-        if (patient.getFamilyHis().equalsIgnoreCase("TRUE")){
+    }
+
+    public GeneralSymptoms(Patient patient) {
+        initComponents();
+        setVisible(true);
+        if (patient.getFamilyHis().equalsIgnoreCase("TRUE")) {
             FamilyHis_check.setSelected(true);
         }
-        if (patient.getLowEducation().equalsIgnoreCase("TRUE")){
+        if (patient.getLowEducation().equalsIgnoreCase("TRUE")) {
             EducationalLevel_check.setSelected(true);
         }
-        if (patient.getBehaviour().equalsIgnoreCase("TRUE")){
+        if (patient.getBehaviour().equalsIgnoreCase("TRUE")) {
             Behaviour_check.setSelected(true);
         }
         if (patient.getEmotionalInstability().equalsIgnoreCase("TRUE")) {
             EmtionalInst_check.setSelected(true);
         }
-        if (patient.getRightWords().equalsIgnoreCase("TRUE")){
+        if (patient.getRightWords().equalsIgnoreCase("TRUE")) {
             RightWords_check.setSelected(true);
         }
-        if (patient.getForgetPersonal().equalsIgnoreCase("TRUE")){
+        if (patient.getForgetPersonal().equalsIgnoreCase("TRUE")) {
             ForgetPersonalInfo_check.setSelected(true);
         }
-        if (patient.getFacialExp().equalsIgnoreCase("TRUE")){
+        if (patient.getFacialExp().equalsIgnoreCase("TRUE")) {
             FacialExp_check.setSelected(true);
         }
-        if (patient.getPlanningOrg().equalsIgnoreCase("TRUE")){
+        if (patient.getPlanningOrg().equalsIgnoreCase("TRUE")) {
             PlanningDifficulty_check.setSelected(true);
         }
-        if (patient.getForgetRecent().equalsIgnoreCase("TRUE")){
+        if (patient.getForgetRecent().equalsIgnoreCase("TRUE")) {
             ForgetRecentInfo_check.setSelected(true);
         }
-        if (patient.getSleepingPattern().equalsIgnoreCase("TRUE")){
+        if (patient.getSleepingPattern().equalsIgnoreCase("TRUE")) {
             SleepPatterns_check.setSelected(true);
         }
-        if (patient.getLossSmell().equalsIgnoreCase("TRUE")){
+        if (patient.getLossSmell().equalsIgnoreCase("TRUE")) {
             Smell_check.setSelected(true);
         }
-        if (patient.getIncontinence().equalsIgnoreCase("TRUE")){
+        if (patient.getIncontinence().equalsIgnoreCase("TRUE")) {
             Incontinence_check.setSelected(true);
         }
-        if(patient.getExposure().equalsIgnoreCase("TRUE")){
+        if (patient.getExposure().equalsIgnoreCase("TRUE")) {
             Chemicals_check.setSelected(true);
         }
-        if (patient.getSmoking().equalsIgnoreCase("TRUE")){
+        if (patient.getSmoking().equalsIgnoreCase("TRUE")) {
             Smoking_check.setSelected(true);
         }
-        if(patient.getDrugConsumption().equalsIgnoreCase("TRUE")) {
+        if (patient.getDrugConsumption().equalsIgnoreCase("TRUE")) {
             DrugConsumption_check.setSelected(true);
         }
     }
@@ -304,7 +310,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         } else {
             patient.setPlanningOrg("FALSE");
         }
-         Boolean forgetRecent = ForgetRecentInfo_check.isSelected();
+        Boolean forgetRecent = ForgetRecentInfo_check.isSelected();
         if (forgetRecent) {
             patient.setForgetRecent("TRUE");
         } else {
@@ -327,7 +333,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
             patient.setIncontinence("TRUE");
         } else {
             patient.setIncontinence("FALSE");
-        } 
+        }
         Boolean exposure = Chemicals_check.isSelected();
         if (exposure) {
             patient.setExposure("TRUE");
@@ -346,20 +352,20 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         } else {
             patient.setDrugConsumption("FALSE");
         }
-        
+
         dispose();
         //setVisible(false);
-        
+
         new MotorSymptoms();
     }//GEN-LAST:event_Next_generalActionPerformed
 
     private void Back_generalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_generalActionPerformed
         // TODO add your handling code here:
         dispose();
-        
+
         new PatientInfo();
     }//GEN-LAST:event_Back_generalActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */
