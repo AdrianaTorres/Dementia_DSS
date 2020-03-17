@@ -6,6 +6,7 @@
 package userInterface;
 
 import dementia_dss.CLIPS_connection;
+import dementia_dss.Patient;
 import static userInterface.PatientInfo.patient;
 
 /**
@@ -18,6 +19,11 @@ public class OtherPathologies extends javax.swing.JFrame {
      * Creates new form OtherPathologies
      */
     public OtherPathologies() {
+        initComponents();
+        setVisible(true);
+    }
+
+    public OtherPathologies(Patient patient) {
         initComponents();
         setVisible(true);
 
@@ -55,8 +61,8 @@ public class OtherPathologies extends javax.swing.JFrame {
             Depression_check.setSelected(true);
         }
     }
-    
-    public void SaveInfo () {
+
+    public void SaveInfo() {
         Boolean downSyndrome = this.DownSyndrome_check.isSelected();
         if (downSyndrome) {
             patient.setDownSyndrome("TRUE");
@@ -338,7 +344,7 @@ public class OtherPathologies extends javax.swing.JFrame {
             patient.setDepression("FALSE");
         }*/
         dispose();
-        new MotorSymptoms();
+        new MotorSymptoms(patient);
     }//GEN-LAST:event_Back_pathologiesActionPerformed
 
     private void Submit_pathologiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_pathologiesActionPerformed
@@ -411,7 +417,7 @@ public class OtherPathologies extends javax.swing.JFrame {
 
         CLIPS_connection clipsConnect = new CLIPS_connection();
         clipsConnect.createPatientAssertion(patient);
-        
+
         dispose();
         //JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ");
     }//GEN-LAST:event_Submit_pathologiesActionPerformed

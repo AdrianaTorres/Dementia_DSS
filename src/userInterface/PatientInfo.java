@@ -14,13 +14,20 @@ import dementia_dss.Patient;
 public class PatientInfo extends javax.swing.JFrame {
 
     public static Patient patient = new Patient();
+
     /**
      * Creates new form PatientInfo
      */
     public PatientInfo() {
         initComponents();
         setVisible(true);
-        if(patient != null) {
+    }
+
+    public PatientInfo(Patient patient) {
+        initComponents();
+        setVisible(true);
+
+        if (patient != null) {
             if (patient.getName() != null) {
                 NameSurname_enter.setText(patient.getName());
             }
@@ -35,8 +42,9 @@ public class PatientInfo extends javax.swing.JFrame {
                 }
             }
         }
-        
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -124,9 +132,9 @@ public class PatientInfo extends javax.swing.JFrame {
         patient.setSex(sex);
 
         dispose();
-        new GeneralSymptoms();
+        new GeneralSymptoms(patient);
     }//GEN-LAST:event_nextPatientInfoActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */

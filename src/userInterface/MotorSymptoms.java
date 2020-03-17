@@ -5,6 +5,7 @@
  */
 package userInterface;
 
+import dementia_dss.Patient;
 import static userInterface.PatientInfo.patient;
 
 /**
@@ -19,6 +20,12 @@ public class MotorSymptoms extends javax.swing.JFrame {
     public MotorSymptoms() {
         initComponents();
         setVisible(true);
+    }
+
+    public MotorSymptoms(Patient patient) {
+        initComponents();
+        setVisible(true);
+
         if (patient.getLackCoord().equalsIgnoreCase("TRUE")) {
             NoCoordination_check.setSelected(true);
         }
@@ -294,14 +301,14 @@ public class MotorSymptoms extends javax.swing.JFrame {
             patient.setBradykinesiaM("FALSE");
             patient.setBradykinesiaH("FALSE");
         }
-        
+
         dispose();
-        new OtherPathologies();
+        new OtherPathologies(patient);
     }//GEN-LAST:event_Next_motorActionPerformed
 
     private void Back_motorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_motorActionPerformed
         dispose();
-        new GeneralSymptoms();
+        new GeneralSymptoms(patient);
     }//GEN-LAST:event_Back_motorActionPerformed
 
     /**
