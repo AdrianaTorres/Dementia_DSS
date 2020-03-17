@@ -18,6 +18,7 @@ public class GeneralSymptoms extends javax.swing.JFrame {
     public GeneralSymptoms() {
         initComponents();
         setVisible(true);
+        //hello
         if (patient.getFamilyHis().equalsIgnoreCase("TRUE")){
             FamilyHis_check.setSelected(true);
         }
