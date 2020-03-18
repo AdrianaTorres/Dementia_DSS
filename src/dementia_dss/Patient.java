@@ -120,7 +120,6 @@ public class Patient {
         this.alzheimer = false;
         this.parkinson = false;
         this.vascularD = false;
-
     }
 
     // 'SET' AND 'GET' METHODS:
@@ -314,6 +313,22 @@ public class Patient {
     public void setLossPhysicalAbilities(String lossPhysicalAbilities_) {
         this.lossPhysicalAbilities = lossPhysicalAbilities_;
     }
+    
+    public void setNoDementia(Boolean noDementia_) {
+        this.noDementia = noDementia_;
+    }
+    
+    public void setParkinson(Boolean p) {
+        this.parkinson = p;
+    }
+    
+    public void setAlzheimer (Boolean a) {
+        this.alzheimer = a;
+    }
+    
+    public void setVascularD (Boolean v) {
+        this.vascularD = v;
+    }
 
     // General patient information 'get' methods:
     public String getName() {
@@ -504,5 +519,21 @@ public class Patient {
     // Specific for both (Parkinson and Alzheimer) symptom' 'get' mehtod:
     public String getLossPhysicalAbilities() {
         return this.lossPhysicalAbilities;
+    }
+    
+    public Boolean getNoDementia () {
+        return this.noDementia;
+    }
+    
+    public Boolean getParkinson () {
+        return this.parkinson;
+    }
+    
+    public Boolean getAlzheimer () {
+        return this.alzheimer;
+    }
+    
+    public Boolean getVascularD () {
+        return this.vascularD;
     }
 }
