@@ -54,7 +54,7 @@ public class CLIPS_connection {
         try {
             clips.eval(assertionOverallSymptoms);
             clips.run();
-            List<FactAddressValue> findAllFacts = clips.findAllFacts("patient");
+            /*List<FactAddressValue> findAllFacts = clips.findAllFacts("patient");
             String noDisease = findAllFacts.get(0).getSlotValue("noDementia").toString();
             String alzheimer = findAllFacts.get(0).getSlotValue("alzheimer").toString();
             String parkinson = findAllFacts.get(0).getSlotValue("parkinson").toString();
@@ -67,7 +67,7 @@ public class CLIPS_connection {
                 System.out.println(parkinson);
             } else {
                 System.out.println(vascular);
-            }
+            }*/
             
         } catch (CLIPSException e) {
             Logger.getLogger(CLIPS_connection.class.getName()).log(Level.SEVERE, null, e);
