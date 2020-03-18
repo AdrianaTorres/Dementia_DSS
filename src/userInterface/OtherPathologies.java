@@ -420,6 +420,10 @@ public class OtherPathologies extends javax.swing.JFrame {
 
         dispose();
         //JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ");
+        /*
+        if (pateint.getNoDementia){
+            new NoDementia();
+        }*/
     }//GEN-LAST:event_Submit_pathologiesActionPerformed
 
     /**

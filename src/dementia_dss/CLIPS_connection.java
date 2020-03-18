@@ -5,27 +5,34 @@
  */
 package dementia_dss;
 
-import dementia_dss.Patient;
-import userInterface.PatientInfo;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import net.sf.clipsrules.jni.CLIPSException;
 import net.sf.clipsrules.jni.Environment;
 import net.sf.clipsrules.jni.FactAddressValue;
 
+/*
+PREGUNTAS:
+1. Siempre sale no dementia
+2. Enlaces JFrame --> Next, al volver no se queda marcado.
+3. FindAllfacts --> se puede cambiar por FindFact
+4. Excepciones al runnear.
+
+
+ */
 /**
  *
  * @author Lucia
  */
 public class CLIPS_connection {
+
     Environment clips = new Environment();
-    
+
     public CLIPS_connection() {
         startCLIPS();
     }
-    
-    public void startCLIPS () {
+
+    public void startCLIPS() {
         try {
             clips.load("Dementia_DSS_3.clp");
             clips.reset();
@@ -34,44 +41,45 @@ public class CLIPS_connection {
             Logger.getLogger(CLIPS_connection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public void createPatientAssertion (Patient p) {
-        String assertionOverallSymptoms = "(assert (patient (name " + p.getName() + ")(sex " + p.getSex() + ")(age " + p.getAge() +
-                                          ")(familyHistoryOfDisease " + p.getFamilyHis() + ")(downsSyndrome " + p.getDownSyndrome() + ")(hyperglycemia " + p.getHyperglycemia() +
-                                          ")(insulinResistance " + p.getInsulin() + ")(hyperlipidemia " + p.getHyperlipidemia() + ")(arterialHypertension " + p.getHypertension() +
-                                          ")(recordHeartCerebroAttacks " + p.getHeartCerebro() + ")(diabetes " + p.getDiabetes() + ")(smoking " + p.getSmoking() +
-                                          ")(obesity " + p.getObesity() + ")(highCholesterol " + p.getCholesterol() + ")(lossOfCoordination " + p.getLackCoord() +
-                                          ")(arteriosclerosis " + p.getArteriosclerosis() + ")(depression " + p.getDepression() + ")(lowLevelsEducation " + p.getLowEducation() +
-                                          ")(difficultiesWords " + p.getRightWords() + ")(memoryProblems " + p.getForgetRecent() + ")(organizationProblems " + p.getPlanningOrg() +
-                                          ")(forgetPersonalInfo "  + p.getForgetPersonal() + ")(noStandWalk " + p.getStandWalk() + ")(bradykinesiaL " + p.getBradykinesiaL() + 
-                                          ")(bradykinesiaM " + p.getBradykinesiaM() + ")(bradykinesiaH " + p.getBradykinesiaH() + ")(orientationImpL " + p.getOrientationL() +
-                                          ")(orientationImpH " + p.getOrientationH() + ")(behaviour " + p.getBehaviour() + ")(emotionalInstability " + p.getEmotionalInstability() +
-                                          ")(chemicalsExposure " + p.getExposure() + ")(drugConsumption " + p.getDrugConsumption() + ")(tremor " + p.getTremor() + ")(stiffness " +
-                                          p.getStiffness() + ")(balanceLoss " + p.getLossBalance() + ")(straightWalkingProblems " + p.getWalkStraight() + ")(smellLoss " + p.getLossSmell() +
-                                          ")(incontinence " + p.getIncontinence() + ")(sleepingProblems " + p.getSleepingPattern() + ")(facialExpressionLoss " + p.getFacialExp() + ")))";
-        
+
+    public void createPatientAssertion(Patient p) {
+        String assertionOverallSymptoms = "(assert (patient (name " + p.getName() + ")(sex " + p.getSex() + ")(age " + p.getAge()
+                + ")(familyHistoryOfDisease " + p.getFamilyHis() + ")(downsSyndrome " + p.getDownSyndrome() + ")(hyperglycemia " + p.getHyperglycemia()
+                + ")(insulinResistance " + p.getInsulin() + ")(hyperlipidemia " + p.getHyperlipidemia() + ")(arterialHypertension " + p.getHypertension()
+                + ")(recordHeartCerebroAttacks " + p.getHeartCerebro() + ")(diabetes " + p.getDiabetes() + ")(smoking " + p.getSmoking()
+                + ")(obesity " + p.getObesity() + ")(highCholesterol " + p.getCholesterol() + ")(lossOfCoordination " + p.getLackCoord()
+                + ")(arteriosclerosis " + p.getArteriosclerosis() + ")(depression " + p.getDepression() + ")(lowLevelsEducation " + p.getLowEducation()
+                + ")(difficultiesWords " + p.getRightWords() + ")(memoryProblems " + p.getForgetRecent() + ")(organizationProblems " + p.getPlanningOrg()
+                + ")(forgetPersonalInfo " + p.getForgetPersonal() + ")(noStandWalk " + p.getStandWalk() + ")(bradykinesiaL " + p.getBradykinesiaL()
+                + ")(bradykinesiaM " + p.getBradykinesiaM() + ")(bradykinesiaH " + p.getBradykinesiaH() + ")(orientationImpL " + p.getOrientationL()
+                + ")(orientationImpH " + p.getOrientationH() + ")(behaviour " + p.getBehaviour() + ")(emotionalInstability " + p.getEmotionalInstability()
+                + ")(chemicalsExposure " + p.getExposure() + ")(drugConsumption " + p.getDrugConsumption() + ")(tremor " + p.getTremor() + ")(stiffness "
+                + p.getStiffness() + ")(balanceLoss " + p.getLossBalance() + ")(straightWalkingProblems " + p.getWalkStraight() + ")(smellLoss " + p.getLossSmell()
+                + ")(incontinence " + p.getIncontinence() + ")(sleepingProblems " + p.getSleepingPattern() + ")(facialExpressionLoss " + p.getFacialExp() + ")))";
+
         System.out.println("Asserting: " + assertionOverallSymptoms);
         try {
             clips.eval(assertionOverallSymptoms);
             clips.run();
-            /*List<FactAddressValue> findAllFacts = clips.findAllFacts("patient");
-            String noDisease = findAllFacts.get(0).getSlotValue("noDementia").toString();
-            String alzheimer = findAllFacts.get(0).getSlotValue("alzheimer").toString();
-            String parkinson = findAllFacts.get(0).getSlotValue("parkinson").toString();
-            String vascular = findAllFacts.get(0).getSlotValue("vascular").toString();
+            FactAddressValue fact = clips.findFact("patient");
+            String noDisease = fact.getSlotValue("noDementia").toString();
+            String alzheimer = fact.getSlotValue("alzheimer").toString();
+            String parkinson = fact.getSlotValue("parkinson").toString();
+            String vascular = fact.getSlotValue("vascular").toString();
+            System.out.println("No disease: " + noDisease + " Alz " + alzheimer + " Park " + parkinson + " Vas " + vascular);
             if (noDisease.equalsIgnoreCase("TRUE")) {
-                System.out.println(noDisease);
+                System.out.println("The patient has no dementia. Java");
             } else if (alzheimer.equalsIgnoreCase("TRUE")) {
-                System.out.println(alzheimer);
+                System.out.println("The patient has Alzheimer. Java");
             } else if (parkinson.equalsIgnoreCase("TRUE")) {
-                System.out.println(parkinson);
+                System.out.println("The patient has Parkinson. Java");
             } else {
-                System.out.println(vascular);
-            }*/
-            
+                System.out.println("The patient has vascular disease. Java");
+            }
+
         } catch (CLIPSException e) {
             Logger.getLogger(CLIPS_connection.class.getName()).log(Level.SEVERE, null, e);
         }
-        
+
     }
 }

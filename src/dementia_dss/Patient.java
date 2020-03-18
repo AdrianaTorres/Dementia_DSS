@@ -64,6 +64,10 @@ public class Patient {
     String hyperreflexia;
     // Specific for both (Parkinson and Alzheimer) symptom:
     String lossPhysicalAbilities;
+    Boolean noDementia;
+    Boolean parkinson;
+    Boolean alzheimer;
+    Boolean vascularD;
 
     public Patient() {
         this.name = null;
@@ -112,6 +116,11 @@ public class Patient {
         this.stiffnessHigh = null;
         this.hyperreflexia = null;
         this.lossPhysicalAbilities = null;
+        this.noDementia = false;
+        this.alzheimer = false;
+        this.parkinson = false;
+        this.vascularD = false;
+
     }
 
     // 'SET' AND 'GET' METHODS:
@@ -184,7 +193,7 @@ public class Patient {
     public void setSmoking(String smoking_) {
         this.smoking = smoking_;
     }
-    
+
     public void setDrugConsumption(String drug) {
         this.drugConsumption = drug;
     }
@@ -375,7 +384,7 @@ public class Patient {
     public String getSmoking() {
         return this.smoking;
     }
-    
+
     public String getDrugConsumption() {
         return this.drugConsumption;
     }
