@@ -73,7 +73,7 @@ public class Patient {
         this.name = null;
         this.age = 0;
         this.sex = null;
-        this.family_his = null;
+        this.family_his = "";
         this.low_education = null;
         this.behaviour = null;
         this.emotional_instability = null;

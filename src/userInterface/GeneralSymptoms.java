@@ -6,7 +6,6 @@
 package userInterface;
 
 import dementia_dss.Patient;
-import static userInterface.PatientInfo.patient;
 
 /**
  *
@@ -14,6 +13,7 @@ import static userInterface.PatientInfo.patient;
  */
 public class GeneralSymptoms extends javax.swing.JFrame {
 
+    Patient patient = new Patient();
     /**
      * Creates new form GeneralSymptoms
      */
@@ -23,8 +23,12 @@ public class GeneralSymptoms extends javax.swing.JFrame {
     }
 
     public GeneralSymptoms(Patient patient) {
+        this.patient = patient;
         initComponents();
         setVisible(true);
+        if (patient == null) {
+            System.out.println("Patient es null");
+        }
         if (patient.getFamilyHis().equalsIgnoreCase("TRUE")) {
             FamilyHis_check.setSelected(true);
         }
@@ -356,14 +360,14 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         dispose();
         //setVisible(false);
 
-        new MotorSymptoms();
+        new MotorSymptoms(patient);
     }//GEN-LAST:event_Next_generalActionPerformed
 
     private void Back_generalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_generalActionPerformed
         // TODO add your handling code here:
         dispose();
 
-        new PatientInfo();
+        new PatientInfo(patient);
     }//GEN-LAST:event_Back_generalActionPerformed
 
     /**

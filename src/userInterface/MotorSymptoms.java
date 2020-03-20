@@ -6,7 +6,6 @@
 package userInterface;
 
 import dementia_dss.Patient;
-import static userInterface.PatientInfo.patient;
 
 /**
  *
@@ -14,6 +13,7 @@ import static userInterface.PatientInfo.patient;
  */
 public class MotorSymptoms extends javax.swing.JFrame {
 
+    Patient patient = new Patient();
     /**
      * Creates new form MotorSymptoms
      */
@@ -23,6 +23,7 @@ public class MotorSymptoms extends javax.swing.JFrame {
     }
 
     public MotorSymptoms(Patient patient) {
+        this.patient = patient;
         initComponents();
         setVisible(true);
 
@@ -232,7 +233,7 @@ public class MotorSymptoms extends javax.swing.JFrame {
 
     private void Orientation_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Orientation_boxActionPerformed
         // TODO add your handling code here:
-        PatientInfo.patient.getAge();
+        //PatientInfo.patient.getAge();
     }//GEN-LAST:event_Orientation_boxActionPerformed
 
     private void Next_motorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_motorActionPerformed

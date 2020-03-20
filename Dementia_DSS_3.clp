@@ -235,9 +235,6 @@
 (slot noDementia
 (default FALSE)))
 
-;----------INITIAL FACT -------
-(deffacts patient "Initial blank patient"
-(patient))
 
 
 

@@ -5,18 +5,20 @@
  */
 package userInterface;
 
+import dementia_dss.Patient;
 import javax.swing.JOptionPane;
-import static userInterface.PatientInfo.patient;
 /**
  *
  * @author Lucia
  */
 public class AlzheimerPhase extends javax.swing.JFrame {
-
+    
+    Patient patient = new Patient();
     /**
      * Creates new form AlzheimerPhase
      */
     public AlzheimerPhase() {
+        this.patient = patient;
         initComponents();
         setVisible(true);
     }
