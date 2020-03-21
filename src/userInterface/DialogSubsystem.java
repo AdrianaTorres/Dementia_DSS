@@ -83,7 +83,7 @@ public class DialogSubsystem extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
 
-        Environment clips = new Environment();
+        /*Environment clips = new Environment();
         clips.load(name_file); // Try-catch
         try {
             clips.reset();
@@ -102,7 +102,7 @@ public class DialogSubsystem extends javax.swing.JFrame {
         // PAra coger info de CLIPS
         FactAddressValue = patient = clips.findFact(name_fact);
         PrimitiveValue slotValue = patient.getSlotValue("diagnosis");
-        jLabelResult.setText(diagnosis.toString());
+        jLabelResult.setText(diagnosis.toString());*/
 
     }//GEN-LAST:event_jTextField1ActionPerformed
 

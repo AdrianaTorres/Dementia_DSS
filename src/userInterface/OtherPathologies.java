@@ -7,7 +7,6 @@ package userInterface;
 
 import dementia_dss.CLIPS_connection;
 import dementia_dss.Patient;
-import static userInterface.PatientInfo.patient;
 
 /**
  *
@@ -15,6 +14,7 @@ import static userInterface.PatientInfo.patient;
  */
 public class OtherPathologies extends javax.swing.JFrame {
 
+    Patient patient = new Patient();
     /**
      * Creates new form OtherPathologies
      */
@@ -24,6 +24,7 @@ public class OtherPathologies extends javax.swing.JFrame {
     }
 
     public OtherPathologies(Patient patient) {
+        this.patient = patient;
         initComponents();
         setVisible(true);
 
@@ -348,7 +349,7 @@ public class OtherPathologies extends javax.swing.JFrame {
     }//GEN-LAST:event_Back_pathologiesActionPerformed
 
     private void Submit_pathologiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_pathologiesActionPerformed
-        Boolean downSyndrome = DownSyndrome_check.isSelected();
+        /*Boolean downSyndrome = DownSyndrome_check.isSelected();
         if (downSyndrome) {
             patient.setDownSyndrome("TRUE");
         } else {
@@ -413,7 +414,8 @@ public class OtherPathologies extends javax.swing.JFrame {
             patient.setDepression("TRUE");
         } else {
             patient.setDepression("FALSE");
-        }
+        }*/
+        SaveInfo();
 
         CLIPS_connection clipsConnect = new CLIPS_connection();
         clipsConnect.createPatientAssertion(patient);

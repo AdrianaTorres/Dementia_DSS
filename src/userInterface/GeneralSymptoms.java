@@ -6,13 +6,14 @@
 package userInterface;
 
 import dementia_dss.Patient;
-import static userInterface.PatientInfo.patient;
 
 /**
  *
  * @author adria
  */
 public class GeneralSymptoms extends javax.swing.JFrame {
+
+    Patient patient = new Patient();
 
     /**
      * Creates new form GeneralSymptoms
@@ -23,8 +24,12 @@ public class GeneralSymptoms extends javax.swing.JFrame {
     }
 
     public GeneralSymptoms(Patient patient) {
+        this.patient = patient;
         initComponents();
         setVisible(true);
+        if (patient == null) {
+            System.out.println("Patient es null");
+        }
         if (patient.getFamilyHis().equalsIgnoreCase("TRUE")) {
             FamilyHis_check.setSelected(true);
         }
@@ -69,6 +74,99 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         }
         if (patient.getDrugConsumption().equalsIgnoreCase("TRUE")) {
             DrugConsumption_check.setSelected(true);
+        }
+    }
+
+    public void SaveInfo() {
+        Boolean familyHistory = this.FamilyHis_check.isSelected();
+        if (familyHistory) {
+            patient.setFamilyHis("TRUE");
+        } else {
+            patient.setFamilyHis("FALSE");
+        }
+        Boolean lowEducation = this.EducationalLevel_check.isSelected();
+        if (lowEducation) {
+            patient.setLowEducation("TRUE");
+        } else {
+            patient.setLowEducation("FALSE");
+        }
+        Boolean changesBehaviour = this.Behaviour_check.isSelected();
+        if (changesBehaviour) {
+            patient.setBehaviour("TRUE");
+        } else {
+            patient.setBehaviour("FALSE");
+        }
+        Boolean emotionalInstability = this.EmtionalInst_check.isSelected();
+        if (emotionalInstability) {
+            patient.setEmotionalInstability("TRUE");
+        } else {
+            patient.setEmotionalInstability("FALSE");
+        }
+        Boolean words = this.RightWords_check.isSelected();
+        if (words) {
+            patient.setRightWords("TRUE");
+        } else {
+            patient.setRightWords("FALSE");
+        }
+        Boolean personalInfo = this.ForgetPersonalInfo_check.isSelected();
+        if (personalInfo) {
+            patient.setForgetPersonal("TRUE");
+        } else {
+            patient.setForgetPersonal("FALSE");
+        }
+        Boolean facialExp = this.FacialExp_check.isSelected();
+        if (facialExp) {
+            patient.setFacialExp("TRUE");
+        } else {
+            patient.setFacialExp("FALSE");
+        }
+        Boolean planningOrg = this.PlanningDifficulty_check.isSelected();
+        if (planningOrg) {
+            patient.setPlanningOrg("TRUE");
+        } else {
+            patient.setPlanningOrg("FALSE");
+        }
+        Boolean recentInfo = this.ForgetRecentInfo_check.isSelected();
+        if (recentInfo) {
+            patient.setForgetRecent("TRUE");
+        } else {
+            patient.setForgetRecent("FALSE");
+        }
+        Boolean sleeping = this.SleepPatterns_check.isSelected();
+        if (sleeping) {
+            patient.setSleepingPattern("TRUE");
+        } else {
+            patient.setSleepingPattern("FALSE");
+        }
+        Boolean smell = this.Smell_check.isSelected();
+        if (smell) {
+            patient.setLossSmell("TRUE");
+        } else {
+            patient.setLossSmell("FALSE");
+        }
+        Boolean incontinence = this.Incontinence_check.isSelected();
+        if (incontinence) {
+            patient.setIncontinence("TRUE");
+        } else {
+            patient.setIncontinence("FALSE");
+        }
+        Boolean chemicals = this.Chemicals_check.isSelected();
+        if (chemicals) {
+            patient.setExposure("TRUE");
+        } else {
+            patient.setExposure("FALSE");
+        }
+        Boolean smoking = this.Smoking_check.isSelected();
+        if (smoking) {
+            patient.setSmoking("TRUE");
+        } else {
+            patient.setSmoking("FALSE");
+        }
+        Boolean drugs = this.DrugConsumption_check.isSelected();
+        if (drugs) {
+            patient.setDrugConsumption("TRUE");
+        } else {
+            patient.setDrugConsumption("FALSE");
         }
     }
 
@@ -356,14 +454,14 @@ public class GeneralSymptoms extends javax.swing.JFrame {
         dispose();
         //setVisible(false);
 
-        new MotorSymptoms();
+        new MotorSymptoms(patient);
     }//GEN-LAST:event_Next_generalActionPerformed
 
     private void Back_generalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_generalActionPerformed
         // TODO add your handling code here:
         dispose();
 
-        new PatientInfo();
+        new PatientInfo(patient);
     }//GEN-LAST:event_Back_generalActionPerformed
 
     /**

@@ -70,57 +70,56 @@ public class Patient {
     Boolean vascularD;
 
     public Patient() {
-        this.name = null;
+        this.name = "";
         this.age = 0;
-        this.sex = null;
-        this.family_his = null;
-        this.low_education = null;
-        this.behaviour = null;
-        this.emotional_instability = null;
-        this.right_words = null;
-        this.forget_personal = null;
-        this.facial_exp = null;
-        this.planning_org = null;
-        this.forget_recent = null;
-        this.sleeping_pattern = null;
-        this.loss_smell = null;
-        this.incontinence = null;
-        this.exposure = null;
-        this.smoking = null;
-        this.drugConsumption = null;
-        this.lack_coord = null;
-        this.stand_walk = null;
-        this.stiffness = null;
-        this.loss_balance = null;
-        this.walk_straight = null;
-        this.tremor = null;
-        this.orientation_high = null;
-        this.orientation_low = null;
-        this.bradykinesia_low = null;
-        this.bradykinesia_medium = null;
-        this.bradykinesia_high = null;
-        this.downSyndrome = null;
-        this.hyperglycemia = null;
-        this.hyperlipidemia = null;
-        this.insulin = null;
-        this.hypertension = null;
-        this.heart_cerebro = null;
-        this.diabetes = null;
-        this.obesity = null;
-        this.cholesterol = null;
-        this.arteriosclerosis = null;
-        this.depression = null;
-        this.tremorUni = null;
-        this.tremorBi = null;
-        this.stiffnessLow = null;
-        this.stiffnessHigh = null;
-        this.hyperreflexia = null;
-        this.lossPhysicalAbilities = null;
+        this.sex = "";
+        this.family_his = "";
+        this.low_education = "";
+        this.behaviour = "";
+        this.emotional_instability = "";
+        this.right_words = "";
+        this.forget_personal = "";
+        this.facial_exp = "";
+        this.planning_org = "";
+        this.forget_recent = "";
+        this.sleeping_pattern = "";
+        this.loss_smell = "";
+        this.incontinence = "";
+        this.exposure = "";
+        this.smoking = "";
+        this.drugConsumption = "";
+        this.lack_coord = "";
+        this.stand_walk = "";
+        this.stiffness = "";
+        this.loss_balance = "";
+        this.walk_straight = "";
+        this.tremor = "";
+        this.orientation_high = "";
+        this.orientation_low = "";
+        this.bradykinesia_low = "";
+        this.bradykinesia_medium = "";
+        this.bradykinesia_high = "";
+        this.downSyndrome = "";
+        this.hyperglycemia = "";
+        this.hyperlipidemia = "";
+        this.insulin = "";
+        this.hypertension = "";
+        this.heart_cerebro = "";
+        this.diabetes = "";
+        this.obesity = "";
+        this.cholesterol = "";
+        this.arteriosclerosis = "";
+        this.depression = "";
+        this.tremorUni = "";
+        this.tremorBi = "";
+        this.stiffnessLow = "";
+        this.stiffnessHigh = "";
+        this.hyperreflexia = "";
+        this.lossPhysicalAbilities = "";
         this.noDementia = false;
         this.alzheimer = false;
         this.parkinson = false;
         this.vascularD = false;
-
     }
 
     // 'SET' AND 'GET' METHODS:
@@ -315,6 +314,22 @@ public class Patient {
         this.lossPhysicalAbilities = lossPhysicalAbilities_;
     }
 
+    public void setNoDementia(Boolean noDementia_) {
+        this.noDementia = noDementia_;
+    }
+
+    public void setParkinson(Boolean p) {
+        this.parkinson = p;
+    }
+
+    public void setAlzheimer(Boolean a) {
+        this.alzheimer = a;
+    }
+
+    public void setVascularD(Boolean v) {
+        this.vascularD = v;
+    }
+
     // General patient information 'get' methods:
     public String getName() {
         return this.name;
@@ -504,5 +519,21 @@ public class Patient {
     // Specific for both (Parkinson and Alzheimer) symptom' 'get' mehtod:
     public String getLossPhysicalAbilities() {
         return this.lossPhysicalAbilities;
+    }
+
+    public Boolean getNoDementia() {
+        return this.noDementia;
+    }
+
+    public Boolean getParkinson() {
+        return this.parkinson;
+    }
+
+    public Boolean getAlzheimer() {
+        return this.alzheimer;
+    }
+
+    public Boolean getVascularD() {
+        return this.vascularD;
     }
 }

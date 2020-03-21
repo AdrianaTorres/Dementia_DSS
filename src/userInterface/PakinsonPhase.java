@@ -5,8 +5,8 @@
  */
 package userInterface;
 
+import dementia_dss.Patient;
 import javax.swing.JOptionPane;
-import static userInterface.PatientInfo.patient;
 
 /**
  *
@@ -14,10 +14,12 @@ import static userInterface.PatientInfo.patient;
  */
 public class PakinsonPhase extends javax.swing.JFrame {
 
+    Patient patient = new Patient();
     /**
      * Creates new form PakinsonPhase
      */
     public PakinsonPhase() {
+        this.patient = patient;
         initComponents();
         setVisible(true);
     }

@@ -59,22 +59,27 @@ public class CLIPS_connection {
 
         System.out.println("Asserting: " + assertionOverallSymptoms);
         try {
+            clips.reset();
             clips.eval(assertionOverallSymptoms);
             clips.run();
             FactAddressValue fact = clips.findFact("patient");
-            String noDisease = fact.getSlotValue("noDementia").toString();
+            String noDementia = fact.getSlotValue("noDementia").toString();
             String alzheimer = fact.getSlotValue("alzheimer").toString();
             String parkinson = fact.getSlotValue("parkinson").toString();
             String vascular = fact.getSlotValue("vascular").toString();
-            System.out.println("No disease: " + noDisease + " Alz " + alzheimer + " Park " + parkinson + " Vas " + vascular);
-            if (noDisease.equalsIgnoreCase("TRUE")) {
+            System.out.println("No disease: " + noDementia + " Alz " + alzheimer + " Park " + parkinson + " Vas " + vascular);
+            if (noDementia.equalsIgnoreCase("TRUE")) {
                 System.out.println("The patient has no dementia. Java");
+                p.setNoDementia(true);
             } else if (alzheimer.equalsIgnoreCase("TRUE")) {
                 System.out.println("The patient has Alzheimer. Java");
+                p.setAlzheimer(true);
             } else if (parkinson.equalsIgnoreCase("TRUE")) {
                 System.out.println("The patient has Parkinson. Java");
+                p.setParkinson(true);
             } else {
                 System.out.println("The patient has vascular disease. Java");
+                p.setVascularD(true);
             }
 
         } catch (CLIPSException e) {
