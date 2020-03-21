@@ -271,205 +271,205 @@
 
 
 (defrule scoreFamilyHistoryOfDisease "Score for family history of disease"
-?patient <- (patient(familyHistoryOfDisease Y) (SCfamilyHistoryOfDisease FALSE) (counterAlzheimer ?counterA) (counterParkinson ?counterP))
+?patient <- (patient(familyHistoryOfDisease TRUE) (SCfamilyHistoryOfDisease FALSE) (counterAlzheimer ?counterA) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (counterParkinson (+ ?counterP 1)) (SCfamilyHistoryOfDisease TRUE)))
 
 
 (defrule scoreDownsSyndrome "Score for Downs syndrome"
-?patient <- (patient(downsSyndrome Y) (SCdownsSyndrome FALSE) (counterAlzheimer ?counterA))
+?patient <- (patient(downsSyndrome TRUE) (SCdownsSyndrome FALSE) (counterAlzheimer ?counterA))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (SCdownsSyndrome TRUE)))
 
 (defrule scoreHyperglycemia "Score for hyperglycemia"
-?patient <- (patient(hyperglycemia Y) (SChyperglycemia FALSE) (counterAlzheimer ?counterA))
+?patient <- (patient(hyperglycemia TRUE) (SChyperglycemia FALSE) (counterAlzheimer ?counterA))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (SChyperglycemia TRUE)))
 
 
 (defrule scoreinsulinResistance "Score for insulin resistance"
-?patient <- (patient(insulinResistance Y) (SCinsulinResistance FALSE) (counterAlzheimer ?counterA))
+?patient <- (patient(insulinResistance TRUE) (SCinsulinResistance FALSE) (counterAlzheimer ?counterA))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (SCinsulinResistance TRUE)))
 
 
 (defrule scoreHyperlipidemia "Score for hyperlipidemia"
-?patient <- (patient(hyperlipidemia Y) (SChyperlipidemia FALSE) (counterAlzheimer ?counterA))
+?patient <- (patient(hyperlipidemia TRUE) (SChyperlipidemia FALSE) (counterAlzheimer ?counterA))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1))(SChyperlipidemia TRUE)))
 
 
 (defrule scoreArterialHypertension"Score for arterial hypertension"
-?patient <- (patient(arterialHypertension Y) (SCarterialHypertension FALSE) (counterAlzheimer ?counterA))
+?patient <- (patient(arterialHypertension TRUE) (SCarterialHypertension FALSE) (counterAlzheimer ?counterA))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1))(SCarterialHypertension TRUE)))
 
 
 (defrule scoreRecordHeartCerebroAttacks"Score for record in Heart ot Cerebrovascular Attacks"
-?patient <- (patient(recordHeartCerebroAttacks Y) (SCrecordHeartCerebroAttacks FALSE) (counterVascular ?counterV))
+?patient <- (patient(recordHeartCerebroAttacks TRUE) (SCrecordHeartCerebroAttacks FALSE) (counterVascular ?counterV))
 =>
 (modify ?patient (counterVascular (+ ?counterV 1))(SCrecordHeartCerebroAttacks TRUE)))
 
 
 (defrule scoreDiabetes "Score for diabetes"
-?patient <- (patient(diabetes Y) (SCdiabetes FALSE) (counterVascular ?counterV))
+?patient <- (patient(diabetes TRUE) (SCdiabetes FALSE) (counterVascular ?counterV))
 =>
 (modify ?patient (counterVascular (+ ?counterV 1)) (SCdiabetes TRUE)))
 
 
 (defrule scoreSmoking "Score for smoking"
-?patient <- (patient(smoking Y) (SCsmoking FALSE) (counterVascular ?counterV))
+?patient <- (patient(smoking TRUE) (SCsmoking FALSE) (counterVascular ?counterV))
 =>
 (modify ?patient (counterVascular (+ ?counterV 1))(SCsmoking TRUE)))
 
 
 (defrule scoreObesity "Score for obesity"
-?patient <- (patient(obesity Y) (SCobesity FALSE) (counterVascular ?counterV))
+?patient <- (patient(obesity TRUE) (SCobesity FALSE) (counterVascular ?counterV))
 (not(SCobesity TRUE))
 =>
 (modify ?patient (counterVascular (+ ?counterV 1))(SCobesity TRUE)))
 
 
 (defrule scoreHighCholesterol "Score for high cholesterol"
-?patient <- (patient(highCholesterol Y) (SChighCholesterol FALSE) (counterVascular ?counterV))
+?patient <- (patient(highCholesterol TRUE) (SChighCholesterol FALSE) (counterVascular ?counterV))
 (not(SChighCholesterol TRUE))
 =>
 (modify ?patient (counterVascular (+ ?counterV 1))(SChighCholesterol TRUE)))
 
 (defrule scoreArteriosclerosis "Score for arteriosclerois"
-?patient <- (patient(arteriosclerosis Y) (SCarteriosclerosis FALSE) (counterVascular ?counterV))
+?patient <- (patient(arteriosclerosis TRUE) (SCarteriosclerosis FALSE) (counterVascular ?counterV))
 (not(SCarteriosclerosis TRUE))
 =>
 (modify ?patient (counterVascular (+ ?counterV 1))(SCarteriosclerosis TRUE)))
 
 
 (defrule scoreDepression "Score for depression"
-?patient <- (patient(depression Y) (SCdepression FALSE) (counterAlzheimer ?counterA))
+?patient <- (patient(depression TRUE) (SCdepression FALSE) (counterAlzheimer ?counterA))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (SCdepression TRUE)))
 
 
 (defrule scoreLowLevelsEducation "Score for low levels of education"
-?patient <- (patient(lowLevelsEducation Y) (SClowLevelsEducation FALSE) (counterAlzheimer ?counterA))
+?patient <- (patient(lowLevelsEducation TRUE) (SClowLevelsEducation FALSE) (counterAlzheimer ?counterA))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (SClowLevelsEducation TRUE)))
 
 
 (defrule scoreDifficultiesWords "Score for difficulties finding words"
-?patient <- (patient(difficultiesWords Y) (SCdifficultiesWords FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
+?patient <- (patient(difficultiesWords TRUE) (SCdifficultiesWords FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (counterVascular (+ ?counterV 1)) (SCdifficultiesWords TRUE)))
 
 
 (defrule scoreMemoryProblems "Score for memory problems"
-?patient <- (patient(memoryProblems Y) (SCmemoryProblems FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
+?patient <- (patient(memoryProblems TRUE) (SCmemoryProblems FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (counterVascular (+ ?counterV 1)) (SCmemoryProblems TRUE)))
 
 
 (defrule scoreOrganizationProblems "Score for organization problems"
-?patient <- (patient(organizationProblems Y) (SCorganizationProblems FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
+?patient <- (patient(organizationProblems TRUE) (SCorganizationProblems FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (counterVascular (+ ?counterV 1)) (SCorganizationProblems TRUE)))
 
 (defrule scoreForgetPersonalInfo "Score for forgetting personal information"
-?patient <- (patient(forgetPersonalInfo Y) (SCforgetPersonalInfo FALSE) (counterAlzheimer ?counterA) (counterAlzPhase ?counterAP) (counterVascular ?counterV))
+?patient <- (patient(forgetPersonalInfo TRUE) (SCforgetPersonalInfo FALSE) (counterAlzheimer ?counterA) (counterAlzPhase ?counterAP) (counterVascular ?counterV))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (counterVascular (+ ?counterV 1)) (SCforgetPersonalInfo TRUE)))
 
 
 (defrule scoreNoStandWalk "Score for not capable of standing or walkind"
-?patient <- (patient(noStandWalk Y) (SCnoStandWalk FALSE) (counterParkinson ?counterP))
+?patient <- (patient(noStandWalk TRUE) (SCnoStandWalk FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1)) (SCnoStandWalk TRUE)))
 
 
 (defrule scoreBradykinesiaL "Score for low bradykinesia"
-?patient <- (patient(bradykinesiaL Y)  (SCbradykinesiaL FALSE) (counterParkinson ?counterP))
+?patient <- (patient(bradykinesiaL TRUE)  (SCbradykinesiaL FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCbradykinesiaL TRUE)))
 
 (defrule scoreBradykinesiaM "Score for medium bradykinesia"
-?patient <- (patient(bradykinesiaM Y)  (SCbradykinesiaM FALSE) (counterParkinson ?counterP))
+?patient <- (patient(bradykinesiaM TRUE)  (SCbradykinesiaM FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCbradykinesiaM TRUE)))
 
 (defrule scoreBradykinesiaH "Score for high bradykinesia"
-?patient <- (patient(bradykinesiaH Y)  (SCbradykinesiaH FALSE) (counterParkinson ?counterP))
+?patient <- (patient(bradykinesiaH TRUE)  (SCbradykinesiaH FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCbradykinesiaH TRUE)))
 
 
 (defrule scoreOrientationImpL "Score for low orientation impairment"
-?patient <- (patient(orientationImpL Y)  (SCorientationImpL FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
+?patient <- (patient(orientationImpL TRUE)  (SCorientationImpL FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (counterVascular (+ ?counterV 1)) (SCorientationImpL TRUE)))
 
 
 (defrule scoreOrientationImpH "Score for high orientation impairment"
-?patient <- (patient(orientationImpH Y)  (SCorientationImpH FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
+?patient <- (patient(orientationImpH TRUE)  (SCorientationImpH FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (counterVascular (+ ?counterV 1)) (SCorientationImpH TRUE)))
 
 
 (defrule scoreBehaviour "Score for behaviour changes"
-?patient <- (patient(behaviour Y)  (SCbehaviour FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
+?patient <- (patient(behaviour TRUE)  (SCbehaviour FALSE) (counterAlzheimer ?counterA) (counterVascular ?counterV))
 =>
 (modify ?patient (counterAlzheimer (+ ?counterA 1)) (counterVascular (+ ?counterV 1)) (SCbehaviour TRUE)))
 
 
 (defrule scoreEmotionalInstability "Score for emotional instability"
-?patient <- (patient(emotionalInstability Y)  (SCemotionalInstability FALSE) (counterVascular ?counterV))
+?patient <- (patient(emotionalInstability TRUE)  (SCemotionalInstability FALSE) (counterVascular ?counterV))
 =>
 (modify ?patient (counterVascular (+ ?counterV 1)) (SCemotionalInstability TRUE)))
 
 (defrule scoreChemicalsExposure "Score for chemical exposure"
-?patient <- (patient(chemicalsExposure Y) (SCchemicalsExposure FALSE) (counterParkinson ?counterP))
+?patient <- (patient(chemicalsExposure TRUE) (SCchemicalsExposure FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCchemicalsExposure TRUE)))
 
 (defrule scoreDrugConsumption "Score for drug consumption"
-?patient <- (patient(drugConsumption Y) (SCdrugConsumption FALSE) (counterParkinson ?counterP))
+?patient <- (patient(drugConsumption TRUE) (SCdrugConsumption FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCdrugConsumption TRUE)))
 
 (defrule scoreTremor "Score for tremor"
-?patient <- (patient(tremor Y) (SCtremor FALSE) (counterParkinson ?counterP))
+?patient <- (patient(tremor TRUE) (SCtremor FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCtremor TRUE)))
 
 (defrule scoreStiffness "Score for stiffness"
-?patient <- (patient(stiffness Y) (SCstiffness FALSE) (counterParkinson ?counterP))
+?patient <- (patient(stiffness TRUE) (SCstiffness FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCstiffness TRUE)))
 
 (defrule scoreBalanceLoss "Score for balanceLoss"
-?patient <- (patient(balanceLoss Y) (SCbalanceLoss FALSE) (counterParkinson ?counterP))
+?patient <- (patient(balanceLoss TRUE) (SCbalanceLoss FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCbalanceLoss TRUE)))
 
 (defrule scoreStraightWalking "Score for straight walking problems"
-?patient <- (patient(straightWalkingProblems Y) (SCstraightWalkingProblems FALSE) (counterParkinson ?counterP))
+?patient <- (patient(straightWalkingProblems TRUE) (SCstraightWalkingProblems FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCstraightWalkingProblems TRUE)))
 
 (defrule scoreSmellLoss "Score for smell loss"
-?patient <- (patient(smellLoss Y) (SCsmellLoss FALSE) (counterParkinson ?counterP))
+?patient <- (patient(smellLoss TRUE) (SCsmellLoss FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCsmellLoss TRUE)))
 
 (defrule scoreIncontinence "Score for urinary and gastric incontinence"
-?patient <- (patient(incontinence Y) (SCincontinence FALSE) (counterVascular ?counterV))
+?patient <- (patient(incontinence TRUE) (SCincontinence FALSE) (counterVascular ?counterV))
 =>
 (modify ?patient (counterVascular (+ ?counterV 1))(SCincontinence TRUE)))
 
 (defrule scoreSleepingProblems "Score for sleeping problems"
-?patient <- (patient(sleepingProblems Y) (SCsleepingProblems FALSE) (counterParkinson ?counterP))
+?patient <- (patient(sleepingProblems TRUE) (SCsleepingProblems FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCsleepingProblems TRUE)))
 
 (defrule scoreFacialExpressionLoss "Score for facial expression loss"
-?patient <- (patient(facialExpressionLoss Y) (SCfacialExpressionLoss FALSE) (counterParkinson ?counterP))
+?patient <- (patient(facialExpressionLoss TRUE) (SCfacialExpressionLoss FALSE) (counterParkinson ?counterP))
 =>
 (modify ?patient (counterParkinson (+ ?counterP 1))(SCfacialExpressionLoss TRUE)))
 
@@ -509,79 +509,56 @@
 
 ;---------- CALCULUS TO SEE WHICH PHASE OF THE DISEASE THE PATIENT HAS ----------------
 ; --------- PARKINSON ----------
-; --------- QUESTIONS FOR SYMPTOMS ONLY FOUND IN PARKINSON: -----------
-
-(defrule lostPhysicalAbilityP "Patient has lost physical ability"
-?patient <- (patient (parkinson TRUE) (lostPhysicalAbilityP nil))
-=>
-(printout t "Does the patient have lost any physical abilities (like swallowing or sitting)? [Y/N]" crlf)
-(modify ?patient (lostPhysicalAbilityP (read))))
-
-
-(defrule tremorUnilP "Patient has unilateral tremor (specific for Park. phase 3)"
-?patient <- (patient(parkinson TRUE) (tremorUnilP nil))
-=>
-(printout t "Does the patient have unilateral tremor? [Y/N]" crlf)
-(modify ?patient (tremorUnilP (read))))
-
-
-(defrule tremorBilP "Patient has bilateral tremor (specific for Park. phase 3)"
-?patient <- (patient(parkinson TRUE) (tremorBilP nil))
-=>
-(printout t "Does the patient have bilateral tremor? [Y/N]" crlf)
-(modify ?patient (tremorBilP (read))))
-
-
 ; ---------------------- RULES TO MAKE PHASE SCORE CALCULATIONS ----------------------
 (defrule scoreNoStandWalkP "Score for no standing or walking for parkinson"
-?patient <- (patient (parkinson TRUE) (noStandWalk Y) (SCnoStandWalkP FALSE) (counterParPhase ?counterPP))
+?patient <- (patient (parkinson TRUE) (noStandWalk TRUE) (SCnoStandWalkP FALSE) (counterParPhase ?counterPP))
 =>
 (modify ?patient (counterParPhase (+ ?counterPP 1))(SCnoStandWalkP TRUE)))
 
 
 (defrule scoreLostPhysicalAbilityP "Score for lost physical ability for parkinson"
-?patient <- (patient (parkinson TRUE) (lostPhysicalAbilityP Y) (SClostPhysicalAbilityP FALSE) (counterParPhase ?counterPP))
+?patient <- (patient (parkinson TRUE) (lostPhysicalAbilityP TRUE) (SClostPhysicalAbilityP FALSE) (counterParPhase ?counterPP))
 =>
 (modify ?patient (counterParPhase (+ ?counterPP 1))(SClostPhysicalAbilityP TRUE)))
 
 
 (defrule scoreBradykinesiaLMP "Score for low or medium bradykinesia for parkinson"
-?patient <- (patient (parkinson TRUE) (bradykinesiaL Y) (bradykinesiaM Y) (SCbradykinesiaLMP FALSE) (counterParPhase ?counterPP))
+?patient <- (patient (parkinson TRUE) (bradykinesiaL TRUE) (bradykinesiaM TRUE) (SCbradykinesiaLMP FALSE) (counterParPhase ?counterPP))
 =>
 (modify ?patient (counterParPhase (+ ?counterPP 1))(SCbradykinesiaLMP TRUE)))
 
 (defrule scoreBradykinesiaHP "Score for high bradykinesia for parkinson"
-?patient <- (patient (parkinson TRUE) (bradykinesiaH Y) (SCbradykinesiaHP FALSE) (counterParPhase ?counterPP))
+?patient <- (patient (parkinson TRUE) (bradykinesiaH TRUE) (SCbradykinesiaHP FALSE) (counterParPhase ?counterPP))
 =>
 (modify ?patient (counterParPhase (+ ?counterPP 1))(SCbradykinesiaHP TRUE)))
 
 
 (defrule scoreTremorUnilP "Score for unilateral tremor for parkinson"
-?patient <- (patient (parkinson TRUE) (tremorUnilP Y) (SCtremorUnilP FALSE) (counterParPhase ?counterPP))
+?patient <- (patient (parkinson TRUE) (tremorUnilP TRUE) (SCtremorUnilP FALSE) (counterParPhase ?counterPP))
 =>
 (modify ?patient (counterParPhase (+ ?counterPP 1))(SCtremorUnilP TRUE)))
 
 
 (defrule scoreTremorBilP "Score for bilateral tremor for parkinson"
-?patient <- (patient (parkinson TRUE) (tremorBilP Y) (SCtremorBilP FALSE) (counterParPhase ?counterPP))
+?patient <- (patient (parkinson TRUE) (tremorBilP TRUE) (SCtremorBilP FALSE) (counterParPhase ?counterPP))
 =>
 (modify ?patient (counterParPhase (+ ?counterPP 1))(SCtremorBilP TRUE)))
 
 
 (defrule scoreStiffnessP "Score for stiffness for parkinson"
-?patient <- (patient (parkinson TRUE) (stiffness Y) (SCstiffnessP FALSE) (counterParPhase ?counterPP))
+?patient <- (patient (parkinson TRUE) (stiffness TRUE) (SCstiffnessP FALSE) (counterParPhase ?counterPP))
 =>
 (modify ?patient (counterParPhase (+ ?counterPP 1))(SCstiffnessP TRUE)))
 
 
 (defrule scoreLossOfCoordinationP "Score for loss of coordination for parkinson"
-?patient <- (patient (parkinson TRUE) (lossOfCoordination Y) (SClossOfCoordinationP FALSE) (counterParPhase ?counterPP))
+?patient <- (patient (parkinson TRUE) (lossOfCoordination TRUE) (SClossOfCoordinationP FALSE) (counterParPhase ?counterPP))
 =>
 (modify ?patient (counterParPhase (+ ?counterPP 1))(SClossOfCoordinationP TRUE)))
 
 
 (defrule scoreIncontinenceP "Score for incontinence for parkinson"
-?patient <- (patient (parkinson TRUE) (incontinence Y) (SCincontinenceP FALSE) (counterParPhase ?counterPP))
+?patient <- (patient (parkinson TRUE) (incontinence TRUE) (SCincontinenceP FALSE) (counterParPhase ?counterPP))
 =>
 (modify ?patient (counterParPhase (+ ?counterPP 1))(SCincontinenceP TRUE)))
 
@@ -612,104 +589,75 @@
 
 
 ; --------- ALZHEIMER ----------
-; --------- QUESTIONS FOR SYMPTOMS ONLY FOUND IN ALZHEIMER: -----------
-(defrule lostPhysicalAbilityA "Patient has lost physical ability"
-?patient <- (patient (alzheimer TRUE) (lostPhysicalAbilityA nil))
-=>
-(printout t "Does the patient have lost any physical abilities (like swallowing or sitting)? [Y/N]" crlf)
-(modify ?patient (lostPhysicalAbilityA (read))))
-
-
-(defrule stiffnessLA "Patient has low stiffness"
-?patient <- (patient (alzheimer TRUE) (stiffnessLAP2 nil))
-=>
-(printout t "Does the patient have low stiffness? [Y/N]" crlf)
-(modify ?patient (stiffnessLAP2 (read))))
-
-
-(defrule stiffnessHA "Patient has high stiffness"
-?patient <- (patient (alzheimer TRUE) (stiffnessHAP3 nil))
-=>
-(printout t "Does the patient have high stiffness? [Y/N]" crlf)
-(modify ?patient (stiffnessHAP3 (read))))
-
-
-(defrule hyperreflexiaA "Patient has hyperreflexia"
-?patient <- (patient (alzheimer TRUE) (hyperreflexiaA nil))
-=>
-(printout t "Does the patient have hyperreflexia? [Y/N]" crlf)
-(modify ?patient (hyperreflexiaA (read))))
-
-
 ; ---------------------- RULES TO MAKE PHASE SCORE CALCULATIONS ----------------------
 (defrule scoreForgetPersonalInfoAP2and3 "Score for forget personal info for Alzheimer"
-?patient <- (patient (alzheimer TRUE) (forgetPersonalInfo Y) (SCforgetPersonalInfoAP2and3 FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (forgetPersonalInfo TRUE) (SCforgetPersonalInfoAP2and3 FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCforgetPersonalInfoAP2and3 TRUE)))
 
 
 (defrule scoreLostPhysicalAbilityA "Score for lost physical ability for Alzheimer"
-?patient <- (patient (alzheimer TRUE) (lostPhysicalAbilityA Y) (SClostPhysicalAbilityA FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (lostPhysicalAbilityA TRUE) (SClostPhysicalAbilityA FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SClostPhysicalAbilityA TRUE)))
 
 
 (defrule scoreOrientationImpLAP2 "Score for low orientation impairment for Alzheimer"
-?patient <- (patient (alzheimer TRUE) (orientationImpL Y) (SCorientationImpLAP2 FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (orientationImpL TRUE) (SCorientationImpLAP2 FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCorientationImpLAP2 TRUE)))
 
 
 (defrule scoreOrientationImpHAP3 "Score for low orientation impairment for Alzheimer"
-?patient <- (patient (alzheimer TRUE) (orientationImpH Y) (SCorientationImpHAP3 FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (orientationImpH TRUE) (SCorientationImpHAP3 FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCorientationImpHAP3 TRUE)))
 
 
 (defrule scoreBehaviourA "Score for changes in behaviour for Alzheimer"
-?patient <- (patient (alzheimer TRUE) (behaviour Y) (SCbehaviourAP2and3 FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (behaviour TRUE) (SCbehaviourAP2and3 FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCbehaviourAP2and3 TRUE)))
 
 
 (defrule scoreEmotionalInstabilityAP2and3 "Score for emotional instability for Alzheimer"
-?patient <- (patient (alzheimer TRUE) (emotionalInstability Y) (SCemotionalInstabilityAP2and3 FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (emotionalInstability TRUE) (SCemotionalInstabilityAP2and3 FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCemotionalInstabilityAP2and3 TRUE)))
 
 
 (defrule scoreStiffnessLAP2 "Score for low stiffness for Alzheimer"
-?patient <- (patient (alzheimer TRUE) (stiffnessLAP2 Y) (SCstiffnessLAP2 FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (stiffnessLAP2 TRUE) (SCstiffnessLAP2 FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCstiffnessLAP2 TRUE)))
 
 
 (defrule scoreStiffnessHAP3 "Score for high stiffness for Alzheimer"
-?patient <- (patient (alzheimer TRUE) (stiffnessHAP3 Y) (SCstiffnessHAP3 FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (stiffnessHAP3 TRUE) (SCstiffnessHAP3 FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCstiffnessHAP3 TRUE)))
 
 
 (defrule scoreLossOfCoordinationAP3 "Score for precision problems or loss of coordination for Alzheimer"
-?patient <- (patient (alzheimer TRUE) (lossOfCoordination Y) (SClossOfCoordinationAP3 FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (lossOfCoordination TRUE) (SClossOfCoordinationAP3 FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SClossOfCoordinationAP3 TRUE)))
 
 
 (defrule scoreIncontinenceA "Score for incontinence for alzheimer"
-?patient <- (patient (alzheimer TRUE) (incontinence Y) (SCincontinenceAP3 FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (incontinence TRUE) (SCincontinenceAP3 FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCincontinenceAP3 TRUE)))
 
 
 (defrule scoreSleepingProblemsAP3 "Score for sleeping problems for alzheimer"
-?patient <- (patient (alzheimer TRUE) (sleepingProblems Y) (SCsleepingProblemsAP3 FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (sleepingProblems TRUE) (SCsleepingProblemsAP3 FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCsleepingProblemsAP3 TRUE)))
 
 
 (defrule scoreHyperreflexiaA "Score for hyperreflexia for alzheimer"
-?patient <- (patient (alzheimer TRUE) (hyperreflexiaA Y) (SChyperreflexiaA FALSE) (counterAlzPhase ?counterPA))
+?patient <- (patient (alzheimer TRUE) (hyperreflexiaA TRUE) (SChyperreflexiaA FALSE) (counterAlzPhase ?counterPA))
 =>
 (modify ?patient (counterAlzPhase (+ ?counterPA 1))(SChyperreflexiaA TRUE)))
 
