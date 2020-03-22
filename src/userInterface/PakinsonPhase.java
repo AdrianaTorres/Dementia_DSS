@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class PakinsonPhase extends javax.swing.JFrame {
 
     Patient patient = new Patient();
+
     /**
      * Creates new form PakinsonPhase
      */
@@ -135,7 +136,7 @@ public class PakinsonPhase extends javax.swing.JFrame {
             patient.setTremorUni(tremor);
             patient.setTremorBi(tremor);
         }
-        
+
         dispose();
         JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON PHASE ");
     }//GEN-LAST:event_Submit_buttonActionPerformed
@@ -147,7 +148,7 @@ public class PakinsonPhase extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

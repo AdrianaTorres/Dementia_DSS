@@ -68,6 +68,11 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="304" max="-2" attributes="0"/>
+              <Component id="prueba" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -104,7 +109,9 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="HeartAttacks_check" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="92" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Component id="prueba" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Submit_pathologies" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Back_pathologies" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -197,6 +204,11 @@
     <Component class="javax.swing.JCheckBox" name="DownSyndrome_check">
       <Properties>
         <Property name="text" type="java.lang.String" value="Down Syndrome"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="prueba">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
   </SubComponents>

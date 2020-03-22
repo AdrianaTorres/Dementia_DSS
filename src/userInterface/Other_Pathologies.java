@@ -221,7 +221,7 @@ public class Other_Pathologies extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(485, 485, 485)
                 .addComponent(jLabel1)
-                .addGap(139, 139, 139))
+                .addGap(139, 609, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +249,7 @@ public class Other_Pathologies extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Insulin_check)
                     .addComponent(HeartAttacks_check))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -272,4 +272,5 @@ public class Other_Pathologies extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+
 }

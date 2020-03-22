@@ -9,6 +9,7 @@ import dementia_dss.CLIPS_connection;
 import dementia_dss.Patient;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,6 +24,8 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
     General_Symptoms generalSymptoms = new General_Symptoms(patient);
     Motor_Symptoms motorSymptoms = new Motor_Symptoms(patient);
     Other_Pathologies otherPathologies = new Other_Pathologies(patient);
+    Parkinson_Phase parkinsonPhase = new Parkinson_Phase(patient);
+    Alzheimer_Phase alzheimerPhase = new Alzheimer_Phase(patient);
 
     /**
      * Creates new form PrincipalWindow
@@ -37,6 +40,8 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
         generalSymptoms.setVisible(false);
         motorSymptoms.setVisible(false);
         otherPathologies.setVisible(false);
+        alzheimerPhase.setVisible(false);
+        parkinsonPhase.setVisible(false);
 
         manageButtons();
     }
@@ -50,7 +55,7 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
             Back_Button.setEnabled(true);
             Next_Button.setEnabled(true);
             Submit_Button.setEnabled(false);
-        } else if (otherPathologies.isVisible()) {
+        } else if (otherPathologies.isVisible() || alzheimerPhase.isVisible() || parkinsonPhase.isVisible()) {
             Back_Button.setEnabled(true);
             Next_Button.setEnabled(false);
             Submit_Button.setEnabled(true);
@@ -195,6 +200,24 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
         otherPathologies.SaveInfo();
         CLIPS_connection clipsConnect = new CLIPS_connection();
         clipsConnect.createPatientAssertion(patient);
+
+        if (patient.getNoDementia()) {
+            JOptionPane.showMessageDialog(null, "Diagnosis is: patient has NO DEMENTIA.");
+        } else if (patient.getAlzheimer()) {
+            JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ALZHEIMER DISEASE.");
+            alzheimerPhase.setVisible(true);
+            PrincipalPanel.add(alzheimerPhase);
+            // if (patient.get)
+        } else if (patient.getParkinson()) {
+            JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON DISEASE.");
+            parkinsonPhase.setVisible(true);
+            PrincipalPanel.add(parkinsonPhase);
+        } else if (patient.getVascularD()) {
+            JOptionPane.showMessageDialog(null, "Diagnosis is: patient has VASCULAR DEMENTIA.");
+        }
+
+        PrincipalPanel.validate();
+        manageButtons();
     }//GEN-LAST:event_Submit_ButtonActionPerformed
 
     /**

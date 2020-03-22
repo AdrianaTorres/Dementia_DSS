@@ -15,6 +15,7 @@ import dementia_dss.Patient;
 public class OtherPathologies extends javax.swing.JFrame {
 
     Patient patient = new Patient();
+
     /**
      * Creates new form OtherPathologies
      */
@@ -156,6 +157,7 @@ public class OtherPathologies extends javax.swing.JFrame {
         Submit_pathologies = new javax.swing.JButton();
         Back_pathologies = new javax.swing.JButton();
         DownSyndrome_check = new javax.swing.JCheckBox();
+        prueba = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -202,6 +204,8 @@ public class OtherPathologies extends javax.swing.JFrame {
 
         DownSyndrome_check.setText("Down Syndrome");
 
+        prueba.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -236,6 +240,10 @@ public class OtherPathologies extends javax.swing.JFrame {
                             .addComponent(Pathologies_symptoms))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(304, 304, 304)
+                .addComponent(prueba)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,7 +274,9 @@ public class OtherPathologies extends javax.swing.JFrame {
                     .addComponent(Depression_check))
                 .addGap(18, 18, 18)
                 .addComponent(HeartAttacks_check)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
+                .addComponent(prueba)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Submit_pathologies)
                     .addComponent(Back_pathologies))
@@ -479,5 +489,6 @@ public class OtherPathologies extends javax.swing.JFrame {
     private javax.swing.JLabel Pathologies_symptoms;
     private javax.swing.JButton Submit_pathologies;
     private javax.swing.JLabel SymptomsPresent_pathologies;
+    private javax.swing.JLabel prueba;
     // End of variables declaration//GEN-END:variables
 }
