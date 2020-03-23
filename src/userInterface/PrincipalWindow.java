@@ -205,11 +205,13 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
             JOptionPane.showMessageDialog(null, "Diagnosis is: patient has NO DEMENTIA.");
         } else if (patient.getAlzheimer()) {
             JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ALZHEIMER DISEASE.");
+            otherPathologies.setVisible(false);
             alzheimerPhase.setVisible(true);
             PrincipalPanel.add(alzheimerPhase);
             // if (patient.get)
         } else if (patient.getParkinson()) {
             JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON DISEASE.");
+            otherPathologies.setVisible(false);
             parkinsonPhase.setVisible(true);
             PrincipalPanel.add(parkinsonPhase);
         } else if (patient.getVascularD()) {
