@@ -68,6 +68,15 @@ public class Patient {
     Boolean parkinson;
     Boolean alzheimer;
     Boolean vascularD;
+    Boolean parkinsonP1;
+    Boolean parkinsonP2;
+    Boolean parkinsonP3;
+    Boolean alzheimerP1;
+    Boolean alzheimerP2;
+    Boolean alzheimerP3;
+    Boolean vascularP1;
+    Boolean vascularP2;
+    Boolean vascularP3;
 
     public Patient() {
         this.name = "";
@@ -120,6 +129,15 @@ public class Patient {
         this.alzheimer = false;
         this.parkinson = false;
         this.vascularD = false;
+        this.parkinsonP1 = false;
+        this.parkinsonP2 = false;
+        this.parkinsonP3 = false;
+        this.alzheimerP1 = false;
+        this.alzheimerP2 = false;
+        this.alzheimerP3 = false;
+        this.vascularP1 = false;
+        this.vascularP2 = false;
+        this.vascularP3 = false;
     }
 
     // 'SET' AND 'GET' METHODS:
@@ -318,16 +336,52 @@ public class Patient {
         this.noDementia = noDementia_;
     }
 
-    public void setParkinson(Boolean p) {
-        this.parkinson = p;
+    public void setParkinson(Boolean parkinson) {
+        this.parkinson = parkinson;
     }
 
-    public void setAlzheimer(Boolean a) {
-        this.alzheimer = a;
+    public void setAlzheimer(Boolean alzheimer) {
+        this.alzheimer = alzheimer;
     }
 
-    public void setVascularD(Boolean v) {
-        this.vascularD = v;
+    public void setVascularD(Boolean vascular) {
+        this.vascularD = vascular;
+    }
+
+    public void setParkinsonP1(Boolean parkinsonP1) {
+        this.parkinsonP1 = parkinsonP1;
+    }
+
+    public void setParkinsonP2(Boolean parkinsonP2) {
+        this.parkinsonP2 = parkinsonP2;
+    }
+
+    public void setParkinsonP3(Boolean parkinsonP3) {
+        this.parkinsonP3 = parkinsonP3;
+    }
+
+    public void setAlzheimerP1(Boolean alzheimerP1) {
+        this.alzheimerP1 = alzheimerP1;
+    }
+
+    public void setAlzheimerP2(Boolean alzheimerP2) {
+        this.alzheimerP2 = alzheimerP2;
+    }
+
+    public void setAlzheimerP3(Boolean alzheimerP3) {
+        this.alzheimerP3 = alzheimerP3;
+    }
+
+    public void setVascularP1(Boolean vascularP1) {
+        this.vascularP1 = vascularP1;
+    }
+
+    public void setVascularP2(Boolean vascularP2) {
+        this.vascularP2 = vascularP2;
+    }
+
+    public void setVascularP3(Boolean vascularP3) {
+        this.vascularP3 = vascularP3;
     }
 
     // General patient information 'get' methods:
@@ -535,5 +589,41 @@ public class Patient {
 
     public Boolean getVascularD() {
         return this.vascularD;
+    }
+
+    public Boolean getParkinsonP1() {
+        return this.parkinsonP1;
+    }
+
+    public Boolean getParkinsonP2() {
+        return this.parkinsonP2;
+    }
+
+    public Boolean getParkinsonP3() {
+        return this.parkinsonP3;
+    }
+
+    public Boolean getAlzheimerP1() {
+        return this.alzheimerP1;
+    }
+
+    public Boolean getAlzheimerP2() {
+        return this.alzheimerP2;
+    }
+
+    public Boolean getAlzheimerP3() {
+        return this.alzheimerP3;
+    }
+
+    public Boolean getVascularP1() {
+        return this.vascularP1;
+    }
+
+    public Boolean getVascularP2() {
+        return this.vascularP2;
+    }
+
+    public Boolean getVascularP3() {
+        return this.vascularP3;
     }
 }

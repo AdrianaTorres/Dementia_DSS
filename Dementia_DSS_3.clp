@@ -510,7 +510,7 @@
 (defrule scoreNoStandWalkP "Score for no standing or walking for parkinson"
 ?patient <- (patient (parkinson TRUE) (noStandWalk TRUE) (SCnoStandWalkP FALSE) (counterParPhase ?counterPP))
 =>
-(modify ?patient (counterParPhase (+ ?counterPP 1))(SCnoStandWalkP TRUE)))
+(modify ?patient (counterParPhase (+ ?counterPP 2))(SCnoStandWalkP TRUE)))
 
 
 (defrule scoreLostPhysicalAbilityP "Score for lost physical ability for parkinson"
@@ -522,12 +522,12 @@
 (defrule scoreBradykinesiaLMP "Score for low or medium bradykinesia for parkinson"
 ?patient <- (patient (parkinson TRUE) (bradykinesiaL TRUE) (bradykinesiaM TRUE) (SCbradykinesiaLMP FALSE) (counterParPhase ?counterPP))
 =>
-(modify ?patient (counterParPhase (+ ?counterPP 1))(SCbradykinesiaLMP TRUE)))
+(modify ?patient (counterParPhase (+ ?counterPP 2))(SCbradykinesiaLMP TRUE)))
 
 (defrule scoreBradykinesiaHP "Score for high bradykinesia for parkinson"
 ?patient <- (patient (parkinson TRUE) (bradykinesiaH TRUE) (SCbradykinesiaHP FALSE) (counterParPhase ?counterPP))
 =>
-(modify ?patient (counterParPhase (+ ?counterPP 1))(SCbradykinesiaHP TRUE)))
+(modify ?patient (counterParPhase (+ ?counterPP 2))(SCbradykinesiaHP TRUE)))
 
 
 (defrule scoreTremorUnilP "Score for unilateral tremor for parkinson"
@@ -539,19 +539,19 @@
 (defrule scoreTremorBilP "Score for bilateral tremor for parkinson"
 ?patient <- (patient (parkinson TRUE) (tremorBilP TRUE) (SCtremorBilP FALSE) (counterParPhase ?counterPP))
 =>
-(modify ?patient (counterParPhase (+ ?counterPP 1))(SCtremorBilP TRUE)))
+(modify ?patient (counterParPhase (+ ?counterPP 2))(SCtremorBilP TRUE)))
 
 
 (defrule scoreStiffnessP "Score for stiffness for parkinson"
 ?patient <- (patient (parkinson TRUE) (stiffness TRUE) (SCstiffnessP FALSE) (counterParPhase ?counterPP))
 =>
-(modify ?patient (counterParPhase (+ ?counterPP 1))(SCstiffnessP TRUE)))
+(modify ?patient (counterParPhase (+ ?counterPP 2))(SCstiffnessP TRUE)))
 
 
 (defrule scoreLossOfCoordinationP "Score for loss of coordination for parkinson"
 ?patient <- (patient (parkinson TRUE) (lossOfCoordination TRUE) (SClossOfCoordinationP FALSE) (counterParPhase ?counterPP))
 =>
-(modify ?patient (counterParPhase (+ ?counterPP 1))(SClossOfCoordinationP TRUE)))
+(modify ?patient (counterParPhase (+ ?counterPP 2))(SClossOfCoordinationP TRUE)))
 
 
 (defrule scoreIncontinenceP "Score for incontinence for parkinson"
@@ -590,7 +590,7 @@
 (defrule scoreForgetPersonalInfoAP2and3 "Score for forget personal info for Alzheimer"
 ?patient <- (patient (alzheimer TRUE) (forgetPersonalInfo TRUE) (SCforgetPersonalInfoAP2and3 FALSE) (counterAlzPhase ?counterPA))
 =>
-(modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCforgetPersonalInfoAP2and3 TRUE)))
+(modify ?patient (counterAlzPhase (+ ?counterPA 2))(SCforgetPersonalInfoAP2and3 TRUE)))
 
 
 (defrule scoreLostPhysicalAbilityA "Score for lost physical ability for Alzheimer"
@@ -602,19 +602,19 @@
 (defrule scoreOrientationImpLAP2 "Score for low orientation impairment for Alzheimer"
 ?patient <- (patient (alzheimer TRUE) (orientationImpL TRUE) (SCorientationImpLAP2 FALSE) (counterAlzPhase ?counterPA))
 =>
-(modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCorientationImpLAP2 TRUE)))
+(modify ?patient (counterAlzPhase (+ ?counterPA 2))(SCorientationImpLAP2 TRUE)))
 
 
 (defrule scoreOrientationImpHAP3 "Score for low orientation impairment for Alzheimer"
 ?patient <- (patient (alzheimer TRUE) (orientationImpH TRUE) (SCorientationImpHAP3 FALSE) (counterAlzPhase ?counterPA))
 =>
-(modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCorientationImpHAP3 TRUE)))
+(modify ?patient (counterAlzPhase (+ ?counterPA 2))(SCorientationImpHAP3 TRUE)))
 
 
 (defrule scoreBehaviourA "Score for changes in behaviour for Alzheimer"
 ?patient <- (patient (alzheimer TRUE) (behaviour TRUE) (SCbehaviourAP2and3 FALSE) (counterAlzPhase ?counterPA))
 =>
-(modify ?patient (counterAlzPhase (+ ?counterPA 1))(SCbehaviourAP2and3 TRUE)))
+(modify ?patient (counterAlzPhase (+ ?counterPA 2))(SCbehaviourAP2and3 TRUE)))
 
 
 (defrule scoreEmotionalInstabilityAP2and3 "Score for emotional instability for Alzheimer"

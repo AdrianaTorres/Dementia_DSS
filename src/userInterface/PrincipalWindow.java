@@ -217,9 +217,30 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
         } else if (patient.getVascularD()) {
             JOptionPane.showMessageDialog(null, "Diagnosis is: patient has VASCULAR DEMENTIA.");
         }
+        while (alzheimerPhase.isVisible() && Submit_Button.isSelected() || parkinsonPhase.isVisible() && Submit_Button.isSelected()) {
+            if (patient.getAlzheimerP1()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 1.");
+            } else if (patient.getAlzheimerP2()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 2.");
+            } else if (patient.getAlzheimerP3()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 3.");
+            } else if (patient.getParkinsonP1()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 1-2.");
+            } else if (patient.getParkinsonP2()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 3-4.");
+            } else if (patient.getParkinsonP3()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASE 5.");
+            } else if (patient.getVascularP1()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 1-3.");
+            } else if (patient.getVascularP2()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 4-5.");
+            } else if (patient.getVascularP3()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 6-7.");
+            }
 
-        PrincipalPanel.validate();
-        manageButtons();
+            PrincipalPanel.validate();
+            manageButtons();
+        }
     }//GEN-LAST:event_Submit_ButtonActionPerformed
 
     /**
