@@ -72,24 +72,21 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
     private void initComponents() {
 
         PrincipalPanel = new javax.swing.JPanel();
-        Next_Button = new javax.swing.JButton();
+        ChangingPanel = new javax.swing.JPanel();
         Back_Button = new javax.swing.JButton();
+        Next_Button = new javax.swing.JButton();
         Submit_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(40, 40));
+        setMinimumSize(new java.awt.Dimension(40, 40));
         setPreferredSize(new java.awt.Dimension(1260, 777));
-        getContentPane().setLayout(new java.awt.FlowLayout());
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PrincipalPanel.setLayout(new java.awt.GridBagLayout());
-        getContentPane().add(PrincipalPanel);
-
-        Next_Button.setText("Next");
-        Next_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Next_ButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Next_Button);
+        getContentPane().add(PrincipalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 22, -1, -1));
+        getContentPane().add(ChangingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 1070, 450));
 
         Back_Button.setText("Back");
         Back_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +94,15 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                 Back_ButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(Back_Button);
+        getContentPane().add(Back_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, -1, -1));
+
+        Next_Button.setText("Next");
+        Next_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Next_ButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Next_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, -1, -1));
 
         Submit_Button.setText("Submit");
         Submit_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +110,7 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
                 Submit_ButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(Submit_Button);
+        getContentPane().add(Submit_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -197,50 +202,60 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
     }//GEN-LAST:event_Back_ButtonActionPerformed
 
     private void Submit_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_ButtonActionPerformed
-        otherPathologies.SaveInfo();
-        CLIPS_connection clipsConnect = new CLIPS_connection();
-        clipsConnect.createPatientAssertion(patient);
 
-        if (patient.getNoDementia()) {
-            JOptionPane.showMessageDialog(null, "Diagnosis is: patient has NO DEMENTIA.");
-        } else if (patient.getAlzheimer()) {
-            JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ALZHEIMER DISEASE.");
-            otherPathologies.setVisible(false);
-            alzheimerPhase.setVisible(true);
-            PrincipalPanel.add(alzheimerPhase);
-            // if (patient.get)
-        } else if (patient.getParkinson()) {
-            JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON DISEASE.");
-            otherPathologies.setVisible(false);
-            parkinsonPhase.setVisible(true);
-            PrincipalPanel.add(parkinsonPhase);
-        } else if (patient.getVascularD()) {
-            JOptionPane.showMessageDialog(null, "Diagnosis is: patient has VASCULAR DEMENTIA.");
+        if (otherPathologies.isVisible()) {
+            otherPathologies.SaveInfo();
+            CLIPS_connection clipsConnect = new CLIPS_connection();
+            clipsConnect.createPatientAssertion(patient);
+            if (patient.getNoDementia()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has NO DEMENTIA.");
+            } else if (patient.getAlzheimer()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ALZHEIMER DISEASE.");
+                otherPathologies.setVisible(false);
+                alzheimerPhase.setVisible(true);
+                PrincipalPanel.add(alzheimerPhase);
+                // if (patient.get)
+            } else if (patient.getParkinson()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON DISEASE.");
+                otherPathologies.setVisible(false);
+                parkinsonPhase.setVisible(true);
+                PrincipalPanel.add(parkinsonPhase);
+            } else if (patient.getVascularD()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has VASCULAR DEMENTIA.");
+            }
         }
-        while (alzheimerPhase.isVisible() && Submit_Button.isSelected() || parkinsonPhase.isVisible() && Submit_Button.isSelected()) {
+        if (alzheimerPhase.isVisible()) {
+            //  saveINfo
+            //        clips
             if (patient.getAlzheimerP1()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 1.");
             } else if (patient.getAlzheimerP2()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 2.");
             } else if (patient.getAlzheimerP3()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 3.");
-            } else if (patient.getParkinsonP1()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 1-2.");
-            } else if (patient.getParkinsonP2()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 3-4.");
-            } else if (patient.getParkinsonP3()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASE 5.");
-            } else if (patient.getVascularP1()) {
+            }
+            /* else if (patient.getVascularP1()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 1-3.");
             } else if (patient.getVascularP2()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 4-5.");
             } else if (patient.getVascularP3()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 6-7.");
-            }
+            }*/
 
             PrincipalPanel.validate();
             manageButtons();
         }
+
+        if (parkinsonPhase.isVisible() && Submit_Button.isSelected()) {
+            if (patient.getParkinsonP1()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 1-2.");
+            } else if (patient.getParkinsonP2()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 3-4.");
+            } else if (patient.getParkinsonP3()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASE 5.");
+            }
+        }
+
     }//GEN-LAST:event_Submit_ButtonActionPerformed
 
     /**
@@ -280,6 +295,7 @@ public class PrincipalWindow extends javax.swing.JFrame implements ActionListene
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back_Button;
+    private javax.swing.JPanel ChangingPanel;
     private javax.swing.JButton Next_Button;
     private javax.swing.JPanel PrincipalPanel;
     private javax.swing.JButton Submit_Button;

@@ -44,6 +44,31 @@ public class Parkinson_Phase extends javax.swing.JPanel {
         }
     }
 
+    public void SaveInfo() {
+        Boolean physicalAbilities = this.LossPhysicalAbilities_check.isSelected();
+        if (physicalAbilities) {
+            patient.setLossPhysicalAbilities("TRUE");
+        } else {
+            patient.setLossPhysicalAbilities("FALSE");
+        }
+        if (physicalAbilities) {
+            patient.setLossPhysicalAbilities("TRUE");
+        } else {
+            patient.setLossPhysicalAbilities("FALSE");
+        }
+        if (Tremor_box.getSelectedItem().equals("Unilateral")) {
+            patient.setTremorUni("TRUE");
+            patient.setTremorBi("FALSE"); // Lo ponemos a false o lo dejamos en true porque si es high tb es low?
+        } else if (Tremor_box.getSelectedItem().equals("Bilateral")) {
+            patient.setTremorUni("FALSE");
+            patient.setTremorBi("TRUE");
+        } else if (Tremor_box.getSelectedItem().equals("None")) {
+            patient.setTremorBi("FALSE");
+            patient.setTremorUni("FALSE");
+            patient.setTremor("FALSE");
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -50,6 +50,36 @@ public class Alzheimer_Phase extends javax.swing.JPanel {
         }
     }
 
+    public void SaveInfo() {
+        Boolean hyperreflexia = this.Hyperreflexia_check.isSelected();
+        if (hyperreflexia) {
+            patient.setHyperreflexia("TRUE");
+        } else {
+            patient.setHyperreflexia("FALSE");
+        }
+        Boolean physicalAbilities = this.LossPhysicalAbilities_check.isSelected();
+        if (physicalAbilities) {
+            patient.setLossPhysicalAbilities("TRUE");
+        } else {
+            patient.setLossPhysicalAbilities("FALSE");
+        }
+        if (physicalAbilities) {
+            patient.setLossPhysicalAbilities("TRUE");
+        } else {
+            patient.setLossPhysicalAbilities("FALSE");
+        }
+        if (Stiffness_box.getSelectedItem().equals("High")) {
+            patient.setStiffnessH("TRUE");
+            patient.setStiffnessL("FALSE"); // Lo ponemos a false o lo dejamos en true porque si es high tb es low?
+        } else if (Stiffness_box.getSelectedItem().equals("Low")) {
+            patient.setStiffnessH("FALSE");
+            patient.setStiffnessL("TRUE");
+        } else if (Stiffness_box.getSelectedItem().equals("None")) {
+            patient.setStiffnessH("FALSE");
+            patient.setStiffnessL("FALSE");
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
