@@ -326,7 +326,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             manageButtons();
         }
 
-        if (parkinsonPhase.isVisible() && Submit_Button.isSelected()) {
+        if (parkinsonPhase.isVisible()) {
             parkinsonPhase.SaveInfo();
 
             CLIPS_connection clipsConnect = new CLIPS_connection();
