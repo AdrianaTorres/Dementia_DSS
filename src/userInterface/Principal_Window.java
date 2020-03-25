@@ -5,9 +5,12 @@
  */
 package userInterface;
 
+import dementia_dss.CLIPS_connection;
 import dementia_dss.Patient;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -39,10 +42,10 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         otherPathologies.setVisible(false);
         alzheimerPhase.setVisible(false);
         parkinsonPhase.setVisible(false);
-        jPanel2.setVisible(true);
+        Buttons_Panel.setVisible(true);
 
-        jPanel1.add(description);
-        jPanel1.add(jPanel2);
+        PrincipalPanel.add(description, BorderLayout.CENTER);
+        pack();
 
         manageButtons();
     }
@@ -50,16 +53,16 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     public void manageButtons() {
         if (description.isVisible()) {
             Back_Button.setEnabled(false);
-            jButton2.setEnabled(true);
-            jButton1.setEnabled(false);
+            Next_Button.setEnabled(true);
+            Submit_Button.setEnabled(false);
         } else if (patientInfo.isVisible() || generalSymptoms.isVisible() || motorSymptoms.isVisible()) {
             Back_Button.setEnabled(true);
-            jButton2.setEnabled(true);
-            jButton1.setEnabled(false);
+            Next_Button.setEnabled(true);
+            Submit_Button.setEnabled(false);
         } else if (otherPathologies.isVisible() || alzheimerPhase.isVisible() || parkinsonPhase.isVisible()) {
             Back_Button.setEnabled(true);
-            jButton2.setEnabled(false);
-            jButton1.setEnabled(true);
+            Next_Button.setEnabled(false);
+            Submit_Button.setEnabled(true);
         }
     }
 
@@ -72,77 +75,274 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Buttons_Panel = new javax.swing.JPanel();
+        Submit_Button = new javax.swing.JButton();
+        Next_Button = new javax.swing.JButton();
         Back_Button = new javax.swing.JButton();
+        PrincipalPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 609, Short.MAX_VALUE)
-        );
+        Submit_Button.setText("Submit");
+        Submit_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Submit_ButtonActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Submit");
-
-        jButton2.setText("Next");
+        Next_Button.setText("Next");
+        Next_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Next_ButtonActionPerformed(evt);
+            }
+        });
 
         Back_Button.setText("Back");
+        Back_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_ButtonActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(855, Short.MAX_VALUE)
+        javax.swing.GroupLayout Buttons_PanelLayout = new javax.swing.GroupLayout(Buttons_Panel);
+        Buttons_Panel.setLayout(Buttons_PanelLayout);
+        Buttons_PanelLayout.setHorizontalGroup(
+            Buttons_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Buttons_PanelLayout.createSequentialGroup()
+                .addContainerGap(903, Short.MAX_VALUE)
                 .addComponent(Back_Button)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(Next_Button)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(Submit_Button)
                 .addGap(10, 10, 10))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        Buttons_PanelLayout.setVerticalGroup(
+            Buttons_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Buttons_PanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
+                .addGroup(Buttons_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Submit_Button)
+                    .addComponent(Next_Button)
                     .addComponent(Back_Button))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        getContentPane().add(Buttons_Panel, java.awt.BorderLayout.PAGE_END);
+
+        PrincipalPanel.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(PrincipalPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_ButtonActionPerformed
+        if (description.isVisible()) {
+            description.setVisible(false);
+            patientInfo.setVisible(true);
+            generalSymptoms.setVisible(false);
+            motorSymptoms.setVisible(false);
+            otherPathologies.setVisible(false);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
+
+        } else if (patientInfo.isVisible()) {
+            patientInfo.SaveInfo();
+            description.setVisible(false);
+            patientInfo.setVisible(false);
+            generalSymptoms.setVisible(true);
+            motorSymptoms.setVisible(false);
+            otherPathologies.setVisible(false);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(generalSymptoms, BorderLayout.CENTER);
+
+        } else if (generalSymptoms.isVisible()) {
+            generalSymptoms.SaveInfo();
+            description.setVisible(false);
+            patientInfo.setVisible(false);
+            generalSymptoms.setVisible(false);
+            motorSymptoms.setVisible(true);
+            otherPathologies.setVisible(false);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(motorSymptoms, BorderLayout.CENTER);
+
+        } else if (motorSymptoms.isVisible()) {
+            motorSymptoms.SaveInfo();
+            description.setVisible(false);
+            patientInfo.setVisible(false);
+            generalSymptoms.setVisible(false);
+            motorSymptoms.setVisible(false);
+            otherPathologies.setVisible(true);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(otherPathologies, BorderLayout.CENTER);
+        }
+
+        pack();
+        manageButtons();
+    }//GEN-LAST:event_Next_ButtonActionPerformed
+
+    private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed
+        if (patientInfo.isVisible()) {
+            patientInfo.SaveInfo();
+            description.setVisible(true);
+            patientInfo.setVisible(false);
+            generalSymptoms.setVisible(false);
+            motorSymptoms.setVisible(false);
+            otherPathologies.setVisible(false);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(description, BorderLayout.CENTER);
+
+        } else if (generalSymptoms.isVisible()) {
+            generalSymptoms.SaveInfo();
+            description.setVisible(false);
+            patientInfo.setVisible(true);
+            generalSymptoms.setVisible(false);
+            motorSymptoms.setVisible(false);
+            otherPathologies.setVisible(false);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
+
+        } else if (motorSymptoms.isVisible()) {
+            motorSymptoms.SaveInfo();
+            description.setVisible(false);
+            patientInfo.setVisible(false);
+            generalSymptoms.setVisible(true);
+            motorSymptoms.setVisible(false);
+            otherPathologies.setVisible(false);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(generalSymptoms, BorderLayout.CENTER);
+
+        } else if (otherPathologies.isVisible()) {
+            otherPathologies.SaveInfo();
+            description.setVisible(false);
+            patientInfo.setVisible(false);
+            generalSymptoms.setVisible(false);
+            motorSymptoms.setVisible(true);
+            otherPathologies.setVisible(false);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(motorSymptoms, BorderLayout.CENTER);
+
+        } else if (alzheimerPhase.isVisible()) {
+            alzheimerPhase.SaveInfo();
+            description.setVisible(false);
+            patientInfo.setVisible(false);
+            generalSymptoms.setVisible(false);
+            motorSymptoms.setVisible(false);
+            otherPathologies.setVisible(true);
+            alzheimerPhase.setVisible(false);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(otherPathologies, BorderLayout.CENTER);
+
+        } else if (parkinsonPhase.isVisible()) {
+            parkinsonPhase.SaveInfo();
+            description.setVisible(false);
+            patientInfo.setVisible(false);
+            generalSymptoms.setVisible(false);
+            motorSymptoms.setVisible(false);
+            otherPathologies.setVisible(true);
+            parkinsonPhase.setVisible(false);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(otherPathologies, BorderLayout.CENTER);
+        }
+        pack();
+        manageButtons();
+    }//GEN-LAST:event_Back_ButtonActionPerformed
+
+    private void Submit_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_ButtonActionPerformed
+        if (otherPathologies.isVisible()) {
+            otherPathologies.SaveInfo();
+
+            CLIPS_connection clipsConnect = new CLIPS_connection();
+            clipsConnect.createPatientAssertion(patient);
+
+            if (patient.getNoDementia()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has NO DEMENTIA.");
+            } else if (patient.getAlzheimer()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ALZHEIMER DISEASE.");
+                otherPathologies.setVisible(false);
+                alzheimerPhase.setVisible(true);
+
+                PrincipalPanel.removeAll();
+                PrincipalPanel.repaint();
+                PrincipalPanel.add(alzheimerPhase, BorderLayout.CENTER);
+
+            } else if (patient.getParkinson()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON DISEASE.");
+                otherPathologies.setVisible(false);
+                parkinsonPhase.setVisible(true);
+
+                PrincipalPanel.removeAll();
+                PrincipalPanel.repaint();
+                PrincipalPanel.add(parkinsonPhase, BorderLayout.CENTER);
+
+            } else if (patient.getVascularD()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has VASCULAR DEMENTIA.");
+
+                if (patient.getVascularP1()) {
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 1-3.");
+                } else if (patient.getVascularP2()) {
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 4-5.");
+                } else if (patient.getVascularP3()) {
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 6-7.");
+                }
+            }
+            pack();
+            manageButtons();
+        }
+        if (alzheimerPhase.isVisible()) {
+            alzheimerPhase.SaveInfo();
+
+            CLIPS_connection clipsConnect = new CLIPS_connection();
+            clipsConnect.createPatientAssertion(patient);
+
+            if (patient.getAlzheimerP1()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 1.");
+            } else if (patient.getAlzheimerP2()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 2.");
+            } else if (patient.getAlzheimerP3()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 3.");
+            }
+
+            manageButtons();
+        }
+
+        if (parkinsonPhase.isVisible() && Submit_Button.isSelected()) {
+            parkinsonPhase.SaveInfo();
+
+            CLIPS_connection clipsConnect = new CLIPS_connection();
+            clipsConnect.createPatientAssertion(patient);
+
+            if (patient.getParkinsonP1()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 1-2.");
+            } else if (patient.getParkinsonP2()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 3-4.");
+            } else if (patient.getParkinsonP3()) {
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASE 5.");
+            }
+
+            manageButtons();
+        }
+    }//GEN-LAST:event_Submit_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,10 +381,10 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back_Button;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel Buttons_Panel;
+    private javax.swing.JButton Next_Button;
+    private javax.swing.JPanel PrincipalPanel;
+    private javax.swing.JButton Submit_Button;
     // End of variables declaration//GEN-END:variables
 
     @Override
