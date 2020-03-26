@@ -157,96 +157,43 @@ public class Motor_Symptoms extends javax.swing.JPanel {
         Bradykinesia_box = new javax.swing.JComboBox<>();
 
         setPreferredSize(new java.awt.Dimension(1260, 777));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Motor Symptoms");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(638, 21, -1, -1));
 
         jLabel2.setText("Please, mark the present motor symptoms:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 68, -1, -1));
 
         NoCoordination_check.setText("Lack of coordination");
+        add(NoCoordination_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         NoStand_check.setText("Unable to stand/walk ");
+        add(NoStand_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 253, -1, -1));
 
         Stiffness_check.setText("Stiffness");
+        add(Stiffness_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 353, -1, -1));
 
         LossBalance_check.setText("Loss of balance");
+        add(LossBalance_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 150, -1, -1));
 
         Tremor_check.setText("Tremor");
+        add(Tremor_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 253, -1, -1));
 
         StraightWalk_check.setText("Unable to walk straight");
+        add(StraightWalk_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 353, -1, -1));
 
         Orientation_label.setText("Orientation imparment");
+        add(Orientation_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(834, 154, -1, -1));
 
         Orientation_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "High" }));
+        add(Orientation_box, new org.netbeans.lib.awtextra.AbsoluteConstraints(1111, 151, 111, -1));
 
         Bradykinesia_label.setText("Bradykinesia");
+        add(Bradykinesia_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(834, 248, -1, -1));
 
         Bradykinesia_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "Medium", "High" }));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(638, 638, 638)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NoCoordination_check)
-                                    .addComponent(NoStand_check)
-                                    .addComponent(StraightWalk_check))
-                                .addGap(174, 174, 174)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(LossBalance_check)
-                                            .addComponent(Tremor_check))
-                                        .addGap(174, 174, 174)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Orientation_label)
-                                            .addComponent(Bradykinesia_label))
-                                        .addGap(64, 64, 64)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(Bradykinesia_box, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(Orientation_box, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addComponent(Stiffness_check))))))
-                .addContainerGap(123, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NoCoordination_check)
-                    .addComponent(LossBalance_check)
-                    .addComponent(Orientation_label)
-                    .addComponent(Orientation_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NoStand_check)
-                            .addComponent(Tremor_check)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Bradykinesia_label)
-                            .addComponent(Bradykinesia_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(StraightWalk_check)
-                    .addComponent(Stiffness_check))
-                .addContainerGap(283, Short.MAX_VALUE))
-        );
+        add(Bradykinesia_box, new org.netbeans.lib.awtextra.AbsoluteConstraints(1111, 245, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

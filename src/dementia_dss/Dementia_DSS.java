@@ -5,7 +5,6 @@
  */
 package dementia_dss;
 
-import dementia_dss.CLIPS_connection;
 import userInterface.*;
 
 /**
@@ -22,7 +21,7 @@ public class Dementia_DSS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new  PatientInfo();
+        new Patient_Info();
         //new CLIPS_connection();
     }
 

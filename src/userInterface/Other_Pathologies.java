@@ -156,10 +156,13 @@ public class Other_Pathologies extends javax.swing.JPanel {
 
         setMaximumSize(new java.awt.Dimension(1345, 671));
         setPreferredSize(new java.awt.Dimension(1260, 777));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Other pathologies");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 21, -1, -1));
 
         jLabel2.setText("Please, mark other pathologies the patient have:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 68, -1, -1));
 
         DownSyndrome_check.setText("Down Syndrome");
         DownSyndrome_check.addActionListener(new java.awt.event.ActionListener() {
@@ -167,90 +170,37 @@ public class Other_Pathologies extends javax.swing.JPanel {
                 DownSyndrome_checkActionPerformed(evt);
             }
         });
+        add(DownSyndrome_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 160, -1, -1));
 
         Hyperglycemia_check.setText("Hyperglicemia");
+        add(Hyperglycemia_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 284, -1, -1));
 
         Hyperlypidemia_check.setText("Hyperlipidemia");
+        add(Hyperlypidemia_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 412, -1, -1));
 
         Hypertension_check.setText("Arterial hypertension");
+        add(Hypertension_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 160, -1, -1));
 
         Insulin_check.setText("Insulin resistance");
+        add(Insulin_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 537, -1, -1));
 
         Diabetes_check.setText("Diabetes");
+        add(Diabetes_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 284, -1, -1));
 
         Obesity_check.setText("Obesity");
+        add(Obesity_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 412, -1, -1));
 
         HeartAttacks_check.setText("Recorded heart/cerebrovascular attacks");
+        add(HeartAttacks_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 537, -1, -1));
 
         Cholesterol_check.setText("High cholesterol");
+        add(Cholesterol_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(989, 160, -1, -1));
 
         Arteriosclerosis_check.setText("Ateriosclerosis");
+        add(Arteriosclerosis_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(989, 284, -1, -1));
 
         Depression_check.setText("Depression");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DownSyndrome_check)
-                            .addComponent(Hyperglycemia_check)
-                            .addComponent(Hyperlypidemia_check)
-                            .addComponent(Insulin_check))
-                        .addGap(200, 200, 200)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Hypertension_check)
-                                    .addComponent(Diabetes_check)
-                                    .addComponent(Obesity_check))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 372, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Arteriosclerosis_check)
-                                    .addComponent(Cholesterol_check)
-                                    .addComponent(Depression_check))
-                                .addGap(82, 82, 82))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(HeartAttacks_check)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(485, 485, 485)
-                .addComponent(jLabel1)
-                .addGap(139, 609, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(66, 66, 66)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DownSyndrome_check)
-                    .addComponent(Hypertension_check)
-                    .addComponent(Cholesterol_check))
-                .addGap(89, 89, 89)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Hyperglycemia_check)
-                    .addComponent(Diabetes_check)
-                    .addComponent(Arteriosclerosis_check))
-                .addGap(93, 93, 93)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Hyperlypidemia_check)
-                    .addComponent(Obesity_check)
-                    .addComponent(Depression_check))
-                .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Insulin_check)
-                    .addComponent(HeartAttacks_check))
-                .addContainerGap(205, Short.MAX_VALUE))
-        );
+        add(Depression_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(989, 412, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void DownSyndrome_checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DownSyndrome_checkActionPerformed

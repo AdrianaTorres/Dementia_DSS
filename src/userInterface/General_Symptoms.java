@@ -197,118 +197,58 @@ public class General_Symptoms extends javax.swing.JPanel {
         DrugConsumption_check = new javax.swing.JCheckBox();
 
         setPreferredSize(new java.awt.Dimension(1260, 777));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("General Symptoms");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 21, -1, -1));
 
         jLabel2.setText("Please, mark the present symptoms:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 71, -1, -1));
 
         FamilyHis_check.setText("Family history of disease");
+        add(FamilyHis_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 126, -1, -1));
 
         EducationalLevel_check.setText("Low educational level");
+        add(EducationalLevel_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 222, -1, -1));
 
         Behaviour_check.setText("Changes in behaviour");
+        add(Behaviour_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 318, -1, -1));
 
         EmtionalInst_check.setText("Emotional instability");
+        add(EmtionalInst_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 425, -1, -1));
 
         RightWords_check.setText("Difficulties finding the right words");
+        add(RightWords_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 541, -1, -1));
 
         ForgetPersonalInfo_check.setText("Forget personal information");
+        add(ForgetPersonalInfo_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 126, -1, -1));
 
         FacialExp_check.setText("Loss of facial expression");
+        add(FacialExp_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 222, -1, -1));
 
         PlanningDifficulty_check.setText("Difficulties planning and organizing");
+        add(PlanningDifficulty_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 318, -1, -1));
 
         ForgetRecentInfo_check.setText("Forget recent information");
+        add(ForgetRecentInfo_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 425, -1, -1));
 
         SleepPatterns_check.setText("Changes in sleeping patterns");
+        add(SleepPatterns_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 541, -1, -1));
 
         Smell_check.setText("Loss of smell");
+        add(Smell_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 126, -1, -1));
 
         Incontinence_check.setText("Urinary or gastric incontinence");
+        add(Incontinence_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 222, -1, -1));
 
         Chemicals_check.setText("Exposure to chemicals");
+        add(Chemicals_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 318, -1, -1));
 
         Smoking_check.setText("Smoking");
+        add(Smoking_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 425, -1, -1));
 
         DrugConsumption_check.setText("Drug comsuption");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FamilyHis_check)
-                            .addComponent(EducationalLevel_check)
-                            .addComponent(Behaviour_check)
-                            .addComponent(EmtionalInst_check)
-                            .addComponent(RightWords_check))
-                        .addGap(0, 136, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(SleepPatterns_check)
-                                .addGap(140, 140, 140)
-                                .addComponent(DrugConsumption_check))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(ForgetPersonalInfo_check)
-                                .addGap(152, 152, 152)
-                                .addComponent(Smell_check))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(FacialExp_check)
-                                .addGap(188, 188, 188)
-                                .addComponent(Incontinence_check))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(PlanningDifficulty_check)
-                                    .addComponent(ForgetRecentInfo_check))
-                                .addGap(82, 82, 82)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Smoking_check)
-                                    .addComponent(Chemicals_check))))))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(568, 568, 568))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24)
-                .addComponent(jLabel2)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FamilyHis_check)
-                    .addComponent(ForgetPersonalInfo_check)
-                    .addComponent(Smell_check))
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EducationalLevel_check)
-                    .addComponent(FacialExp_check)
-                    .addComponent(Incontinence_check))
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Behaviour_check)
-                    .addComponent(PlanningDifficulty_check)
-                    .addComponent(Chemicals_check))
-                .addGap(72, 72, 72)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EmtionalInst_check)
-                    .addComponent(ForgetRecentInfo_check)
-                    .addComponent(Smoking_check))
-                .addGap(81, 81, 81)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RightWords_check)
-                    .addComponent(SleepPatterns_check)
-                    .addComponent(DrugConsumption_check))
-                .addContainerGap(95, Short.MAX_VALUE))
-        );
+        add(DrugConsumption_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 541, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

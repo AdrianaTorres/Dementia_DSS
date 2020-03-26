@@ -97,59 +97,25 @@ public class Alzheimer_Phase extends javax.swing.JPanel {
         Stiffness_box = new javax.swing.JComboBox<>();
 
         setPreferredSize(new java.awt.Dimension(1260, 777));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Alzheimer Specific Symptoms");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 21, -1, -1));
 
         jLabel2.setText("Please, mark the present symptoms for the system to be able to estimate the phase:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 68, -1, -1));
 
         jLabel3.setText("Stiffness");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(532, 148, -1, -1));
 
         Hyperreflexia_check.setText("Hyperreflexia");
+        add(Hyperreflexia_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 144, -1, -1));
 
         LossPhysicalAbilities_check.setText("Loss of physical abilities");
+        add(LossPhysicalAbilities_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 254, -1, -1));
 
         Stiffness_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "High" }));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LossPhysicalAbilities_check)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(Hyperreflexia_check)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3)
-                                    .addGap(51, 51, 51)
-                                    .addComponent(Stiffness_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(80, 80, 80))
-                                .addComponent(jLabel2))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(394, 394, 394)
-                        .addComponent(jLabel1)))
-                .addContainerGap(237, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(Hyperreflexia_check)
-                    .addComponent(Stiffness_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(75, 75, 75)
-                .addComponent(LossPhysicalAbilities_check)
-                .addContainerGap(335, Short.MAX_VALUE))
-        );
+        add(Stiffness_box, new org.netbeans.lib.awtextra.AbsoluteConstraints(662, 145, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -85,52 +85,22 @@ public class Parkinson_Phase extends javax.swing.JPanel {
         LossPhysicalAbilities_check = new javax.swing.JCheckBox();
 
         setPreferredSize(new java.awt.Dimension(1260, 777));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Parkinson Specific Symptoms");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 11, -1, -1));
 
         jLabel2.setText("Please, mark the present symptoms for the system to be able to estimate the phase:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 49, -1, -1));
 
         jLabel3.setText("Tremor");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(579, 128, -1, -1));
 
         Tremor_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Unilateral", "Bilateral" }));
+        add(Tremor_box, new org.netbeans.lib.awtextra.AbsoluteConstraints(721, 125, -1, -1));
 
         LossPhysicalAbilities_check.setText("Loss of physical abilities");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(287, 287, 287)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LossPhysicalAbilities_check)
-                                .addGap(289, 289, 289)
-                                .addComponent(jLabel3)
-                                .addGap(74, 74, 74)
-                                .addComponent(Tremor_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2))))
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(Tremor_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LossPhysicalAbilities_check))
-                .addContainerGap(383, Short.MAX_VALUE))
-        );
+        add(LossPhysicalAbilities_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 124, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

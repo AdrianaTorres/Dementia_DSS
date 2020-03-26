@@ -29,6 +29,9 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     Parkinson_Phase parkinsonPhase = new Parkinson_Phase(patient);
     Alzheimer_Phase alzheimerPhase = new Alzheimer_Phase(patient);
 
+    Boolean parkinsonPhaseWind = false;
+    Boolean alzheimerPhaseWind = false;
+
     /**
      * Creates new form Principal_Window
      */
@@ -83,6 +86,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Submit_Button.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
         Submit_Button.setText("Submit");
         Submit_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +94,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             }
         });
 
+        Next_Button.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
         Next_Button.setText("Next");
         Next_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +102,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             }
         });
 
+        Back_Button.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
         Back_Button.setText("Back");
         Back_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,23 +115,23 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         Buttons_PanelLayout.setHorizontalGroup(
             Buttons_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Buttons_PanelLayout.createSequentialGroup()
-                .addContainerGap(903, Short.MAX_VALUE)
-                .addComponent(Back_Button)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Next_Button)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Submit_Button)
-                .addGap(10, 10, 10))
+                .addContainerGap(484, Short.MAX_VALUE)
+                .addComponent(Back_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Submit_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
         );
         Buttons_PanelLayout.setVerticalGroup(
             Buttons_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Buttons_PanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Buttons_PanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Buttons_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Submit_Button)
-                    .addComponent(Next_Button)
-                    .addComponent(Back_Button))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Back_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Next_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Submit_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(Buttons_Panel, java.awt.BorderLayout.PAGE_END);
@@ -280,21 +286,22 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             } else if (patient.getAlzheimer()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ALZHEIMER DISEASE.");
                 otherPathologies.setVisible(false);
-                alzheimerPhase.setVisible(true);
+                alzheimerPhaseWind = true;
+                /*alzheimerPhase.setVisible(true);
 
                 PrincipalPanel.removeAll();
                 PrincipalPanel.repaint();
-                PrincipalPanel.add(alzheimerPhase, BorderLayout.CENTER);
+                PrincipalPanel.add(alzheimerPhase, BorderLayout.CENTER);*/
 
             } else if (patient.getParkinson()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON DISEASE.");
                 otherPathologies.setVisible(false);
-                parkinsonPhase.setVisible(true);
+                parkinsonPhaseWind = true;
 
-                PrincipalPanel.removeAll();
+                /* PrincipalPanel.removeAll();
                 PrincipalPanel.repaint();
                 PrincipalPanel.add(parkinsonPhase, BorderLayout.CENTER);
-
+                 */
             } else if (patient.getVascularD()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has VASCULAR DEMENTIA.");
 
@@ -309,7 +316,14 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             pack();
             manageButtons();
         }
-        if (alzheimerPhase.isVisible()) {
+        if (alzheimerPhaseWind) {
+            alzheimerPhase.setVisible(true);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(alzheimerPhase, BorderLayout.CENTER);
+            pack();
+
             alzheimerPhase.SaveInfo();
 
             CLIPS_connection clipsConnect = new CLIPS_connection();
@@ -326,7 +340,14 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             manageButtons();
         }
 
-        if (parkinsonPhase.isVisible()) {
+        if (parkinsonPhaseWind) {
+            parkinsonPhase.setVisible(true);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(parkinsonPhase, BorderLayout.CENTER);
+            pack();
+
             parkinsonPhase.SaveInfo();
 
             CLIPS_connection clipsConnect = new CLIPS_connection();
@@ -342,6 +363,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
             manageButtons();
         }
+
     }//GEN-LAST:event_Submit_ButtonActionPerformed
 
     /**
