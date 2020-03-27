@@ -104,6 +104,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
         Back_Button.setFont(new java.awt.Font("Tahoma", 0, 25)); // NOI18N
         Back_Button.setText("Back");
+        Back_Button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Back_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Back_ButtonActionPerformed(evt);
