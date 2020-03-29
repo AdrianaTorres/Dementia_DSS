@@ -70,7 +70,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             Submit_Button.setEnabled(true);
         }
     }
-    
+
     public void backButtonActions() {
         if (patientInfo.isVisible()) {
 
@@ -148,7 +148,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             PrincipalPanel.add(otherPathologies, BorderLayout.CENTER);
         }
     }
-    
+
     public void nextButtonActions() {
         if (description.isVisible()) {
             description.setVisible(false);
@@ -198,7 +198,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             PrincipalPanel.add(otherPathologies, BorderLayout.CENTER);
         }
     }
-    
+
     public void submitButtonActions() {
         if (otherPathologies.isVisible()) {
             otherPathologies.SaveInfo();
@@ -386,7 +386,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Submit_ButtonActionPerformed
 
     private void Back_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Back_ButtonKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_B) {
+        if (evt.getKeyCode() == KeyEvent.VK_B) {
             backButtonActions();
             pack();
             manageButtons();
@@ -394,7 +394,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Back_ButtonKeyPressed
 
     private void Next_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Next_ButtonKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_N) {
+        if (evt.getKeyCode() == KeyEvent.VK_N) {
             nextButtonActions();
             pack();
             manageButtons();
@@ -402,7 +402,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Next_ButtonKeyPressed
 
     private void Submit_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Submit_ButtonKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_S) {
+        if (evt.getKeyCode() == KeyEvent.VK_S) {
             submitButtonActions();
         }
     }//GEN-LAST:event_Submit_ButtonKeyPressed
@@ -412,12 +412,12 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
      */
     // ESTO ESTÁ COMENTADO PORQUE ES UNA PRUEBA. EN PRINCIPIO EL ÚNICO 'MAIN' QUE DEBERÍA HABER ES EN LA CLASE DEMENTIA_DSS QUE ES LA PRINCIPAL DEL PROYECTO Y DESDE LA QUE SE EJECUTA TODO.
     /*public static void main(String args[]) {*/
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+ /* Set the Nimbus look and feel */
+    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        /*try {
+     */
+ /*try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -433,16 +433,15 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Principal_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }*/
-        //</editor-fold>
+    //</editor-fold>
 
-        /* Create and display the form */
-        /*java.awt.EventQueue.invokeLater(new Runnable() {
+    /* Create and display the form */
+ /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Principal_Window().setVisible(true);
             }
         });
     }*/
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back_Button;
     private javax.swing.JPanel Buttons_Panel;
