@@ -143,7 +143,7 @@ public class Motor_Symptoms extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         NoCoordination_check = new javax.swing.JCheckBox();
         NoStand_check = new javax.swing.JCheckBox();
@@ -155,45 +155,158 @@ public class Motor_Symptoms extends javax.swing.JPanel {
         Orientation_box = new javax.swing.JComboBox<>();
         Bradykinesia_label = new javax.swing.JLabel();
         Bradykinesia_box = new javax.swing.JComboBox<>();
+        jPanel1 = new javax.swing.JPanel();
+        iconoMarca1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        setBackground(new java.awt.Color(225, 238, 238));
+        setMinimumSize(new java.awt.Dimension(853, 375));
         setPreferredSize(new java.awt.Dimension(1260, 777));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Motor Symptoms");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(638, 21, -1, -1));
-
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Please, mark the present motor symptoms:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 68, -1, -1));
 
+        NoCoordination_check.setBackground(new java.awt.Color(225, 238, 238));
         NoCoordination_check.setText("Lack of coordination");
-        add(NoCoordination_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
+        NoStand_check.setBackground(new java.awt.Color(225, 238, 238));
         NoStand_check.setText("Unable to stand/walk ");
-        add(NoStand_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 253, -1, -1));
 
+        Stiffness_check.setBackground(new java.awt.Color(225, 238, 238));
         Stiffness_check.setText("Stiffness");
-        add(Stiffness_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 353, -1, -1));
 
+        LossBalance_check.setBackground(new java.awt.Color(225, 238, 238));
         LossBalance_check.setText("Loss of balance");
-        add(LossBalance_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 150, -1, -1));
 
+        Tremor_check.setBackground(new java.awt.Color(225, 238, 238));
         Tremor_check.setText("Tremor");
-        add(Tremor_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 253, -1, -1));
 
+        StraightWalk_check.setBackground(new java.awt.Color(225, 238, 238));
         StraightWalk_check.setText("Unable to walk straight");
-        add(StraightWalk_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 353, -1, -1));
 
         Orientation_label.setText("Orientation imparment");
-        add(Orientation_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(834, 154, -1, -1));
 
         Orientation_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "High" }));
-        add(Orientation_box, new org.netbeans.lib.awtextra.AbsoluteConstraints(1111, 151, 111, -1));
 
         Bradykinesia_label.setText("Bradykinesia");
-        add(Bradykinesia_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(834, 248, -1, -1));
 
         Bradykinesia_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Low", "Medium", "High" }));
-        add(Bradykinesia_box, new org.netbeans.lib.awtextra.AbsoluteConstraints(1111, 245, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        iconoMarca1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userInterface/dmentiapp_logo1.png"))); // NOI18N
+        jPanel1.add(iconoMarca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 320, 110));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Motor Symptoms");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+
+        jPanel6.setBackground(new java.awt.Color(0, 102, 102));
+
+        jPanel7.setBackground(new java.awt.Color(0, 102, 102));
+
+        jPanel8.setBackground(new java.awt.Color(0, 102, 102));
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Orientation_label)
+                                .addComponent(Bradykinesia_label))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Orientation_box, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Bradykinesia_box, 0, 111, Short.MAX_VALUE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(StraightWalk_check)
+                                    .addGap(91, 91, 91)
+                                    .addComponent(Stiffness_check)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(NoCoordination_check)
+                                        .addGap(10, 10, 10))
+                                    .addComponent(NoStand_check, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(99, 99, 99)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LossBalance_check)
+                                    .addComponent(Tremor_check))))))
+                .addGap(3, 3, 3))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NoCoordination_check)
+                            .addComponent(LossBalance_check))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NoStand_check)
+                            .addComponent(Tremor_check))
+                        .addGap(17, 17, 17)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(StraightWalk_check)
+                            .addComponent(Stiffness_check))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(Orientation_label)
+                                .addGap(26, 26, 26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Orientation_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Bradykinesia_label)
+                            .addComponent(Bradykinesia_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -207,7 +320,14 @@ public class Motor_Symptoms extends javax.swing.JPanel {
     private javax.swing.JCheckBox Stiffness_check;
     private javax.swing.JCheckBox StraightWalk_check;
     private javax.swing.JCheckBox Tremor_check;
+    private javax.swing.JLabel iconoMarca1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }

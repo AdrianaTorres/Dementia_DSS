@@ -140,7 +140,8 @@ public class Other_Pathologies extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         DownSyndrome_check = new javax.swing.JCheckBox();
         Hyperglycemia_check = new javax.swing.JCheckBox();
@@ -153,54 +154,170 @@ public class Other_Pathologies extends javax.swing.JPanel {
         Cholesterol_check = new javax.swing.JCheckBox();
         Arteriosclerosis_check = new javax.swing.JCheckBox();
         Depression_check = new javax.swing.JCheckBox();
+        jPanel2 = new javax.swing.JPanel();
+        iconoMarca1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
 
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setText("General Symptoms");
+        jPanel1.add(jLabel3);
+
+        setBackground(new java.awt.Color(225, 238, 238));
         setMaximumSize(new java.awt.Dimension(1345, 671));
-        setPreferredSize(new java.awt.Dimension(1260, 777));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setPreferredSize(new java.awt.Dimension(700, 777));
 
-        jLabel1.setText("Other pathologies");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 21, -1, -1));
-
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Please, mark other pathologies the patient have:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 68, -1, -1));
 
+        DownSyndrome_check.setBackground(new java.awt.Color(225, 238, 238));
         DownSyndrome_check.setText("Down Syndrome");
         DownSyndrome_check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DownSyndrome_checkActionPerformed(evt);
             }
         });
-        add(DownSyndrome_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 160, -1, -1));
 
+        Hyperglycemia_check.setBackground(new java.awt.Color(225, 238, 238));
         Hyperglycemia_check.setText("Hyperglicemia");
-        add(Hyperglycemia_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 284, -1, -1));
 
+        Hyperlypidemia_check.setBackground(new java.awt.Color(225, 238, 238));
         Hyperlypidemia_check.setText("Hyperlipidemia");
-        add(Hyperlypidemia_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 412, -1, -1));
 
+        Hypertension_check.setBackground(new java.awt.Color(225, 238, 238));
         Hypertension_check.setText("Arterial hypertension");
-        add(Hypertension_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 160, -1, -1));
 
+        Insulin_check.setBackground(new java.awt.Color(225, 238, 238));
         Insulin_check.setText("Insulin resistance");
-        add(Insulin_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 537, -1, -1));
 
+        Diabetes_check.setBackground(new java.awt.Color(225, 238, 238));
         Diabetes_check.setText("Diabetes");
-        add(Diabetes_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 284, -1, -1));
 
+        Obesity_check.setBackground(new java.awt.Color(225, 238, 238));
         Obesity_check.setText("Obesity");
-        add(Obesity_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 412, -1, -1));
 
+        HeartAttacks_check.setBackground(new java.awt.Color(225, 238, 238));
         HeartAttacks_check.setText("Recorded heart/cerebrovascular attacks");
-        add(HeartAttacks_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 537, -1, -1));
 
+        Cholesterol_check.setBackground(new java.awt.Color(225, 238, 238));
         Cholesterol_check.setText("High cholesterol");
-        add(Cholesterol_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(989, 160, -1, -1));
 
+        Arteriosclerosis_check.setBackground(new java.awt.Color(225, 238, 238));
         Arteriosclerosis_check.setText("Ateriosclerosis");
-        add(Arteriosclerosis_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(989, 284, -1, -1));
 
+        Depression_check.setBackground(new java.awt.Color(225, 238, 238));
         Depression_check.setText("Depression");
-        add(Depression_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(989, 412, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        iconoMarca1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userInterface/dmentiapp_logo1.png"))); // NOI18N
+        jPanel2.add(iconoMarca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 320, 110));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Other pathologies");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, 20));
+
+        jPanel6.setBackground(new java.awt.Color(0, 102, 102));
+
+        jPanel7.setBackground(new java.awt.Color(0, 102, 102));
+
+        jPanel8.setBackground(new java.awt.Color(0, 102, 102));
+
+        jPanel9.setBackground(new java.awt.Color(0, 102, 102));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DownSyndrome_check)
+                            .addComponent(Hyperglycemia_check)
+                            .addComponent(Hyperlypidemia_check)
+                            .addComponent(Insulin_check))
+                        .addGap(113, 113, 113)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Arteriosclerosis_check)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Cholesterol_check)
+                                    .addComponent(Diabetes_check)
+                                    .addComponent(Hypertension_check))
+                                .addGap(108, 108, 108)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(HeartAttacks_check)
+                                    .addComponent(Depression_check)
+                                    .addComponent(Obesity_check))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Cholesterol_check)
+                            .addComponent(DownSyndrome_check)
+                            .addComponent(Obesity_check))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Diabetes_check)
+                            .addComponent(Hyperglycemia_check)
+                            .addComponent(Depression_check))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Hyperlypidemia_check)
+                                .addGap(18, 18, 18)
+                                .addComponent(Insulin_check))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Hypertension_check)
+                                    .addComponent(HeartAttacks_check))
+                                .addGap(18, 18, 18)
+                                .addComponent(Arteriosclerosis_check)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void DownSyndrome_checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DownSyndrome_checkActionPerformed
@@ -219,8 +336,16 @@ public class Other_Pathologies extends javax.swing.JPanel {
     private javax.swing.JCheckBox Hypertension_check;
     private javax.swing.JCheckBox Insulin_check;
     private javax.swing.JCheckBox Obesity_check;
+    private javax.swing.JLabel iconoMarca1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 
 }

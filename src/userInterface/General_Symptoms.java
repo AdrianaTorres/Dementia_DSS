@@ -178,7 +178,8 @@ public class General_Symptoms extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        iconoMarca = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         FamilyHis_check = new javax.swing.JCheckBox();
         EducationalLevel_check = new javax.swing.JCheckBox();
@@ -195,60 +196,188 @@ public class General_Symptoms extends javax.swing.JPanel {
         Chemicals_check = new javax.swing.JCheckBox();
         Smoking_check = new javax.swing.JCheckBox();
         DrugConsumption_check = new javax.swing.JCheckBox();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        iconoMarca1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
 
+        iconoMarca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userInterface/dmentiapp_logo1.png"))); // NOI18N
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        setBackground(new java.awt.Color(225, 238, 238));
         setPreferredSize(new java.awt.Dimension(1260, 777));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("General Symptoms");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 21, -1, -1));
-
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Please, mark the present symptoms:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 71, -1, -1));
 
+        FamilyHis_check.setBackground(new java.awt.Color(225, 238, 238));
         FamilyHis_check.setText("Family history of disease");
-        add(FamilyHis_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 126, -1, -1));
 
+        EducationalLevel_check.setBackground(new java.awt.Color(225, 238, 238));
         EducationalLevel_check.setText("Low educational level");
-        add(EducationalLevel_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 222, -1, -1));
 
+        Behaviour_check.setBackground(new java.awt.Color(225, 238, 238));
         Behaviour_check.setText("Changes in behaviour");
-        add(Behaviour_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 318, -1, -1));
 
+        EmtionalInst_check.setBackground(new java.awt.Color(225, 238, 238));
         EmtionalInst_check.setText("Emotional instability");
-        add(EmtionalInst_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 425, -1, -1));
 
+        RightWords_check.setBackground(new java.awt.Color(225, 238, 238));
         RightWords_check.setText("Difficulties finding the right words");
-        add(RightWords_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 541, -1, -1));
 
+        ForgetPersonalInfo_check.setBackground(new java.awt.Color(225, 238, 238));
         ForgetPersonalInfo_check.setText("Forget personal information");
-        add(ForgetPersonalInfo_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 126, -1, -1));
 
+        FacialExp_check.setBackground(new java.awt.Color(225, 238, 238));
         FacialExp_check.setText("Loss of facial expression");
-        add(FacialExp_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 222, -1, -1));
 
+        PlanningDifficulty_check.setBackground(new java.awt.Color(225, 238, 238));
         PlanningDifficulty_check.setText("Difficulties planning and organizing");
-        add(PlanningDifficulty_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 318, -1, -1));
 
+        ForgetRecentInfo_check.setBackground(new java.awt.Color(225, 238, 238));
         ForgetRecentInfo_check.setText("Forget recent information");
-        add(ForgetRecentInfo_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 425, -1, -1));
 
+        SleepPatterns_check.setBackground(new java.awt.Color(225, 238, 238));
         SleepPatterns_check.setText("Changes in sleeping patterns");
-        add(SleepPatterns_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 541, -1, -1));
 
+        Smell_check.setBackground(new java.awt.Color(225, 238, 238));
         Smell_check.setText("Loss of smell");
-        add(Smell_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 126, -1, -1));
 
+        Incontinence_check.setBackground(new java.awt.Color(225, 238, 238));
         Incontinence_check.setText("Urinary or gastric incontinence");
-        add(Incontinence_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 222, -1, -1));
 
+        Chemicals_check.setBackground(new java.awt.Color(225, 238, 238));
         Chemicals_check.setText("Exposure to chemicals");
-        add(Chemicals_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 318, -1, -1));
 
+        Smoking_check.setBackground(new java.awt.Color(225, 238, 238));
         Smoking_check.setText("Smoking");
-        add(Smoking_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 425, -1, -1));
 
+        DrugConsumption_check.setBackground(new java.awt.Color(225, 238, 238));
         DrugConsumption_check.setText("Drug comsuption");
-        add(DrugConsumption_check, new org.netbeans.lib.awtextra.AbsoluteConstraints(916, 541, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("General Symptoms");
+
+        iconoMarca1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userInterface/dmentiapp_logo1.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jLabel1)
+                .addGap(407, 407, 407)
+                .addComponent(iconoMarca1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(iconoMarca1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(27, 27, 27))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+
+        jPanel3.setBackground(new java.awt.Color(0, 102, 102));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RightWords_check)
+                            .addComponent(EducationalLevel_check)
+                            .addComponent(EmtionalInst_check)
+                            .addComponent(FamilyHis_check)
+                            .addComponent(Behaviour_check))
+                        .addGap(51, 51, 51)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FacialExp_check)
+                            .addComponent(ForgetRecentInfo_check)
+                            .addComponent(SleepPatterns_check)
+                            .addComponent(ForgetPersonalInfo_check)
+                            .addComponent(PlanningDifficulty_check))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Smoking_check)
+                            .addComponent(Smell_check)
+                            .addComponent(Incontinence_check)
+                            .addComponent(Chemicals_check)
+                            .addComponent(DrugConsumption_check))
+                        .addGap(77, 77, 77))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel2)
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FamilyHis_check)
+                    .addComponent(ForgetPersonalInfo_check)
+                    .addComponent(Smell_check))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FacialExp_check)
+                    .addComponent(EducationalLevel_check)
+                    .addComponent(Incontinence_check))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Behaviour_check)
+                    .addComponent(PlanningDifficulty_check)
+                    .addComponent(Chemicals_check))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EmtionalInst_check)
+                    .addComponent(ForgetRecentInfo_check)
+                    .addComponent(Smoking_check))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SleepPatterns_check)
+                    .addComponent(RightWords_check)
+                    .addComponent(DrugConsumption_check))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -267,7 +396,15 @@ public class General_Symptoms extends javax.swing.JPanel {
     private javax.swing.JCheckBox SleepPatterns_check;
     private javax.swing.JCheckBox Smell_check;
     private javax.swing.JCheckBox Smoking_check;
+    private javax.swing.JLabel iconoMarca;
+    private javax.swing.JLabel iconoMarca1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 }

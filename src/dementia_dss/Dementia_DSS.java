@@ -16,13 +16,11 @@ import userInterface.*;
 // Move the clips project to the folder of the project.
 // Eliminar el fact que crea el paciente con todo a nil.
 public class Dementia_DSS {
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Patient_Info();
-        //new CLIPS_connection();
+        new Principal_Window();
     }
 
 }
