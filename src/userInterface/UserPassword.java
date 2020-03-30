@@ -5,17 +5,44 @@
  */
 package userInterface;
 
+import dementia_dss.Doctor;
+
 /**
  *
  * @author adria
  */
 public class UserPassword extends javax.swing.JPanel {
 
+    Doctor doctor = new Doctor();
+
     /**
      * Creates new form UserPassword
      */
     public UserPassword() {
         initComponents();
+    }
+
+    public UserPassword(Doctor doctor) {
+        this.doctor = doctor;
+        initComponents();
+        setVisible(true);
+
+        if (doctor != null) {
+            if (!doctor.getUsername().equalsIgnoreCase("")) {
+                usernameEnter.setText(doctor.getUsername());
+            }
+            /* Dejo esto comentado porque no creo que tenga sentido guardar la conraseña por temas de seguridad.
+            if (!doctor.getPassword().equalsIgnoreCase("")) {
+                passwordEnter.setText(doctor.getPassword());
+            }*/
+
+        }
+    }
+
+    public void SaveInfo() { // REVISAR QUE ESTE BIEN
+        if (usernameEnter.getText() != null) {
+            doctor.setName(usernameEnter.getText());
+        }
     }
 
     /**

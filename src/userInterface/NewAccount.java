@@ -5,17 +5,63 @@
  */
 package userInterface;
 
+import dementia_dss.Doctor;
+
 /**
  *
  * @author adria
  */
 public class NewAccount extends javax.swing.JPanel {
 
+    Doctor doctor = new Doctor();
+
     /**
      * Creates new form NewAccount
      */
     public NewAccount() {
         initComponents();
+    }
+
+    public NewAccount(Doctor doctor) {
+        this.doctor = doctor;
+        initComponents();
+        setVisible(true);
+
+        if (doctor != null) {
+            if (!doctor.getName().equalsIgnoreCase("")) {
+                nameEnter.setText(doctor.getName());
+            }
+            if (!doctor.getSurname().equalsIgnoreCase("")) {
+                surnameEnter.setText(doctor.getSurname());
+            }
+            if (doctor.getAge() != 0) {
+                ageEnter.setText(Integer.toString(doctor.getAge()));
+            }
+            if (!doctor.getSex().equalsIgnoreCase("")) {
+                if (doctor.getSex().matches("Male")) {
+                    sexEnter.setSelectedIndex(0);
+                } else {
+                    sexEnter.setSelectedIndex(1);
+                }
+            }
+        }
+    }
+
+    public void SaveInfo() {
+        if (nameEnter.getText() != null) {
+            doctor.setName(nameEnter.getText());
+        }
+        if (surnameEnter.getText() != null) {
+            doctor.setSurname(surnameEnter.getText());
+        }
+        if (ageEnter.getText() != null) {
+            doctor.setAge(Integer.parseInt(ageEnter.getText()));
+        }
+        if (sexEnter.getSelectedItem().equals("Male")) {
+            doctor.setSex("MALE");
+        } else {
+            doctor.setSex("FEMALE");
+        }
     }
 
     /**

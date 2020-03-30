@@ -68,8 +68,18 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         ButtonsPanel.setBackground(new java.awt.Color(225, 238, 238));
 
         LoginButton.setText("Login");
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginButtonActionPerformed(evt);
+            }
+        });
 
         NewAccountButton.setText("Create an account");
+        NewAccountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NewAccountButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ButtonsPanelLayout = new javax.swing.GroupLayout(ButtonsPanel);
         ButtonsPanel.setLayout(ButtonsPanelLayout);
@@ -102,6 +112,30 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void NewAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewAccountButtonActionPerformed
+        userPassword.SaveInfo();
+
+        userPassword.setVisible(false);
+        newAccount.setVisible(true);
+
+        PrincipalPanel.removeAll();
+        PrincipalPanel.repaint();
+        PrincipalPanel.add(newAccount, BorderLayout.CENTER);
+        pack();
+    }//GEN-LAST:event_NewAccountButtonActionPerformed
+
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
+        //Si contraseña ok:
+        userPassword.setVisible(false);
+        newAccount.setVisible(false);
+
+        dispose();
+        new Principal_Window();
+
+        //Si contraseña mal:
+        // JOptionPane.showMessageDialog(null, "Incorrect credentials, please try again. ");
+    }//GEN-LAST:event_LoginButtonActionPerformed
 
     /**
      * @param args the command line arguments

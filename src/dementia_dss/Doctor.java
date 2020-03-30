@@ -18,6 +18,15 @@ public class Doctor {
     String username;
     String password;
 
+    public Doctor() {
+        this.name = "";
+        this.surname = "";
+        this.age = 0;
+        this.sex = "";
+        this.username = "";
+        this.password = ""; //Ver si esto tiene sentido
+    }
+
     public void setName(String name_) {
         this.name = name_;
     }
