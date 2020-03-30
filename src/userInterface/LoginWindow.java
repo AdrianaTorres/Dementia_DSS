@@ -30,6 +30,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
         userPassword.setVisible(true);
         newAccount.setVisible(false);
+        ButtonsPanel.setVisible(true);
 
         PrincipalPanel.add(userPassword, BorderLayout.CENTER);
         pack();
@@ -64,6 +65,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        ButtonsPanel.setBackground(new java.awt.Color(225, 238, 238));
+
         LoginButton.setText("Login");
 
         NewAccountButton.setText("Create an account");
@@ -91,17 +94,10 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
         getContentPane().add(ButtonsPanel, java.awt.BorderLayout.PAGE_END);
 
-        javax.swing.GroupLayout PrincipalPanelLayout = new javax.swing.GroupLayout(PrincipalPanel);
-        PrincipalPanel.setLayout(PrincipalPanelLayout);
-        PrincipalPanelLayout.setHorizontalGroup(
-            PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 699, Short.MAX_VALUE)
-        );
-        PrincipalPanelLayout.setVerticalGroup(
-            PrincipalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
-        );
-
+        PrincipalPanel.setBackground(new java.awt.Color(225, 238, 238));
+        PrincipalPanel.setMaximumSize(new java.awt.Dimension(700, 777));
+        PrincipalPanel.setPreferredSize(new java.awt.Dimension(700, 777));
+        PrincipalPanel.setLayout(new java.awt.BorderLayout());
         getContentPane().add(PrincipalPanel, java.awt.BorderLayout.CENTER);
 
         pack();

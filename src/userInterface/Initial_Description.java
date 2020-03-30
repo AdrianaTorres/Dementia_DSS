@@ -49,7 +49,8 @@ public class Initial_Description extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
-        setPreferredSize(new java.awt.Dimension(1260, 832));
+        setBackground(new java.awt.Color(225, 238, 238));
+        setPreferredSize(new java.awt.Dimension(700, 777));
         setRequestFocusEnabled(false);
 
         jTextArea1.setColumns(20);

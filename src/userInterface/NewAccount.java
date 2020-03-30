@@ -36,12 +36,18 @@ public class NewAccount extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         sexEnter = new javax.swing.JComboBox<>();
 
+        setBackground(new java.awt.Color(225, 238, 238));
+
+        jLabel1.setBackground(new java.awt.Color(225, 238, 238));
         jLabel1.setText("Name:");
 
+        jLabel2.setBackground(new java.awt.Color(225, 238, 238));
         jLabel2.setText("Surname:");
 
+        jLabel3.setBackground(new java.awt.Color(225, 238, 238));
         jLabel3.setText("Age:");
 
+        jLabel4.setBackground(new java.awt.Color(225, 238, 238));
         jLabel4.setText("Sex:");
 
         sexEnter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
