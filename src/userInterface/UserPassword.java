@@ -29,8 +29,8 @@ public class UserPassword extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        usernameEnter = new javax.swing.JTextField();
+        passwordEnter = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -39,14 +39,14 @@ public class UserPassword extends javax.swing.JPanel {
 
         jLabel2.setText("Password:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 120, -1));
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 120, -1));
+        add(usernameEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 120, -1));
+        add(passwordEnter, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 120, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField passwordEnter;
+    private javax.swing.JTextField usernameEnter;
     // End of variables declaration//GEN-END:variables
 }
