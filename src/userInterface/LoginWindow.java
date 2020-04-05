@@ -6,9 +6,13 @@
 package userInterface;
 
 import dementia_dss.Doctor;
+import dementia_dss.RSA;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.PrivateKey;
+import java.util.Map;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,6 +30,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
      */
     public LoginWindow() {
         this.setVisible(true);
+        this.doctor = doctor;
         initComponents();
 
         userPassword.setVisible(true);
@@ -42,10 +47,10 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     public void manageButtons() {
         if (newAccount.isVisible()) {
             NewAccountButton.setEnabled(true);
-            LoginButton.setEnabled(false);
+            SignInButton.setEnabled(false);
         } else {
             NewAccountButton.setEnabled(true);
-            LoginButton.setEnabled(true);
+            SignInButton.setEnabled(true);
         }
     }
 
@@ -59,18 +64,19 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     private void initComponents() {
 
         ButtonsPanel = new javax.swing.JPanel();
-        LoginButton = new javax.swing.JButton();
+        SignInButton = new javax.swing.JButton();
         NewAccountButton = new javax.swing.JButton();
+        SignUpButton = new javax.swing.JButton();
         PrincipalPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         ButtonsPanel.setBackground(new java.awt.Color(225, 238, 238));
 
-        LoginButton.setText("Login");
-        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+        SignInButton.setText("Sign in");
+        SignInButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginButtonActionPerformed(evt);
+                SignInButtonActionPerformed(evt);
             }
         });
 
@@ -81,15 +87,24 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             }
         });
 
+        SignUpButton.setText("Sign up");
+        SignUpButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignUpButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ButtonsPanelLayout = new javax.swing.GroupLayout(ButtonsPanel);
         ButtonsPanel.setLayout(ButtonsPanelLayout);
         ButtonsPanelLayout.setHorizontalGroup(
             ButtonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonsPanelLayout.createSequentialGroup()
-                .addContainerGap(371, Short.MAX_VALUE)
+                .addContainerGap(234, Short.MAX_VALUE)
                 .addComponent(NewAccountButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LoginButton)
+                .addComponent(SignUpButton)
+                .addGap(18, 18, 18)
+                .addComponent(SignInButton)
                 .addContainerGap())
         );
         ButtonsPanelLayout.setVerticalGroup(
@@ -97,7 +112,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonsPanelLayout.createSequentialGroup()
                 .addContainerGap(35, Short.MAX_VALUE)
                 .addGroup(ButtonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LoginButton)
+                    .addComponent(SignInButton)
+                    .addComponent(SignUpButton)
                     .addComponent(NewAccountButton))
                 .addGap(30, 30, 30))
         );
@@ -114,7 +130,40 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NewAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewAccountButtonActionPerformed
+        newAccount.SaveInfo();
+
+        userPassword.setVisible(false);
+        newAccount.setVisible(false);
+
+        JOptionPane.showMessageDialog(null, "The account was succesfully created.");
+
+        dispose();
+        new Principal_Window();
+    }//GEN-LAST:event_NewAccountButtonActionPerformed
+
+    private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
         userPassword.SaveInfo();
+
+        if (userPassword.checkPassword(doctor)) {
+
+            userPassword.setVisible(false);
+            newAccount.setVisible(false);
+
+            dispose();
+            new Principal_Window();
+        } else {
+            JOptionPane.showMessageDialog(null, "Wrong credentials. Please try again.");
+        }
+    }//GEN-LAST:event_SignInButtonActionPerformed
+
+    private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
+        userPassword.SaveInfo();
+
+        System.out.println("User: " + doctor.getUsername());
+        System.out.println("Password: " + doctor.getPassword());
+        Map<String, Object> keys = RSA.createKeys();
+        PrivateKey privateKey = (PrivateKey) keys.get("private");
+        System.out.println("Password decrypted: " + RSA.decryptPassword(doctor.getPassword(), privateKey));
 
         userPassword.setVisible(false);
         newAccount.setVisible(true);
@@ -123,19 +172,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         PrincipalPanel.repaint();
         PrincipalPanel.add(newAccount, BorderLayout.CENTER);
         pack();
-    }//GEN-LAST:event_NewAccountButtonActionPerformed
-
-    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
-        //Si contraseña ok:
-        userPassword.setVisible(false);
-        newAccount.setVisible(false);
-
-        dispose();
-        new Principal_Window();
-
-        //Si contraseña mal:
-        // JOptionPane.showMessageDialog(null, "Incorrect credentials, please try again. ");
-    }//GEN-LAST:event_LoginButtonActionPerformed
+    }//GEN-LAST:event_SignUpButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,9 +211,10 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ButtonsPanel;
-    private javax.swing.JButton LoginButton;
     private javax.swing.JButton NewAccountButton;
     private javax.swing.JPanel PrincipalPanel;
+    private javax.swing.JButton SignInButton;
+    private javax.swing.JButton SignUpButton;
     // End of variables declaration//GEN-END:variables
 
     @Override

@@ -6,6 +6,10 @@
 package userInterface;
 
 import dementia_dss.Doctor;
+import dementia_dss.RSA;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.util.Map;
 
 /**
  *
@@ -39,9 +43,40 @@ public class UserPassword extends javax.swing.JPanel {
         }
     }
 
-    public void SaveInfo() { // REVISAR QUE ESTE BIEN
+    public void SaveInfo() {
         if (usernameEnter.getText() != null) {
-            doctor.setName(usernameEnter.getText());
+            doctor.setUsername(usernameEnter.getText());
+            System.out.println("El username is: " + doctor.getUsername());
+        }
+        if (passwordEnter.getText() != null) {
+            Map<String, Object> keys = RSA.createKeys();
+            PublicKey publicKey = (PublicKey) keys.get("public");
+
+            String password = passwordEnter.getText();
+            System.out.println("El password es: " + password);
+            String encryptedPassword = RSA.encryptPassword(password, publicKey);
+            System.out.println("Ese password encriptado es: " + encryptedPassword);
+
+            doctor.setPassword(encryptedPassword);
+            System.out.println("Ese password guardado en doctor es: " + doctor.getPassword());
+        }
+    }
+
+    public Boolean checkPassword(Doctor doctor) {
+        Map<String, Object> keys = RSA.createKeys();
+        PrivateKey privateKey = (PrivateKey) keys.get("private");
+        PublicKey publicKey = (PublicKey) keys.get("public");
+
+        String validPassword = ""; //= Vete a la base de datos, busca el user, coge la contraseña
+        validPassword = RSA.decryptPassword(validPassword, privateKey);
+
+        String password = doctor.getPassword();
+        password = RSA.decryptPassword(password, privateKey);
+
+        if (password.equals(validPassword)) {
+            return true;
+        } else {
+            return false;
         }
     }
 
