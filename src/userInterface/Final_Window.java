@@ -37,7 +37,10 @@ public class Final_Window extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Buttons_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         saveResults_button.setText("Save Results");
+        Buttons_Panel.add(saveResults_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 111, -1));
 
         close_button.setText("Close");
         close_button.addActionListener(new java.awt.event.ActionListener() {
@@ -45,29 +48,9 @@ public class Final_Window extends javax.swing.JFrame {
                 close_buttonActionPerformed(evt);
             }
         });
+        Buttons_Panel.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
 
-        javax.swing.GroupLayout Buttons_PanelLayout = new javax.swing.GroupLayout(Buttons_Panel);
-        Buttons_Panel.setLayout(Buttons_PanelLayout);
-        Buttons_PanelLayout.setHorizontalGroup(
-            Buttons_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Buttons_PanelLayout.createSequentialGroup()
-                .addGap(295, 295, 295)
-                .addComponent(close_button)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(saveResults_button, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(143, Short.MAX_VALUE))
-        );
-        Buttons_PanelLayout.setVerticalGroup(
-            Buttons_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Buttons_PanelLayout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
-                .addGroup(Buttons_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(close_button)
-                    .addComponent(saveResults_button))
-                .addGap(45, 45, 45))
-        );
-
-        message.setText("jLabel1");
+        message.setText("Do you wish to save the results?");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userInterface/dmentiapp-lockIcon1.png"))); // NOI18N
 
@@ -75,12 +58,12 @@ public class Final_Window extends javax.swing.JFrame {
         Main_Panel.setLayout(Main_PanelLayout);
         Main_PanelLayout.setHorizontalGroup(
             Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Buttons_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Buttons_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
             .addGroup(Main_PanelLayout.createSequentialGroup()
                 .addGap(180, 180, 180)
                 .addGroup(Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Main_PanelLayout.setVerticalGroup(
@@ -90,8 +73,8 @@ public class Final_Window extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(30, 30, 30)
                 .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 422, Short.MAX_VALUE)
-                .addComponent(Buttons_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addComponent(Buttons_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(Main_Panel, java.awt.BorderLayout.CENTER);
