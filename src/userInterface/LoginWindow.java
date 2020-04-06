@@ -22,15 +22,14 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
     Doctor doctor = new Doctor();
 
-    UserPassword userPassword = new UserPassword();
-    NewAccount newAccount = new NewAccount();
+    UserPassword userPassword = new UserPassword(doctor);
+    NewAccount newAccount = new NewAccount(doctor);
 
     /**
      * Creates new form LoginWindow
      */
     public LoginWindow() {
         this.setVisible(true);
-        this.doctor = doctor;
         initComponents();
 
         userPassword.setVisible(true);
