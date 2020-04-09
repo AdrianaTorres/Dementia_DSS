@@ -626,4 +626,5 @@ public class Patient {
     public Boolean getVascularP3() {
         return this.vascularP3;
     }
+
 }

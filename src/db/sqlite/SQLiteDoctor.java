@@ -5,6 +5,7 @@
  */
 package db.sqlite;
 
+import db.interfaces.DoctorManager;
 import dementia_dss.Doctor;
 import java.sql.Connection;
 
@@ -12,10 +13,26 @@ import java.sql.Connection;
  *
  * @author Lucia
  */
-public class SQLiteDoctor extends Doctor {
+public class SQLiteDoctor implements DoctorManager {
+
     private Connection connection;
-    
-    public SQLiteDoctor (Connection c) {
+
+    public SQLiteDoctor(Connection c) {
         this.connection = c;
+    }
+
+    @Override
+    public Boolean doctorExists(Doctor doctor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getPassword(Doctor doctor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void newDoctor(Doctor doctor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

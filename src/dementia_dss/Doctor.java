@@ -74,5 +74,4 @@ public class Doctor {
     public String getPassword() {
         return this.password;
     }
-
 }

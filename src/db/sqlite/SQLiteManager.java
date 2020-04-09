@@ -6,8 +6,8 @@
 package db.sqlite;
 
 import db.interfaces.DBManager;
-import dementia_dss.Doctor;
-import dementia_dss.Patient;
+import db.interfaces.DoctorManager;
+import db.interfaces.PatientManager;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -20,8 +20,8 @@ import java.sql.Statement;
 public class SQLiteManager implements DBManager {
 
     private Connection connection;
-    private Doctor doctor;
-    private Patient patient;
+    private DoctorManager doctor;
+    private PatientManager patient;
 
     public SQLiteManager() {
         super();
@@ -52,22 +52,30 @@ public class SQLiteManager implements DBManager {
         }
     }
 
+    public PatientManager getPatientManager() {
+        return patient;
+    }
+
+    public DoctorManager getDoctorManager() {
+        return doctor;
+    }
+
     // AQUI DEBERIAN CREARSE LAS TABLAS
     @Override
     public void createTables() {
-		Statement st = null;
-		String in = null;
+        Statement st = null;
+        String in = null;
 
-		try {
-			//st = con.getConnect().createStatement();
+        try {
+            //st = con.getConnect().createStatement();
 
-			in = "CREATE TABLE ADDRESS " + "(ID integer PRIMARY KEY AUTOINCREMENT NOT NULL," + "CITY varchar(50),"
-					+ "STREET varchar(50)," + "CP bigint," + "HOUSENUMBER bigint)";
+            in = "CREATE TABLE ADDRESS " + "(ID integer PRIMARY KEY AUTOINCREMENT NOT NULL," + "CITY varchar(50),"
+                    + "STREET varchar(50)," + "CP bigint," + "HOUSENUMBER bigint)";
 
-			st.execute(in);
-			st.close();
-		} catch (Exception ex) {
-			System.out.println(ex.getMessage() + "Address");
-		}
+            st.execute(in);
+            st.close();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage() + "Address");
+        }
     }
 }
