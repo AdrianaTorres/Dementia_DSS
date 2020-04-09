@@ -3,18 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package db.interfaces;
+package db.sqlite;
+
+import dementia_dss.Doctor;
 
 /**
  *
- * @author adria
+ * @author Lucia
  */
-public interface DBManager {
-
-    public void connect();
-
-    public void disconnect();
-
-    public void createTables();
-
+public class SQLiteDoctor implements Doctor {
+    
 }

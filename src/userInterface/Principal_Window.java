@@ -398,7 +398,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Submit_ButtonActionPerformed
 
     private void Back_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Back_ButtonKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_B) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             backButtonActions();
             pack();
             manageButtons();
@@ -406,7 +406,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Back_ButtonKeyPressed
 
     private void Next_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Next_ButtonKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_N) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             nextButtonActions();
             pack();
             manageButtons();
@@ -414,7 +414,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Next_ButtonKeyPressed
 
     private void Submit_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Submit_ButtonKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_S) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             submitButtonActions();
         }
     }//GEN-LAST:event_Submit_ButtonKeyPressed

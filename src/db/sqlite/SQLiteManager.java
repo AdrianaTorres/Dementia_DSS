@@ -6,6 +6,8 @@
 package db.sqlite;
 
 import db.interfaces.DBManager;
+import dementia_dss.Doctor;
+import dementia_dss.Patient;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -17,6 +19,8 @@ import java.sql.SQLException;
 public class SQLiteManager implements DBManager {
 
     private Connection connection;
+    private Doctor doctor;
+    private Patient patient;
 
     public SQLiteManager() {
         super();
@@ -28,6 +32,8 @@ public class SQLiteManager implements DBManager {
             Class.forName("org.sqlite.JDBC");
             this.connection = DriverManager.getConnection("jdbc:sqlite:./db/DBdementiaDSS.db");
             connection.createStatement().execute("PRAGMA foreign_keys = ON");
+            doctor = new SQLiteDoctor(connection);
+            patient = new SQLitePatient(connection);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,8 +52,8 @@ public class SQLiteManager implements DBManager {
     }
 
     // AQUI DEBERIAN CREARSE LAS TABLAS
-    /*
-    private static void cTAddress(Conector conn) {
+    @Override
+    private static void createTables(Conector conn) {
 		Conector con = conn;
 		Statement st = null;
 		String in = null;
@@ -64,7 +70,7 @@ public class SQLiteManager implements DBManager {
 			System.out.println(ex.getMessage() + "Address");
 		}
 	}
-     */
+    
     @Override
     public void createTables() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

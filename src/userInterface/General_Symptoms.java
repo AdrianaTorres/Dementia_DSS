@@ -247,6 +247,11 @@ public class General_Symptoms extends javax.swing.JPanel {
         Smell_check.setBackground(new java.awt.Color(225, 238, 238));
         Smell_check.setText("Loss of smell");
         Smell_check.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        Smell_check.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Smell_checkActionPerformed(evt);
+            }
+        });
 
         Incontinence_check.setBackground(new java.awt.Color(225, 238, 238));
         Incontinence_check.setText("Urinary or gastric incontinence");
@@ -380,6 +385,10 @@ public class General_Symptoms extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Smell_checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Smell_checkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Smell_checkActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox Behaviour_check;
