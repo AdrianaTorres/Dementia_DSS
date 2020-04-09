@@ -11,6 +11,7 @@ import dementia_dss.Patient;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -53,13 +54,12 @@ public class SQLiteManager implements DBManager {
 
     // AQUI DEBERIAN CREARSE LAS TABLAS
     @Override
-    private static void createTables(Conector conn) {
-		Conector con = conn;
+    public void createTables() {
 		Statement st = null;
 		String in = null;
 
 		try {
-			st = con.getConnect().createStatement();
+			//st = con.getConnect().createStatement();
 
 			in = "CREATE TABLE ADDRESS " + "(ID integer PRIMARY KEY AUTOINCREMENT NOT NULL," + "CITY varchar(50),"
 					+ "STREET varchar(50)," + "CP bigint," + "HOUSENUMBER bigint)";
@@ -69,10 +69,5 @@ public class SQLiteManager implements DBManager {
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage() + "Address");
 		}
-	}
-    
-    @Override
-    public void createTables() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

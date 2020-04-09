@@ -6,11 +6,16 @@
 package db.sqlite;
 
 import dementia_dss.Doctor;
+import java.sql.Connection;
 
 /**
  *
  * @author Lucia
  */
-public class SQLiteDoctor implements Doctor {
+public class SQLiteDoctor extends Doctor {
+    private Connection connection;
     
+    public SQLiteDoctor (Connection c) {
+        this.connection = c;
+    }
 }

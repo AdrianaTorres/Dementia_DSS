@@ -12,6 +12,10 @@ import java.sql.Connection;
  *
  * @author Lucia
  */
-public class SQLitePatient implements Patient {
+public class SQLitePatient extends Patient {
+    private Connection connection;
     
+    public SQLitePatient (Connection c) {
+        this.connection = c;
+    }
 }
