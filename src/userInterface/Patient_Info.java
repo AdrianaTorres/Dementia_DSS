@@ -60,6 +60,17 @@ public class Patient_Info extends javax.swing.JPanel {
         }
 
     }
+    
+    public boolean checkEmptyFields() {
+        boolean b;
+        if ((NameSurname_enter.getText().equals("")) || (Age_enter.getText().equals(""))) {
+            b = true;
+        } else {
+            b = false;
+        }
+        
+        return b;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -102,6 +113,8 @@ public class Patient_Info extends javax.swing.JPanel {
             }
         });
 
+        NameSurname_enter.setToolTipText("");
+
         Age_enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Age_enterActionPerformed(evt);
@@ -135,9 +148,7 @@ public class Patient_Info extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(21, 21, 21))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(iconoMarca)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(iconoMarca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel9.setBackground(new java.awt.Color(0, 102, 102));
@@ -175,7 +186,7 @@ public class Patient_Info extends javax.swing.JPanel {
                         .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

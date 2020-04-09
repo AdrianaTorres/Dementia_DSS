@@ -73,18 +73,21 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     public void backButtonActions() {
         if (patientInfo.isVisible()) {
+            if((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
+                JOptionPane.showMessageDialog(null, "Please, enter a 'Name' and 'Age'\n"
+                                                  + "           before continuing.");
+            } else {
+                patientInfo.SaveInfo();
+                description.setVisible(true);
+                patientInfo.setVisible(false);
+                generalSymptoms.setVisible(false);
+                motorSymptoms.setVisible(false);
+                otherPathologies.setVisible(false);
 
-            patientInfo.SaveInfo();
-            description.setVisible(true);
-            patientInfo.setVisible(false);
-            generalSymptoms.setVisible(false);
-            motorSymptoms.setVisible(false);
-            otherPathologies.setVisible(false);
-
-            PrincipalPanel.removeAll();
-            PrincipalPanel.repaint();
-            PrincipalPanel.add(description, BorderLayout.CENTER);
-
+                PrincipalPanel.removeAll();
+                PrincipalPanel.repaint();
+                PrincipalPanel.add(description, BorderLayout.CENTER);
+            }
         } else if (generalSymptoms.isVisible()) {
             generalSymptoms.SaveInfo();
             description.setVisible(false);
@@ -162,17 +165,21 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
 
         } else if (patientInfo.isVisible()) {
-            patientInfo.SaveInfo();
-            description.setVisible(false);
-            patientInfo.setVisible(false);
-            generalSymptoms.setVisible(true);
-            motorSymptoms.setVisible(false);
-            otherPathologies.setVisible(false);
+            if((Next_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
+                JOptionPane.showMessageDialog(null, "Please, enter a 'Name' and 'Age'\n"
+                                                  + "           before continuing.");
+            } else {
+                patientInfo.SaveInfo();
+                description.setVisible(false);
+                patientInfo.setVisible(false);
+                generalSymptoms.setVisible(true);
+                motorSymptoms.setVisible(false);
+                otherPathologies.setVisible(false);
 
-            PrincipalPanel.removeAll();
-            PrincipalPanel.repaint();
-            PrincipalPanel.add(generalSymptoms, BorderLayout.CENTER);
-
+                PrincipalPanel.removeAll();
+                PrincipalPanel.repaint();
+                PrincipalPanel.add(generalSymptoms, BorderLayout.CENTER);
+            }          
         } else if (generalSymptoms.isVisible()) {
             generalSymptoms.SaveInfo();
             description.setVisible(false);
@@ -184,7 +191,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             PrincipalPanel.removeAll();
             PrincipalPanel.repaint();
             PrincipalPanel.add(motorSymptoms, BorderLayout.CENTER);
-
+            
         } else if (motorSymptoms.isVisible()) {
             motorSymptoms.SaveInfo();
             description.setVisible(false);
@@ -339,6 +346,11 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         Back_Button.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Back_Button.setText("Back");
         Back_Button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Back_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_ButtonActionPerformed(evt);
+            }
+        });
         Back_Button.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Back_ButtonKeyPressed(evt);
@@ -406,6 +418,12 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             submitButtonActions();
         }
     }//GEN-LAST:event_Submit_ButtonKeyPressed
+
+    private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed
+        backButtonActions();
+        pack();
+        manageButtons();
+    }//GEN-LAST:event_Back_ButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -246,6 +246,7 @@ public class General_Symptoms extends javax.swing.JPanel {
 
         Smell_check.setBackground(new java.awt.Color(225, 238, 238));
         Smell_check.setText("Loss of smell");
+        Smell_check.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         Incontinence_check.setBackground(new java.awt.Color(225, 238, 238));
         Incontinence_check.setText("Urinary or gastric incontinence");
@@ -275,15 +276,17 @@ public class General_Symptoms extends javax.swing.JPanel {
                 .addGap(45, 45, 45)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(iconoMarca1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(iconoMarca1))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(iconoMarca1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(iconoMarca1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
@@ -306,8 +309,8 @@ public class General_Symptoms extends javax.swing.JPanel {
                             .addComponent(RightWords_check)
                             .addComponent(EducationalLevel_check)
                             .addComponent(EmtionalInst_check)
-                            .addComponent(FamilyHis_check)
-                            .addComponent(Behaviour_check))
+                            .addComponent(Behaviour_check)
+                            .addComponent(FamilyHis_check))
                         .addGap(51, 51, 51)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(FacialExp_check)
@@ -315,14 +318,14 @@ public class General_Symptoms extends javax.swing.JPanel {
                             .addComponent(SleepPatterns_check)
                             .addComponent(ForgetPersonalInfo_check)
                             .addComponent(PlanningDifficulty_check))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 541, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Smoking_check)
-                            .addComponent(Smell_check)
                             .addComponent(Incontinence_check)
+                            .addComponent(Smell_check)
                             .addComponent(Chemicals_check)
+                            .addComponent(Smoking_check)
                             .addComponent(DrugConsumption_check))
-                        .addGap(77, 77, 77))
+                        .addContainerGap(131, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -335,13 +338,13 @@ public class General_Symptoms extends javax.swing.JPanel {
                                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel2))
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -368,7 +371,7 @@ public class General_Symptoms extends javax.swing.JPanel {
                     .addComponent(SleepPatterns_check)
                     .addComponent(RightWords_check)
                     .addComponent(DrugConsumption_check))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 324, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 357, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

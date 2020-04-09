@@ -50,8 +50,8 @@
                           <Component id="RightWords_check" min="-2" max="-2" attributes="0"/>
                           <Component id="EducationalLevel_check" min="-2" max="-2" attributes="0"/>
                           <Component id="EmtionalInst_check" min="-2" max="-2" attributes="0"/>
-                          <Component id="FamilyHis_check" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="Behaviour_check" min="-2" max="-2" attributes="0"/>
+                          <Component id="FamilyHis_check" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -61,15 +61,15 @@
                           <Component id="ForgetPersonalInfo_check" min="-2" max="-2" attributes="0"/>
                           <Component id="PlanningDifficulty_check" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="541" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Smoking_check" min="-2" max="-2" attributes="0"/>
-                          <Component id="Smell_check" min="-2" max="-2" attributes="0"/>
                           <Component id="Incontinence_check" min="-2" max="-2" attributes="0"/>
+                          <Component id="Smell_check" min="-2" max="-2" attributes="0"/>
                           <Component id="Chemicals_check" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="Smoking_check" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="DrugConsumption_check" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                      <EmptySpace pref="131" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -88,14 +88,14 @@
                   </Group>
               </Group>
           </Group>
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="791" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="97" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -127,7 +127,7 @@
                   <Component id="RightWords_check" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="DrugConsumption_check" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="324" max="32767" attributes="0"/>
+              <EmptySpace pref="357" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
@@ -234,6 +234,7 @@
           <Color blue="ee" green="ee" red="e1" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Loss of smell"/>
+        <Property name="horizontalTextPosition" type="int" value="4"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="Incontinence_check">
@@ -282,17 +283,20 @@
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="iconoMarca1" min="-2" pref="320" max="-2" attributes="0"/>
+                  <Component id="iconoMarca1" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="iconoMarca1" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="iconoMarca1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
