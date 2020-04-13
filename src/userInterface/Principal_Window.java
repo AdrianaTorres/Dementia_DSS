@@ -11,7 +11,11 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -70,12 +74,42 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             Submit_Button.setEnabled(true);
         }
     }
+    
+    public void generateMessageDialog() {
+        JFrame messageDialog = new JFrame();
+        JButton button = new JButton();
+        JLabel message = new JLabel();        
+        
+        messageDialog.setTitle("Warning!");
+
+        message.setText("Please, enter a 'Name' and 'Age' before continuing.");
+        message.setSize(250, 300);
+        messageDialog.add(message, BorderLayout.CENTER);
+        //messageDialog.add(message);
+        
+        button.setText("OK");
+        button.setLocation(10, 10);
+        messageDialog.add(button, BorderLayout.SOUTH);
+        //messageDialog.add(button);
+        
+        //messageDialog.setBounds(300, 300, 150, 100);
+        //messageDialog.setSize(20, 15);
+        messageDialog.setLocation(300, 400);
+        messageDialog.pack();
+        messageDialog.setVisible(true);
+
+        button.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                messageDialog.dispose();
+            }
+        });
+    }
 
     public void backButtonActions() {
         if (patientInfo.isVisible()) {
             if((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
-                JOptionPane.showMessageDialog(null, "Please, enter a 'Name' and 'Age'\n"
-                                                  + "           before continuing.");
+                generateMessageDialog();
             } else {
                 patientInfo.SaveInfo();
                 description.setVisible(true);
