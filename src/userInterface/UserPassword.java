@@ -105,7 +105,6 @@ public class UserPassword extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userInterface/dmentiapp_logo1.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 5, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
