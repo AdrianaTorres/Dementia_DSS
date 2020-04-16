@@ -25,7 +25,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     /**
      * Creates new form LoginWindow
      */
-    public LoginWindow() {
+    public LoginWindow(/*DoctorManager doctorManager, PatientManager patientManager*/) {
         this.setVisible(true);
         initComponents();
 

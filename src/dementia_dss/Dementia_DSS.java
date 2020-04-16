@@ -34,7 +34,7 @@ public class Dementia_DSS {
         doctorManager = dbManager.getDoctorManager();
         patientManager = dbManager.getPatientManager();
         dbManager.createTables();
-        new LoginWindow();
+        new LoginWindow(doctorManager, patientManager);
     }
 
 }

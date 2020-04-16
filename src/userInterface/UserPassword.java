@@ -5,7 +5,6 @@
  */
 package userInterface;
 
-import db.sqlite.SQLiteDoctor;
 import dementia_dss.Doctor;
 import dementia_dss.RSA;
 import java.security.PrivateKey;
@@ -19,7 +18,6 @@ import java.util.Map;
 public class UserPassword extends javax.swing.JPanel {
 
     Doctor doctor = new Doctor();
-    SQLiteDoctor SQLDoctor = new SQLiteDoctor(connection);
     Map<String, Object> keys = RSA.createKeys();
     PublicKey publicKey = (PublicKey) keys.get("public");
     PrivateKey privateKey = (PrivateKey) keys.get("private");
