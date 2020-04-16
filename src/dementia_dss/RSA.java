@@ -60,12 +60,15 @@ public class RSA {
     public static String decryptPassword(String password, PrivateKey privateKey) {
         try {
             Cipher cipher = Cipher.getInstance("RSA");
+            System.out.println("He hecho el cipher");
             cipher.init(Cipher.DECRYPT_MODE, privateKey);
+            System.out.println("He hecho el cipher init");
             byte[] decryptedPassword = cipher.doFinal(Base64.getDecoder().decode(password));
+            System.out.println("He hecho el byte[]");
             String decryptedPass = new String(decryptedPassword);
+            System.out.println("Fiiiin");
             return decryptedPass;
         } catch (Exception e) {
-            System.out.println("The message could not be decrypted.");
             String error = "The message could not be decrypted.";
             return error;
         }

@@ -99,8 +99,6 @@ public class NewAccount extends javax.swing.JPanel {
 
         sexEnter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userInterface/dmentiapp_doctor_icon.png"))); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(

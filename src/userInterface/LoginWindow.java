@@ -160,6 +160,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
         System.out.println("User: " + doctor.getUsername());
         System.out.println("Password: " + doctor.getPassword());
+
         Map<String, Object> keys = RSA.createKeys();
         PrivateKey privateKey = (PrivateKey) keys.get("private");
         System.out.println("Password decrypted: " + RSA.decryptPassword(doctor.getPassword(), privateKey));
