@@ -5,6 +5,10 @@
  */
 package dementia_dss;
 
+import db.interfaces.DBManager;
+import db.interfaces.DoctorManager;
+import db.interfaces.PatientManager;
+import db.sqlite.SQLiteManager;
 import userInterface.*;
 
 /**
@@ -17,12 +21,20 @@ import userInterface.*;
 // Eliminar el fact que crea el paciente con todo a nil.
 public class Dementia_DSS {
 
+    private static DBManager dbManager;
+    private static DoctorManager doctorManager;
+    private static PatientManager patientManager;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Principal_Window();
-        //new Login();
+        dbManager = new SQLiteManager();
+        dbManager.connect();
+        doctorManager = dbManager.getDoctorManager();
+        patientManager = dbManager.getPatientManager();
+        dbManager.createTables();
+        new LoginWindow();
     }
 
 }

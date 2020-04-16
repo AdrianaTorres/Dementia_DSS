@@ -17,4 +17,8 @@ public interface DBManager {
 
     public void createTables();
 
+    public DoctorManager getDoctorManager();
+
+    public PatientManager getPatientManager();
+
 }

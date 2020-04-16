@@ -6,12 +6,9 @@
 package userInterface;
 
 import dementia_dss.Doctor;
-import dementia_dss.RSA;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.security.PrivateKey;
-import java.util.Map;
 import javax.swing.JOptionPane;
 
 /**
@@ -158,13 +155,11 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
         userPassword.SaveInfo();
 
-        System.out.println("User: " + doctor.getUsername());
-        System.out.println("Password: " + doctor.getPassword());
-
-        Map<String, Object> keys = RSA.createKeys();
-        PrivateKey privateKey = (PrivateKey) keys.get("private");
-        System.out.println("Password decrypted: " + RSA.decryptPassword(doctor.getPassword(), privateKey));
-
+        //System.out.println("User: " + doctor.getUsername());
+        //System.out.println("Password: " + doctor.getPassword());
+        //Map<String, Object> keys = RSA.createKeys();
+        //PrivateKey privateKey = (PrivateKey) keys.get("private");
+        //System.out.println("Password decrypted: " + RSA.decryptPassword(doctor.getPassword(), privateKey));
         userPassword.setVisible(false);
         newAccount.setVisible(true);
 

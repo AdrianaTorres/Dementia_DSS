@@ -5,6 +5,7 @@
  */
 package userInterface;
 
+import db.sqlite.SQLiteDoctor;
 import dementia_dss.Doctor;
 import dementia_dss.RSA;
 import java.security.PrivateKey;
@@ -18,6 +19,10 @@ import java.util.Map;
 public class UserPassword extends javax.swing.JPanel {
 
     Doctor doctor = new Doctor();
+    SQLiteDoctor SQLDoctor = new SQLiteDoctor(connection);
+    Map<String, Object> keys = RSA.createKeys();
+    PublicKey publicKey = (PublicKey) keys.get("public");
+    PrivateKey privateKey = (PrivateKey) keys.get("private");
 
     /**
      * Creates new form UserPassword
@@ -49,23 +54,17 @@ public class UserPassword extends javax.swing.JPanel {
             System.out.println("El username is: " + doctor.getUsername());
         }
         if (passwordEnter.getText() != null) {
-            Map<String, Object> keys = RSA.createKeys();
-            PublicKey publicKey = (PublicKey) keys.get("public");
 
             String password = passwordEnter.getText();
-            System.out.println("El password es: " + password);
             String encryptedPassword = RSA.encryptPassword(password, publicKey);
-            System.out.println("Ese password encriptado es: " + encryptedPassword);
-
             doctor.setPassword(encryptedPassword);
-            System.out.println("Ese password guardado en doctor es: " + doctor.getPassword());
+
         }
     }
 
     public Boolean checkPassword(Doctor doctor) {
-        Map<String, Object> keys = RSA.createKeys();
-        PrivateKey privateKey = (PrivateKey) keys.get("private");
-        PublicKey publicKey = (PublicKey) keys.get("public");
+        //doctor exists??
+        // si --> get pass
 
         String validPassword = ""; //= Vete a la base de datos, busca el user, coge la contraseña
         validPassword = RSA.decryptPassword(validPassword, privateKey);
