@@ -34,43 +34,42 @@ public class SQLiteDoctor implements DoctorManager {
         boolean doctorCreated = false;
         try {
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-         
+
             String query = "SELECT * FROM doctors WHERE doctor.id = ?;"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
-            st.setInt(1, doctor.id);
+            st.setInt(1, doctor.getId());
             ResultSet rs = st.executeQuery();
-          
-            while (rs.next()){
+
+            while (rs.next()) {
                 //if the doctor has not been created
-                if (!doctorCreated){
+                if (!doctorCreated) {
                     doctorCreated = false;
-                }
-                else{
+                } else {
                     doctorCreated = true;
                     break;
                 }
-            }   
+            }
         } catch (SQLException ex) {
             Logger.getLogger(SQLiteDoctor.class.getName()).log(Level.SEVERE, null, ex);
         }
-         return doctorCreated;
+        return doctorCreated;
     }
-    
+
     @Override
-    public Doctor getDoctor (int id){
+    public Doctor getDoctor(int id) {
         Doctor newDoc = null;
-        try {         
+        try {
             Patient newPat;
             List<Patient> patientsList;
-            patientsList = new ArrayList <>();
+            patientsList = new ArrayList<>();
             String query = "SELECT * FROM doctors AS d JOIN patients AS p ON d.id = patients.doctorId WHERE d.id = ?;"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
             st.setInt(1, id);
             ResultSet rs = st.executeQuery();
             boolean doctorCreated = false;
-            while (rs.next()){
+            while (rs.next()) {
                 //if the doctor has not been created
-                if (!doctorCreated){
+                if (!doctorCreated) {
                     //get the doctor information
                     int newDoctorId = rs.getInt(1);
                     String docName = rs.getString(2);
@@ -79,14 +78,14 @@ public class SQLiteDoctor implements DoctorManager {
                     String docSex = rs.getString(5);
                     String docUsername = rs.getString(6);
                     String docPassword = rs.getString(7);
-                    
+
                     //create new doctor:
-                    newDoc = new Doctor (newDoctorId, docName, docSurname, docAge, docSex,
+                    newDoc = new Doctor(newDoctorId, docName, docSurname, docAge, docSex,
                             docUsername, docPassword);
                 }
                 //get patient information:
                 int patientId = rs.getInt(8);
-                int patDocId =rs.getInt(9);
+                int patDocId = rs.getInt(9);
                 String patName = rs.getString(10);
                 int patAge = rs.getInt(11);
                 String patSex = rs.getString(12);
@@ -146,35 +145,32 @@ public class SQLiteDoctor implements DoctorManager {
                 Boolean patVascularD1 = rs.getBoolean(66);
                 Boolean patVascularD2 = rs.getBoolean(67);
                 Boolean patVascularD3 = rs.getBoolean(68);
-                
+
                 // Create new patient
                 newPat = new Patient(patientId, patDocId, patName, patAge, patSex,
-                        patFamilyHis, patLowEducation,patBehaviour, patEmotionalInstability, patRightWords,
+                        patFamilyHis, patLowEducation, patBehaviour, patEmotionalInstability, patRightWords,
                         patForgetPersonal, patFacialExp, patPlanningOrg, patForgetRecent, patSleepingPattern,
                         patLossSmell, patIncontinence, patExposure, patSmoking, patDrugConsumption,
-                        patLackCord, patStandWalk, patStiffness,patLossBalance,patWalkStraight, patTremor,
-                        patOrientationLow, patOrientationHigh, patBradykinesiaLow,patBradykinesiaMedium,
+                        patLackCord, patStandWalk, patStiffness, patLossBalance, patWalkStraight, patTremor,
+                        patOrientationLow, patOrientationHigh, patBradykinesiaLow, patBradykinesiaMedium,
                         patBradykinesiaHigh, patDownsSyndrome, patHyperglycemia, patHyperlipidemia,
-                        patInsulin,patHypertension, patHeartCerebro, patDiabetes, patObesity,patCholesterol,
-                        patArteriosclerosis,patDepression, patTremorUni,patTremorBi, patStiffnessLow,
-                        patStiffnessHigh, patHyperreflexia, patLossPhysicalAbilities,patNoDementia,
-                        patParkinson, patAlzheimer, patVascularD, patParkinson1,patParkinson2,
-                        patParkinson3,patAlzheimer1, patAlzheimer2, patAlzheimer3, patVascularD1,
+                        patInsulin, patHypertension, patHeartCerebro, patDiabetes, patObesity, patCholesterol,
+                        patArteriosclerosis, patDepression, patTremorUni, patTremorBi, patStiffnessLow,
+                        patStiffnessHigh, patHyperreflexia, patLossPhysicalAbilities, patNoDementia,
+                        patParkinson, patAlzheimer, patVascularD, patParkinson1, patParkinson2,
+                        patParkinson3, patAlzheimer1, patAlzheimer2, patAlzheimer3, patVascularD1,
                         patVascularD2, patVascularD3);
-                
+
                 patientsList.add(newPat);
-            } 
+            }
             newDoc.setPatientList(patientsList);
-              
+
         } catch (SQLException ex) {
             Logger.getLogger(SQLiteDoctor.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return newDoc; 
-   } 
-             
-    
-    
-    
+        return newDoc;
+    }
+
     @Override
     public String getPassword(Doctor doctor) { //Select
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -185,26 +181,25 @@ public class SQLiteDoctor implements DoctorManager {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         String query = "INSERT INTO doctors (name, surname, age, sex, username, password)"
                 + "VALUES (?,?,?,?,?,?);";
-        try ( 
-            PreparedStatement st = c.prepareStatement(query)) {
+        try (
+                PreparedStatement st = c.prepareStatement(query)) {
             st.setString(1, doctor.getName());
             st.setString(2, doctor.getSurname());
             st.setInt(3, doctor.getId());
             st.setInt(4, doctor.getAge());
-            if (doctor.getSex().equals("Male")){
+            if (doctor.getSex().equals("Male")) {
                 st.setString(5, "Male");
-            }
-            else
+            } else {
                 st.setString(5, "Female");
+            }
             st.setString(6, doctor.getUsername());
             st.setString(7, doctor.getPassword());
-            
+
             st.executeUpdate();
             st.close();
-            
-        }catch (Exception e){
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        } 
     }
-
+}
