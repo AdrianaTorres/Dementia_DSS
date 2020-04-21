@@ -28,6 +28,12 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     public LoginWindow(/*DoctorManager doctorManager, PatientManager patientManager*/) {
         this.setVisible(true);
         initComponents();
+        
+        // Here we are going to set size and location on screen of the windows.
+        //this.setBounds(250, 250, 200, 50); // Parameters are: x-axis, y-axis, width, height
+        this.setLocation(350, 150);
+        //this.setSize(500, 50);
+        this.setTitle("DmentiApp 21.04");
 
         userPassword.setVisible(true);
         newAccount.setVisible(false);
@@ -40,13 +46,15 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
     }
 
-    public void manageButtons() {
-        if (newAccount.isVisible()) {
-            NewAccountButton.setEnabled(true);
-            SignInButton.setEnabled(false);
-        } else {
+    private void manageButtons() {
+        if (userPassword.isVisible()) {
+            NewAccountButton.setEnabled(false);
+            SignInButton.setEnabled(true);
+            SignUpButton.setEnabled(true);
+        } else if (newAccount.isVisible()) {
             NewAccountButton.setEnabled(true);
             SignInButton.setEnabled(true);
+            SignUpButton.setEnabled(false);
         }
     }
 
@@ -66,6 +74,9 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         PrincipalPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(250, 250, 500, 50));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(null);
 
         ButtonsPanel.setBackground(new java.awt.Color(225, 238, 238));
 
@@ -117,8 +128,6 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         getContentPane().add(ButtonsPanel, java.awt.BorderLayout.PAGE_END);
 
         PrincipalPanel.setBackground(new java.awt.Color(225, 238, 238));
-        PrincipalPanel.setMaximumSize(new java.awt.Dimension(700, 777));
-        PrincipalPanel.setPreferredSize(new java.awt.Dimension(700, 777));
         PrincipalPanel.setLayout(new java.awt.BorderLayout());
         getContentPane().add(PrincipalPanel, java.awt.BorderLayout.CENTER);
 
@@ -130,7 +139,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
         userPassword.setVisible(false);
         newAccount.setVisible(false);
-
+        manageButtons();
+        
         JOptionPane.showMessageDialog(null, "The account was succesfully created.");
 
         dispose();
@@ -144,7 +154,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
             userPassword.setVisible(false);
             newAccount.setVisible(false);
-
+            manageButtons();
+            
             dispose();
             new Principal_Window();
         } else {

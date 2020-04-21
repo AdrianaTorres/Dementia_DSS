@@ -59,7 +59,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         manageButtons();
     }
 
-    public void manageButtons() {
+    private void manageButtons() {
         if (description.isVisible()) {
             Back_Button.setEnabled(false);
             Next_Button.setEnabled(true);
