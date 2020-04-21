@@ -15,7 +15,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  *
@@ -74,24 +73,24 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             Submit_Button.setEnabled(true);
         }
     }
-    
+
     public void generateMessageDialog() {
         JFrame messageDialog = new JFrame();
         JButton button = new JButton();
-        JLabel message = new JLabel();        
-        
+        JLabel message = new JLabel();
+
         messageDialog.setTitle("Warning!");
 
         message.setText("Please, enter a 'Name' and 'Age' before continuing.");
         message.setSize(250, 300);
         messageDialog.add(message, BorderLayout.CENTER);
         //messageDialog.add(message);
-        
+
         button.setText("OK");
         button.setLocation(10, 10);
         messageDialog.add(button, BorderLayout.SOUTH);
         //messageDialog.add(button);
-        
+
         //messageDialog.setBounds(300, 300, 150, 100);
         //messageDialog.setSize(20, 15);
         messageDialog.setLocation(300, 400);
@@ -108,7 +107,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     public void backButtonActions() {
         if (patientInfo.isVisible()) {
-            if((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
+            if ((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
                 generateMessageDialog();
             } else {
                 patientInfo.SaveInfo();
@@ -199,9 +198,9 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
 
         } else if (patientInfo.isVisible()) {
-            if((Next_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
+            if ((Next_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
                 JOptionPane.showMessageDialog(null, "Please, enter a 'Name' and 'Age'\n"
-                                                  + "           before continuing.");
+                        + "           before continuing.");
             } else {
                 patientInfo.SaveInfo();
                 description.setVisible(false);
@@ -213,7 +212,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 PrincipalPanel.removeAll();
                 PrincipalPanel.repaint();
                 PrincipalPanel.add(generalSymptoms, BorderLayout.CENTER);
-            }          
+            }
         } else if (generalSymptoms.isVisible()) {
             generalSymptoms.SaveInfo();
             description.setVisible(false);
@@ -225,7 +224,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             PrincipalPanel.removeAll();
             PrincipalPanel.repaint();
             PrincipalPanel.add(motorSymptoms, BorderLayout.CENTER);
-            
+
         } else if (motorSymptoms.isVisible()) {
             motorSymptoms.SaveInfo();
             description.setVisible(false);
@@ -253,21 +252,22 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ALZHEIMER DISEASE.");
                 otherPathologies.setVisible(false);
                 alzheimerPhaseWind = true;
-                /*alzheimerPhase.setVisible(true);
+                alzheimerPhase.setVisible(true);
 
                 PrincipalPanel.removeAll();
                 PrincipalPanel.repaint();
-                PrincipalPanel.add(alzheimerPhase, BorderLayout.CENTER);*/
+                PrincipalPanel.add(alzheimerPhase, BorderLayout.CENTER);
 
             } else if (patient.getParkinson()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON DISEASE.");
                 otherPathologies.setVisible(false);
                 parkinsonPhaseWind = true;
+                parkinsonPhase.setVisible(true);
 
-                /* PrincipalPanel.removeAll();
+                PrincipalPanel.removeAll();
                 PrincipalPanel.repaint();
                 PrincipalPanel.add(parkinsonPhase, BorderLayout.CENTER);
-                 */
+
             } else if (patient.getVascularD()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has VASCULAR DEMENTIA.");
 
@@ -281,53 +281,54 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             }
             pack();
             manageButtons();
-        }
-        if (alzheimerPhaseWind) {
-            alzheimerPhase.setVisible(true);
+        } else {
+            if (alzheimerPhase.isVisible()) {
+                /* alzheimerPhase.setVisible(true);
 
-            PrincipalPanel.removeAll();
-            PrincipalPanel.repaint();
-            PrincipalPanel.add(alzheimerPhase, BorderLayout.CENTER);
-            pack();
+                PrincipalPanel.removeAll();
+                PrincipalPanel.repaint();
+                PrincipalPanel.add(alzheimerPhase, BorderLayout.CENTER);
+                pack();
+                 */
+                alzheimerPhase.SaveInfo();
 
-            alzheimerPhase.SaveInfo();
+                CLIPS_connection clipsConnect = new CLIPS_connection();
+                clipsConnect.createPatientAssertion(patient);
 
-            CLIPS_connection clipsConnect = new CLIPS_connection();
-            clipsConnect.createPatientAssertion(patient);
+                if (patient.getAlzheimerP1()) {
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 1.");
+                } else if (patient.getAlzheimerP2()) {
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 2.");
+                } else if (patient.getAlzheimerP3()) {
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 3.");
+                }
 
-            if (patient.getAlzheimerP1()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 1.");
-            } else if (patient.getAlzheimerP2()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 2.");
-            } else if (patient.getAlzheimerP3()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 3.");
+                manageButtons();
             }
 
-            manageButtons();
-        }
+            if (parkinsonPhase.isVisible()) {
+                /*parkinsonPhase.setVisible(true);
 
-        if (parkinsonPhaseWind) {
-            parkinsonPhase.setVisible(true);
+                PrincipalPanel.removeAll();
+                PrincipalPanel.repaint();
+                PrincipalPanel.add(parkinsonPhase, BorderLayout.CENTER);
+                pack();
+                 */
+                parkinsonPhase.SaveInfo();
 
-            PrincipalPanel.removeAll();
-            PrincipalPanel.repaint();
-            PrincipalPanel.add(parkinsonPhase, BorderLayout.CENTER);
-            pack();
+                CLIPS_connection clipsConnect = new CLIPS_connection();
+                clipsConnect.createPatientAssertion(patient);
 
-            parkinsonPhase.SaveInfo();
+                if (patient.getParkinsonP1()) {
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 1-2.");
+                } else if (patient.getParkinsonP2()) {
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 3-4.");
+                } else if (patient.getParkinsonP3()) {
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASE 5.");
+                }
 
-            CLIPS_connection clipsConnect = new CLIPS_connection();
-            clipsConnect.createPatientAssertion(patient);
-
-            if (patient.getParkinsonP1()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 1-2.");
-            } else if (patient.getParkinsonP2()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 3-4.");
-            } else if (patient.getParkinsonP3()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASE 5.");
+                manageButtons();
             }
-
-            manageButtons();
         }
     }
 

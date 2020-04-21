@@ -7,6 +7,8 @@ package userInterface;
 
 import dementia_dss.Doctor;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -26,12 +28,11 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
      * Creates new form LoginWindow
      */
     public LoginWindow(/*DoctorManager doctorManager, PatientManager patientManager*/) {
-        this.setVisible(true);
+
         initComponents();
-        
+
         // Here we are going to set size and location on screen of the windows.
         //this.setBounds(250, 250, 200, 50); // Parameters are: x-axis, y-axis, width, height
-        this.setLocation(350, 150);
         //this.setSize(500, 50);
         this.setTitle("DmentiApp 21.04");
 
@@ -40,6 +41,10 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         ButtonsPanel.setVisible(true);
 
         PrincipalPanel.add(userPassword, BorderLayout.CENTER);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
         pack();
 
         manageButtons();
@@ -53,7 +58,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             SignUpButton.setEnabled(true);
         } else if (newAccount.isVisible()) {
             NewAccountButton.setEnabled(true);
-            SignInButton.setEnabled(true);
+            SignInButton.setEnabled(false);
             SignUpButton.setEnabled(false);
         }
     }
@@ -76,7 +81,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(250, 250, 500, 50));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(null);
+        setResizable(false);
 
         ButtonsPanel.setBackground(new java.awt.Color(225, 238, 238));
 
@@ -140,7 +145,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         userPassword.setVisible(false);
         newAccount.setVisible(false);
         manageButtons();
-        
+
         JOptionPane.showMessageDialog(null, "The account was succesfully created.");
 
         dispose();
@@ -148,19 +153,20 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_NewAccountButtonActionPerformed
 
     private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
-        userPassword.SaveInfo();
+        /*  userPassword.SaveInfo();
 
         if (userPassword.checkPassword(doctor)) {
 
             userPassword.setVisible(false);
             newAccount.setVisible(false);
             manageButtons();
-            
+
             dispose();
             new Principal_Window();
         } else {
             JOptionPane.showMessageDialog(null, "Wrong credentials. Please try again.");
-        }
+        }*/
+        new Principal_Window();
     }//GEN-LAST:event_SignInButtonActionPerformed
 
     private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
