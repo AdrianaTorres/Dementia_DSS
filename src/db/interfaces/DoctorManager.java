@@ -13,9 +13,9 @@ import dementia_dss.Doctor;
  */
 public interface DoctorManager {
 
-    public Boolean doctorExists(Doctor doctor); //Checks if the doctor already exists
-    
-    public Doctor getDoctor (int id);
+    public Boolean doctorExists(int id); //Checks if the doctor already exists
+
+    public Doctor getDoctor(int id);
 
     public String getPassword(Doctor doctor); //Gets the doctor's password
 

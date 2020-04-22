@@ -5,6 +5,8 @@
  */
 package userInterface;
 
+import db.interfaces.DBManager;
+import db.sqlite.SQLiteManager;
 import dementia_dss.Doctor;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -19,21 +21,19 @@ import javax.swing.JOptionPane;
  */
 public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
+    DBManager dbManager = new SQLiteManager();
     Doctor doctor = new Doctor();
 
-    UserPassword userPassword = new UserPassword(doctor);
+    UserPassword userPassword = new UserPassword(dbManager, doctor);
     NewAccount newAccount = new NewAccount(doctor);
 
     /**
      * Creates new form LoginWindow
      */
-    public LoginWindow(/*DoctorManager doctorManager, PatientManager patientManager*/) {
-
+    public LoginWindow(DBManager dbManager) {
+        this.dbManager = dbManager;
         initComponents();
 
-        // Here we are going to set size and location on screen of the windows.
-        //this.setBounds(250, 250, 200, 50); // Parameters are: x-axis, y-axis, width, height
-        //this.setSize(500, 50);
         this.setTitle("DmentiApp 21.04");
 
         userPassword.setVisible(true);
@@ -41,14 +41,15 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         ButtonsPanel.setVisible(true);
 
         PrincipalPanel.add(userPassword, BorderLayout.CENTER);
+
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
         this.setLocationRelativeTo(null);
+
         this.setVisible(true);
         pack();
 
         manageButtons();
-
     }
 
     private void manageButtons() {
@@ -149,34 +150,30 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, "The account was succesfully created.");
 
         dispose();
-        new Principal_Window();
+        new Principal_Window(dbManager);
     }//GEN-LAST:event_NewAccountButtonActionPerformed
 
     private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
-        /*  userPassword.SaveInfo();
+        userPassword.SaveInfo();
 
-        if (userPassword.checkPassword(doctor)) {
+        if (userPassword.checkPassword()) {
 
             userPassword.setVisible(false);
             newAccount.setVisible(false);
             manageButtons();
 
             dispose();
-            new Principal_Window();
+            new Principal_Window(dbManager);
         } else {
             JOptionPane.showMessageDialog(null, "Wrong credentials. Please try again.");
-        }*/
-        new Principal_Window();
+        }
     }//GEN-LAST:event_SignInButtonActionPerformed
 
     private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
         userPassword.SaveInfo();
 
-        //System.out.println("User: " + doctor.getUsername());
-        //System.out.println("Password: " + doctor.getPassword());
-        //Map<String, Object> keys = RSA.createKeys();
-        //PrivateKey privateKey = (PrivateKey) keys.get("private");
-        //System.out.println("Password decrypted: " + RSA.decryptPassword(doctor.getPassword(), privateKey));
+        // System.out.println("User: " + doctor.getUsername());
+        // System.out.println("Password: " + doctor.getPassword());
         userPassword.setVisible(false);
         newAccount.setVisible(true);
 
@@ -184,42 +181,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         PrincipalPanel.repaint();
         PrincipalPanel.add(newAccount, BorderLayout.CENTER);
         pack();
+        manageButtons();
     }//GEN-LAST:event_SignUpButtonActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginWindow().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ButtonsPanel;

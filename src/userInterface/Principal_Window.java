@@ -5,6 +5,8 @@
  */
 package userInterface;
 
+import db.interfaces.DBManager;
+import db.sqlite.SQLiteManager;
 import dementia_dss.CLIPS_connection;
 import dementia_dss.Patient;
 import java.awt.BorderLayout;
@@ -22,16 +24,17 @@ import javax.swing.JOptionPane;
  */
 public class Principal_Window extends javax.swing.JFrame implements ActionListener {
 
+    DBManager dbManager = new SQLiteManager();
     public Patient patient = new Patient();
 
     //JPanels:
     Initial_Description description = new Initial_Description();
-    Patient_Info patientInfo = new Patient_Info(patient);
-    General_Symptoms generalSymptoms = new General_Symptoms(patient);
-    Motor_Symptoms motorSymptoms = new Motor_Symptoms(patient);
-    Other_Pathologies otherPathologies = new Other_Pathologies(patient);
-    Parkinson_Phase parkinsonPhase = new Parkinson_Phase(patient);
-    Alzheimer_Phase alzheimerPhase = new Alzheimer_Phase(patient);
+    Patient_Info patientInfo = new Patient_Info(dbManager, patient);
+    General_Symptoms generalSymptoms = new General_Symptoms(dbManager, patient);
+    Motor_Symptoms motorSymptoms = new Motor_Symptoms(dbManager, patient);
+    Other_Pathologies otherPathologies = new Other_Pathologies(dbManager, patient);
+    Parkinson_Phase parkinsonPhase = new Parkinson_Phase(dbManager, patient);
+    Alzheimer_Phase alzheimerPhase = new Alzheimer_Phase(dbManager, patient);
 
     Boolean parkinsonPhaseWind = false;
     Boolean alzheimerPhaseWind = false;
@@ -39,7 +42,8 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     /**
      * Creates new form Principal_Window
      */
-    public Principal_Window() {
+    public Principal_Window(DBManager dbManager) {
+        this.dbManager = dbManager;
         this.setVisible(true);
         initComponents();
 

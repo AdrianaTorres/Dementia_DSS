@@ -5,6 +5,8 @@
  */
 package userInterface;
 
+import db.interfaces.DBManager;
+import db.sqlite.SQLiteManager;
 import dementia_dss.Patient;
 
 /**
@@ -13,6 +15,7 @@ import dementia_dss.Patient;
  */
 public class Alzheimer_Phase extends javax.swing.JPanel {
 
+    DBManager dbManager = new SQLiteManager();
     Patient patient = new Patient();
 
     /**
@@ -22,7 +25,8 @@ public class Alzheimer_Phase extends javax.swing.JPanel {
         initComponents();
     }
 
-    public Alzheimer_Phase(Patient patient) {
+    public Alzheimer_Phase(DBManager dbManager, Patient patient) {
+        this.dbManager = dbManager;
         this.patient = patient;
         initComponents();
         String stiffness = (String) Stiffness_box.getSelectedItem();

@@ -5,8 +5,9 @@
  */
 package userInterface;
 
+import db.interfaces.DBManager;
+import db.sqlite.SQLiteManager;
 import dementia_dss.Patient;
-import javax.swing.ImageIcon;
 
 /**
  *
@@ -14,16 +15,18 @@ import javax.swing.ImageIcon;
  */
 public class Patient_Info extends javax.swing.JPanel {
 
+    DBManager dbManager = new SQLiteManager();
     Patient patient = new Patient();
 
     /**
      * Creates new form Patient_Info
      */
     public Patient_Info() {
-        initComponents();        
+        initComponents();
     }
 
-    public Patient_Info(Patient patient) {
+    public Patient_Info(DBManager dbManager, Patient patient) {
+        this.dbManager = dbManager;
         this.patient = patient;
         initComponents();
         setVisible(true);
@@ -60,7 +63,7 @@ public class Patient_Info extends javax.swing.JPanel {
         }
 
     }
-    
+
     public boolean checkEmptyFields() {
         boolean b;
         if ((NameSurname_enter.getText().equals("")) || (Age_enter.getText().equals(""))) {
@@ -68,7 +71,7 @@ public class Patient_Info extends javax.swing.JPanel {
         } else {
             b = false;
         }
-        
+
         return b;
     }
 

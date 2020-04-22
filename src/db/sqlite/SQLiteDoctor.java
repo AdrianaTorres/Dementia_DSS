@@ -30,14 +30,14 @@ public class SQLiteDoctor implements DoctorManager {
     }
 
     @Override
-    public Boolean doctorExists(Doctor doctor) {
+    public Boolean doctorExists(int id) {
         boolean doctorCreated = false;
         try {
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
             String query = "SELECT * FROM doctors WHERE doctor.id = ?;"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
-            st.setInt(1, doctor.getId());
+            st.setInt(1, id);
             ResultSet rs = st.executeQuery();
 
             while (rs.next()) {

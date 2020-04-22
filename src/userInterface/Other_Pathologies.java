@@ -5,6 +5,8 @@
  */
 package userInterface;
 
+import db.interfaces.DBManager;
+import db.sqlite.SQLiteManager;
 import dementia_dss.Patient;
 //import icons.*;
 
@@ -14,6 +16,7 @@ import dementia_dss.Patient;
  */
 public class Other_Pathologies extends javax.swing.JPanel {
 
+    DBManager dbManager = new SQLiteManager();
     Patient patient = new Patient();
 
     /**
@@ -23,7 +26,8 @@ public class Other_Pathologies extends javax.swing.JPanel {
         initComponents();
     }
 
-    public Other_Pathologies(Patient patient) {
+    public Other_Pathologies(DBManager dbManager, Patient patient) {
+        this.dbManager = dbManager;
         this.patient = patient;
         initComponents();
         setVisible(true);

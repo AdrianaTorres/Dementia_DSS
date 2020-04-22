@@ -5,11 +5,14 @@
  */
 package userInterface;
 
+import db.interfaces.DBManager;
+import db.sqlite.SQLiteManager;
 import dementia_dss.Doctor;
 import dementia_dss.RSA;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +20,7 @@ import java.util.Map;
  */
 public class UserPassword extends javax.swing.JPanel {
 
+    DBManager dbManager = new SQLiteManager();
     Doctor doctor = new Doctor();
     Map<String, Object> keys = RSA.createKeys();
     PublicKey publicKey = (PublicKey) keys.get("public");
@@ -29,7 +33,8 @@ public class UserPassword extends javax.swing.JPanel {
         initComponents();
     }
 
-    public UserPassword(Doctor doctor) {
+    public UserPassword(DBManager dbManager, Doctor doctor) {
+        this.dbManager = dbManager;
         this.doctor = doctor;
         initComponents();
         setVisible(true);
@@ -54,27 +59,32 @@ public class UserPassword extends javax.swing.JPanel {
         if (passwordEnter.getText() != null) {
 
             String password = passwordEnter.getText();
+            System.out.println("Password received: " + password);
             String encryptedPassword = RSA.encryptPassword(password, publicKey);
             doctor.setPassword(encryptedPassword);
 
         }
     }
 
-    public Boolean checkPassword(Doctor doctor) {
-        //doctor exists??
-        // si --> get pass
+    public Boolean checkPassword(int id, String password) {
+        if (dbManager.getDoctorManager().doctorExists(id)) {
+            Doctor currentDoctor = dbManager.getDoctorManager().getDoctor(id);
 
-        String validPassword = ""; //= Vete a la base de datos, busca el user, coge la contraseña
-        validPassword = RSA.decryptPassword(validPassword, privateKey);
+            String validPassword = currentDoctor.getPassword();
+            validPassword = RSA.decryptPassword(validPassword, privateKey);
 
-        String password = doctor.getPassword();
-        password = RSA.decryptPassword(password, privateKey);
+            password = RSA.decryptPassword(password, privateKey);
 
-        if (password.equals(validPassword)) {
-            return true;
+            if (password.equals(validPassword)) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
+            JOptionPane.showMessageDialog(null, "The specified username has not an account yet. Please sign up. ");
             return false;
         }
+
     }
 
     /**
@@ -89,13 +99,12 @@ public class UserPassword extends javax.swing.JPanel {
         usernameLabel = new javax.swing.JLabel();
         passwordLabel = new javax.swing.JLabel();
         usernameEnter = new javax.swing.JTextField();
-        passwordEnter = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         AppIcon = new javax.swing.JLabel();
+        passwordEnter = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(225, 238, 238));
         setMaximumSize(null);
-        setPreferredSize(null);
 
         usernameLabel.setText("Username:");
 
@@ -115,15 +124,13 @@ public class UserPassword extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(173, 173, 173)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(usernameLabel)
-                        .addGap(78, 78, 78)
-                        .addComponent(usernameEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(passwordLabel)
-                        .addGap(80, 80, 80)
-                        .addComponent(passwordEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(usernameLabel)
+                    .addComponent(passwordLabel))
+                .addGap(78, 78, 78)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(usernameEnter, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                    .addComponent(passwordEnter))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,18 +140,18 @@ public class UserPassword extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(usernameLabel)
                     .addComponent(usernameEnter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordLabel)
                     .addComponent(passwordEnter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AppIcon;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField passwordEnter;
+    private javax.swing.JPasswordField passwordEnter;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JTextField usernameEnter;
     private javax.swing.JLabel usernameLabel;
