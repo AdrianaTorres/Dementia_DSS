@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Doctor {
 
-    int id;
+    String id;
     String name;
     String surname;
     int age;
@@ -24,7 +24,7 @@ public class Doctor {
     List<Patient> patientList;
 
     public Doctor() {
-        this.id = 0;
+        this.id = "";
         this.name = "";
         this.surname = "";
         this.age = 0;
@@ -35,7 +35,7 @@ public class Doctor {
     }
 
     // Constructor for queries:
-    public Doctor(int newDoctorId, String docName, String docSurname, int docAge, String docSex, String docUsername, String docPassword) {
+    public Doctor(String newDoctorId, String docName, String docSurname, int docAge, String docSex, String docUsername, String docPassword) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         this.id = newDoctorId;
         this.name = docName;
@@ -58,7 +58,7 @@ public class Doctor {
         this.age = age_;
     }
 
-    public void setId(int id_) {
+    public void setId(String id_) {
         this.id = id_;
     }
 
@@ -90,7 +90,7 @@ public class Doctor {
         return this.age;
     }
 
-    public int getId() {
+    public String getId() {
         return this.id;
     }
 

@@ -142,6 +142,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
     private void NewAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewAccountButtonActionPerformed
         newAccount.SaveInfo();
+        dbManager.getDoctorManager().newDoctor(doctor);
 
         userPassword.setVisible(false);
         newAccount.setVisible(false);
@@ -154,9 +155,9 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_NewAccountButtonActionPerformed
 
     private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
-        userPassword.SaveInfo();
 
-        if (userPassword.checkPassword()) {
+        if (userPassword.checkPassword(userPassword.getUsername(), userPassword.getPassword())) {
+            userPassword.SaveInfo();
 
             userPassword.setVisible(false);
             newAccount.setVisible(false);

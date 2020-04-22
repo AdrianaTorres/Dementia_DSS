@@ -30,14 +30,14 @@ public class SQLiteDoctor implements DoctorManager {
     }
 
     @Override
-    public Boolean doctorExists(int id) {
+    public Boolean doctorExists(String id) {
         boolean doctorCreated = false;
         try {
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
             String query = "SELECT * FROM doctors WHERE doctor.id = ?;"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
-            st.setInt(1, id);
+            st.setString(1, id);
             ResultSet rs = st.executeQuery();
 
             while (rs.next()) {
@@ -56,7 +56,7 @@ public class SQLiteDoctor implements DoctorManager {
     }
 
     @Override
-    public Doctor getDoctor(int id) {
+    public Doctor getDoctor(String id) {
         Doctor newDoc = null;
         try {
             Patient newPat;
@@ -64,14 +64,14 @@ public class SQLiteDoctor implements DoctorManager {
             patientsList = new ArrayList<>();
             String query = "SELECT * FROM doctors AS d JOIN patients AS p ON d.id = patients.doctorId WHERE d.id = ?;"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
-            st.setInt(1, id);
+            st.setString(1, id);
             ResultSet rs = st.executeQuery();
             boolean doctorCreated = false;
             while (rs.next()) {
                 //if the doctor has not been created
                 if (!doctorCreated) {
                     //get the doctor information
-                    int newDoctorId = rs.getInt(1);
+                    String newDoctorId = rs.getString(1);
                     String docName = rs.getString(2);
                     String docSurname = rs.getString(3);
                     int docAge = rs.getInt(4);
@@ -185,7 +185,7 @@ public class SQLiteDoctor implements DoctorManager {
                 PreparedStatement st = c.prepareStatement(query)) {
             st.setString(1, doctor.getName());
             st.setString(2, doctor.getSurname());
-            st.setInt(3, doctor.getId());
+            st.setString(3, doctor.getId());
             st.setInt(4, doctor.getAge());
             if (doctor.getSex().equals("Male")) {
                 st.setString(5, "Male");

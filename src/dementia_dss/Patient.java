@@ -12,10 +12,10 @@ package dementia_dss;
 public class Patient {
 
     // Patient general info variables:
-    int id;
+    String id;
     int doctorId;
     String name;
-    int age;        
+    int age;
     String sex;
     // General symptoms variables:
     String family_his;
@@ -81,10 +81,10 @@ public class Patient {
     Boolean vascularP3;
 
     public Patient() {
-        this.id =0;
-        this.doctorId=0;
+        this.id = "";
+        this.doctorId = 0;
         this.name = "";
-        this.age = 0;        
+        this.age = 0;
         this.sex = "";
         this.family_his = "";
         this.low_education = "";
@@ -144,42 +144,41 @@ public class Patient {
         this.vascularP3 = false;
     }
     // Constructor for queries:
-    
+
     public Patient(int newPatId, int patDocId, String patName, int patAge, String patSex) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public Patient( int newPatId, int patDocId, String patName, int patAge, String patSex, 
-            String patFamilyHis, String patLowEducation, String patBehaviour, 
+    public Patient(int newPatId, int patDocId, String patName, int patAge, String patSex,
+            String patFamilyHis, String patLowEducation, String patBehaviour,
             String patEmotionalInstability, String patRightWords, String patForgetPersonal,
-            String patFacialExp, String patPlanningOrg, String patForgetRecent, 
-            String patSleepingPattern, String patLossSmell, String patIncontinence, 
-            String patExposure, String patSmoking, String patDrugConsumption, String patLackCord, 
-            String patStandWalk, String patStiffness, String patLossBalance, String patWalkStraight, 
+            String patFacialExp, String patPlanningOrg, String patForgetRecent,
+            String patSleepingPattern, String patLossSmell, String patIncontinence,
+            String patExposure, String patSmoking, String patDrugConsumption, String patLackCord,
+            String patStandWalk, String patStiffness, String patLossBalance, String patWalkStraight,
             String patTremor, String patOrientationLow, String patOrientationHigh,
-            String patBradykinesiaLow, String patBradykinesiaMedium, String patBradykinesiaHigh, 
-            String patDownsSyndrome, String patHyperglycemia, String patHyperlipidemia, 
-            String patInsulin, String patHypertension, String patHeartCerebro, String patDiabetes, 
-            String patObesity, String patCholesterol, String patArteriosclerosis, String patDepression, 
-            String patTremorUni, String patTremorBi, String patStiffnessLow, String patStiffnessHigh, 
-            String patHyperreflexia, String patLossPhysicalAbilities, Boolean patNoDementia, 
-            Boolean patParkinson, Boolean patAlzheimer, Boolean patVascularD, Boolean patParkinson1, 
-            Boolean patParkinson2, Boolean patParkinson3, Boolean patAlzheimer1, Boolean patAlzheimer2, 
-            Boolean patAlzheimer3, Boolean patVascularD1, Boolean patVascularD2, Boolean patVascularD3 ) 
-       {
+            String patBradykinesiaLow, String patBradykinesiaMedium, String patBradykinesiaHigh,
+            String patDownsSyndrome, String patHyperglycemia, String patHyperlipidemia,
+            String patInsulin, String patHypertension, String patHeartCerebro, String patDiabetes,
+            String patObesity, String patCholesterol, String patArteriosclerosis, String patDepression,
+            String patTremorUni, String patTremorBi, String patStiffnessLow, String patStiffnessHigh,
+            String patHyperreflexia, String patLossPhysicalAbilities, Boolean patNoDementia,
+            Boolean patParkinson, Boolean patAlzheimer, Boolean patVascularD, Boolean patParkinson1,
+            Boolean patParkinson2, Boolean patParkinson3, Boolean patAlzheimer1, Boolean patAlzheimer2,
+            Boolean patAlzheimer3, Boolean patVascularD1, Boolean patVascularD2, Boolean patVascularD3) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     // 'SET' AND 'GET' METHODS:
     // Patient general information 'set' methods:
-    public void setId (int id_) {
+    public void setId(String id_) {
         this.id = id_;
     }
-    
-    public void setDoctorId (int docId_){
+
+    public void setDoctorId(int docId_) {
         this.doctorId = docId_;
     }
-    
+
     public void setName(String name_) {
         this.name = name_;
     }
@@ -187,7 +186,6 @@ public class Patient {
     public void setAge(int age_) {
         this.age = age_;
     }
-    
 
     public void setSex(String sex_) {
         this.sex = sex_;
@@ -424,15 +422,14 @@ public class Patient {
     }
 
     // General patient information 'get' methods:
-     
-    public int getId() {
+    public String getId() {
         return this.id;
     }
-    
-    public int getDoctorId(){
+
+    public int getDoctorId() {
         return this.doctorId;
     }
-    
+
     public String getName() {
         return this.name;
     }
@@ -440,7 +437,7 @@ public class Patient {
     public int getAge() {
         return this.age;
     }
-   
+
     public String getSex() {
         return this.sex;
     }

@@ -66,7 +66,18 @@ public class UserPassword extends javax.swing.JPanel {
         }
     }
 
-    public Boolean checkPassword(int id, String password) {
+    public String getUsername() {
+        return usernameEnter.getText();
+    }
+
+    public String getPassword() {
+        String password = passwordEnter.getText();
+        String encryptedPassword = RSA.encryptPassword(password, publicKey);
+
+        return encryptedPassword;
+    }
+
+    public Boolean checkPassword(String id, String password) {
         if (dbManager.getDoctorManager().doctorExists(id)) {
             Doctor currentDoctor = dbManager.getDoctorManager().getDoctor(id);
 
@@ -106,7 +117,7 @@ public class UserPassword extends javax.swing.JPanel {
         setBackground(new java.awt.Color(225, 238, 238));
         setMaximumSize(null);
 
-        usernameLabel.setText("Username:");
+        usernameLabel.setText("NIF:");
 
         passwordLabel.setText("Password:");
 
@@ -130,16 +141,16 @@ public class UserPassword extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(usernameEnter, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
                     .addComponent(passwordEnter))
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(usernameLabel)
-                    .addComponent(usernameEnter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usernameEnter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usernameLabel))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordLabel)

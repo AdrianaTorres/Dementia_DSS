@@ -285,6 +285,8 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             }
             pack();
             manageButtons();
+
+            dbManager.getPatientManager().newPatient(patient);
         } else {
             if (alzheimerPhase.isVisible()) {
                 /* alzheimerPhase.setVisible(true);

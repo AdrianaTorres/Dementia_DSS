@@ -29,19 +29,6 @@
               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Name_Surname" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Age" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Sex" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Age_enter" min="-2" pref="104" max="-2" attributes="0"/>
-                          <Component id="NameSurname_enter" min="-2" pref="393" max="-2" attributes="0"/>
-                          <Component id="Sex_box" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Component id="jPanel9" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -50,6 +37,23 @@
                       <Component id="jPanel11" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel12" min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Name_Surname" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="Age" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="Sex" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="NameSurname_enter" min="-2" pref="393" max="-2" attributes="0"/>
+                          <Component id="Sex_box" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="NIFenter" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Age_enter" alignment="0" pref="104" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -68,16 +72,21 @@
                   <Component id="NameSurname_enter" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Age" min="-2" max="-2" attributes="0"/>
-                  <Component id="Age_enter" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="NIFenter" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Sex" min="-2" max="-2" attributes="0"/>
-                  <Component id="Sex_box" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Age_enter" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Age" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="494" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Sex" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Sex_box" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="446" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                       <Component id="jPanel9" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -235,5 +244,12 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="NIF:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="NIFenter">
+    </Component>
   </SubComponents>
 </Form>
