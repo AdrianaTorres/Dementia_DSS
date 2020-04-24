@@ -13,6 +13,9 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -38,6 +41,12 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     Boolean parkinsonPhaseWind = false;
     Boolean alzheimerPhaseWind = false;
+    
+    // JButtons control:
+    Boolean n_button = false;
+    Boolean b_button = false;
+    Boolean s_button = false;
+    Boolean alt_button = false;
 
     /**
      * Creates new form Principal_Window
@@ -47,6 +56,10 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         this.setVisible(true);
         initComponents();
 
+        /*Next_Button.setMnemonic(KeyEvent.VK_N);
+        Back_Button.setMnemonic(KeyEvent.VK_B);
+        Submit_Button.setMnemonic(KeyEvent.VK_S);*/
+        
         description.setVisible(true);
         patientInfo.setVisible(false);
         generalSymptoms.setVisible(false);
@@ -396,6 +409,9 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 Back_ButtonKeyPressed(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Back_ButtonKeyTyped(evt);
+            }
         });
 
         javax.swing.GroupLayout Buttons_PanelLayout = new javax.swing.GroupLayout(Buttons_Panel);
@@ -429,25 +445,29 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }// </editor-fold>//GEN-END:initComponents
 
     private void Next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Next_ButtonActionPerformed
+        // Works when button is clicked with mouse.
         nextButtonActions();
         pack();
         manageButtons();
     }//GEN-LAST:event_Next_ButtonActionPerformed
 
     private void Submit_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_ButtonActionPerformed
+        // Works when button is clicked with mouse.
         submitButtonActions();
     }//GEN-LAST:event_Submit_ButtonActionPerformed
 
     private void Back_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Back_ButtonKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        // Works when ALT+B is typed.        
+        if (evt.getKeyCode() == KeyEvent.VK_B) {
             backButtonActions();
             pack();
-            manageButtons();
-        }
+            manageButtons(); 
+        }                    
     }//GEN-LAST:event_Back_ButtonKeyPressed
 
     private void Next_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Next_ButtonKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        // Works when ALT+N is typed.
+        if (evt.getKeyCode() == KeyEvent.VK_N) {
             nextButtonActions();
             pack();
             manageButtons();
@@ -455,17 +475,23 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Next_ButtonKeyPressed
 
     private void Submit_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Submit_ButtonKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        // Works when ALT+S is typed.
+        if (evt.getKeyCode() == KeyEvent.VK_S) {
             submitButtonActions();
         }
     }//GEN-LAST:event_Submit_ButtonKeyPressed
 
     private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed
+        // Works when button is clicked with mouse.
         backButtonActions();
         pack();
         manageButtons();
     }//GEN-LAST:event_Back_ButtonActionPerformed
 
+    private void Back_ButtonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Back_ButtonKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Back_ButtonKeyTyped
+    
     /**
      * @param args the command line arguments
      */

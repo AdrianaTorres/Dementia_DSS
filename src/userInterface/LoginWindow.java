@@ -5,6 +5,7 @@
  */
 package userInterface;
 
+import com.sun.glass.events.KeyEvent;
 import db.interfaces.DBManager;
 import db.sqlite.SQLiteManager;
 import dementia_dss.Doctor;
@@ -63,6 +64,50 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             SignUpButton.setEnabled(false);
         }
     }
+    
+    private void NewAccountButtonActions () {
+        newAccount.SaveInfo();
+        dbManager.getDoctorManager().newDoctor(doctor);
+
+        userPassword.setVisible(false);
+        newAccount.setVisible(false);
+        manageButtons();
+
+        JOptionPane.showMessageDialog(null, "The account was succesfully created.");
+
+        dispose();
+        new Principal_Window(dbManager);
+    }
+    
+    private void SignInButtonActions () {
+        if (userPassword.checkPassword(userPassword.getUsername(), userPassword.getPassword())) {
+            userPassword.SaveInfo();
+
+            userPassword.setVisible(false);
+            newAccount.setVisible(false);
+            manageButtons();
+
+            dispose();
+            new Principal_Window(dbManager);
+        } else {
+            JOptionPane.showMessageDialog(null, "Wrong credentials. Please try again.");
+        }
+    }
+    
+    private void SignUpButtonActions () {
+        userPassword.SaveInfo();
+
+        // System.out.println("User: " + doctor.getUsername());
+        // System.out.println("Password: " + doctor.getPassword());
+        userPassword.setVisible(false);
+        newAccount.setVisible(true);
+
+        PrincipalPanel.removeAll();
+        PrincipalPanel.repaint();
+        PrincipalPanel.add(newAccount, BorderLayout.CENTER);
+        pack();
+        manageButtons();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -92,6 +137,14 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
                 SignInButtonActionPerformed(evt);
             }
         });
+        SignInButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SignInButtonKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                SignInButtonKeyTyped(evt);
+            }
+        });
 
         NewAccountButton.setText("Create an account");
         NewAccountButton.addActionListener(new java.awt.event.ActionListener() {
@@ -99,11 +152,27 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
                 NewAccountButtonActionPerformed(evt);
             }
         });
+        NewAccountButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                NewAccountButtonKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NewAccountButtonKeyTyped(evt);
+            }
+        });
 
         SignUpButton.setText("Sign up");
         SignUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignUpButtonActionPerformed(evt);
+            }
+        });
+        SignUpButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SignUpButtonKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                SignUpButtonKeyTyped(evt);
             }
         });
 
@@ -141,49 +210,46 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NewAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewAccountButtonActionPerformed
-        newAccount.SaveInfo();
-        dbManager.getDoctorManager().newDoctor(doctor);
-
-        userPassword.setVisible(false);
-        newAccount.setVisible(false);
-        manageButtons();
-
-        JOptionPane.showMessageDialog(null, "The account was succesfully created.");
-
-        dispose();
-        new Principal_Window(dbManager);
+        NewAccountButtonActions();
     }//GEN-LAST:event_NewAccountButtonActionPerformed
 
     private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
-
-        if (userPassword.checkPassword(userPassword.getUsername(), userPassword.getPassword())) {
-            userPassword.SaveInfo();
-
-            userPassword.setVisible(false);
-            newAccount.setVisible(false);
-            manageButtons();
-
-            dispose();
-            new Principal_Window(dbManager);
-        } else {
-            JOptionPane.showMessageDialog(null, "Wrong credentials. Please try again.");
-        }
+        SignInButtonActions();
     }//GEN-LAST:event_SignInButtonActionPerformed
 
     private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
-        userPassword.SaveInfo();
-
-        // System.out.println("User: " + doctor.getUsername());
-        // System.out.println("Password: " + doctor.getPassword());
-        userPassword.setVisible(false);
-        newAccount.setVisible(true);
-
-        PrincipalPanel.removeAll();
-        PrincipalPanel.repaint();
-        PrincipalPanel.add(newAccount, BorderLayout.CENTER);
-        pack();
-        manageButtons();
+        SignUpButtonActions();
     }//GEN-LAST:event_SignUpButtonActionPerformed
+
+    private void NewAccountButtonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NewAccountButtonKeyTyped
+        
+    }//GEN-LAST:event_NewAccountButtonKeyTyped
+
+    private void SignUpButtonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SignUpButtonKeyTyped
+        
+    }//GEN-LAST:event_SignUpButtonKeyTyped
+
+    private void SignInButtonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SignInButtonKeyTyped
+        
+    }//GEN-LAST:event_SignInButtonKeyTyped
+
+    private void NewAccountButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NewAccountButtonKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_A) {
+            NewAccountButtonActions();
+        }
+    }//GEN-LAST:event_NewAccountButtonKeyPressed
+
+    private void SignUpButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SignUpButtonKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_U) {
+            SignUpButtonActions();
+        }
+    }//GEN-LAST:event_SignUpButtonKeyPressed
+
+    private void SignInButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SignInButtonKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_I) {
+            SignInButtonActions();
+        }
+    }//GEN-LAST:event_SignInButtonKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ButtonsPanel;
