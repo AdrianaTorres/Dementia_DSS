@@ -152,7 +152,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
                 PrincipalPanel.removeAll();
                 PrincipalPanel.repaint();
-                PrincipalPanel.add(description, BorderLayout.CENTER);
+                PrincipalPanel.add(openPatient, BorderLayout.CENTER);
             }
         } else if (generalSymptoms.isVisible()) {
             generalSymptoms.SaveInfo();
@@ -229,7 +229,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
             PrincipalPanel.removeAll();
             PrincipalPanel.repaint();
-            PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
+            PrincipalPanel.add(openPatient, BorderLayout.CENTER);
 
         } else if (openPatient.isVisible()) {
             description.setVisible(false);

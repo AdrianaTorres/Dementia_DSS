@@ -29,10 +29,11 @@ public class SQLitePatient implements PatientManager {
     @Override
     public Boolean patientExists(String id) {
         boolean patientCreated = false;
+        System.out.println("Llego aqui");
         try {
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
-            String query = "SELECT * FROM patients WHERE patient.pat_id = ?;";
+            String query = "SELECT * FROM patients WHERE patients.pat_id = ?;";
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
@@ -56,7 +57,7 @@ public class SQLitePatient implements PatientManager {
         Patient newPat = null;
         try {
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            String query = "SELECT * from patients WHERE id = ?";
+            String query = "SELECT * from patients WHERE patients.pat_id = ?";
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
@@ -65,8 +66,8 @@ public class SQLitePatient implements PatientManager {
                 //if the patent has not been created
                 if (!patientCreated) {
                     // get Patient Info
-                    int newPatId = rs.getInt(1);
-                    int patDocId = rs.getInt(2);
+                    String newPatId = rs.getString(1);
+                    String patDocId = rs.getString(2);
                     String patName = rs.getString(3);
                     int patAge = rs.getInt(4);
                     String patSex = rs.getString(5);
@@ -152,7 +153,7 @@ public class SQLitePatient implements PatientManager {
     @Override
     public void modifyPatient(Patient patient) { //Update
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        String query = "UPDATE patients SET name=?, age=?, sex=?, familyHis=? WHERE id=?";
+        String query = "UPDATE patients SET name=?, age=?, sex=?, familyHis=? WHERE pat_id=?";
         try (PreparedStatement st = c.prepareStatement(query)) {
             st.setString(1, patient.getName());
             st.setString(2, patient.getId());
@@ -202,7 +203,7 @@ public class SQLitePatient implements PatientManager {
                 st.setString(18, patient.getExposure());
                 st.setString(19, patient.getSmoking());
                 st.setString(20, patient.getDrugConsumption());
-                st.setString(21, patient.getLackCoord()); 
+                st.setString(21, patient.getLackCoord());
                 st.setString(22, patient.getStandWalk());
                 st.setString(23, patient.getStiffness());
                 st.setString(24, patient.getLossBalance());
@@ -232,7 +233,7 @@ public class SQLitePatient implements PatientManager {
                 st.setString(48, patient.getLossPhysicalAbilities());
                 st.setBoolean(49, patient.getNoDementia());
                 st.setBoolean(50, patient.getParkinson());
-                st.setBoolean(51, patient.getAlzheimer()); 
+                st.setBoolean(51, patient.getAlzheimer());
                 st.setBoolean(52, patient.getVascularD());
                 st.setBoolean(53, patient.getParkinsonP1());
                 st.setBoolean(54, patient.getParkinsonP2());

@@ -35,7 +35,7 @@ public class SQLiteDoctor implements DoctorManager {
         try {
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
-            String query = "SELECT * FROM doctors WHERE doctor.doc_id = ?;"; //doctorId todavia no existe en patient
+            String query = "SELECT * FROM doctors WHERE doctors.doc_id = ?;"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
@@ -84,8 +84,8 @@ public class SQLiteDoctor implements DoctorManager {
                             docUsername, docPassword);
                 }
                 //get patient information:
-                int patientId = rs.getInt(8);
-                int patDocId = rs.getInt(9);
+                String patientId = rs.getString(8);
+                String patDocId = rs.getString(9);
                 String patName = rs.getString(10);
                 int patAge = rs.getInt(11);
                 String patSex = rs.getString(12);
@@ -179,10 +179,12 @@ public class SQLiteDoctor implements DoctorManager {
     @Override
     public void newDoctor(Doctor doctor) { //Insert
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        String query = "INSERT INTO doctors (doc_id, name, surname, age, sex, username, password)"
-                + "VALUES (?,?,?,?,?,?,?);";
-        try (
-                PreparedStatement st = c.prepareStatement(query)) {
+
+        try {
+            String query = "INSERT INTO doctors (doc_id, name, surname, age, sex, username, password)"
+                    + "VALUES (?,?,?,?,?,?,?)";
+            PreparedStatement st = c.prepareStatement(query);
+
             st.setString(1, doctor.getId());
             st.setString(2, doctor.getName());
             st.setString(3, doctor.getSurname());

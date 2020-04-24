@@ -54,6 +54,7 @@ public class UserPassword extends javax.swing.JPanel {
     public void SaveInfo() {
         if (usernameEnter.getText() != null) {
             doctor.setUsername(usernameEnter.getText());
+            doctor.setId(usernameEnter.getText());
             System.out.println("El username is: " + doctor.getUsername());
         }
         if (passwordEnter.getText() != null) {
