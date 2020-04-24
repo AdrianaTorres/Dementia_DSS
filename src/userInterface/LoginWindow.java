@@ -64,8 +64,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             SignUpButton.setEnabled(false);
         }
     }
-    
-    private void NewAccountButtonActions () {
+
+    private void NewAccountButtonActions() {
         newAccount.SaveInfo();
         dbManager.getDoctorManager().newDoctor(doctor);
 
@@ -78,8 +78,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         dispose();
         new Principal_Window(dbManager);
     }
-    
-    private void SignInButtonActions () {
+
+    private void SignInButtonActions() {
         if (userPassword.checkPassword(userPassword.getUsername(), userPassword.getPassword())) {
             userPassword.SaveInfo();
 
@@ -93,8 +93,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, "Wrong credentials. Please try again.");
         }
     }
-    
-    private void SignUpButtonActions () {
+
+    private void SignUpButtonActions() {
         userPassword.SaveInfo();
 
         // System.out.println("User: " + doctor.getUsername());
@@ -222,15 +222,15 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_SignUpButtonActionPerformed
 
     private void NewAccountButtonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NewAccountButtonKeyTyped
-        
+
     }//GEN-LAST:event_NewAccountButtonKeyTyped
 
     private void SignUpButtonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SignUpButtonKeyTyped
-        
+
     }//GEN-LAST:event_SignUpButtonKeyTyped
 
     private void SignInButtonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SignInButtonKeyTyped
-        
+
     }//GEN-LAST:event_SignInButtonKeyTyped
 
     private void NewAccountButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NewAccountButtonKeyPressed

@@ -27,6 +27,31 @@ public class SQLitePatient implements PatientManager {
     }
 
     @Override
+    public Boolean patientExists(String id) {
+        boolean patientCreated = false;
+        try {
+            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+            String query = "SELECT * FROM patients WHERE patient.id = ?;";
+            PreparedStatement st = c.prepareStatement(query);
+            st.setString(1, id);
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()) {
+                //if the patient has not been created
+                if (!patientCreated) {
+                    patientCreated = false;
+                } else {
+                    patientCreated = true;
+                    break;
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SQLitePatient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return patientCreated;
+    }
+
     public Patient getPatientByNIF(String id) {
         Patient newPat = null;
         try {

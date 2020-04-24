@@ -8,14 +8,12 @@ package userInterface;
 import db.interfaces.DBManager;
 import db.sqlite.SQLiteManager;
 import dementia_dss.CLIPS_connection;
+import dementia_dss.Doctor;
 import dementia_dss.Patient;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyCodeCombination;
-import javafx.scene.input.KeyCombination;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,9 +27,11 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     DBManager dbManager = new SQLiteManager();
     public Patient patient = new Patient();
+    public Doctor doctor = new Doctor();
 
     //JPanels:
     Initial_Description description = new Initial_Description();
+    Open_Patient openPatient = new Open_Patient(dbManager, patient);
     Patient_Info patientInfo = new Patient_Info(dbManager, patient);
     General_Symptoms generalSymptoms = new General_Symptoms(dbManager, patient);
     Motor_Symptoms motorSymptoms = new Motor_Symptoms(dbManager, patient);
@@ -41,7 +41,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     Boolean parkinsonPhaseWind = false;
     Boolean alzheimerPhaseWind = false;
-    
+
     // JButtons control:
     Boolean n_button = false;
     Boolean b_button = false;
@@ -59,8 +59,8 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         /*Next_Button.setMnemonic(KeyEvent.VK_N);
         Back_Button.setMnemonic(KeyEvent.VK_B);
         Submit_Button.setMnemonic(KeyEvent.VK_S);*/
-        
         description.setVisible(true);
+        openPatient.setVisible(false);
         patientInfo.setVisible(false);
         generalSymptoms.setVisible(false);
         motorSymptoms.setVisible(false);
@@ -80,7 +80,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             Back_Button.setEnabled(false);
             Next_Button.setEnabled(true);
             Submit_Button.setEnabled(false);
-        } else if (patientInfo.isVisible() || generalSymptoms.isVisible() || motorSymptoms.isVisible()) {
+        } else if (patientInfo.isVisible() || generalSymptoms.isVisible() || motorSymptoms.isVisible() || openPatient.isVisible()) {
             Back_Button.setEnabled(true);
             Next_Button.setEnabled(true);
             Submit_Button.setEnabled(false);
@@ -123,12 +123,28 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }
 
     public void backButtonActions() {
-        if (patientInfo.isVisible()) {
+        if (openPatient.isVisible()) {
+            if ((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
+                generateMessageDialog();
+            } else {
+                openPatient.SaveInfo();
+                description.setVisible(true);
+                patientInfo.setVisible(false);
+                generalSymptoms.setVisible(false);
+                motorSymptoms.setVisible(false);
+                otherPathologies.setVisible(false);
+
+                PrincipalPanel.removeAll();
+                PrincipalPanel.repaint();
+                PrincipalPanel.add(description, BorderLayout.CENTER);
+            }
+        } else if (patientInfo.isVisible()) {
             if ((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
                 generateMessageDialog();
             } else {
                 patientInfo.SaveInfo();
-                description.setVisible(true);
+                description.setVisible(false);
+                openPatient.setVisible(true);
                 patientInfo.setVisible(false);
                 generalSymptoms.setVisible(false);
                 motorSymptoms.setVisible(false);
@@ -205,6 +221,19 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     public void nextButtonActions() {
         if (description.isVisible()) {
             description.setVisible(false);
+            openPatient.setVisible(true);
+            patientInfo.setVisible(false);
+            generalSymptoms.setVisible(false);
+            motorSymptoms.setVisible(false);
+            otherPathologies.setVisible(false);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
+
+        } else if (openPatient.isVisible()) {
+            description.setVisible(false);
+            openPatient.setVisible(false);
             patientInfo.setVisible(true);
             generalSymptoms.setVisible(false);
             motorSymptoms.setVisible(false);
@@ -295,11 +324,15 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 } else if (patient.getVascularP3()) {
                     JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 6-7.");
                 }
+                if (openPatient.isNew(patient.getId())) {
+                    dbManager.getPatientManager().newPatient(patient);
+                } else {
+                    dbManager.getPatientManager().modifyPatient(patient);
+                }
             }
             pack();
             manageButtons();
 
-            dbManager.getPatientManager().newPatient(patient);
         } else {
             if (alzheimerPhase.isVisible()) {
                 /* alzheimerPhase.setVisible(true);
@@ -348,6 +381,13 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
                 manageButtons();
             }
+
+            if (openPatient.isNew(patient.getId())) {
+                dbManager.getPatientManager().newPatient(patient);
+            } else {
+                dbManager.getPatientManager().modifyPatient(patient);
+            }
+
         }
     }
 
@@ -457,12 +497,12 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Submit_ButtonActionPerformed
 
     private void Back_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Back_ButtonKeyPressed
-        // Works when ALT+B is typed.        
+        // Works when ALT+B is typed.
         if (evt.getKeyCode() == KeyEvent.VK_B) {
             backButtonActions();
             pack();
-            manageButtons(); 
-        }                    
+            manageButtons();
+        }
     }//GEN-LAST:event_Back_ButtonKeyPressed
 
     private void Next_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Next_ButtonKeyPressed
@@ -491,7 +531,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     private void Back_ButtonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Back_ButtonKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_Back_ButtonKeyTyped
-    
+
     /**
      * @param args the command line arguments
      */

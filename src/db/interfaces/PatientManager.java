@@ -13,6 +13,8 @@ import dementia_dss.Patient;
  */
 public interface PatientManager {
 
+    public Boolean patientExists(String id);
+
     public Patient getPatientByNIF(String id); //Select
 
     public void modifyPatient(Patient patient); //Update

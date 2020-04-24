@@ -35,9 +35,6 @@ public class Patient_Info extends javax.swing.JPanel {
             if (!patient.getName().equalsIgnoreCase("")) {
                 NameSurname_enter.setText(patient.getName());
             }
-            if (!patient.getId().equalsIgnoreCase("")) {
-                NIFenter.setText(patient.getId());
-            }
             if (patient.getAge() != 0) {
                 Age_enter.setText(Integer.toString(patient.getAge()));
             }
@@ -55,9 +52,6 @@ public class Patient_Info extends javax.swing.JPanel {
     public void SaveInfo() { // REVISAR QUE ESTE BIEN
         if (NameSurname_enter.getText() != null) {
             patient.setName(NameSurname_enter.getText());
-        }
-        if (NIFenter.getText() != null) {
-            patient.setId(NIFenter.getText());
         }
         if (Age_enter.getText() != null) {
             patient.setAge(Integer.parseInt(Age_enter.getText()));
@@ -104,8 +98,6 @@ public class Patient_Info extends javax.swing.JPanel {
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        NIFenter = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(225, 238, 238));
         setPreferredSize(new java.awt.Dimension(700, 777));
@@ -170,8 +162,6 @@ public class Patient_Info extends javax.swing.JPanel {
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("NIF:");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -193,16 +183,13 @@ public class Patient_Info extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Name_Surname)
                             .addComponent(Age)
-                            .addComponent(Sex)
-                            .addComponent(jLabel1))
+                            .addComponent(Sex))
                         .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NameSurname_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Sex_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(NIFenter, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Age_enter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)))))
-                .addContainerGap(113, Short.MAX_VALUE))
+                            .addComponent(Age_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,23 +203,19 @@ public class Patient_Info extends javax.swing.JPanel {
                     .addComponent(NameSurname_enter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(NIFenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Age_enter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Age))
+                    .addComponent(Age)
+                    .addComponent(Age_enter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Sex)
                     .addComponent(Sex_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(446, 446, 446)
+                .addGap(503, 503, 503)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -247,13 +230,11 @@ public class Patient_Info extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Age;
     private javax.swing.JTextField Age_enter;
-    private javax.swing.JTextField NIFenter;
     private javax.swing.JTextField NameSurname_enter;
     private javax.swing.JLabel Name_Surname;
     private javax.swing.JLabel Sex;
     private javax.swing.JComboBox<String> Sex_box;
     private javax.swing.JLabel appIcon;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
