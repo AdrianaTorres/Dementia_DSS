@@ -32,7 +32,7 @@ public class SQLitePatient implements PatientManager {
         try {
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
-            String query = "SELECT * FROM patients WHERE patient.id = ?;";
+            String query = "SELECT * FROM patients WHERE patient.pat_id = ?;";
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
@@ -174,10 +174,16 @@ public class SQLitePatient implements PatientManager {
     public void newPatient(Patient patient) {
         try { //Insert
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            String query = "INSERT INTO patients (name, surname, age, sex, username, password)" + "VALUES (?,?,?,?,?,?);";
+            String query = "INSERT INTO patients (pat_id, doctorID, nameSurname, age, sex, familyHistory, lowEducation, behaviour, emotionInstability,"
+                    + "rightWords, forgetPersonal, facialExpression, planOrganize, forgetRecent, sleepPattern, lossSmell, incontinence, exposure, smoking, "
+                    + "drugConsuption, lackCoordination, standWalk, stiffness, lossBalance, walkStraight, tremor, orientationHigh, orientationLow, bradykinesiaLow,"
+                    + "bradykinesiaMedium, bradikineasiaHigh, downSyndrome, hyperglycemia, hyperlypidemia, insuline, hypertension, heartCerebroAttack, diabetes, obesity,"
+                    + "cholesterol, arteriosclerosis, depression, tremorUnilat, tremorBilat, stiffnessLow, stiffnessHigh, hyperreflexia, lossPhysicalAbility, noDementia,"
+                    + "parkinson, alzheimer, vascular, parkinsonP1, parkinsonP2, parkinsonP3, alzheimerP1, alzheimerP2, alzheimerP3, vascularP1, vascularP2, vascularP3)"
+                    + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
             try (PreparedStatement st = c.prepareStatement(query)) {
-                st.setString(1, patient.getName());
-                st.setString(2, patient.getId());
+                st.setString(1, patient.getId());
+                st.setString(2, patient.getName());
                 st.setInt(3, patient.getAge());
                 if (patient.getSex().equals("Male")) {
                     st.setString(4, "Male");
@@ -197,7 +203,7 @@ public class SQLitePatient implements PatientManager {
     public void deletePatient(Patient patient) {
         try { //Delete
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            String query = "DELETE FROM patients WHERE id = ?;";
+            String query = "DELETE FROM patients WHERE pat_id = ?;";
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, patient.getId());
             st.executeUpdate();
