@@ -13,7 +13,7 @@ public class Patient {
 
     // Patient general info variables:
     String id;
-    int doctorId;
+    String doctorId;
     String name;
     int age;
     String sex;
@@ -82,7 +82,7 @@ public class Patient {
 
     public Patient() {
         this.id = "";
-        this.doctorId = 0;
+        this.doctorId = "";
         this.name = "";
         this.age = 0;
         this.sex = "";
@@ -175,7 +175,7 @@ public class Patient {
         this.id = id_;
     }
 
-    public void setDoctorId(int docId_) {
+    public void setDoctorId(String docId_) {
         this.doctorId = docId_;
     }
 
@@ -426,7 +426,7 @@ public class Patient {
         return this.id;
     }
 
-    public int getDoctorId() {
+    public String getDoctorId() {
         return this.doctorId;
     }
 

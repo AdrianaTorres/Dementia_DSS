@@ -68,7 +68,7 @@ public class SQLiteManager implements DBManager {
 
         try {
             st = connection.createStatement();
-            String tablePatients = "CREATE TABLE patients (" + "pat_ID INTEGER," + "doctorID INTEGER,"
+            String tablePatients = "CREATE TABLE patients (" + "pat_ID TEXT," + "doctorID TEXT,"
                     + "nameSurname TEXT," + "age INTEGER NOT NULL," + "sex TEXT NOT NULL,"
                     + "familyHistory TEXT," + "lowEducation TEXT," + "behaviour TEXT," + "emotionInstability TEXT,"
                     + "rightWords TEXT," + "forgetPersonal TEXT," + "facialExpression TEXT,"
