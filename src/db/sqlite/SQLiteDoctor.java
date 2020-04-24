@@ -179,7 +179,7 @@ public class SQLiteDoctor implements DoctorManager {
     @Override
     public void newDoctor(Doctor doctor) { //Insert
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        String query = "INSERT INTO doctors (id, name, surname, age, sex, username, password)"
+        String query = "INSERT INTO doctors (doc_id, name, surname, age, sex, username, password)"
                 + "VALUES (?,?,?,?,?,?,?);";
         try (
                 PreparedStatement st = c.prepareStatement(query)) {

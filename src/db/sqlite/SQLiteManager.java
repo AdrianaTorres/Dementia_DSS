@@ -94,7 +94,7 @@ public class SQLiteManager implements DBManager {
             st.executeUpdate(tablePatients);
 
             st = connection.createStatement();
-            String tableDoctors = "CREATE TABLE doctors (" + "doc_id INTEGER," + "name TEXT,"
+            String tableDoctors = "CREATE TABLE doctors (" + "doc_id TEXT," + "name TEXT,"
                     + "surname TEXT," + "age INTEGER," + "sex TEXT," + "username TEXT,"
                     + "password TEXT," + "PRIMARY KEY (doc_id))";
             st.executeUpdate(tableDoctors);
