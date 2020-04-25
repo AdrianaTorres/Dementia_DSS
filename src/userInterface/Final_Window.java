@@ -16,7 +16,7 @@ public class Final_Window extends javax.swing.JFrame {
      */
     public Final_Window() {
         initComponents();
-        message.setText("Do you want to save the data?");
+        questionLabel.setText("Do you want to save the data?");
     }
 
     /**
@@ -32,15 +32,19 @@ public class Final_Window extends javax.swing.JFrame {
         Buttons_Panel = new javax.swing.JPanel();
         saveResults_button = new javax.swing.JButton();
         close_button = new javax.swing.JButton();
-        message = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        questionLabel = new javax.swing.JLabel();
+        icon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
+        Main_Panel.setBackground(new java.awt.Color(225, 238, 238));
+
+        Buttons_Panel.setBackground(new java.awt.Color(225, 238, 238));
         Buttons_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         saveResults_button.setText("Save Results");
-        Buttons_Panel.add(saveResults_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, 111, -1));
+        Buttons_Panel.add(saveResults_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 111, -1));
 
         close_button.setText("Close");
         close_button.addActionListener(new java.awt.event.ActionListener() {
@@ -48,32 +52,36 @@ public class Final_Window extends javax.swing.JFrame {
                 close_buttonActionPerformed(evt);
             }
         });
-        Buttons_Panel.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+        Buttons_Panel.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
-        message.setText("Do you wish to save the results?");
+        questionLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        questionLabel.setText("Do you wish to save the results?");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userInterface/dmentiapp-lockIcon1.png"))); // NOI18N
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dmentiapp_lock_icon.png"))); // NOI18N
 
         javax.swing.GroupLayout Main_PanelLayout = new javax.swing.GroupLayout(Main_Panel);
         Main_Panel.setLayout(Main_PanelLayout);
         Main_PanelLayout.setHorizontalGroup(
             Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Buttons_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
+            .addComponent(Buttons_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
             .addGroup(Main_PanelLayout.createSequentialGroup()
-                .addGap(180, 180, 180)
                 .addGroup(Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Main_PanelLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(questionLabel))
+                    .addGroup(Main_PanelLayout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(icon)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Main_PanelLayout.setVerticalGroup(
             Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Main_PanelLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(message, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(icon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Buttons_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -125,8 +133,8 @@ public class Final_Window extends javax.swing.JFrame {
     private javax.swing.JPanel Buttons_Panel;
     private javax.swing.JPanel Main_Panel;
     private javax.swing.JButton close_button;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel message;
+    private javax.swing.JLabel icon;
+    private javax.swing.JLabel questionLabel;
     private javax.swing.JButton saveResults_button;
     // End of variables declaration//GEN-END:variables
 }

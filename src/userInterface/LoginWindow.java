@@ -44,7 +44,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         PrincipalPanel.add(userPassword, BorderLayout.CENTER);
 
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+        this.setLocation(dim.width - this.getSize().width, dim.height - this.getSize().height);
         this.setLocationRelativeTo(null);
 
         this.setVisible(true);
@@ -125,8 +125,9 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         PrincipalPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(250, 250, 500, 50));
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocation(new java.awt.Point(100, 100));
         setResizable(false);
 
         ButtonsPanel.setBackground(new java.awt.Color(225, 238, 238));

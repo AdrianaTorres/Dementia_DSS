@@ -55,6 +55,8 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         this.dbManager = dbManager;
         this.setVisible(true);
         initComponents();
+        
+        this.setTitle("DmentiApp 21.04");
 
         /*Next_Button.setMnemonic(KeyEvent.VK_N);
         Back_Button.setMnemonic(KeyEvent.VK_B);
@@ -407,6 +409,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         PrincipalPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         Buttons_Panel.setBackground(new java.awt.Color(225, 238, 238));
         Buttons_Panel.setPreferredSize(new java.awt.Dimension(906, 35));
