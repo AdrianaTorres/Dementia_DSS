@@ -52,6 +52,17 @@ public class Open_Patient extends javax.swing.JPanel {
             return true;
         }
     }
+    
+    public boolean checkEmptyNIF() {
+        boolean b;
+        if (NIF_enter.getText().equals("")) {
+            b = true;
+        } else {
+            b = false;
+        }
+
+        return b;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

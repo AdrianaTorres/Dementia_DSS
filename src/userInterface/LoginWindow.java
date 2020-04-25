@@ -44,7 +44,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         PrincipalPanel.add(userPassword, BorderLayout.CENTER);
 
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width - this.getSize().width, dim.height - this.getSize().height);
+        //this.setLocation(dim.width - this.getSize().width, dim.height - this.getSize().height);
         this.setLocationRelativeTo(null);
 
         this.setVisible(true);

@@ -100,13 +100,14 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
         messageDialog.setTitle("Warning!");
 
-        message.setText("Please, enter a 'Name' and 'Age' before continuing.");
-        message.setSize(250, 300);
-        messageDialog.add(message, BorderLayout.CENTER);
+        message.setText("Please, enter the data before continuing.");
+        //message.setSize(250, 300);
+        messageDialog.add(message, BorderLayout.NORTH);
         //messageDialog.add(message);
 
         button.setText("OK");
         button.setLocation(10, 10);
+        messageDialog.add(message, BorderLayout.NORTH);
         messageDialog.add(button, BorderLayout.SOUTH);
         //messageDialog.add(button);
 
@@ -126,7 +127,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     public void backButtonActions() {
         if (openPatient.isVisible()) {
-            if ((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
+            if ((Back_Button.isEnabled()) && (openPatient.checkEmptyNIF())) {
                 generateMessageDialog();
             } else {
                 openPatient.SaveInfo();
@@ -234,17 +235,20 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             PrincipalPanel.add(openPatient, BorderLayout.CENTER);
 
         } else if (openPatient.isVisible()) {
-            description.setVisible(false);
-            openPatient.setVisible(false);
-            patientInfo.setVisible(true);
-            generalSymptoms.setVisible(false);
-            motorSymptoms.setVisible(false);
-            otherPathologies.setVisible(false);
+            if ((Back_Button.isEnabled()) && (openPatient.checkEmptyNIF())) {
+                generateMessageDialog();
+            } else {
+                description.setVisible(false);
+                openPatient.setVisible(false);
+                patientInfo.setVisible(true);
+                generalSymptoms.setVisible(false);
+                motorSymptoms.setVisible(false);
+                otherPathologies.setVisible(false);
 
-            PrincipalPanel.removeAll();
-            PrincipalPanel.repaint();
-            PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
-
+                PrincipalPanel.removeAll();
+                PrincipalPanel.repaint();
+                PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
+            }
         } else if (patientInfo.isVisible()) {
             if ((Next_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
                 JOptionPane.showMessageDialog(null, "Please, enter a 'Name' and 'Age'\n"
