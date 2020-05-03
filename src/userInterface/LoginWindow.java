@@ -38,6 +38,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         this.setTitle("DmentiApp 21.04");
 
         userPassword.setVisible(true);
+        userPassword.setDbManager(this.dbManager);
         newAccount.setVisible(false);
         ButtonsPanel.setVisible(true);
 
@@ -97,8 +98,6 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     private void SignUpButtonActions() {
         userPassword.SaveInfo();
 
-        // System.out.println("User: " + doctor.getUsername());
-        // System.out.println("Password: " + doctor.getPassword());
         userPassword.setVisible(false);
         newAccount.setVisible(true);
 

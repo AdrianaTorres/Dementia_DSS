@@ -33,6 +33,10 @@ public class UserPassword extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void setDbManager(DBManager dbManager) {
+        this.dbManager = dbManager;
+    }
+
     public UserPassword(DBManager dbManager, Doctor doctor) {
         this.dbManager = dbManager;
         this.doctor = doctor;
