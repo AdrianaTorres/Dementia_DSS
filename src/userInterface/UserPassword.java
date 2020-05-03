@@ -37,8 +37,7 @@ public class UserPassword extends javax.swing.JPanel {
         this.dbManager = dbManager;
     }
 
-    public UserPassword(DBManager dbManager, Doctor doctor) {
-        this.dbManager = dbManager;
+    public UserPassword(Doctor doctor) {
         this.doctor = doctor;
         initComponents();
         setVisible(true);
@@ -83,6 +82,7 @@ public class UserPassword extends javax.swing.JPanel {
     }
 
     public Boolean checkPassword(String id, String password) {
+        System.out.println("Existe el doctor? " + dbManager.getDoctorManager().doctorExists(id));
         if (dbManager.getDoctorManager().doctorExists(id)) {
             Doctor currentDoctor = dbManager.getDoctorManager().getDoctor(id);
 

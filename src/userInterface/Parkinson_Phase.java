@@ -25,8 +25,11 @@ public class Parkinson_Phase extends javax.swing.JPanel {
         initComponents();
     }
 
-    public Parkinson_Phase(DBManager dbManager, Patient patient) {
+    public void setDbManager(DBManager dbManager) {
         this.dbManager = dbManager;
+    }
+
+    public Parkinson_Phase(Patient patient) {
         this.patient = patient;
         initComponents();
         Boolean lossPhysicalAbilities = LossPhysicalAbilities_check.isSelected();

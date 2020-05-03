@@ -31,13 +31,13 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     //JPanels:
     Initial_Description description = new Initial_Description();
-    Open_Patient openPatient = new Open_Patient(dbManager, patient);
-    Patient_Info patientInfo = new Patient_Info(dbManager, patient);
-    General_Symptoms generalSymptoms = new General_Symptoms(dbManager, patient);
-    Motor_Symptoms motorSymptoms = new Motor_Symptoms(dbManager, patient);
-    Other_Pathologies otherPathologies = new Other_Pathologies(dbManager, patient);
-    Parkinson_Phase parkinsonPhase = new Parkinson_Phase(dbManager, patient);
-    Alzheimer_Phase alzheimerPhase = new Alzheimer_Phase(dbManager, patient);
+    Open_Patient openPatient = new Open_Patient(patient);
+    Patient_Info patientInfo = new Patient_Info(patient);
+    General_Symptoms generalSymptoms = new General_Symptoms(patient);
+    Motor_Symptoms motorSymptoms = new Motor_Symptoms(patient);
+    Other_Pathologies otherPathologies = new Other_Pathologies(patient);
+    Parkinson_Phase parkinsonPhase = new Parkinson_Phase(patient);
+    Alzheimer_Phase alzheimerPhase = new Alzheimer_Phase(patient);
 
     Boolean parkinsonPhaseWind = false;
     Boolean alzheimerPhaseWind = false;
@@ -55,7 +55,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         this.dbManager = dbManager;
         this.setVisible(true);
         initComponents();
-        
+
         this.setTitle("DmentiApp 21.04");
 
         /*Next_Button.setMnemonic(KeyEvent.VK_N);
@@ -70,6 +70,14 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         alzheimerPhase.setVisible(false);
         parkinsonPhase.setVisible(false);
         Buttons_Panel.setVisible(true);
+
+        openPatient.setDbManager(this.dbManager);
+        patientInfo.setDbManager(this.dbManager);
+        generalSymptoms.setDbManager(this.dbManager);
+        motorSymptoms.setDbManager(this.dbManager);
+        otherPathologies.setDbManager(this.dbManager);
+        alzheimerPhase.setDbManager(this.dbManager);
+        parkinsonPhase.setDbManager(this.dbManager);
 
         PrincipalPanel.add(description, BorderLayout.CENTER);
         pack();
@@ -389,8 +397,10 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             }
 
             if (openPatient.isNew(patient.getId())) {
+                System.out.println("Paciente nuevo de ID: " + patient.getId());
                 dbManager.getPatientManager().newPatient(patient);
             } else {
+                System.out.println("Paciente viejo de ID:" + patient.getId());
                 dbManager.getPatientManager().modifyPatient(patient);
             }
 

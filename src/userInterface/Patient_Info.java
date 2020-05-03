@@ -25,8 +25,11 @@ public class Patient_Info extends javax.swing.JPanel {
         initComponents();
     }
 
-    public Patient_Info(DBManager dbManager, Patient patient) {
+    public void setDbManager(DBManager dbManager) {
         this.dbManager = dbManager;
+    }
+
+    public Patient_Info(Patient patient) {
         this.patient = patient;
         initComponents();
         setVisible(true);

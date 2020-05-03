@@ -26,8 +26,11 @@ public class Other_Pathologies extends javax.swing.JPanel {
         initComponents();
     }
 
-    public Other_Pathologies(DBManager dbManager, Patient patient) {
+    public void setDbManager(DBManager dbManager) {
         this.dbManager = dbManager;
+    }
+
+    public Other_Pathologies(Patient patient) {
         this.patient = patient;
         initComponents();
         setVisible(true);

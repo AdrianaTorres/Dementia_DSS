@@ -29,30 +29,53 @@ public class SQLitePatient implements PatientManager {
     @Override
     public Boolean patientExists(String id) {
         boolean patientCreated = false;
-        System.out.println("Llego aqui");
         try {
+            System.out.println("Entro al try de patients!! ");
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
-            String query = "SELECT * FROM patients WHERE patients.pat_id = ?;";
+            String query = "SELECT * FROM patients WHERE patients.pat_id = ?"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
 
-            while (rs.next()) {
-                //if the patient has not been created
-                if (!patientCreated) {
-                    patientCreated = false;
-                } else {
-                    patientCreated = true;
-                    break;
-                }
+            // System.out.println("Es esto el ID?" + rs.getString(1));
+            if (rs.getString(1) != null) {
+                patientCreated = true;
+            } else {
+                patientCreated = false;
             }
+
         } catch (SQLException ex) {
-            Logger.getLogger(SQLitePatient.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SQLiteDoctor.class.getName()).log(Level.SEVERE, null, ex);
         }
         return patientCreated;
     }
 
+    /*
+    public Boolean patientExists(String id) {
+        boolean patientCreated = false;
+        System.out.println("Llego aqui");
+        try {
+            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+            String query = "SELECT * FROM patients WHERE patients.pat_id = ?";
+            PreparedStatement st = c.prepareStatement(query);
+            st.setString(1, id);
+            ResultSet rs = st.executeQuery();
+
+            String id_selected = rs.getString(1);
+
+            if (id_selected.equals(id)) {
+                patientCreated = true;
+            } else {
+                patientCreated = false;
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(SQLitePatient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return patientCreated;
+    }*/
     public Patient getPatientByNIF(String id) {
         Patient newPat = null;
         try {
@@ -177,7 +200,7 @@ public class SQLitePatient implements PatientManager {
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             String query = "INSERT INTO patients (pat_id, doctorID, nameSurname, age, sex, familyHistory, lowEducation, behaviour, emotionInstability,"
                     + "rightWords, forgetPersonal, facialExpression, planOrganize, forgetRecent, sleepPattern, lossSmell, incontinence, exposure, smoking, "
-                    + "drugConsuption, lackCoordination, standWalk, stiffness, lossBalance, walkStraight, tremor, orientationHigh, orientationLow, bradykinesiaLow,"
+                    + "drugConsumption, lackCoordination, standWalk, stiffness, lossBalance, walkStraight, tremor, orientationHigh, orientationLow, bradykinesiaLow,"
                     + "bradykinesiaMedium, bradikineasiaHigh, downSyndrome, hyperglycemia, hyperlypidemia, insuline, hypertension, heartCerebroAttack, diabetes, obesity,"
                     + "cholesterol, arteriosclerosis, depression, tremorUnilat, tremorBilat, stiffnessLow, stiffnessHigh, hyperreflexia, lossPhysicalAbility, noDementia,"
                     + "parkinson, alzheimer, vascular, parkinsonP1, parkinsonP2, parkinsonP3, alzheimerP1, alzheimerP2, alzheimerP3, vascularP1, vascularP2, vascularP3)"
@@ -262,7 +285,7 @@ public class SQLitePatient implements PatientManager {
     public void deletePatient(Patient patient) {
         try { //Delete
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            String query = "DELETE FROM patients WHERE pat_id = ?;";
+            String query = "DELETE FROM patients WHERE pat_id = ?";
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, patient.getId());
             st.executeUpdate();

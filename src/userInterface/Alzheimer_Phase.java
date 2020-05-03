@@ -25,8 +25,11 @@ public class Alzheimer_Phase extends javax.swing.JPanel {
         initComponents();
     }
 
-    public Alzheimer_Phase(DBManager dbManager, Patient patient) {
+    public void setDbManager(DBManager dbManager) {
         this.dbManager = dbManager;
+    }
+
+    public Alzheimer_Phase(Patient patient) {
         this.patient = patient;
         initComponents();
         String stiffness = (String) Stiffness_box.getSelectedItem();

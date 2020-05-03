@@ -25,8 +25,11 @@ public class Open_Patient extends javax.swing.JPanel {
         initComponents();
     }
 
-    public Open_Patient(DBManager dbManager, Patient patient) {
+    public void setDbManager(DBManager dbManager) {
         this.dbManager = dbManager;
+    }
+
+    public Open_Patient(Patient patient) {
         this.patient = patient;
         initComponents();
         setVisible(true);
@@ -52,7 +55,7 @@ public class Open_Patient extends javax.swing.JPanel {
             return true;
         }
     }
-    
+
     public boolean checkEmptyNIF() {
         boolean b;
         if (NIF_enter.getText().equals("")) {

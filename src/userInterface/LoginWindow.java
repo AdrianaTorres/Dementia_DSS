@@ -25,7 +25,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     DBManager dbManager = new SQLiteManager();
     Doctor doctor = new Doctor();
 
-    UserPassword userPassword = new UserPassword(dbManager, doctor);
+    UserPassword userPassword = new UserPassword(doctor);
     NewAccount newAccount = new NewAccount(doctor);
 
     /**
@@ -81,6 +81,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     }
 
     private void SignInButtonActions() {
+        System.out.println("ID doctor:" + userPassword.getUsername());
+        System.out.println("Existe el doctor? " + dbManager.getDoctorManager().doctorExists(userPassword.getUsername()));
         if (userPassword.checkPassword(userPassword.getUsername(), userPassword.getPassword())) {
             userPassword.SaveInfo();
 

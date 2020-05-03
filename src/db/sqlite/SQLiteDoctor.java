@@ -33,22 +33,24 @@ public class SQLiteDoctor implements DoctorManager {
     public Boolean doctorExists(String id) {
         boolean doctorCreated = false;
         try {
+            System.out.println("Entro al try!! ");
             //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
-            String query = "SELECT * FROM doctors WHERE doctors.doc_id = ?;"; //doctorId todavia no existe en patient
+            String query = "SELECT * FROM doctors WHERE doctors.doc_id = ?"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
 
-            while (rs.next()) {
-                //if the doctor has not been created
-                if (!doctorCreated) {
-                    doctorCreated = false;
-                } else {
-                    doctorCreated = true;
-                    break;
-                }
+            System.out.println("Es esto el ID?" + rs.getString(1));
+
+            String id_selected = rs.getString(1);
+
+            if (id_selected.equals(id)) {
+                doctorCreated = true;
+            } else {
+                doctorCreated = false;
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(SQLiteDoctor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -62,7 +64,7 @@ public class SQLiteDoctor implements DoctorManager {
             Patient newPat;
             List<Patient> patientsList;
             patientsList = new ArrayList<>();
-            String query = "SELECT * FROM doctors AS d JOIN patients AS p ON d.id = patients.doctorId WHERE d.doc_id = ?;"; //doctorId todavia no existe en patient
+            String query = "SELECT * FROM doctors AS d JOIN patients AS p ON d.doc_id = p.doctorID WHERE d.doc_id = ?"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
@@ -182,7 +184,7 @@ public class SQLiteDoctor implements DoctorManager {
 
         try {
             String query = "INSERT INTO doctors (doc_id, name, surname, age, sex, username, password)"
-                    + "VALUES (?,?,?,?,?,?,?)";
+                    + "VALUES (?,?,?,?,?,?,?);";
             PreparedStatement st = c.prepareStatement(query);
 
             st.setString(1, doctor.getId());

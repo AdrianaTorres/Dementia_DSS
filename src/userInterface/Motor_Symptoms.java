@@ -25,8 +25,11 @@ public class Motor_Symptoms extends javax.swing.JPanel {
         initComponents();
     }
 
-    public Motor_Symptoms(DBManager dbManager, Patient patient) {
+    public void setDbManager(DBManager dbManager) {
         this.dbManager = dbManager;
+    }
+
+    public Motor_Symptoms(Patient patient) {
         this.patient = patient;
         initComponents();
         setVisible(true);

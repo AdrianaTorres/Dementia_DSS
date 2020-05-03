@@ -25,8 +25,11 @@ public class General_Symptoms extends javax.swing.JPanel {
         initComponents();
     }
 
-    public General_Symptoms(DBManager dbManager, Patient patient) {
+    public void setDbManager(DBManager dbManager) {
         this.dbManager = dbManager;
+    }
+
+    public General_Symptoms(Patient patient) {
         this.patient = patient;
         initComponents();
         setVisible(true);
