@@ -38,13 +38,19 @@ public class SQLitePatient implements PatientManager {
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
 
-            // System.out.println("Es esto el ID?" + rs.getString(1));
-            if (rs.getString(1) != null) {
-                patientCreated = true;
+            if (rs.getRow() == 0) {
+                patientCreated = false;
             } else {
                 patientCreated = false;
             }
 
+            // System.out.println("Es esto el ID?" + rs.getString(1));
+            /*
+            if (rs.getString(1) != null) {
+                patientCreated = true;
+            } else {
+                patientCreated = false;
+            }*/
         } catch (SQLException ex) {
             Logger.getLogger(SQLiteDoctor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -201,7 +207,7 @@ public class SQLitePatient implements PatientManager {
             String query = "INSERT INTO patients (pat_id, doctorID, nameSurname, age, sex, familyHistory, lowEducation, behaviour, emotionInstability,"
                     + "rightWords, forgetPersonal, facialExpression, planOrganize, forgetRecent, sleepPattern, lossSmell, incontinence, exposure, smoking, "
                     + "drugConsumption, lackCoordination, standWalk, stiffness, lossBalance, walkStraight, tremor, orientationHigh, orientationLow, bradykinesiaLow,"
-                    + "bradykinesiaMedium, bradikineasiaHigh, downSyndrome, hyperglycemia, hyperlypidemia, insuline, hypertension, heartCerebroAttack, diabetes, obesity,"
+                    + "bradykinesiaMedium, bradykinesiaHigh, downSyndrome, hyperglycemia, hyperlypidemia, insulin, hypertension, heartCerebroAttack, diabetes, obesity,"
                     + "cholesterol, arteriosclerosis, depression, tremorUnilat, tremorBilat, stiffnessLow, stiffnessHigh, hyperreflexia, lossPhysicalAbility, noDementia,"
                     + "parkinson, alzheimer, vascular, parkinsonP1, parkinsonP2, parkinsonP3, alzheimerP1, alzheimerP2, alzheimerP3, vascularP1, vascularP2, vascularP3)"
                     + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
@@ -210,7 +216,11 @@ public class SQLitePatient implements PatientManager {
                 st.setString(2, patient.getDoctorId());
                 st.setString(3, patient.getName());
                 st.setInt(4, patient.getAge());
-                st.setString(5, patient.getSex());
+                if (patient.getSex().equals("Male")) {
+                    st.setString(5, "Male");
+                } else {
+                    st.setString(5, "Female");
+                }
                 st.setString(6, patient.getFamilyHis());
                 st.setString(7, patient.getLowEducation());
                 st.setString(8, patient.getBehaviour());
@@ -267,12 +277,8 @@ public class SQLitePatient implements PatientManager {
                 st.setBoolean(59, patient.getVascularP1());
                 st.setBoolean(60, patient.getVascularP2());
                 st.setBoolean(61, patient.getVascularP3());
-                if (patient.getSex().equals("Male")) {
-                    st.setString(4, "Male");
-                } else {
-                    st.setString(4, "Female");
-                }
-                st.setString(5, patient.getFamilyHis());
+
+                System.out.println("Doctor ID: " + patient.getDoctorId());
 
                 st.executeUpdate();
             }

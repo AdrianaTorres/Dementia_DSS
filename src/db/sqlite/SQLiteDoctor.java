@@ -41,16 +41,20 @@ public class SQLiteDoctor implements DoctorManager {
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
 
-            System.out.println("Es esto el ID?" + rs.getString(1));
+            if (rs.getRow() == 0) {
+                doctorCreated = false;
+            } else {
+                doctorCreated = false;
+            }
 
-            String id_selected = rs.getString(1);
+            /* String id_selected = rs.getString(1);
 
             if (id_selected.equals(id)) {
                 doctorCreated = true;
             } else {
                 doctorCreated = false;
             }
-
+             */
         } catch (SQLException ex) {
             Logger.getLogger(SQLiteDoctor.class.getName()).log(Level.SEVERE, null, ex);
         }
