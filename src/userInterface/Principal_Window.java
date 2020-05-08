@@ -346,7 +346,9 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             }
             pack();
             manageButtons();
-
+            
+            /*this.dispose();
+            System.exit(0);*/
         } else {
             if (alzheimerPhase.isVisible()) {
                 /* alzheimerPhase.setVisible(true);
@@ -403,7 +405,9 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 System.out.println("Paciente viejo de ID:" + patient.getId());
                 dbManager.getPatientManager().modifyPatient(patient);
             }
-
+            
+            /*this.dispose();
+            System.exit(0);*/
         }
     }
 

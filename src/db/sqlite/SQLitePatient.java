@@ -82,6 +82,8 @@ public class SQLitePatient implements PatientManager {
         }
         return patientCreated;
     }*/
+    
+    @Override
     public Patient getPatientByNIF(String id) {
         Patient newPat = null;
         try {
@@ -214,6 +216,7 @@ public class SQLitePatient implements PatientManager {
             try (PreparedStatement st = c.prepareStatement(query)) {
                 st.setString(1, patient.getId());
                 st.setString(2, patient.getDoctorId());
+                System.out.println("doc id: " + patient.getDoctorId());
                 st.setString(3, patient.getName());
                 st.setInt(4, patient.getAge());
                 if (patient.getSex().equals("Male")) {

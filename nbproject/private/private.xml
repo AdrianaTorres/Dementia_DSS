@@ -5,17 +5,24 @@
         <group>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Alzheimer_Phase.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/dementia_dss/Dementia_DSS.java</file>
-            <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Patient_Info.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/db/sqlite/SQLiteDoctor.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/db/interfaces/PatientManager.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Motor_Symptoms.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Parkinson_Phase.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/LoginWindow.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Principal_Window.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/db/interfaces/DoctorManager.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/General_Symptoms.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/db/sqlite/SQLiteManager.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Open_Patient.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/UserPassword.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Other_Pathologies.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Final_Window.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/db/interfaces/DBManager.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/db/sqlite/SQLitePatient.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/dementia_dss/Doctor.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/NewAccount.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/dementia_dss/Patient.java</file>
         </group>
     </open-files>
 </project-private>
