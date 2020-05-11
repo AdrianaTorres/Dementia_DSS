@@ -41,10 +41,10 @@ public class SQLiteDoctor implements DoctorManager {
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
 
-            if (rs.getRow() == 0) {
+            if (rs.getString(1) == null) {
                 doctorCreated = false;
             } else {
-                doctorCreated = false;
+                doctorCreated = true;
             }
 
             /* String id_selected = rs.getString(1);

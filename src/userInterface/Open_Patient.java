@@ -44,6 +44,8 @@ public class Open_Patient extends javax.swing.JPanel {
     public void SaveInfo() {
         if (NIF_enter.getText() != null) {
             patient.setId(NIF_enter.getText());
+            System.out.println("Deberia guardar el ID y es:" + patient.getId());
+            System.out.println("Get text :" + NIF_enter.getText());
         }
     }
 

@@ -82,7 +82,8 @@ public class UserPassword extends javax.swing.JPanel {
     }
 
     public Boolean checkPassword(String id, String password) {
-        System.out.println("Existe el doctor? " + dbManager.getDoctorManager().doctorExists(id));
+        System.out.println("Existe el doctor? USERPASSWORD - CHECKPASSWORD " + dbManager.getDoctorManager().doctorExists(id));
+        System.out.println("Contraseña que recibe el metodo check" + password);
         if (dbManager.getDoctorManager().doctorExists(id)) {
             Doctor currentDoctor = dbManager.getDoctorManager().getDoctor(id);
 
@@ -90,6 +91,8 @@ public class UserPassword extends javax.swing.JPanel {
             validPassword = RSA.decryptPassword(validPassword, privateKey);
 
             password = RSA.decryptPassword(password, privateKey);
+
+            System.out.println("Contraseña con la que compara check" + validPassword);
 
             if (password.equals(validPassword)) {
                 return true;

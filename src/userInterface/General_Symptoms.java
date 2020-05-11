@@ -7,6 +7,7 @@ package userInterface;
 
 import db.interfaces.DBManager;
 import db.sqlite.SQLiteManager;
+import dementia_dss.Doctor;
 import dementia_dss.Patient;
 
 /**
@@ -29,8 +30,9 @@ public class General_Symptoms extends javax.swing.JPanel {
         this.dbManager = dbManager;
     }
 
-    public General_Symptoms(Patient patient) {
+    public General_Symptoms(Patient patient, Doctor doctor) {
         this.patient = patient;
+        patient.setDoctorId(doctor.getId());
         initComponents();
         setVisible(true);
         if (patient == null) {

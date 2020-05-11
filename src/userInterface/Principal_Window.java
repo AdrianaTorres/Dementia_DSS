@@ -30,14 +30,14 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     public Doctor doctor = new Doctor();
 
     //JPanels:
-    Initial_Description description = new Initial_Description();
-    Open_Patient openPatient = new Open_Patient(patient);
-    Patient_Info patientInfo = new Patient_Info(patient);
-    General_Symptoms generalSymptoms = new General_Symptoms(patient);
-    Motor_Symptoms motorSymptoms = new Motor_Symptoms(patient);
-    Other_Pathologies otherPathologies = new Other_Pathologies(patient);
-    Parkinson_Phase parkinsonPhase = new Parkinson_Phase(patient);
-    Alzheimer_Phase alzheimerPhase = new Alzheimer_Phase(patient);
+    Initial_Description description;
+    Open_Patient openPatient;
+    Patient_Info patientInfo;
+    General_Symptoms generalSymptoms;
+    Motor_Symptoms motorSymptoms;
+    Other_Pathologies otherPathologies;
+    Parkinson_Phase parkinsonPhase;
+    Alzheimer_Phase alzheimerPhase;
 
     Boolean parkinsonPhaseWind = false;
     Boolean alzheimerPhaseWind = false;
@@ -51,10 +51,19 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     /**
      * Creates new form Principal_Window
      */
-    public Principal_Window(DBManager dbManager) {
+    public Principal_Window(DBManager dbManager, Doctor doctor) {
         this.dbManager = dbManager;
         this.setVisible(true);
         initComponents();
+
+        description = new Initial_Description();
+        openPatient = new Open_Patient(patient);
+        patientInfo = new Patient_Info(patient);
+        generalSymptoms = new General_Symptoms(patient, doctor);
+        motorSymptoms = new Motor_Symptoms(patient);
+        otherPathologies = new Other_Pathologies(patient);
+        parkinsonPhase = new Parkinson_Phase(patient);
+        alzheimerPhase = new Alzheimer_Phase(patient);
 
         this.setTitle("DmentiApp 21.04");
 
@@ -246,6 +255,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             if ((Back_Button.isEnabled()) && (openPatient.checkEmptyNIF())) {
                 generateMessageDialog();
             } else {
+                openPatient.SaveInfo();
                 description.setVisible(false);
                 openPatient.setVisible(false);
                 patientInfo.setVisible(true);
@@ -300,6 +310,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }
 
     public void submitButtonActions() {
+        System.out.println("DOctor ID:" + patient.getDoctorId());
         if (otherPathologies.isVisible()) {
             otherPathologies.SaveInfo();
 
@@ -346,7 +357,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             }
             pack();
             manageButtons();
-            
+
             /*this.dispose();
             System.exit(0);*/
         } else {
@@ -405,7 +416,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 System.out.println("Paciente viejo de ID:" + patient.getId());
                 dbManager.getPatientManager().modifyPatient(patient);
             }
-            
+
             /*this.dispose();
             System.exit(0);*/
         }

@@ -77,12 +77,13 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, "The account was succesfully created.");
 
         dispose();
-        new Principal_Window(dbManager);
+        new Principal_Window(dbManager, doctor);
     }
 
     private void SignInButtonActions() {
-        System.out.println("ID doctor:" + userPassword.getUsername());
-        System.out.println("Existe el doctor? " + dbManager.getDoctorManager().doctorExists(userPassword.getUsername()));
+        System.out.println("ID doctor: LOGIN WIND" + userPassword.getUsername());
+        System.out.println("Password: LOGIN WIND" + userPassword.getPassword());
+        System.out.println("Existe el doctor? LOGIN WINDOW - SIGN IN" + dbManager.getDoctorManager().doctorExists(userPassword.getUsername()));
         if (userPassword.checkPassword(userPassword.getUsername(), userPassword.getPassword())) {
             userPassword.SaveInfo();
 
@@ -91,7 +92,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             manageButtons();
 
             dispose();
-            new Principal_Window(dbManager);
+            new Principal_Window(dbManager, doctor);
         } else {
             JOptionPane.showMessageDialog(null, "Wrong credentials. Please try again.");
         }

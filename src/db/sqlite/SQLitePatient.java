@@ -41,7 +41,7 @@ public class SQLitePatient implements PatientManager {
             if (rs.getRow() == 0) {
                 patientCreated = false;
             } else {
-                patientCreated = false;
+                patientCreated = true;
             }
 
             // System.out.println("Es esto el ID?" + rs.getString(1));
@@ -82,7 +82,6 @@ public class SQLitePatient implements PatientManager {
         }
         return patientCreated;
     }*/
-    
     @Override
     public Patient getPatientByNIF(String id) {
         Patient newPat = null;

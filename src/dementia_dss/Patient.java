@@ -146,7 +146,7 @@ public class Patient {
     // Constructor for queries:
 
     public Patient(String newPatId, String patDocId, String patName, int patAge, String patSex) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Patient(String newPatId, String patDocId, String patName, int patAge, String patSex,
@@ -166,7 +166,7 @@ public class Patient {
             Boolean patParkinson, Boolean patAlzheimer, Boolean patVascularD, Boolean patParkinson1,
             Boolean patParkinson2, Boolean patParkinson3, Boolean patAlzheimer1, Boolean patAlzheimer2,
             Boolean patAlzheimer3, Boolean patVascularD1, Boolean patVascularD2, Boolean patVascularD3) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     // 'SET' AND 'GET' METHODS:
