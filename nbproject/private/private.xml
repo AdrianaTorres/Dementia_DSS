@@ -5,6 +5,7 @@
         <group>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Alzheimer_Phase.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/dementia_dss/Dementia_DSS.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Patient_Info.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/db/sqlite/SQLiteDoctor.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/db/interfaces/PatientManager.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Motor_Symptoms.java</file>
