@@ -9,6 +9,8 @@ import db.interfaces.DBManager;
 import db.interfaces.DoctorManager;
 import db.interfaces.PatientManager;
 import db.sqlite.SQLiteManager;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import userInterface.*;
 
 /**
@@ -34,6 +36,13 @@ public class Dementia_DSS {
         doctorManager = dbManager.getDoctorManager();
         patientManager = dbManager.getPatientManager();
         dbManager.createTables();
+        Welcome_Window welcomeWindow = new Welcome_Window();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Dementia_DSS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        welcomeWindow.dispose();
         new LoginWindow(dbManager);
     }
 

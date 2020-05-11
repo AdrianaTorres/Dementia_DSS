@@ -30,7 +30,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     public Doctor doctor = new Doctor();
 
     //JPanels:
-    Initial_Description description;
     Open_Patient openPatient;
     Patient_Info patientInfo;
     General_Symptoms generalSymptoms;
@@ -56,7 +55,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         this.setVisible(true);
         initComponents();
 
-        description = new Initial_Description();
         openPatient = new Open_Patient(patient);
         patientInfo = new Patient_Info(patient);
         generalSymptoms = new General_Symptoms(patient, doctor);
@@ -70,8 +68,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         /*Next_Button.setMnemonic(KeyEvent.VK_N);
         Back_Button.setMnemonic(KeyEvent.VK_B);
         Submit_Button.setMnemonic(KeyEvent.VK_S);*/
-        description.setVisible(true);
-        openPatient.setVisible(false);
+        openPatient.setVisible(true);
         patientInfo.setVisible(false);
         generalSymptoms.setVisible(false);
         motorSymptoms.setVisible(false);
@@ -88,18 +85,18 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         alzheimerPhase.setDbManager(this.dbManager);
         parkinsonPhase.setDbManager(this.dbManager);
 
-        PrincipalPanel.add(description, BorderLayout.CENTER);
+        PrincipalPanel.add(openPatient, BorderLayout.CENTER);
         pack();
 
         manageButtons();
     }
 
     private void manageButtons() {
-        if (description.isVisible()) {
+        if (openPatient.isVisible()) {
             Back_Button.setEnabled(false);
             Next_Button.setEnabled(true);
             Submit_Button.setEnabled(false);
-        } else if (patientInfo.isVisible() || generalSymptoms.isVisible() || motorSymptoms.isVisible() || openPatient.isVisible()) {
+        } else if (patientInfo.isVisible() || generalSymptoms.isVisible() || motorSymptoms.isVisible()) {
             Back_Button.setEnabled(true);
             Next_Button.setEnabled(true);
             Submit_Button.setEnabled(false);
@@ -143,27 +140,11 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }
 
     public void backButtonActions() {
-        if (openPatient.isVisible()) {
-            if ((Back_Button.isEnabled()) && (openPatient.checkEmptyNIF())) {
-                generateMessageDialog();
-            } else {
-                openPatient.SaveInfo();
-                description.setVisible(true);
-                patientInfo.setVisible(false);
-                generalSymptoms.setVisible(false);
-                motorSymptoms.setVisible(false);
-                otherPathologies.setVisible(false);
-
-                PrincipalPanel.removeAll();
-                PrincipalPanel.repaint();
-                PrincipalPanel.add(description, BorderLayout.CENTER);
-            }
-        } else if (patientInfo.isVisible()) {
+        if (patientInfo.isVisible()) {
             if ((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
                 generateMessageDialog();
             } else {
                 patientInfo.SaveInfo();
-                description.setVisible(false);
                 openPatient.setVisible(true);
                 patientInfo.setVisible(false);
                 generalSymptoms.setVisible(false);
@@ -176,7 +157,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             }
         } else if (generalSymptoms.isVisible()) {
             generalSymptoms.SaveInfo();
-            description.setVisible(false);
             patientInfo.setVisible(true);
             generalSymptoms.setVisible(false);
             motorSymptoms.setVisible(false);
@@ -188,7 +168,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
         } else if (motorSymptoms.isVisible()) {
             motorSymptoms.SaveInfo();
-            description.setVisible(false);
             patientInfo.setVisible(false);
             generalSymptoms.setVisible(true);
             motorSymptoms.setVisible(false);
@@ -200,7 +179,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
         } else if (otherPathologies.isVisible()) {
             otherPathologies.SaveInfo();
-            description.setVisible(false);
             patientInfo.setVisible(false);
             generalSymptoms.setVisible(false);
             motorSymptoms.setVisible(true);
@@ -212,7 +190,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
         } else if (alzheimerPhase.isVisible()) {
             alzheimerPhase.SaveInfo();
-            description.setVisible(false);
             patientInfo.setVisible(false);
             generalSymptoms.setVisible(false);
             motorSymptoms.setVisible(false);
@@ -225,7 +202,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
         } else if (parkinsonPhase.isVisible()) {
             parkinsonPhase.SaveInfo();
-            description.setVisible(false);
             patientInfo.setVisible(false);
             generalSymptoms.setVisible(false);
             motorSymptoms.setVisible(false);
@@ -239,24 +215,11 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }
 
     public void nextButtonActions() {
-        if (description.isVisible()) {
-            description.setVisible(false);
-            openPatient.setVisible(true);
-            patientInfo.setVisible(false);
-            generalSymptoms.setVisible(false);
-            motorSymptoms.setVisible(false);
-            otherPathologies.setVisible(false);
-
-            PrincipalPanel.removeAll();
-            PrincipalPanel.repaint();
-            PrincipalPanel.add(openPatient, BorderLayout.CENTER);
-
-        } else if (openPatient.isVisible()) {
+        if (openPatient.isVisible()) {
             if ((Back_Button.isEnabled()) && (openPatient.checkEmptyNIF())) {
                 generateMessageDialog();
             } else {
                 openPatient.SaveInfo();
-                description.setVisible(false);
                 openPatient.setVisible(false);
                 patientInfo.setVisible(true);
                 generalSymptoms.setVisible(false);
@@ -273,7 +236,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                         + "           before continuing.");
             } else {
                 patientInfo.SaveInfo();
-                description.setVisible(false);
                 patientInfo.setVisible(false);
                 generalSymptoms.setVisible(true);
                 motorSymptoms.setVisible(false);
@@ -285,7 +247,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             }
         } else if (generalSymptoms.isVisible()) {
             generalSymptoms.SaveInfo();
-            description.setVisible(false);
             patientInfo.setVisible(false);
             generalSymptoms.setVisible(false);
             motorSymptoms.setVisible(true);
@@ -297,7 +258,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
         } else if (motorSymptoms.isVisible()) {
             motorSymptoms.SaveInfo();
-            description.setVisible(false);
             patientInfo.setVisible(false);
             generalSymptoms.setVisible(false);
             motorSymptoms.setVisible(false);
