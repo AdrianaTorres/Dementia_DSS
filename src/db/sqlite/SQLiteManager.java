@@ -49,6 +49,7 @@ public class SQLiteManager implements DBManager {
     public void disconnect() {
         try {
             connection.close();
+            System.out.println("The connection ended. ");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -96,7 +97,7 @@ public class SQLiteManager implements DBManager {
             st = connection.createStatement();
             String tableDoctors = "CREATE TABLE doctors (" + "doc_id TEXT," + "name TEXT,"
                     + "surname TEXT," + "age INTEGER," + "sex TEXT," + "username TEXT,"
-                    + "password TEXT," + "PRIMARY KEY (doc_id))";
+                    + "password INTEGER," + "PRIMARY KEY (doc_id))";
             st.executeUpdate(tableDoctors);
 
             st.close();

@@ -83,7 +83,7 @@ public class SQLiteDoctor implements DoctorManager {
                     int docAge = rs.getInt(4);
                     String docSex = rs.getString(5);
                     String docUsername = rs.getString(6);
-                    String docPassword = rs.getString(7);
+                    int docPassword = rs.getInt(7);
 
                     //create new doctor:
                     newDoc = new Doctor(newDoctorId, docName, docSurname, docAge, docSex,
@@ -201,7 +201,7 @@ public class SQLiteDoctor implements DoctorManager {
                 st.setString(5, "Female");
             }
             st.setString(6, doctor.getUsername());
-            st.setString(7, doctor.getPassword());
+            st.setInt(7, doctor.getPassword());
 
             st.executeUpdate();
             st.close();

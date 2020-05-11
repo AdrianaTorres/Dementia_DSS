@@ -5,17 +5,27 @@
  */
 package userInterface;
 
+import db.interfaces.DBManager;
+import db.sqlite.SQLiteManager;
+import dementia_dss.Doctor;
+
 /**
  *
  * @author Lucia
  */
 public class Final_Window extends javax.swing.JFrame {
 
+    DBManager dbManager = new SQLiteManager();
+    Doctor doctor = new Doctor();
+
     /**
      * Creates new form Final_Window
      */
-    public Final_Window() {
+    public Final_Window(DBManager dbManager, Doctor doctor) {
+        setVisible(true);
         initComponents();
+        this.dbManager = dbManager;
+        this.doctor = doctor;
         questionLabel.setText("Do you want to save the data?");
     }
 
@@ -30,10 +40,12 @@ public class Final_Window extends javax.swing.JFrame {
 
         Main_Panel = new javax.swing.JPanel();
         Buttons_Panel = new javax.swing.JPanel();
-        saveResults_button = new javax.swing.JButton();
+        loadPatient_button = new javax.swing.JButton();
         close_button = new javax.swing.JButton();
         questionLabel = new javax.swing.JLabel();
         icon = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -43,45 +55,65 @@ public class Final_Window extends javax.swing.JFrame {
         Buttons_Panel.setBackground(new java.awt.Color(225, 238, 238));
         Buttons_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        saveResults_button.setText("Save Results");
-        Buttons_Panel.add(saveResults_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 111, -1));
+        loadPatient_button.setText("Load patient");
+        loadPatient_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loadPatient_buttonActionPerformed(evt);
+            }
+        });
+        Buttons_Panel.add(loadPatient_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 160, -1));
 
-        close_button.setText("Close");
+        close_button.setText("Close DMENTIAPP");
         close_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 close_buttonActionPerformed(evt);
             }
         });
-        Buttons_Panel.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+        Buttons_Panel.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
         questionLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        questionLabel.setText("Do you wish to save the results?");
+        questionLabel.setText("Do you wish to load another patient?");
 
         icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dmentiapp_lock_icon.png"))); // NOI18N
+
+        jLabel1.setText("Data saved!");
+
+        jSeparator1.setBackground(new java.awt.Color(0, 153, 153));
 
         javax.swing.GroupLayout Main_PanelLayout = new javax.swing.GroupLayout(Main_Panel);
         Main_Panel.setLayout(Main_PanelLayout);
         Main_PanelLayout.setHorizontalGroup(
             Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Buttons_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
+            .addComponent(Buttons_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+            .addComponent(jSeparator1)
             .addGroup(Main_PanelLayout.createSequentialGroup()
                 .addGroup(Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Main_PanelLayout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(questionLabel))
+                        .addGap(83, 83, 83)
+                        .addComponent(icon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1))
                     .addGroup(Main_PanelLayout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(icon)))
+                        .addGap(105, 105, 105)
+                        .addComponent(questionLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Main_PanelLayout.setVerticalGroup(
             Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Main_PanelLayout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Main_PanelLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel1)
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Main_PanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(icon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(icon)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Buttons_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -91,50 +123,27 @@ public class Final_Window extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void close_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_close_buttonActionPerformed
-        // TODO add your handling code here:
+        dbManager.disconnect();
+        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_close_buttonActionPerformed
+
+    private void loadPatient_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadPatient_buttonActionPerformed
+        this.dispose();
+        new Principal_Window(dbManager, doctor);
+    }//GEN-LAST:event_loadPatient_buttonActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Final_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Final_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Final_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Final_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Final_Window().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Buttons_Panel;
     private javax.swing.JPanel Main_Panel;
     private javax.swing.JButton close_button;
     private javax.swing.JLabel icon;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton loadPatient_button;
     private javax.swing.JLabel questionLabel;
-    private javax.swing.JButton saveResults_button;
     // End of variables declaration//GEN-END:variables
 }

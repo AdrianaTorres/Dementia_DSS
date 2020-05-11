@@ -8,10 +8,6 @@ package userInterface;
 import db.interfaces.DBManager;
 import db.sqlite.SQLiteManager;
 import dementia_dss.Doctor;
-import dementia_dss.RSA;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.util.Map;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,9 +18,6 @@ public class UserPassword extends javax.swing.JPanel {
 
     DBManager dbManager = new SQLiteManager();
     Doctor doctor = new Doctor();
-    Map<String, Object> keys = RSA.createKeys();
-    PublicKey publicKey = (PublicKey) keys.get("public");
-    PrivateKey privateKey = (PrivateKey) keys.get("private");
 
     /**
      * Creates new form UserPassword
@@ -64,8 +57,8 @@ public class UserPassword extends javax.swing.JPanel {
 
             String password = passwordEnter.getText();
             System.out.println("Password received: " + password);
-            String encryptedPassword = RSA.encryptPassword(password, publicKey);
-            doctor.setPassword(encryptedPassword);
+            int hashPassword = password.hashCode();
+            doctor.setPassword(hashPassword);
 
         }
     }
@@ -74,27 +67,24 @@ public class UserPassword extends javax.swing.JPanel {
         return usernameEnter.getText();
     }
 
-    public String getPassword() {
+    public int getPassword() {
         String password = passwordEnter.getText();
-        String encryptedPassword = RSA.encryptPassword(password, publicKey);
+        int hashPassword = password.hashCode();
 
-        return encryptedPassword;
+        return hashPassword;
     }
 
-    public Boolean checkPassword(String id, String password) {
+    public Boolean checkPassword(String id, int password) {
         System.out.println("Existe el doctor? USERPASSWORD - CHECKPASSWORD " + dbManager.getDoctorManager().doctorExists(id));
         System.out.println("Contraseña que recibe el metodo check" + password);
         if (dbManager.getDoctorManager().doctorExists(id)) {
             Doctor currentDoctor = dbManager.getDoctorManager().getDoctor(id);
 
-            String validPassword = currentDoctor.getPassword();
-            validPassword = RSA.decryptPassword(validPassword, privateKey);
-
-            password = RSA.decryptPassword(password, privateKey);
+            int validPassword = currentDoctor.getPassword();
 
             System.out.println("Contraseña con la que compara check" + validPassword);
 
-            if (password.equals(validPassword)) {
+            if (password == validPassword) {
                 return true;
             } else {
                 return false;

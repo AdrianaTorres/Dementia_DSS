@@ -20,7 +20,7 @@ public class Doctor {
     int age;
     String sex;
     String username;
-    String password;
+    int password;
     List<Patient> patientList;
 
     public Doctor() {
@@ -30,12 +30,12 @@ public class Doctor {
         this.age = 0;
         this.sex = "";
         this.username = "";
-        this.password = ""; //Ver si esto tiene sentido
+        this.password = 0; //Ver si esto tiene sentido
         this.patientList = new ArrayList<>();
     }
 
     // Constructor for queries:
-    public Doctor(String newDoctorId, String docName, String docSurname, int docAge, String docSex, String docUsername, String docPassword) {
+    public Doctor(String newDoctorId, String docName, String docSurname, int docAge, String docSex, String docUsername, int docPassword) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         this.id = newDoctorId;
         this.name = docName;
@@ -70,7 +70,7 @@ public class Doctor {
         this.username = username_;
     }
 
-    public void setPassword(String password_) {
+    public void setPassword(int password_) {
         this.password = password_;
     }
 
@@ -102,7 +102,7 @@ public class Doctor {
         return this.username;
     }
 
-    public String getPassword() {
+    public int getPassword() {
         return this.password;
     }
 
