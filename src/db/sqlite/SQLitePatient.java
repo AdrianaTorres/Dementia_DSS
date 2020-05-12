@@ -38,10 +38,10 @@ public class SQLitePatient implements PatientManager {
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
 
-            if (rs.getRow() == 0) {
-                patientCreated = false;
-            } else {
+            if (rs.next()) {
                 patientCreated = true;
+            } else {
+                patientCreated = false;
             }
 
             // System.out.println("Es esto el ID?" + rs.getString(1));
@@ -183,17 +183,76 @@ public class SQLitePatient implements PatientManager {
     @Override
     public void modifyPatient(Patient patient) { //Update
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        String query = "UPDATE patients SET name=?, age=?, sex=?, familyHis=? WHERE pat_id=?";
+        String query = "UPDATE patients SET nameSurname = ?, age = ?, sex = ?, familyHistory = ?, lowEducation = ?, behaviour = ?, emotionInstability = ?,"
+                + "rightWords = ?, forgetPersonal = ?, facialExpression = ?, planOrganize = ?, forgetRecent = ?, sleepPattern = ?, lossSmell = ?, incontinence = ?, exposure = ?, smoking = ?, "
+                + "drugConsumption = ?, lackCoordination = ?, standWalk = ?, stiffness = ?, lossBalance = ?, walkStraight = ?, tremor = ?, orientationHigh = ?, orientationLow = ?, bradykinesiaLow = ?,"
+                + "bradykinesiaMedium = ?, bradykinesiaHigh = ?, downSyndrome = ?, hyperglycemia = ?, hyperlypidemia = ?, insulin = ?, hypertension = ?, heartCerebroAttack = ?, diabetes = ?, obesity = ?,"
+                + "cholesterol = ?, arteriosclerosis = ?, depression = ?, tremorUnilat = ?, tremorBilat = ?, stiffnessLow = ?, stiffnessHigh = ?, hyperreflexia = ?, lossPhysicalAbility = ?, noDementia = ?,"
+                + "parkinson = ?, alzheimer = ?, vascular = ?, parkinsonP1 = ?, parkinsonP2 = ?, parkinsonP3 = ?, alzheimerP1 = ?, alzheimerP2 = ?, alzheimerP3 = ?, vascularP1 = ?, vascularP2 = ?, vascularP3 = ? WHERE pat_id=?";
         try (PreparedStatement st = c.prepareStatement(query)) {
             st.setString(1, patient.getName());
-            st.setString(2, patient.getId());
-            st.setInt(3, patient.getAge());
+            st.setInt(2, patient.getAge());
             if (patient.getSex().equals("Male")) {
-                st.setString(4, "Male");
+                st.setString(3, "Male");
             } else {
-                st.setString(4, "Female");
+                st.setString(3, "Female");
             }
-            st.setString(5, patient.getFamilyHis());
+            st.setString(4, patient.getFamilyHis());
+            st.setString(5, patient.getLowEducation());
+            st.setString(6, patient.getBehaviour());
+            st.setString(7, patient.getEmotionalInstability());
+            st.setString(8, patient.getRightWords());
+            st.setString(9, patient.getForgetPersonal());
+            st.setString(10, patient.getFacialExp());
+            st.setString(11, patient.getPlanningOrg());
+            st.setString(12, patient.getForgetRecent());
+            st.setString(13, patient.getSleepingPattern());
+            st.setString(14, patient.getLossSmell());
+            st.setString(15, patient.getIncontinence());
+            st.setString(16, patient.getExposure());
+            st.setString(17, patient.getSmoking());
+            st.setString(18, patient.getDrugConsumption());
+            st.setString(19, patient.getLackCoord());
+            st.setString(20, patient.getStandWalk());
+            st.setString(21, patient.getStiffness());
+            st.setString(22, patient.getLossBalance());
+            st.setString(23, patient.getWalkStraight());
+            st.setString(24, patient.getTremor());
+            st.setString(25, patient.getOrientationH());
+            st.setString(26, patient.getOrientationL());
+            st.setString(27, patient.getBradykinesiaL());
+            st.setString(28, patient.getBradykinesiaM());
+            st.setString(29, patient.getBradykinesiaH());
+            st.setString(30, patient.getDownSyndrome());
+            st.setString(31, patient.getHyperglycemia());
+            st.setString(32, patient.getHyperlipidemia());
+            st.setString(33, patient.getInsulin());
+            st.setString(34, patient.getHypertension());
+            st.setString(35, patient.getHeartCerebro());
+            st.setString(36, patient.getDiabetes());
+            st.setString(37, patient.getObesity());
+            st.setString(40, patient.getCholesterol());
+            st.setString(41, patient.getArteriosclerosis());
+            st.setString(42, patient.getDepression());
+            st.setString(43, patient.getTremorUni());
+            st.setString(44, patient.getTremorBi());
+            st.setString(45, patient.getStiffnessL());
+            st.setString(46, patient.getStiffnessH());
+            st.setString(47, patient.getHyperreflexia());
+            st.setString(48, patient.getLossPhysicalAbilities());
+            st.setBoolean(49, patient.getNoDementia());
+            st.setBoolean(50, patient.getParkinson());
+            st.setBoolean(51, patient.getAlzheimer());
+            st.setBoolean(52, patient.getVascularD());
+            st.setBoolean(53, patient.getParkinsonP1());
+            st.setBoolean(54, patient.getParkinsonP2());
+            st.setBoolean(55, patient.getParkinsonP3());
+            st.setBoolean(56, patient.getAlzheimerP1());
+            st.setBoolean(57, patient.getAlzheimerP2());
+            st.setBoolean(58, patient.getAlzheimerP3());
+            st.setBoolean(59, patient.getVascularP1());
+            st.setBoolean(60, patient.getVascularP2());
+            st.setBoolean(61, patient.getVascularP3());
 
             st.executeUpdate();
         } catch (SQLException ex) {

@@ -51,7 +51,6 @@ public class Open_Patient extends javax.swing.JPanel {
 
     public Boolean isNew(String id) {
         if (dbManager.getPatientManager().patientExists(id)) {
-            patient = dbManager.getPatientManager().getPatientByNIF(id);
             return false;
         } else {
             return true;

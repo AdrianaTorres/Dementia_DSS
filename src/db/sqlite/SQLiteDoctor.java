@@ -33,28 +33,18 @@ public class SQLiteDoctor implements DoctorManager {
     public Boolean doctorExists(String id) {
         boolean doctorCreated = false;
         try {
-            System.out.println("Entro al try!! ");
-            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
             String query = "SELECT * FROM doctors WHERE doctors.doc_id = ?"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
             ResultSet rs = st.executeQuery();
 
-            if (rs.getString(1) == null) {
-                doctorCreated = false;
-            } else {
-                doctorCreated = true;
-            }
-
-            /* String id_selected = rs.getString(1);
-
-            if (id_selected.equals(id)) {
+            if (rs.next()) {
                 doctorCreated = true;
             } else {
                 doctorCreated = false;
             }
-             */
+
         } catch (SQLException ex) {
             Logger.getLogger(SQLiteDoctor.class.getName()).log(Level.SEVERE, null, ex);
         }

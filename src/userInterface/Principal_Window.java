@@ -270,7 +270,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }
 
     public void submitButtonActions() {
-        System.out.println("DOctor ID:" + patient.getDoctorId());
         if (otherPathologies.isVisible()) {
             otherPathologies.SaveInfo();
 
@@ -279,6 +278,17 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
             if (patient.getNoDementia()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has NO DEMENTIA.");
+
+                if (openPatient.isNew(patient.getId())) {
+                    System.out.println("Paciente nuevo de ID: " + patient.getId());
+                    dbManager.getPatientManager().newPatient(patient);
+                } else {
+                    System.out.println("Paciente viejo de ID:" + patient.getId());
+                    dbManager.getPatientManager().modifyPatient(patient);
+                }
+                new Final_Window(dbManager, doctor);
+                dispose();
+
             } else if (patient.getAlzheimer()) {
                 JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ALZHEIMER DISEASE.");
                 otherPathologies.setVisible(false);
@@ -309,27 +319,24 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 } else if (patient.getVascularP3()) {
                     JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 6-7.");
                 }
+
                 if (openPatient.isNew(patient.getId())) {
+                    System.out.println("Paciente nuevo de ID: " + patient.getId());
                     dbManager.getPatientManager().newPatient(patient);
                 } else {
+                    System.out.println("Paciente viejo de ID:" + patient.getId());
                     dbManager.getPatientManager().modifyPatient(patient);
                 }
+                new Final_Window(dbManager, doctor);
+                dispose();
+
             }
             pack();
             manageButtons();
 
-            dispose();
-            new Final_Window(dbManager, doctor);
-
         } else {
             if (alzheimerPhase.isVisible()) {
-                /* alzheimerPhase.setVisible(true);
 
-                PrincipalPanel.removeAll();
-                PrincipalPanel.repaint();
-                PrincipalPanel.add(alzheimerPhase, BorderLayout.CENTER);
-                pack();
-                 */
                 alzheimerPhase.SaveInfo();
 
                 CLIPS_connection clipsConnect = new CLIPS_connection();
@@ -370,7 +377,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 manageButtons();
 
             }
-
             if (openPatient.isNew(patient.getId())) {
                 System.out.println("Paciente nuevo de ID: " + patient.getId());
                 dbManager.getPatientManager().newPatient(patient);
@@ -379,8 +385,8 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 dbManager.getPatientManager().modifyPatient(patient);
             }
 
-            dispose();
             new Final_Window(dbManager, doctor);
+            dispose();
 
         }
 
@@ -403,6 +409,11 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formKeyTyped(evt);
+            }
+        });
 
         Buttons_Panel.setBackground(new java.awt.Color(225, 238, 238));
         Buttons_Panel.setPreferredSize(new java.awt.Dimension(906, 35));
@@ -494,6 +505,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     private void Back_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Back_ButtonKeyPressed
         // Works when ALT+B is typed.
+        System.out.println("Se ha presionado B" + evt);
         if (evt.getKeyCode() == KeyEvent.VK_B) {
             backButtonActions();
             pack();
@@ -527,6 +539,10 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     private void Back_ButtonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Back_ButtonKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_Back_ButtonKeyTyped
+
+    private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyTyped
 
     /**
      * @param args the command line arguments
@@ -573,6 +589,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
