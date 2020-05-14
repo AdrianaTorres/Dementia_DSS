@@ -52,6 +52,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
      */
     public Principal_Window(DBManager dbManager, Doctor doctor) {
         this.dbManager = dbManager;
+        this.doctor = doctor;
         this.setVisible(true);
         initComponents();
 

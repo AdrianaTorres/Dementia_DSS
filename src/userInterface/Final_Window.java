@@ -16,7 +16,7 @@ import dementia_dss.Doctor;
 public class Final_Window extends javax.swing.JFrame {
 
     DBManager dbManager = new SQLiteManager();
-    Doctor doctor = new Doctor();
+    Doctor doctor;
 
     /**
      * Creates new form Final_Window
@@ -26,7 +26,7 @@ public class Final_Window extends javax.swing.JFrame {
         initComponents();
         this.dbManager = dbManager;
         this.doctor = doctor;
-        questionLabel.setText("Do you want to save the data?");
+        System.out.println("ID de doctor en FW: " + doctor.getId());
     }
 
     /**

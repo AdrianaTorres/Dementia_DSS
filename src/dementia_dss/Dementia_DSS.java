@@ -38,7 +38,7 @@ public class Dementia_DSS {
         dbManager.createTables();
         Welcome_Window welcomeWindow = new Welcome_Window();
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Dementia_DSS.class.getName()).log(Level.SEVERE, null, ex);
         }
