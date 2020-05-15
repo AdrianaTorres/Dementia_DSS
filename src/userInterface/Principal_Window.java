@@ -108,37 +108,39 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         }
     }
 
-    public void generateMessageDialog() {
-        JFrame messageDialog = new JFrame();
-        JButton button = new JButton();
-        JLabel message = new JLabel();
-
-        messageDialog.setTitle("Warning!");
-
-        message.setText("Please, enter the data before continuing.");
-        //message.setSize(250, 300);
-        messageDialog.add(message, BorderLayout.NORTH);
-        //messageDialog.add(message);
-
-        button.setText("OK");
-        button.setLocation(10, 10);
-        messageDialog.add(message, BorderLayout.NORTH);
-        messageDialog.add(button, BorderLayout.SOUTH);
-        //messageDialog.add(button);
-
-        //messageDialog.setBounds(300, 300, 150, 100);
-        //messageDialog.setSize(20, 15);
-        messageDialog.setLocation(300, 400);
-        messageDialog.pack();
-        messageDialog.setVisible(true);
-
-        button.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                messageDialog.dispose();
-            }
-        });
-    }
+//    public void generateMessageDialog() {
+//        JFrame messageDialog = new JFrame();
+//        JButton button = new JButton();
+//        JLabel message = new JLabel();
+//
+//        messageDialog.setTitle("Warning!");
+//
+//        message.setText("Please, enter the data before continuing.");
+//        //message.setSize(250, 300);
+//        messageDialog.add(message, BorderLayout.CENTER);
+//        //messageDialog.setLocation(null);
+//       
+//        //messageDialog.add(message);
+//
+//        button.setText("OK");
+//        button.setLocation(10, 10);
+//        messageDialog.add(message, BorderLayout.NORTH);
+//        messageDialog.add(button, BorderLayout.SOUTH);
+//        //messageDialog.add(button);
+//
+//        //messageDialog.setBounds(300, 300, 150, 100);
+//        //messageDialog.setSize(20, 15);
+//        messageDialog.setLocation(300, 400);
+//        messageDialog.pack();
+//        messageDialog.setVisible(true);
+//
+//        button.addActionListener(new java.awt.event.ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent ae) {
+//                messageDialog.dispose();
+//            }
+//        });
+//    }
 
     public Boolean validateInt(int numero) {
         String cadena = Integer.toString(numero);
@@ -168,7 +170,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     public void backButtonActions() {
         if (patientInfo.isVisible()) {
             if ((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
-                generateMessageDialog();
+                 JOptionPane.showMessageDialog(null, "Please, enter the data before continuing ");
             } else {
                 patientInfo.SaveInfo();
                 openPatient.setVisible(true);
@@ -244,7 +246,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         if (openPatient.isVisible()) {
 
             if ((Back_Button.isEnabled()) && (openPatient.checkEmptyNIF())) {
-                generateMessageDialog();
+                JOptionPane.showMessageDialog(null, "Please, enter the data before continuing ");
             } else {
                 openPatient.SaveInfo();
                 if (validateNIF(patient.getId())) {
