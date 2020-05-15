@@ -108,7 +108,7 @@ public class Alzheimer_Phase extends javax.swing.JPanel {
         iconAlzheimer = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(225, 238, 238));
-        setPreferredSize(new java.awt.Dimension(700, 777));
+        setPreferredSize(new java.awt.Dimension(700, 600));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Please, mark the present symptoms for the system to be able to estimate the phase:");

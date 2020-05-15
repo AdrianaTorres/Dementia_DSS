@@ -180,7 +180,7 @@ public class Other_Pathologies extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(225, 238, 238));
         setMaximumSize(new java.awt.Dimension(1345, 671));
-        setPreferredSize(new java.awt.Dimension(700, 777));
+        setPreferredSize(new java.awt.Dimension(700, 600));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Please, mark other pathologies the patient have:");
@@ -311,7 +311,7 @@ public class Other_Pathologies extends javax.swing.JPanel {
                                             .addComponent(Insulin_check)
                                             .addComponent(Hyperlypidemia_check)
                                             .addComponent(DownSyndrome_check))))))))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

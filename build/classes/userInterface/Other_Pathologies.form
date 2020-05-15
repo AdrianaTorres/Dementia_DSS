@@ -30,7 +30,7 @@
       <Dimension value="[1345, 671]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[700, 777]"/>
+      <Dimension value="[700, 600]"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -99,7 +99,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="78" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

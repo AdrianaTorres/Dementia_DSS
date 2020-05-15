@@ -88,7 +88,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
         PrincipalPanel.add(openPatient, BorderLayout.CENTER);
         pack();
-
+        this.setLocationRelativeTo(null);
         manageButtons();
     }
 
@@ -138,6 +138,31 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 messageDialog.dispose();
             }
         });
+    }
+
+    public Boolean validateInt(int numero) {
+        String cadena = Integer.toString(numero);
+        if (cadena.matches("[0-9]+")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Boolean validateNIF(String NIF) {
+        if (NIF.matches("\\d{8}[A-HJ-NP-TV-Z]")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Boolean validateString(String string) {
+        if (string.matches("[A-Za-z]+")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void backButtonActions() {
@@ -217,19 +242,25 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 
     public void nextButtonActions() {
         if (openPatient.isVisible()) {
+
             if ((Back_Button.isEnabled()) && (openPatient.checkEmptyNIF())) {
                 generateMessageDialog();
             } else {
                 openPatient.SaveInfo();
-                openPatient.setVisible(false);
-                patientInfo.setVisible(true);
-                generalSymptoms.setVisible(false);
-                motorSymptoms.setVisible(false);
-                otherPathologies.setVisible(false);
+                if (validateNIF(patient.getId())) {
+                    openPatient.setVisible(false);
+                    patientInfo.setVisible(true);
+                    generalSymptoms.setVisible(false);
+                    motorSymptoms.setVisible(false);
+                    otherPathologies.setVisible(false);
 
-                PrincipalPanel.removeAll();
-                PrincipalPanel.repaint();
-                PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
+                    PrincipalPanel.removeAll();
+                    PrincipalPanel.repaint();
+                    PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Please, enter a valid NIF. It should have 8 numbers followed by an uppercase letter. ");
+                }
             }
         } else if (patientInfo.isVisible()) {
             if ((Next_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
@@ -237,14 +268,17 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                         + "           before continuing.");
             } else {
                 patientInfo.SaveInfo();
-                patientInfo.setVisible(false);
-                generalSymptoms.setVisible(true);
-                motorSymptoms.setVisible(false);
-                otherPathologies.setVisible(false);
+                if (validateInt(patient.getAge())) {
+                    patientInfo.setVisible(false);
+                    generalSymptoms.setVisible(true);
+                    motorSymptoms.setVisible(false);
+                    otherPathologies.setVisible(false);
 
-                PrincipalPanel.removeAll();
-                PrincipalPanel.repaint();
-                PrincipalPanel.add(generalSymptoms, BorderLayout.CENTER);
+                    PrincipalPanel.removeAll();
+                    PrincipalPanel.repaint();
+                    PrincipalPanel.add(generalSymptoms, BorderLayout.CENTER);
+                }
+
             }
         } else if (generalSymptoms.isVisible()) {
             generalSymptoms.SaveInfo();

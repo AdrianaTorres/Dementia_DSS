@@ -44,10 +44,12 @@ public class Open_Patient extends javax.swing.JPanel {
     }
 
     public void SaveInfo() {
-        if (NIF_enter.getText() != null) {
+        if (NIF_enter.getText() != null && validateNIF(NIF_enter.getText())) {
             patient.setId(NIF_enter.getText());
             System.out.println("Deberia guardar el ID y es:" + patient.getId());
             System.out.println("Get text :" + NIF_enter.getText());
+        } else if (!validateNIF(NIF_enter.getText())) {
+            JOptionPane.showMessageDialog(null, "Please, enter a valid NIF. ");
         }
     }
 
@@ -70,6 +72,14 @@ public class Open_Patient extends javax.swing.JPanel {
         return b;
     }
 
+    public Boolean validateNIF(String NIF) {
+        if (NIF.matches("\\d{8}[A-HJ-NP-TV-Z]")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,6 +98,7 @@ public class Open_Patient extends javax.swing.JPanel {
         delete_button = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(225, 238, 238));
+        setPreferredSize(new java.awt.Dimension(700, 600));
 
         jLabel1.setText("NIF:");
 

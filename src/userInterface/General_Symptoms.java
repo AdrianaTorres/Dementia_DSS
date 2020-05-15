@@ -217,7 +217,7 @@ public class General_Symptoms extends javax.swing.JPanel {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         setBackground(new java.awt.Color(225, 238, 238));
-        setPreferredSize(new java.awt.Dimension(875, 777));
+        setPreferredSize(new java.awt.Dimension(700, 600));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Please, mark the present symptoms:");

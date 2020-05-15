@@ -87,6 +87,7 @@ public class NewAccount extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(225, 238, 238));
+        setPreferredSize(new java.awt.Dimension(700, 600));
 
         nameLabel.setBackground(new java.awt.Color(225, 238, 238));
         nameLabel.setText("Name:");

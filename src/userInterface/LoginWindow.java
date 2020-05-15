@@ -34,7 +34,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     public LoginWindow(DBManager dbManager) {
         this.dbManager = dbManager;
         initComponents();
-
+        this.setVisible(true);
         this.setTitle("DmentiApp 21.04");
 
         userPassword.setVisible(true);
@@ -46,11 +46,9 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         //this.setLocation(dim.width - this.getSize().width, dim.height - this.getSize().height);
-        this.setLocationRelativeTo(null);
 
-        this.setVisible(true);
         pack();
-
+        this.setLocationRelativeTo(null);
         manageButtons();
     }
 
@@ -103,14 +101,18 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     private void SignUpButtonActions() {
         userPassword.SaveInfo();
 
-        userPassword.setVisible(false);
-        newAccount.setVisible(true);
+        if (validateNIF(userPassword.getUsername())) {
+            userPassword.setVisible(false);
+            newAccount.setVisible(true);
 
-        PrincipalPanel.removeAll();
-        PrincipalPanel.repaint();
-        PrincipalPanel.add(newAccount, BorderLayout.CENTER);
-        pack();
-        manageButtons();
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(newAccount, BorderLayout.CENTER);
+            pack();
+            manageButtons();
+        } else {
+            JOptionPane.showMessageDialog(null, "Please, enter a valid NIF.");
+        }
     }
 
     public Boolean validateInt(int numero) {
@@ -158,6 +160,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocation(new java.awt.Point(100, 100));
+        setPreferredSize(new java.awt.Dimension(700, 600));
         setResizable(false);
 
         ButtonsPanel.setBackground(new java.awt.Color(225, 238, 238));

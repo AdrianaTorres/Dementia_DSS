@@ -8,6 +8,7 @@ package userInterface;
 import db.interfaces.DBManager;
 import db.sqlite.SQLiteManager;
 import dementia_dss.Patient;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,6 +28,15 @@ public class Patient_Info extends javax.swing.JPanel {
 
     public void setDbManager(DBManager dbManager) {
         this.dbManager = dbManager;
+    }
+
+    public static Boolean validateInt(String numero) {
+        //String cadena = Integer.toString(numero);
+        if (numero.matches("[0-9]+")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Patient_Info(Patient patient) {
@@ -56,8 +66,11 @@ public class Patient_Info extends javax.swing.JPanel {
         if (NameSurname_enter.getText() != null) {
             patient.setName(NameSurname_enter.getText());
         }
-        if (Age_enter.getText() != null) {
+        if (Age_enter.getText() != null && validateInt(Age_enter.getText())) {
             patient.setAge(Integer.parseInt(Age_enter.getText()));
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Please, enter a valid age. It should be a number. ");
         }
         if (Sex_box.getSelectedItem().equals("Male")) {
             patient.setSex("MALE");
@@ -105,7 +118,7 @@ public class Patient_Info extends javax.swing.JPanel {
         iconPatientInfo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(225, 238, 238));
-        setPreferredSize(new java.awt.Dimension(700, 777));
+        setPreferredSize(new java.awt.Dimension(700, 600));
 
         Name_Surname.setText("Name and surname:");
 
@@ -199,16 +212,16 @@ public class Patient_Info extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Age)
                                     .addComponent(Sex))
-                                .addGap(99, 99, 99)
+                                .addGap(115, 115, 115)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Sex_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Age_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(Age_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Sex_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Name_Surname)
                                 .addGap(28, 28, 28)
                                 .addComponent(NameSurname_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jLabel5))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,7 +239,7 @@ public class Patient_Info extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Age)
                             .addComponent(Age_enter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 13, 13)
+                        .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Sex)
                             .addComponent(Sex_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -235,7 +248,7 @@ public class Patient_Info extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(iconPatientInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jSeparator1))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 450, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 270, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

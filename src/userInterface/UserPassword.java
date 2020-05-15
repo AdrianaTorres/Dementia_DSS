@@ -98,14 +98,6 @@ public class UserPassword extends javax.swing.JPanel {
 
     }
 
-    public Boolean validateNIF(String NIF) {
-        if (NIF.matches("\\d{8}[A-HJ-NP-TV-Z]")) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

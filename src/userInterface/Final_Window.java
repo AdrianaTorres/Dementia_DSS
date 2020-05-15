@@ -26,6 +26,7 @@ public class Final_Window extends javax.swing.JFrame {
         initComponents();
         this.dbManager = dbManager;
         this.doctor = doctor;
+        this.setLocationRelativeTo(null);
         System.out.println("ID de doctor en FW: " + doctor.getId());
     }
 
@@ -40,36 +41,21 @@ public class Final_Window extends javax.swing.JFrame {
 
         Main_Panel = new javax.swing.JPanel();
         Buttons_Panel = new javax.swing.JPanel();
-        loadPatient_button = new javax.swing.JButton();
-        close_button = new javax.swing.JButton();
         questionLabel = new javax.swing.JLabel();
         icon = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        close_button = new javax.swing.JButton();
+        loadPatient_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 600));
         setResizable(false);
 
         Main_Panel.setBackground(new java.awt.Color(225, 238, 238));
 
         Buttons_Panel.setBackground(new java.awt.Color(225, 238, 238));
         Buttons_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        loadPatient_button.setText("Load patient");
-        loadPatient_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loadPatient_buttonActionPerformed(evt);
-            }
-        });
-        Buttons_Panel.add(loadPatient_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 160, -1));
-
-        close_button.setText("Close DMENTIAPP");
-        close_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                close_buttonActionPerformed(evt);
-            }
-        });
-        Buttons_Panel.add(close_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
         questionLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         questionLabel.setText("Do you wish to load another patient?");
@@ -80,21 +66,41 @@ public class Final_Window extends javax.swing.JFrame {
 
         jSeparator1.setBackground(new java.awt.Color(0, 153, 153));
 
+        close_button.setText("Close DMENTIAPP");
+        close_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                close_buttonActionPerformed(evt);
+            }
+        });
+
+        loadPatient_button.setText("Load patient");
+        loadPatient_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loadPatient_buttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Main_PanelLayout = new javax.swing.GroupLayout(Main_Panel);
         Main_Panel.setLayout(Main_PanelLayout);
         Main_PanelLayout.setHorizontalGroup(
             Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Buttons_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+            .addComponent(Buttons_Panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 711, Short.MAX_VALUE)
             .addComponent(jSeparator1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Main_PanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(loadPatient_button, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
+                .addComponent(close_button)
+                .addGap(192, 192, 192))
             .addGroup(Main_PanelLayout.createSequentialGroup()
                 .addGroup(Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Main_PanelLayout.createSequentialGroup()
-                        .addGap(83, 83, 83)
+                        .addGap(228, 228, 228)
                         .addComponent(icon)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1))
                     .addGroup(Main_PanelLayout.createSequentialGroup()
-                        .addGap(105, 105, 105)
+                        .addGap(207, 207, 207)
                         .addComponent(questionLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -103,17 +109,21 @@ public class Final_Window extends javax.swing.JFrame {
             .addGroup(Main_PanelLayout.createSequentialGroup()
                 .addGroup(Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Main_PanelLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel1)
-                        .addGap(49, 49, 49))
+                        .addGap(17, 17, 17)
+                        .addComponent(icon)
+                        .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Main_PanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(icon)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(jLabel1)
+                        .addGap(51, 51, 51)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                 .addComponent(questionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(33, 33, 33)
+                .addGroup(Main_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(close_button)
+                    .addComponent(loadPatient_button))
+                .addGap(84, 84, 84)
                 .addComponent(Buttons_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
