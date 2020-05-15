@@ -23,6 +23,7 @@ public class Open_Patient extends javax.swing.JPanel {
      * Creates new form Open_Patient
      */
     public Open_Patient() {
+        this.setVisible(true);
         initComponents();
     }
 
@@ -32,8 +33,8 @@ public class Open_Patient extends javax.swing.JPanel {
 
     public Open_Patient(Patient patient) {
         this.patient = patient;
+        this.setVisible(true);
         initComponents();
-        setVisible(true);
 
         if (patient != null) {
             if (!patient.getId().equalsIgnoreCase("")) {
