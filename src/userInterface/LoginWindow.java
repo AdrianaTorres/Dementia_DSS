@@ -59,10 +59,12 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             NewAccountButton.setEnabled(false);
             SignInButton.setEnabled(true);
             SignUpButton.setEnabled(true);
+            Delete_button.setEnabled(true);
         } else if (newAccount.isVisible()) {
             NewAccountButton.setEnabled(true);
             SignInButton.setEnabled(false);
             SignUpButton.setEnabled(false);
+            Delete_button.setEnabled(false);
         }
     }
 
@@ -124,6 +126,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         SignInButton = new javax.swing.JButton();
         NewAccountButton = new javax.swing.JButton();
         SignUpButton = new javax.swing.JButton();
+        Delete_button = new javax.swing.JButton();
         PrincipalPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -179,12 +182,21 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             }
         });
 
+        Delete_button.setText("Delete account");
+        Delete_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Delete_buttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ButtonsPanelLayout = new javax.swing.GroupLayout(ButtonsPanel);
         ButtonsPanel.setLayout(ButtonsPanelLayout);
         ButtonsPanelLayout.setHorizontalGroup(
             ButtonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonsPanelLayout.createSequentialGroup()
-                .addContainerGap(234, Short.MAX_VALUE)
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(Delete_button)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(NewAccountButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SignUpButton)
@@ -199,7 +211,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
                 .addGroup(ButtonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SignInButton)
                     .addComponent(SignUpButton)
-                    .addComponent(NewAccountButton))
+                    .addComponent(NewAccountButton)
+                    .addComponent(Delete_button))
                 .addGap(30, 30, 30))
         );
 
@@ -254,8 +267,25 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         }
     }//GEN-LAST:event_SignInButtonKeyPressed
 
+    private void Delete_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_buttonActionPerformed
+        userPassword.SaveInfo();
+        if (dbManager.getDoctorManager().doctorExists(doctor.getId()) && userPassword.checkPassword(doctor.getId(), userPassword.getPassword())) {
+            dbManager.getPatientManager().deletePatientsFromDoctor(doctor);
+            dbManager.getDoctorManager().deleteDoctor(doctor);
+            userPassword.removeInfo();
+            JOptionPane.showMessageDialog(null, "Doctor account successfully deleted.");
+        } else {
+            if (!dbManager.getDoctorManager().doctorExists(doctor.getId())) {
+                JOptionPane.showMessageDialog(null, "The doctor does not exist, so it cannot be deleted.");
+            } else if (!userPassword.checkPassword(doctor.getId(), userPassword.getPassword())) {
+                JOptionPane.showMessageDialog(null, "Wrong credentials, please enter the right ones to delete the doctor account.");
+            }
+        }
+    }//GEN-LAST:event_Delete_buttonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ButtonsPanel;
+    private javax.swing.JButton Delete_button;
     private javax.swing.JButton NewAccountButton;
     private javax.swing.JPanel PrincipalPanel;
     private javax.swing.JButton SignInButton;

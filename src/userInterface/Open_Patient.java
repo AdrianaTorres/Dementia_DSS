@@ -164,8 +164,9 @@ public class Open_Patient extends javax.swing.JPanel {
         SaveInfo();
         if (dbManager.getPatientManager().patientExists(patient.getId())) {
             dbManager.getPatientManager().deletePatient(patient);
+            JOptionPane.showMessageDialog(null, "Patient successfully deleted.");
         } else {
-            JOptionPane.showMessageDialog(null, "The patient does not exists, so it cannot be deleted.");
+            JOptionPane.showMessageDialog(null, "The patient does not exist, so it cannot be deleted.");
         }
     }//GEN-LAST:event_delete_buttonActionPerformed
 

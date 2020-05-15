@@ -200,4 +200,17 @@ public class SQLiteDoctor implements DoctorManager {
             e.printStackTrace();
         }
     }
+
+    public void deleteDoctor(Doctor doctor) {
+        try { //Delete
+            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            String query = "DELETE FROM doctors WHERE doc_id = ?";
+            PreparedStatement st = c.prepareStatement(query);
+            st.setString(1, doctor.getId());
+            st.executeUpdate();
+            st.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(SQLitePatient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

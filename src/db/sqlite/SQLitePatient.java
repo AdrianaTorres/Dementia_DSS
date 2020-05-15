@@ -6,6 +6,7 @@
 package db.sqlite;
 
 import db.interfaces.PatientManager;
+import dementia_dss.Doctor;
 import dementia_dss.Patient;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -356,6 +357,19 @@ public class SQLitePatient implements PatientManager {
             String query = "DELETE FROM patients WHERE pat_id = ?";
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, patient.getId());
+            st.executeUpdate();
+            st.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(SQLitePatient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void deletePatientsFromDoctor(Doctor doctor) {
+        try { //Delete
+            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            String query = "DELETE FROM patients WHERE doctorID = ?";
+            PreparedStatement st = c.prepareStatement(query);
+            st.setString(1, doctor.getId());
             st.executeUpdate();
             st.close();
         } catch (SQLException ex) {

@@ -49,7 +49,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="234" max="32767" attributes="0"/>
+                  <EmptySpace pref="51" max="32767" attributes="0"/>
+                  <Component id="Delete_button" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="NewAccountButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="SignUpButton" min="-2" max="-2" attributes="0"/>
@@ -67,6 +69,7 @@
                       <Component id="SignInButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="SignUpButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="NewAccountButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Delete_button" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
@@ -102,6 +105,14 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignUpButtonActionPerformed"/>
             <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SignUpButtonKeyPressed"/>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SignUpButtonKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="Delete_button">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Delete account"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Delete_buttonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

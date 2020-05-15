@@ -5,6 +5,7 @@
  */
 package db.interfaces;
 
+import dementia_dss.Doctor;
 import dementia_dss.Patient;
 
 /**
@@ -22,4 +23,6 @@ public interface PatientManager {
     public void newPatient(Patient patient); //Insert
 
     public void deletePatient(Patient patient); //Delete
+
+    public void deletePatientsFromDoctor(Doctor doctor);
 }

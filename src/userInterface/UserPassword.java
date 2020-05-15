@@ -63,6 +63,11 @@ public class UserPassword extends javax.swing.JPanel {
         }
     }
 
+    public void removeInfo() {
+        usernameEnter.setText("");
+        passwordEnter.setText("");
+    }
+
     public String getUsername() {
         return usernameEnter.getText();
     }

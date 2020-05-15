@@ -21,4 +21,6 @@ public interface DoctorManager {
 
     public void newDoctor(Doctor doctor);
 
+    public void deleteDoctor(Doctor doctor);
+
 }
