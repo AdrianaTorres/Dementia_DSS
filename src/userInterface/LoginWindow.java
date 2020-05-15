@@ -113,6 +113,31 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         manageButtons();
     }
 
+    public Boolean validateInt(int numero) {
+        String cadena = Integer.toString(numero);
+        if (cadena.matches("[0-9]+")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Boolean validateNIF(String NIF) {
+        if (NIF.matches("\\d{8}[A-HJ-NP-TV-Z]")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Boolean validateString(String string) {
+        if (string.matches("[A-Za-z]+")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
