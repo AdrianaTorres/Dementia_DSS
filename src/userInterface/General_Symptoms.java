@@ -181,33 +181,33 @@ public class General_Symptoms extends javax.swing.JPanel {
     public void loadGeneralSymptoms(Patient p) {
         if (p.getBehaviour().equals("TRUE")) {
             Behaviour_check.setSelected(true);
-        } else if (p.getExposure().equals("TRUE")) {
+        } if (p.getExposure().equals("TRUE")) {
             Chemicals_check.setSelected(true);
-        } else if (p.getDrugConsumption().equals("TRUE")) {
+        } if (p.getDrugConsumption().equals("TRUE")) {
             DrugConsumption_check.setSelected(true);
-        } else if (p.getLowEducation().equals("TRUE")) {
+        } if (p.getLowEducation().equals("TRUE")) {
             EducationalLevel_check.setSelected(true);
-        } else if (p.getEmotionalInstability().equals("TRUE")) {
+        } if (p.getEmotionalInstability().equals("TRUE")) {
             EmtionalInst_check.setSelected(true);
-        } else if (p.getFacialExp().equals("TRUE")) {
+        } if (p.getFacialExp().equals("TRUE")) {
             FacialExp_check.setSelected(true);
-        } else if (p.getFamilyHis().equals("TRUE")) {
+        } if (p.getFamilyHis().equals("TRUE")) {
             FamilyHis_check.setSelected(true);
-        } else if (p.getForgetPersonal().equals("TRUE")) {
+        } if (p.getForgetPersonal().equals("TRUE")) {
             ForgetPersonalInfo_check.setSelected(true);
-        } else if (p.getForgetRecent().equals("TRUE")) {
+        } if (p.getForgetRecent().equals("TRUE")) {
             ForgetRecentInfo_check.setSelected(true);
-        } else if (p.getIncontinence().equals("TRUE")) {
+        } if (p.getIncontinence().equals("TRUE")) {
             Incontinence_check.setSelected(true);
-        } else if (p.getPlanningOrg().equals("TRUE")) {
+        } if (p.getPlanningOrg().equals("TRUE")) {
             PlanningDifficulty_check.setSelected(true);
-        } else if (p.getRightWords().equals("TRUE")) {
+        } if (p.getRightWords().equals("TRUE")) {
             RightWords_check.setSelected(true);
-        } else if (p.getSleepingPattern().equals("TRUE")) {
+        } if (p.getSleepingPattern().equals("TRUE")) {
             SleepPatterns_check.setSelected(true);
-        } else if (p.getLossSmell().equals("TRUE")) {
+        } if (p.getLossSmell().equals("TRUE")) {
             Smell_check.setSelected(true);
-        } else if (p.getSmoking().equals("TRUE")) {
+        } if (p.getSmoking().equals("TRUE")) {
             Smoking_check.setSelected(true);
         }
     }

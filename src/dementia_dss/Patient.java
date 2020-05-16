@@ -166,7 +166,67 @@ public class Patient {
             Boolean patParkinson, Boolean patAlzheimer, Boolean patVascularD, Boolean patParkinson1,
             Boolean patParkinson2, Boolean patParkinson3, Boolean patAlzheimer1, Boolean patAlzheimer2,
             Boolean patAlzheimer3, Boolean patVascularD1, Boolean patVascularD2, Boolean patVascularD3) {
-
+        this.id = newPatId;
+        this.doctorId = patDocId;
+        this.name = patName;
+        this.age = patAge;
+        this.sex = patSex;
+        this.family_his = patFamilyHis;
+        this.low_education = patLowEducation;
+        this.behaviour = patBehaviour;
+        this.emotional_instability = patEmotionalInstability;
+        this.right_words = patRightWords;
+        this.forget_personal = patForgetPersonal;
+        this.facial_exp = patFacialExp;
+        this.planning_org = patPlanningOrg;
+        this.forget_recent = patForgetRecent;
+        this.sleeping_pattern = patSleepingPattern;
+        this.loss_smell = patLossSmell;
+        this.incontinence = patIncontinence;
+        this.exposure = patExposure;
+        this.smoking = patSmoking;
+        this.drugConsumption = patDrugConsumption;
+        this.lack_coord = patLackCord;
+        this.stand_walk = patStandWalk;
+        this.stiffness = patStiffness;
+        this.loss_balance = patLossBalance;
+        this.walk_straight = patWalkStraight;
+        this.tremor = patTremor;
+        this.orientation_high = patOrientationHigh;
+        this.orientation_low = patOrientationLow;
+        this.bradykinesia_low = patBradykinesiaLow;
+        this.bradykinesia_medium = patBradykinesiaMedium;
+        this.bradykinesia_high = patBradykinesiaHigh;
+        this.downSyndrome = patDownsSyndrome;
+        this.hyperglycemia = patHyperglycemia;
+        this.hyperlipidemia = patHyperlipidemia;
+        this.insulin = patInsulin;
+        this.hypertension = patHypertension;
+        this.heart_cerebro = patHeartCerebro;
+        this.diabetes = patDiabetes;
+        this.obesity = patObesity;
+        this.cholesterol = patCholesterol;
+        this.arteriosclerosis = patArteriosclerosis;
+        this.depression = patDepression;
+        this.tremorUni = patTremorUni;
+        this.tremorBi = patTremorBi;
+        this.stiffnessLow = patStiffnessLow;
+        this.stiffnessHigh = patStiffnessHigh;
+        this.hyperreflexia = patHyperreflexia;
+        this.lossPhysicalAbilities = patLossPhysicalAbilities;
+        this.noDementia = patNoDementia;
+        this.alzheimer = patAlzheimer;
+        this.parkinson = patParkinson;
+        this.vascularD = patVascularD;
+        this.parkinsonP1 = patParkinson1;
+        this.parkinsonP2 = patParkinson2;
+        this.parkinsonP3 = patParkinson3;
+        this.alzheimerP1 = patAlzheimer1;
+        this.alzheimerP2 = patAlzheimer2;
+        this.alzheimerP3 = patAlzheimer3;
+        this.vascularP1 = patVascularD1;
+        this.vascularP2 = patVascularD2;
+        this.vascularP3 = patVascularD3;
     }
 
     // 'SET' AND 'GET' METHODS:

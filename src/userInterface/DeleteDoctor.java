@@ -5,6 +5,12 @@
  */
 package userInterface;
 
+import db.interfaces.DBManager;
+import db.sqlite.SQLiteDoctor;
+import db.sqlite.SQLiteManager;
+import dementia_dss.Doctor;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author adria
@@ -12,6 +18,8 @@ package userInterface;
 public class DeleteDoctor extends javax.swing.JFrame {
 
     Boolean delete;
+    DBManager dbManager = new SQLiteManager();
+    Doctor doctor = new Doctor();
 
     /**
      * Creates new form DeleteDoctor
@@ -23,6 +31,14 @@ public class DeleteDoctor extends javax.swing.JFrame {
 
     public Boolean getDelete() {
         return delete;
+    }
+    
+    public void setDBManager (DBManager dbM) {
+        this.dbManager = dbM;
+    }
+    
+    public void setDoctor (Doctor d) {
+        this.doctor = d;
     }
 
     /**
@@ -87,8 +103,24 @@ public class DeleteDoctor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void yes_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yes_buttonActionPerformed
-        delete = true;
-        dispose();
+        //System.out.println("Delete: " + deleteDoctor.getDelete());
+        if (dbManager.getDoctorManager().doctorExists(doctor.getId()) && userPassword.checkPassword(doctor.getId(), userPassword.getPassword())) {
+            dbManager.getPatientManager().deletePatientsFromDoctor(doctor);
+            dbManager.getDoctorManager().deleteDoctor(doctor);
+            userPassword.removeInfo();
+            JOptionPane.showMessageDialog(null, "Doctor account successfully deleted.");
+        } else {
+            if (!dbManager.getDoctorManager().doctorExists(doctor.getId())) {
+                JOptionPane.showMessageDialog(null, "The doctor does not exist, so it cannot be deleted.");
+            } else if (!userPassword.checkPassword(doctor.getId(), userPassword.getPassword())) {
+                JOptionPane.showMessageDialog(null, "Wrong credentials, please enter the right ones to delete the doctor account.");
+            } else if (!deleteDoctor.getDelete()) {
+                JOptionPane.showMessageDialog(null, "Delete canceled. ");
+            }
+        }
+        
+        /*delete = true;
+        dispose();*/
     }//GEN-LAST:event_yes_buttonActionPerformed
 
     private void no_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_no_buttonActionPerformed

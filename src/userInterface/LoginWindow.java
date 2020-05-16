@@ -303,21 +303,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     private void Delete_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_buttonActionPerformed
         userPassword.SaveInfo();
         deleteDoctor.setVisible(true);
-        System.out.println("Delete: " + deleteDoctor.getDelete());
-        if (dbManager.getDoctorManager().doctorExists(doctor.getId()) && userPassword.checkPassword(doctor.getId(), userPassword.getPassword()) && deleteDoctor.getDelete()) {
-            dbManager.getPatientManager().deletePatientsFromDoctor(doctor);
-            dbManager.getDoctorManager().deleteDoctor(doctor);
-            userPassword.removeInfo();
-            JOptionPane.showMessageDialog(null, "Doctor account successfully deleted.");
-        } else {
-            if (!dbManager.getDoctorManager().doctorExists(doctor.getId())) {
-                JOptionPane.showMessageDialog(null, "The doctor does not exist, so it cannot be deleted.");
-            } else if (!userPassword.checkPassword(doctor.getId(), userPassword.getPassword())) {
-                JOptionPane.showMessageDialog(null, "Wrong credentials, please enter the right ones to delete the doctor account.");
-            } else if (!deleteDoctor.getDelete()) {
-                JOptionPane.showMessageDialog(null, "Delete canceled. ");
-            }
-        }
+        deleteDoctor.setDBManager(dbManager);
+        deleteDoctor.setDoctor(doctor);
     }//GEN-LAST:event_Delete_buttonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

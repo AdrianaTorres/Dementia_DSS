@@ -143,30 +143,30 @@ public class Motor_Symptoms extends javax.swing.JPanel {
 
     public void loadMotorSymptoms(Patient p) {
         if (p.getLossBalance().equals("TRUE")) {
-            LossBalance_check.setEnabled(true);
-        } else if (p.getLackCoord().equals("TRUE")) {
-            NoCoordination_check.setEnabled(true);
-        } else if (p.getStandWalk().equals("TRUE")) {
-            NoStand_check.setEnabled(true);
-        } else if (p.getStiffness().equals("TRUE")) {
-            Stiffness_check.setEnabled(true);
-        } else if (p.getWalkStraight().equals("TRUE")) {
-            StraightWalk_check.setEnabled(true);
-        } else if (p.getTremor().equals("TRUE")) {
-            Tremor_check.setEnabled(true);
-        } else if (p.getBradykinesiaL().equals("FALSE") && (p.getBradykinesiaM().equalsIgnoreCase("FALSE")) && (patient.getBradykinesiaH().equalsIgnoreCase("FALSE"))) {
+            LossBalance_check.setSelected(true);
+        } if (p.getLackCoord().equals("TRUE")) {
+            NoCoordination_check.setSelected(true);
+        } if (p.getStandWalk().equals("TRUE")) {
+            NoStand_check.setSelected(true);
+        } if (p.getStiffness().equals("TRUE")) {
+            Stiffness_check.setSelected(true);
+        } if (p.getWalkStraight().equals("TRUE")) {
+            StraightWalk_check.setSelected(true);
+        } if (p.getTremor().equals("TRUE")) {
+            Tremor_check.setSelected(true);
+        } if (p.getBradykinesiaL().equals("FALSE") && (p.getBradykinesiaM().equalsIgnoreCase("FALSE")) && (patient.getBradykinesiaH().equalsIgnoreCase("FALSE"))) {
             Bradykinesia_box.setSelectedIndex(0);
-        } else if (p.getBradykinesiaL().equals("TRUE")) {
+        } if (p.getBradykinesiaL().equals("TRUE")) {
             Bradykinesia_box.setSelectedIndex(1);
-        } else if (p.getBradykinesiaM().equals("TRUE")) {
+        } if (p.getBradykinesiaM().equals("TRUE")) {
             Bradykinesia_box.setSelectedIndex(2);
-        } else if (p.getBradykinesiaH().equals("TRUE")) {
+        } if (p.getBradykinesiaH().equals("TRUE")) {
             Bradykinesia_box.setSelectedIndex(3);
-        } else if (p.getOrientationH().equals("FALSE") && (p.getOrientationH().equalsIgnoreCase("FALSE"))) {
+        } if (p.getOrientationH().equals("FALSE") && (p.getOrientationH().equalsIgnoreCase("FALSE"))) {
             Orientation_box.setSelectedIndex(0);
-        } else if (p.getOrientationL().equals("TRUE")) {
+        } if (p.getOrientationL().equals("TRUE")) {
             Orientation_box.setSelectedIndex(1);
-        } else if (p.getOrientationH().equalsIgnoreCase("TRUE")) {
+        } if (p.getOrientationH().equalsIgnoreCase("TRUE")) {
             Orientation_box.setSelectedIndex(2);
         }
     }
