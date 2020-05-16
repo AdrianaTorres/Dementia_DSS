@@ -140,6 +140,36 @@ public class Motor_Symptoms extends javax.swing.JPanel {
             patient.setBradykinesiaM("FALSE");
         }
     }
+    
+    /*public void loadMotorSymptoms (Patient p) {
+        this.patient = p;
+        
+        if (p.getLossBalance().equals("TRUE")) {
+            LossBalance_check.setEnabled(true);
+        } else if (p.getLackCoord().equals("TRUE")) {
+            NoCoordination_check.setEnabled(true);
+        } else if (p.getStandWalk().equals("TRUE")) {
+            NoStand_check.setEnabled(true);
+        } else if (p.getStiffness().equals("TRUE")) {
+            Stiffness_check.setEnabled(true);
+        } else if (p.getWalkStraight().equals("TRUE")) {
+            StraightWalk_check.setEnabled(true);
+        } else if (p.getTremor().equals("TRUE")) {
+            Tremor_check.setEnabled(true);
+        } else if (p.getBradykinesiaL().equals("")) {
+            
+        } else if (p.getBradykinesiaL()) {
+            
+        } else if (p.getBradykinesiaM()) {
+            
+        } else if (p.getBradykinesiaH()) {
+            
+        }
+        
+        Bradykinesia_box;
+          Orientation_box;
+        
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.

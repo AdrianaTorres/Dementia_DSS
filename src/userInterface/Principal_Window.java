@@ -88,6 +88,10 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         this.setLocationRelativeTo(null);
         manageButtons();
     }
+    
+    public void setPatient (Patient p) {
+        this.patient = p;
+    }
 
     private void manageButtons() {
         if (openPatient.isVisible()) {
@@ -105,39 +109,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         }
     }
 
-//    public void generateMessageDialog() {
-//        JFrame messageDialog = new JFrame();
-//        JButton button = new JButton();
-//        JLabel message = new JLabel();
-//
-//        messageDialog.setTitle("Warning!");
-//
-//        message.setText("Please, enter the data before continuing.");
-//        //message.setSize(250, 300);
-//        messageDialog.add(message, BorderLayout.CENTER);
-//        //messageDialog.setLocation(null);
-//
-//        //messageDialog.add(message);
-//
-//        button.setText("OK");
-//        button.setLocation(10, 10);
-//        messageDialog.add(message, BorderLayout.NORTH);
-//        messageDialog.add(button, BorderLayout.SOUTH);
-//        //messageDialog.add(button);
-//
-//        //messageDialog.setBounds(300, 300, 150, 100);
-//        //messageDialog.setSize(20, 15);
-//        messageDialog.setLocation(300, 400);
-//        messageDialog.pack();
-//        messageDialog.setVisible(true);
-//
-//        button.addActionListener(new java.awt.event.ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent ae) {
-//                messageDialog.dispose();
-//            }
-//        });
-//    }
     public Boolean validateInt(int numero) {
         String cadena = Integer.toString(numero);
         if (cadena.matches("[0-9]+")) {
@@ -387,13 +358,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             }
 
             if (parkinsonPhase.isVisible()) {
-                /*parkinsonPhase.setVisible(true);
-
-                PrincipalPanel.removeAll();
-                PrincipalPanel.repaint();
-                PrincipalPanel.add(parkinsonPhase, BorderLayout.CENTER);
-                pack();
-                 */
                 parkinsonPhase.SaveInfo();
 
                 CLIPS_connection clipsConnect = new CLIPS_connection();
@@ -580,7 +544,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     /**
      * @param args the command line arguments
      */
-    // ESTO ESTÁ COMENTADO PORQUE ES UNA PRUEBA. EN PRINCIPIO EL ÚNICO 'MAIN' QUE DEBERÍA HABER ES EN LA CLASE DEMENTIA_DSS QUE ES LA PRINCIPAL DEL PROYECTO Y DESDE LA QUE SE EJECUTA TODO.
     /*public static void main(String args[]) {*/
  /* Set the Nimbus look and feel */
     //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

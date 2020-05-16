@@ -57,7 +57,7 @@
               <Component id="iconGeneralSymptoms" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="11" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" pref="56" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="FacialExp_check" min="-2" max="-2" attributes="0"/>
                   <Component id="ForgetPersonalInfo_check" min="-2" max="-2" attributes="0"/>
@@ -81,7 +81,7 @@
                   <Component id="EducationalLevel_check" min="-2" max="-2" attributes="0"/>
                   <Component id="Smell_check" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="57" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

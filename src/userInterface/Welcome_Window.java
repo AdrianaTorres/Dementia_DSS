@@ -15,6 +15,7 @@ public class Welcome_Window extends javax.swing.JFrame {
      * Creates new form Welcome_Window
      */
     public Welcome_Window() {
+        this.setTitle("DmentiApp 21.04");
         setVisible(true);
         initComponents();
         this.setLocationRelativeTo(null);
@@ -33,7 +34,7 @@ public class Welcome_Window extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
-        setPreferredSize(new java.awt.Dimension(450, 450));
+        setPreferredSize(new java.awt.Dimension(500, 584));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/dmentiapp_logoBIG2.png"))); // NOI18N
 
@@ -41,11 +42,11 @@ public class Welcome_Window extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
