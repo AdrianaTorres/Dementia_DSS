@@ -8,7 +8,6 @@ package userInterface;
 import db.interfaces.DBManager;
 import db.sqlite.SQLiteManager;
 import dementia_dss.Doctor;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -92,7 +91,6 @@ public class UserPassword extends javax.swing.JPanel {
                 return false;
             }
         } else {
-            JOptionPane.showMessageDialog(null, "The specified username has not an account yet. Please sign up. ");
             return false;
         }
 

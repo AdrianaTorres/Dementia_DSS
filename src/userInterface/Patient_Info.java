@@ -31,8 +31,15 @@ public class Patient_Info extends javax.swing.JPanel {
     }
 
     public static Boolean validateInt(String numero) {
-        //String cadena = Integer.toString(numero);
         if (numero.matches("[0-9]+")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Boolean validateString(String string) {
+        if (string.matches("[A-Za-z\\s]+")) {
             return true;
         } else {
             return false;
@@ -63,13 +70,14 @@ public class Patient_Info extends javax.swing.JPanel {
     }
 
     public void SaveInfo() { // REVISAR QUE ESTE BIEN
-        if (NameSurname_enter.getText() != null) {
+        if (NameSurname_enter.getText() != null && validateString(NameSurname_enter.getText())) {
             patient.setName(NameSurname_enter.getText());
+        } else {
+            JOptionPane.showMessageDialog(null, "Please, enter a valid name and surname. It should only contain characters and spaces. ");
         }
         if (Age_enter.getText() != null && validateInt(Age_enter.getText())) {
             patient.setAge(Integer.parseInt(Age_enter.getText()));
         } else {
-
             JOptionPane.showMessageDialog(null, "Please, enter a valid age. It should be a number. ");
         }
         if (Sex_box.getSelectedItem().equals("Male")) {

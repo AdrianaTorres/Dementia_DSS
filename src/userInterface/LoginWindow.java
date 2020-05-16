@@ -27,6 +27,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
     UserPassword userPassword = new UserPassword(doctor);
     NewAccount newAccount = new NewAccount(doctor);
+    DeleteDoctor deleteDoctor = new DeleteDoctor();
 
     /**
      * Creates new form LoginWindow
@@ -40,6 +41,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         userPassword.setVisible(true);
         userPassword.setDbManager(this.dbManager);
         newAccount.setVisible(false);
+        deleteDoctor.setVisible(false);
         ButtonsPanel.setVisible(true);
 
         PrincipalPanel.add(userPassword, BorderLayout.CENTER);
@@ -68,16 +70,19 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
     private void NewAccountButtonActions() {
         newAccount.SaveInfo();
-        dbManager.getDoctorManager().newDoctor(doctor);
 
-        userPassword.setVisible(false);
-        newAccount.setVisible(false);
-        manageButtons();
+        if (validateInt(doctor.getAge()) && doctor.getAge() != 0 && validateString(doctor.getName()) && validateString(doctor.getSurname())) {
+            dbManager.getDoctorManager().newDoctor(doctor);
 
-        JOptionPane.showMessageDialog(null, "The account was succesfully created.");
+            userPassword.setVisible(false);
+            newAccount.setVisible(false);
+            manageButtons();
 
-        dispose();
-        new Principal_Window(dbManager, doctor);
+            JOptionPane.showMessageDialog(null, "The account was succesfully created.");
+
+            dispose();
+            new Principal_Window(dbManager, doctor);
+        }
     }
 
     private void SignInButtonActions() {
@@ -111,7 +116,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             pack();
             manageButtons();
         } else {
-            JOptionPane.showMessageDialog(null, "Please, enter a valid NIF.");
+            JOptionPane.showMessageDialog(null, "Please, enter a valid NIF. It should have 8 numbers followed by an uppercase letter. ");
         }
     }
 
@@ -297,7 +302,9 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
     private void Delete_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_buttonActionPerformed
         userPassword.SaveInfo();
-        if (dbManager.getDoctorManager().doctorExists(doctor.getId()) && userPassword.checkPassword(doctor.getId(), userPassword.getPassword())) {
+        deleteDoctor.setVisible(true);
+        System.out.println("Delete: " + deleteDoctor.getDelete());
+        if (dbManager.getDoctorManager().doctorExists(doctor.getId()) && userPassword.checkPassword(doctor.getId(), userPassword.getPassword()) && deleteDoctor.getDelete()) {
             dbManager.getPatientManager().deletePatientsFromDoctor(doctor);
             dbManager.getDoctorManager().deleteDoctor(doctor);
             userPassword.removeInfo();
@@ -307,6 +314,8 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "The doctor does not exist, so it cannot be deleted.");
             } else if (!userPassword.checkPassword(doctor.getId(), userPassword.getPassword())) {
                 JOptionPane.showMessageDialog(null, "Wrong credentials, please enter the right ones to delete the doctor account.");
+            } else if (!deleteDoctor.getDelete()) {
+                JOptionPane.showMessageDialog(null, "Delete canceled. ");
             }
         }
     }//GEN-LAST:event_Delete_buttonActionPerformed

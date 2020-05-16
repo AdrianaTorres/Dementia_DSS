@@ -6,6 +6,7 @@
 package userInterface;
 
 import dementia_dss.Doctor;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -47,15 +48,37 @@ public class NewAccount extends javax.swing.JPanel {
         }
     }
 
+    public Boolean validateInt(String numero) {
+        if (numero.matches("[0-9]+")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Boolean validateString(String string) {
+        if (string.matches("[A-Za-z]+")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void SaveInfo() {
-        if (nameEnter.getText() != null) {
+        if (nameEnter.getText() != null && validateString(nameEnter.getText())) {
             doctor.setName(nameEnter.getText());
+        } else {
+            JOptionPane.showMessageDialog(null, "Please, enter a valid name. It should only contain characters and spaces. ");
         }
-        if (surnameEnter.getText() != null) {
+        if (surnameEnter.getText() != null && validateString(surnameEnter.getText())) {
             doctor.setSurname(surnameEnter.getText());
+        } else {
+            JOptionPane.showMessageDialog(null, "Please, enter a valid surname. It should only contain characters and spaces. ");
         }
-        if (ageEnter.getText() != null) {
+        if (ageEnter.getText() != null && validateInt(ageEnter.getText())) {
             doctor.setAge(Integer.parseInt(ageEnter.getText()));
+        } else {
+            JOptionPane.showMessageDialog(null, "Please, enter a valid age. It should be a number. ");
         }
         if (sexEnter.getSelectedItem().equals("Male")) {
             doctor.setSex("MALE");

@@ -14,9 +14,6 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /**
@@ -119,7 +116,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 //        //message.setSize(250, 300);
 //        messageDialog.add(message, BorderLayout.CENTER);
 //        //messageDialog.setLocation(null);
-//       
+//
 //        //messageDialog.add(message);
 //
 //        button.setText("OK");
@@ -141,7 +138,6 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
 //            }
 //        });
 //    }
-
     public Boolean validateInt(int numero) {
         String cadena = Integer.toString(numero);
         if (cadena.matches("[0-9]+")) {
@@ -160,7 +156,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }
 
     public Boolean validateString(String string) {
-        if (string.matches("[A-Za-z]+")) {
+        if (string.matches("[A-Za-z\\s]+")) {
             return true;
         } else {
             return false;
@@ -170,7 +166,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     public void backButtonActions() {
         if (patientInfo.isVisible()) {
             if ((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
-                 JOptionPane.showMessageDialog(null, "Please, enter the data before continuing ");
+                JOptionPane.showMessageDialog(null, "Please, enter the data before continuing ");
             } else {
                 patientInfo.SaveInfo();
                 openPatient.setVisible(true);
@@ -246,7 +242,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         if (openPatient.isVisible()) {
 
             if ((Back_Button.isEnabled()) && (openPatient.checkEmptyNIF())) {
-                JOptionPane.showMessageDialog(null, "Please, enter the data before continuing ");
+                JOptionPane.showMessageDialog(null, "Please, enter the data before continuing. ");
             } else {
                 openPatient.SaveInfo();
                 if (validateNIF(patient.getId())) {
@@ -270,7 +266,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                         + "           before continuing.");
             } else {
                 patientInfo.SaveInfo();
-                if (validateInt(patient.getAge())) {
+                if (validateInt(patient.getAge()) && patient.getAge() != 0 && validateString(patient.getName())) {
                     patientInfo.setVisible(false);
                     generalSymptoms.setVisible(true);
                     motorSymptoms.setVisible(false);
