@@ -137,7 +137,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     public void backButtonActions() {
         if (patientInfo.isVisible()) {
             if ((Back_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
-                JOptionPane.showMessageDialog(null, "Please, enter the data before continuing ");
+                JOptionPane.showMessageDialog(null, "Please, enter the data before continuing ", "Warning", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 patientInfo.SaveInfo();
                 openPatient.setVisible(true);
@@ -213,7 +213,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         if (openPatient.isVisible()) {
 
             if ((Back_Button.isEnabled()) && (openPatient.checkEmptyNIF())) {
-                JOptionPane.showMessageDialog(null, "Please, enter the data before continuing. ");
+                JOptionPane.showMessageDialog(null, "Please, enter the data before continuing. ", "Warning", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 if (!openPatient.isNew(openPatient.getNIF())) {
                     Patient p = dbManager.getPatientManager().getPatientByNIF(openPatient.getNIF());
@@ -238,13 +238,13 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                     PrincipalPanel.add(patientInfo, BorderLayout.CENTER);
 
                 } else {
-                    JOptionPane.showMessageDialog(null, "Please, enter a valid NIF. It should have 8 numbers followed by an uppercase letter. ");
+                    JOptionPane.showMessageDialog(null, "Please, enter a valid NIF. It should have 8 numbers followed by an uppercase letter. ", "Warning", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         } else if (patientInfo.isVisible()) {
             if ((Next_Button.isEnabled()) && (patientInfo.checkEmptyFields())) {
                 JOptionPane.showMessageDialog(null, "Please, enter a 'Name' and 'Age'\n"
-                        + "           before continuing.");
+                        + "           before continuing.", "Warning", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 patientInfo.SaveInfo();
                 if (validateInt(patient.getAge()) && patient.getAge() != 0 && validateString(patient.getName())) {
@@ -291,7 +291,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             clipsConnect.createPatientAssertion(patient);
 
             if (patient.getNoDementia()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has NO DEMENTIA.");
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has NO DEMENTIA.", "Message", JOptionPane.INFORMATION_MESSAGE);
 
                 if (openPatient.isNew(patient.getId())) {
                     System.out.println("Paciente nuevo de ID: " + patient.getId());
@@ -304,7 +304,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 dispose();
 
             } else if (patient.getAlzheimer()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ALZHEIMER DISEASE.");
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has ALZHEIMER DISEASE.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 otherPathologies.setVisible(false);
                 alzheimerPhaseWind = true;
                 alzheimerPhase.setVisible(true);
@@ -314,7 +314,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 PrincipalPanel.add(alzheimerPhase, BorderLayout.CENTER);
 
             } else if (patient.getParkinson()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON DISEASE.");
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has PARKINSON DISEASE.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 otherPathologies.setVisible(false);
                 parkinsonPhaseWind = true;
                 parkinsonPhase.setVisible(true);
@@ -324,14 +324,14 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 PrincipalPanel.add(parkinsonPhase, BorderLayout.CENTER);
 
             } else if (patient.getVascularD()) {
-                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has VASCULAR DEMENTIA.");
+                JOptionPane.showMessageDialog(null, "Diagnosis is: patient has VASCULAR DEMENTIA.", "Message", JOptionPane.INFORMATION_MESSAGE);
 
                 if (patient.getVascularP1()) {
-                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 1-3.");
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 1-3.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 } else if (patient.getVascularP2()) {
-                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 4-5.");
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 4-5.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 } else if (patient.getVascularP3()) {
-                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 6-7.");
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Vascular dementia PHASES 6-7.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 }
 
                 if (openPatient.isNew(patient.getId())) {
@@ -357,11 +357,11 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 clipsConnect.createPatientAssertion(patient);
 
                 if (patient.getAlzheimerP1()) {
-                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 1.");
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 1.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 } else if (patient.getAlzheimerP2()) {
-                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 2.");
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 2.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 } else if (patient.getAlzheimerP3()) {
-                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 3.");
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Alzheimer disease PHASE 3.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 }
 
                 manageButtons();
@@ -374,21 +374,19 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
                 clipsConnect.createPatientAssertion(patient);
 
                 if (patient.getParkinsonP1()) {
-                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 1-2.");
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 1-2.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 } else if (patient.getParkinsonP2()) {
-                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 3-4.");
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASES 3-4.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 } else if (patient.getParkinsonP3()) {
-                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASE 5.");
+                    JOptionPane.showMessageDialog(null, "Diagnosis is: patient has Parkinson disease PHASE 5.", "Message", JOptionPane.INFORMATION_MESSAGE);
                 }
 
                 manageButtons();
 
             }
             if (openPatient.isNew(patient.getId())) {
-                System.out.println("Paciente nuevo de ID: " + patient.getId());
                 dbManager.getPatientManager().newPatient(patient);
             } else {
-                System.out.println("Paciente viejo de ID:" + patient.getId());
                 dbManager.getPatientManager().modifyPatient(patient);
             }
 
@@ -439,6 +437,7 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         });
 
         Next_Button.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Next_Button.setMnemonic('N');
         Next_Button.setText("Next");
         Next_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -511,9 +510,9 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Submit_ButtonActionPerformed
 
     private void Back_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Back_ButtonKeyPressed
-        // Works when ALT+B is typed.
+        // Works when enter is typed.
         System.out.println("Se ha presionado B" + evt);
-        if (evt.getKeyCode() == KeyEvent.VK_B) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             backButtonActions();
             pack();
             manageButtons();
@@ -521,8 +520,8 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Back_ButtonKeyPressed
 
     private void Next_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Next_ButtonKeyPressed
-        // Works when ALT+N is typed.
-        if (evt.getKeyCode() == KeyEvent.VK_N) {
+        // Works when enter is typed.
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             nextButtonActions();
             pack();
             manageButtons();
@@ -530,8 +529,8 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_Next_ButtonKeyPressed
 
     private void Submit_ButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Submit_ButtonKeyPressed
-        // Works when ALT+S is typed.
-        if (evt.getKeyCode() == KeyEvent.VK_S) {
+        // Works when enter is typed.
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             submitButtonActions();
         }
     }//GEN-LAST:event_Submit_ButtonKeyPressed

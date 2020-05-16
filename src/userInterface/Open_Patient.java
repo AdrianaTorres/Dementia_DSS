@@ -46,10 +46,6 @@ public class Open_Patient extends javax.swing.JPanel {
     public void SaveInfo() {
         if (NIF_enter.getText() != null && validateNIF(NIF_enter.getText())) {
             patient.setId(NIF_enter.getText());
-            System.out.println("Deberia guardar el ID y es:" + patient.getId());
-            System.out.println("Get text :" + NIF_enter.getText());
-        } else if (!validateNIF(NIF_enter.getText())) {
-            JOptionPane.showMessageDialog(null, "Please, enter a valid NIF. ");
         }
     }
 
@@ -180,9 +176,10 @@ public class Open_Patient extends javax.swing.JPanel {
         SaveInfo();
         if (dbManager.getPatientManager().patientExists(patient.getId())) {
             dbManager.getPatientManager().deletePatient(patient);
-            JOptionPane.showMessageDialog(null, "Patient successfully deleted.");
+            NIF_enter.setText("");
+            JOptionPane.showMessageDialog(null, "Patient successfully deleted.", "Message", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "The patient does not exist, so it cannot be deleted.");
+            JOptionPane.showMessageDialog(null, "The patient does not exist, so it cannot be deleted.", "Warning", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_delete_buttonActionPerformed
 

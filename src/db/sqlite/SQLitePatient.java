@@ -31,9 +31,6 @@ public class SQLitePatient implements PatientManager {
     public Boolean patientExists(String id) {
         boolean patientCreated = false;
         try {
-            System.out.println("Entro al try de patients!! ");
-            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-
             String query = "SELECT * FROM patients WHERE patients.pat_id = ?"; //doctorId todavia no existe en patient
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
@@ -45,49 +42,16 @@ public class SQLitePatient implements PatientManager {
                 patientCreated = false;
             }
 
-            // System.out.println("Es esto el ID?" + rs.getString(1));
-            /*
-            if (rs.getString(1) != null) {
-                patientCreated = true;
-            } else {
-                patientCreated = false;
-            }*/
         } catch (SQLException ex) {
             Logger.getLogger(SQLiteDoctor.class.getName()).log(Level.SEVERE, null, ex);
         }
         return patientCreated;
     }
 
-    /*
-    public Boolean patientExists(String id) {
-        boolean patientCreated = false;
-        System.out.println("Llego aqui");
-        try {
-            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-
-            String query = "SELECT * FROM patients WHERE patients.pat_id = ?";
-            PreparedStatement st = c.prepareStatement(query);
-            st.setString(1, id);
-            ResultSet rs = st.executeQuery();
-
-            String id_selected = rs.getString(1);
-
-            if (id_selected.equals(id)) {
-                patientCreated = true;
-            } else {
-                patientCreated = false;
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(SQLitePatient.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return patientCreated;
-    }*/
     @Override
     public Patient getPatientByNIF(String id) {
         Patient newPat = new Patient();
         try {
-            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             String query = "SELECT * from patients WHERE patients.pat_id = ?";
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
@@ -186,7 +150,6 @@ public class SQLitePatient implements PatientManager {
 
     @Override
     public void modifyPatient(Patient patient) { //Update
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         String query = "UPDATE patients SET nameSurname = ?, age = ?, sex = ?, familyHistory = ?, lowEducation = ?, behaviour = ?, emotionInstability = ?,"
                 + "rightWords = ?, forgetPersonal = ?, facialExpression = ?, planOrganize = ?, forgetRecent = ?, sleepPattern = ?, lossSmell = ?, incontinence = ?, exposure = ?, smoking = ?, "
                 + "drugConsumption = ?, lackCoordination = ?, standWalk = ?, stiffness = ?, lossBalance = ?, walkStraight = ?, tremor = ?, orientationHigh = ?, orientationLow = ?, bradykinesiaLow = ?,"
@@ -268,7 +231,6 @@ public class SQLitePatient implements PatientManager {
     @Override
     public void newPatient(Patient patient) {
         try { //Insert
-            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             String query = "INSERT INTO patients (pat_id, doctorID, nameSurname, age, sex, familyHistory, lowEducation, behaviour, emotionInstability,"
                     + "rightWords, forgetPersonal, facialExpression, planOrganize, forgetRecent, sleepPattern, lossSmell, incontinence, exposure, smoking, "
                     + "drugConsumption, lackCoordination, standWalk, stiffness, lossBalance, walkStraight, tremor, orientationHigh, orientationLow, bradykinesiaLow,"
@@ -356,7 +318,6 @@ public class SQLitePatient implements PatientManager {
     @Override
     public void deletePatient(Patient patient) {
         try { //Delete
-            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             String query = "DELETE FROM patients WHERE pat_id = ?";
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, patient.getId());
@@ -369,7 +330,6 @@ public class SQLitePatient implements PatientManager {
 
     public void deletePatientsFromDoctor(Doctor doctor) {
         try { //Delete
-            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             String query = "DELETE FROM patients WHERE doctorID = ?";
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, doctor.getId());

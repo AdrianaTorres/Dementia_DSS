@@ -27,7 +27,6 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
     UserPassword userPassword = new UserPassword(doctor);
     NewAccount newAccount = new NewAccount(doctor);
-    DeleteDoctor deleteDoctor = new DeleteDoctor();
 
     /**
      * Creates new form LoginWindow
@@ -41,13 +40,11 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
         userPassword.setVisible(true);
         userPassword.setDbManager(this.dbManager);
         newAccount.setVisible(false);
-        deleteDoctor.setVisible(false);
         ButtonsPanel.setVisible(true);
 
         PrincipalPanel.add(userPassword, BorderLayout.CENTER);
 
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        //this.setLocation(dim.width - this.getSize().width, dim.height - this.getSize().height);
 
         pack();
         this.setLocationRelativeTo(null);
@@ -65,58 +62,6 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             SignInButton.setEnabled(false);
             SignUpButton.setEnabled(false);
             Delete_button.setEnabled(false);
-        }
-    }
-
-    private void NewAccountButtonActions() {
-        newAccount.SaveInfo();
-
-        if (validateInt(doctor.getAge()) && doctor.getAge() != 0 && validateString(doctor.getName()) && validateString(doctor.getSurname())) {
-            dbManager.getDoctorManager().newDoctor(doctor);
-
-            userPassword.setVisible(false);
-            newAccount.setVisible(false);
-            manageButtons();
-
-            JOptionPane.showMessageDialog(null, "The account was succesfully created.");
-
-            dispose();
-            new Principal_Window(dbManager, doctor);
-        }
-    }
-
-    private void SignInButtonActions() {
-        System.out.println("ID doctor: LOGIN WIND" + userPassword.getUsername());
-        System.out.println("Password: LOGIN WIND" + userPassword.getPassword());
-        System.out.println("Existe el doctor? LOGIN WINDOW - SIGN IN" + dbManager.getDoctorManager().doctorExists(userPassword.getUsername()));
-        if (userPassword.checkPassword(userPassword.getUsername(), userPassword.getPassword())) {
-            userPassword.SaveInfo();
-
-            userPassword.setVisible(false);
-            newAccount.setVisible(false);
-            manageButtons();
-
-            dispose();
-            new Principal_Window(dbManager, doctor);
-        } else {
-            JOptionPane.showMessageDialog(null, "Wrong credentials. Please try again.");
-        }
-    }
-
-    private void SignUpButtonActions() {
-        userPassword.SaveInfo();
-
-        if (validateNIF(userPassword.getUsername())) {
-            userPassword.setVisible(false);
-            newAccount.setVisible(true);
-
-            PrincipalPanel.removeAll();
-            PrincipalPanel.repaint();
-            PrincipalPanel.add(newAccount, BorderLayout.CENTER);
-            pack();
-            manageButtons();
-        } else {
-            JOptionPane.showMessageDialog(null, "Please, enter a valid NIF. It should have 8 numbers followed by an uppercase letter. ");
         }
     }
 
@@ -138,10 +83,59 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     }
 
     public Boolean validateString(String string) {
-        if (string.matches("[A-Za-z]+")) {
+        if (string.matches("[A-Za-z\\s]+")) {
             return true;
         } else {
             return false;
+        }
+    }
+
+    private void NewAccountButtonActions() {
+        newAccount.SaveInfo();
+
+        if (validateInt(doctor.getAge()) && doctor.getAge() != 0 && validateString(doctor.getName()) && validateString(doctor.getSurname())) {
+            dbManager.getDoctorManager().newDoctor(doctor);
+
+            userPassword.setVisible(false);
+            newAccount.setVisible(false);
+            manageButtons();
+
+            JOptionPane.showMessageDialog(null, "The account was succesfully created.", "Message", JOptionPane.INFORMATION_MESSAGE);
+
+            dispose();
+            new Principal_Window(dbManager, doctor);
+        }
+    }
+
+    private void SignInButtonActions() {
+        if (userPassword.checkPassword(userPassword.getUsername(), userPassword.getPassword())) {
+            userPassword.SaveInfo();
+
+            userPassword.setVisible(false);
+            newAccount.setVisible(false);
+            manageButtons();
+
+            dispose();
+            new Principal_Window(dbManager, doctor);
+        } else {
+            JOptionPane.showMessageDialog(null, "Wrong credentials. Please try again.", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private void SignUpButtonActions() {
+        userPassword.SaveInfo();
+
+        if (validateNIF(userPassword.getUsername())) {
+            userPassword.setVisible(false);
+            newAccount.setVisible(true);
+
+            PrincipalPanel.removeAll();
+            PrincipalPanel.repaint();
+            PrincipalPanel.add(newAccount, BorderLayout.CENTER);
+            pack();
+            manageButtons();
+        } else {
+            JOptionPane.showMessageDialog(null, "Please, enter a valid NIF. It should have 8 numbers followed by an uppercase letter. ", "Warning", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -283,28 +277,37 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
     }//GEN-LAST:event_SignInButtonKeyTyped
 
     private void NewAccountButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NewAccountButtonKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_A) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             NewAccountButtonActions();
         }
     }//GEN-LAST:event_NewAccountButtonKeyPressed
 
     private void SignUpButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SignUpButtonKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_U) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             SignUpButtonActions();
         }
     }//GEN-LAST:event_SignUpButtonKeyPressed
 
     private void SignInButtonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SignInButtonKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_I) {
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             SignInButtonActions();
         }
     }//GEN-LAST:event_SignInButtonKeyPressed
 
     private void Delete_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_buttonActionPerformed
         userPassword.SaveInfo();
-        deleteDoctor.setVisible(true);
-        deleteDoctor.setDBManager(dbManager);
-        deleteDoctor.setDoctor(doctor);
+        if (dbManager.getDoctorManager().doctorExists(doctor.getId()) && userPassword.checkPassword(doctor.getId(), userPassword.getPassword())) {
+            dbManager.getPatientManager().deletePatientsFromDoctor(doctor);
+            dbManager.getDoctorManager().deleteDoctor(doctor);
+            userPassword.removeInfo();
+            JOptionPane.showMessageDialog(null, "Doctor account successfully deleted.", "Message", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            if (!dbManager.getDoctorManager().doctorExists(doctor.getId())) {
+                JOptionPane.showMessageDialog(null, "The doctor does not exist, so it cannot be deleted.", "Warning", JOptionPane.INFORMATION_MESSAGE);
+            } else if (!userPassword.checkPassword(doctor.getId(), userPassword.getPassword())) {
+                JOptionPane.showMessageDialog(null, "Wrong credentials, please enter the right ones to delete the doctor account.", "Warning", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_Delete_buttonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

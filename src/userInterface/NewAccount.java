@@ -57,7 +57,7 @@ public class NewAccount extends javax.swing.JPanel {
     }
 
     public Boolean validateString(String string) {
-        if (string.matches("[A-Za-z]+")) {
+        if (string.matches("[A-Za-z\\s]+")) {
             return true;
         } else {
             return false;
@@ -68,17 +68,17 @@ public class NewAccount extends javax.swing.JPanel {
         if (nameEnter.getText() != null && validateString(nameEnter.getText())) {
             doctor.setName(nameEnter.getText());
         } else {
-            JOptionPane.showMessageDialog(null, "Please, enter a valid name. It should only contain characters and spaces. ");
+            JOptionPane.showMessageDialog(null, "Please, enter a valid name. It should only contain characters and spaces. ", "Warning", JOptionPane.INFORMATION_MESSAGE);
         }
         if (surnameEnter.getText() != null && validateString(surnameEnter.getText())) {
             doctor.setSurname(surnameEnter.getText());
         } else {
-            JOptionPane.showMessageDialog(null, "Please, enter a valid surname. It should only contain characters and spaces. ");
+            JOptionPane.showMessageDialog(null, "Please, enter a valid surname. It should only contain characters and spaces. ", "Warning", JOptionPane.INFORMATION_MESSAGE);
         }
         if (ageEnter.getText() != null && validateInt(ageEnter.getText())) {
             doctor.setAge(Integer.parseInt(ageEnter.getText()));
         } else {
-            JOptionPane.showMessageDialog(null, "Please, enter a valid age. It should be a number. ");
+            JOptionPane.showMessageDialog(null, "Please, enter a valid age. It should be a number. ", "Warning", JOptionPane.INFORMATION_MESSAGE);
         }
         if (sexEnter.getSelectedItem().equals("Male")) {
             doctor.setSex("MALE");

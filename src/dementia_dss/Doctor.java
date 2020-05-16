@@ -36,14 +36,13 @@ public class Doctor {
 
     // Constructor for queries:
     public Doctor(String newDoctorId, String docName, String docSurname, int docAge, String docSex, String docUsername, int docPassword) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         this.id = newDoctorId;
         this.name = docName;
         this.surname = docSurname;
         this.age = docAge;
         this.sex = docSex;
         this.username = docUsername;
-        this.password = docPassword; //Ver si esto tiene sentido
+        this.password = docPassword;
     }
 
     public void setName(String name_) {

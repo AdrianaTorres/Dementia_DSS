@@ -38,10 +38,6 @@ public class UserPassword extends javax.swing.JPanel {
             if (!doctor.getUsername().equalsIgnoreCase("")) {
                 usernameEnter.setText(doctor.getUsername());
             }
-            /* Dejo esto comentado porque no creo que tenga sentido guardar la conraseña por temas de seguridad.
-            if (!doctor.getPassword().equalsIgnoreCase("")) {
-                passwordEnter.setText(doctor.getPassword());
-            }*/
 
         }
     }
@@ -50,12 +46,10 @@ public class UserPassword extends javax.swing.JPanel {
         if (usernameEnter.getText() != null) {
             doctor.setUsername(usernameEnter.getText());
             doctor.setId(usernameEnter.getText());
-            System.out.println("El username is: " + doctor.getUsername());
         }
         if (passwordEnter.getText() != null) {
 
             String password = passwordEnter.getText();
-            System.out.println("Password received: " + password);
             int hashPassword = password.hashCode();
             doctor.setPassword(hashPassword);
 
@@ -79,7 +73,6 @@ public class UserPassword extends javax.swing.JPanel {
     }
 
     public Boolean checkPassword(String id, int password) {
-        System.out.println("Existe el doctor? USERPASSWORD - CHECKPASSWORD " + dbManager.getDoctorManager().doctorExists(id));
         if (dbManager.getDoctorManager().doctorExists(id)) {
             Doctor currentDoctor = dbManager.getDoctorManager().getDoctor(id);
 

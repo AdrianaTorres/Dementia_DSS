@@ -145,10 +145,6 @@ public class Patient {
     }
     // Constructor for queries:
 
-    public Patient(String newPatId, String patDocId, String patName, int patAge, String patSex) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public Patient(String newPatId, String patDocId, String patName, int patAge, String patSex,
             String patFamilyHis, String patLowEducation, String patBehaviour,
             String patEmotionalInstability, String patRightWords, String patForgetPersonal,

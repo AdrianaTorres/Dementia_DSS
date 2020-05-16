@@ -73,12 +73,12 @@ public class Patient_Info extends javax.swing.JPanel {
         if (NameSurname_enter.getText() != null && validateString(NameSurname_enter.getText())) {
             patient.setName(NameSurname_enter.getText());
         } else {
-            JOptionPane.showMessageDialog(null, "Please, enter a valid name and surname. It should only contain characters and spaces. ");
+            JOptionPane.showMessageDialog(null, "Please, enter a valid name and surname. It should only contain characters and spaces. ", "Warning", JOptionPane.INFORMATION_MESSAGE);
         }
         if (Age_enter.getText() != null && validateInt(Age_enter.getText())) {
             patient.setAge(Integer.parseInt(Age_enter.getText()));
         } else {
-            JOptionPane.showMessageDialog(null, "Please, enter a valid age. It should be a number. ");
+            JOptionPane.showMessageDialog(null, "Please, enter a valid age. It should be a number. ", "Warning", JOptionPane.INFORMATION_MESSAGE);
         }
         if (Sex_box.getSelectedItem().equals("Male")) {
             patient.setSex("MALE");
