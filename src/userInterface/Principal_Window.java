@@ -88,8 +88,8 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
         this.setLocationRelativeTo(null);
         manageButtons();
     }
-    
-    public void setPatient (Patient p) {
+
+    public void setPatient(Patient p) {
         this.patient = p;
     }
 
@@ -215,6 +215,16 @@ public class Principal_Window extends javax.swing.JFrame implements ActionListen
             if ((Back_Button.isEnabled()) && (openPatient.checkEmptyNIF())) {
                 JOptionPane.showMessageDialog(null, "Please, enter the data before continuing. ");
             } else {
+                if (!openPatient.isNew(openPatient.getNIF())) {
+                    Patient p = dbManager.getPatientManager().getPatientByNIF(openPatient.getNIF());
+                    System.out.println("Nombre patient: " + dbManager.getPatientManager().getPatientByNIF(openPatient.getNIF()).getName());
+                    patientInfo.loadPatientInfo(p);
+                    generalSymptoms.loadGeneralSymptoms(p);
+                    motorSymptoms.loadMotorSymptoms(p);
+                    otherPathologies.loadOtherPathologies(p);
+                    alzheimerPhase.loadAlzheimerPhase(p);
+                    parkinsonPhase.loadParkinsonPhase(p);
+                }
                 openPatient.SaveInfo();
                 if (validateNIF(patient.getId())) {
                     openPatient.setVisible(false);

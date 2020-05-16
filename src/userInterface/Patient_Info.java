@@ -98,10 +98,8 @@ public class Patient_Info extends javax.swing.JPanel {
 
         return b;
     }
-    
-    /*public void loadPatientInfo (Patient p) {
-        this.patient = p;
-        
+
+    public void loadPatientInfo(Patient p) {
         NameSurname_enter.setText(p.getName());
         Age_enter.setText(Integer.toString(p.getAge()));
         if (p.getSex().equals("MALE")) {
@@ -109,7 +107,7 @@ public class Patient_Info extends javax.swing.JPanel {
         } else {
             Sex_box.setSelectedIndex(1);
         }
-    }*/
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

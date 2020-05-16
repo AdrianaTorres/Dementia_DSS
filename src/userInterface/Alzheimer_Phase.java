@@ -57,6 +57,20 @@ public class Alzheimer_Phase extends javax.swing.JPanel {
         }
     }
 
+    public void loadAlzheimerPhase(Patient patient) {
+        if (patient.getHyperreflexia().equalsIgnoreCase("TRUE")) {
+            Hyperreflexia_check.setSelected(true);
+        } else if (patient.getLossPhysicalAbilities().equalsIgnoreCase("TRUE")) {
+            LossPhysicalAbilities_check.setSelected(true);
+        } else if (patient.getStiffness().equalsIgnoreCase("FALSE") && patient.getStiffnessL().equalsIgnoreCase("FALSE") && patient.getStiffnessH().equalsIgnoreCase("FALSE")) {
+            Stiffness_box.setSelectedIndex(0);
+        } else if (patient.getStiffnessL().equalsIgnoreCase("TRUE")) {
+            Stiffness_box.setSelectedIndex(1);
+        } else if (patient.getStiffnessH().equalsIgnoreCase("TRUE")) {
+            Stiffness_box.setSelectedIndex(2);
+        }
+    }
+
     public void SaveInfo() {
         Boolean hyperreflexia = this.Hyperreflexia_check.isSelected();
         if (hyperreflexia) {

@@ -70,6 +70,42 @@ public class Other_Pathologies extends javax.swing.JPanel {
         }
     }
 
+    public void loadOtherPathologies(Patient patient) {
+        if (patient.getDownSyndrome().equalsIgnoreCase("TRUE")) {
+            DownSyndrome_check.setSelected(true);
+        }
+        if (patient.getHyperglycemia().equalsIgnoreCase("TRUE")) {
+            Hyperglycemia_check.setSelected(true);
+        }
+        if (patient.getHyperlipidemia().equalsIgnoreCase("TRUE")) {
+            Hyperlypidemia_check.setSelected(true);
+        }
+        if (patient.getInsulin().equalsIgnoreCase("TRUE")) {
+            Insulin_check.setSelected(true);
+        }
+        if (patient.getHypertension().equalsIgnoreCase("TRUE")) {
+            Hypertension_check.setSelected(true);
+        }
+        if (patient.getHeartCerebro().equalsIgnoreCase("TRUE")) {
+            HeartAttacks_check.setSelected(true);
+        }
+        if (patient.getDiabetes().equalsIgnoreCase("TRUE")) {
+            Diabetes_check.setSelected(true);
+        }
+        if (patient.getObesity().equalsIgnoreCase("TRUE")) {
+            Obesity_check.setSelected(true);
+        }
+        if (patient.getCholesterol().equalsIgnoreCase("TRUE")) {
+            Cholesterol_check.setSelected(true);
+        }
+        if (patient.getArteriosclerosis().equalsIgnoreCase("TRUE")) {
+            Arteriosclerosis_check.setSelected(true);
+        }
+        if (patient.getDepression().equalsIgnoreCase("TRUE")) {
+            Depression_check.setSelected(true);
+        }
+    }
+
     public void SaveInfo() {
         Boolean downSyndrome = this.DownSyndrome_check.isSelected();
         if (downSyndrome) {

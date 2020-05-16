@@ -51,6 +51,18 @@ public class Parkinson_Phase extends javax.swing.JPanel {
         }
     }
 
+    public void loadParkinsonPhase(Patient patient) {
+        if (patient.getLossPhysicalAbilities().equalsIgnoreCase("TRUE")) {
+            LossPhysicalAbilities_check.setSelected(true);
+        } else if (patient.getTremor().equalsIgnoreCase("FALSE") && patient.getTremorUni().equalsIgnoreCase("FALSE") && patient.getTremorBi().equalsIgnoreCase("FALSE")) {
+            Tremor_box.setSelectedIndex(0);
+        } else if (patient.getTremorUni().equalsIgnoreCase("TRUE")) {
+            Tremor_box.setSelectedIndex(1);
+        } else if (patient.getTremorBi().equalsIgnoreCase("TRUE")) {
+            Tremor_box.setSelectedIndex(2);
+        }
+    }
+
     public void SaveInfo() {
         Boolean physicalAbilities = this.LossPhysicalAbilities_check.isSelected();
         if (physicalAbilities) {

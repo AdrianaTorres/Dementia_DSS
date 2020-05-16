@@ -177,42 +177,40 @@ public class General_Symptoms extends javax.swing.JPanel {
             patient.setDrugConsumption("FALSE");
         }
     }
-    
-    /*public void loadGeneralSymptoms (Patient p) {
-        this.patient = p;
-        
+
+    public void loadGeneralSymptoms(Patient p) {
         if (p.getBehaviour().equals("TRUE")) {
-            Behaviour_check.setEnabled(true);
+            Behaviour_check.setSelected(true);
         } else if (p.getExposure().equals("TRUE")) {
-            Chemicals_check.setEnabled(true);
+            Chemicals_check.setSelected(true);
         } else if (p.getDrugConsumption().equals("TRUE")) {
-            DrugConsumption_check.setEnabled(true);
+            DrugConsumption_check.setSelected(true);
         } else if (p.getLowEducation().equals("TRUE")) {
-            EducationalLevel_check.setEnabled(true);
+            EducationalLevel_check.setSelected(true);
         } else if (p.getEmotionalInstability().equals("TRUE")) {
-            EmtionalInst_check.setEnabled(true);
+            EmtionalInst_check.setSelected(true);
         } else if (p.getFacialExp().equals("TRUE")) {
-            FacialExp_check.setEnabled(true);
+            FacialExp_check.setSelected(true);
         } else if (p.getFamilyHis().equals("TRUE")) {
-            FamilyHis_check.setEnabled(true);
+            FamilyHis_check.setSelected(true);
         } else if (p.getForgetPersonal().equals("TRUE")) {
-            ForgetPersonalInfo_check.setEnabled(true);
+            ForgetPersonalInfo_check.setSelected(true);
         } else if (p.getForgetRecent().equals("TRUE")) {
-            ForgetRecentInfo_check.setEnabled(true);
+            ForgetRecentInfo_check.setSelected(true);
         } else if (p.getIncontinence().equals("TRUE")) {
-            Incontinence_check.setEnabled(true);
+            Incontinence_check.setSelected(true);
         } else if (p.getPlanningOrg().equals("TRUE")) {
-            PlanningDifficulty_check.setEnabled(true);
+            PlanningDifficulty_check.setSelected(true);
         } else if (p.getRightWords().equals("TRUE")) {
-            RightWords_check.setEnabled(true);
+            RightWords_check.setSelected(true);
         } else if (p.getSleepingPattern().equals("TRUE")) {
-            SleepPatterns_check.setEnabled(true);
+            SleepPatterns_check.setSelected(true);
         } else if (p.getLossSmell().equals("TRUE")) {
-            Smell_check.setEnabled(true);
+            Smell_check.setSelected(true);
         } else if (p.getSmoking().equals("TRUE")) {
-            Smoking_check.setEnabled(true);
+            Smoking_check.setSelected(true);
         }
-    }*/
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

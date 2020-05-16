@@ -140,10 +140,8 @@ public class Motor_Symptoms extends javax.swing.JPanel {
             patient.setBradykinesiaM("FALSE");
         }
     }
-    
-    /*public void loadMotorSymptoms (Patient p) {
-        this.patient = p;
-        
+
+    public void loadMotorSymptoms(Patient p) {
         if (p.getLossBalance().equals("TRUE")) {
             LossBalance_check.setEnabled(true);
         } else if (p.getLackCoord().equals("TRUE")) {
@@ -156,20 +154,22 @@ public class Motor_Symptoms extends javax.swing.JPanel {
             StraightWalk_check.setEnabled(true);
         } else if (p.getTremor().equals("TRUE")) {
             Tremor_check.setEnabled(true);
-        } else if (p.getBradykinesiaL().equals("")) {
-            
-        } else if (p.getBradykinesiaL()) {
-            
-        } else if (p.getBradykinesiaM()) {
-            
-        } else if (p.getBradykinesiaH()) {
-            
+        } else if (p.getBradykinesiaL().equals("FALSE") && (p.getBradykinesiaM().equalsIgnoreCase("FALSE")) && (patient.getBradykinesiaH().equalsIgnoreCase("FALSE"))) {
+            Bradykinesia_box.setSelectedIndex(0);
+        } else if (p.getBradykinesiaL().equals("TRUE")) {
+            Bradykinesia_box.setSelectedIndex(1);
+        } else if (p.getBradykinesiaM().equals("TRUE")) {
+            Bradykinesia_box.setSelectedIndex(2);
+        } else if (p.getBradykinesiaH().equals("TRUE")) {
+            Bradykinesia_box.setSelectedIndex(3);
+        } else if (p.getOrientationH().equals("FALSE") && (p.getOrientationH().equalsIgnoreCase("FALSE"))) {
+            Orientation_box.setSelectedIndex(0);
+        } else if (p.getOrientationL().equals("TRUE")) {
+            Orientation_box.setSelectedIndex(1);
+        } else if (p.getOrientationH().equalsIgnoreCase("TRUE")) {
+            Orientation_box.setSelectedIndex(2);
         }
-        
-        Bradykinesia_box;
-          Orientation_box;
-        
-    }*/
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

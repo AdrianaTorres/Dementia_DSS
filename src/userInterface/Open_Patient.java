@@ -72,6 +72,10 @@ public class Open_Patient extends javax.swing.JPanel {
         return b;
     }
 
+    public String getNIF() {
+        return NIF_enter.getText();
+    }
+
     public Boolean validateNIF(String NIF) {
         if (NIF.matches("\\d{8}[A-HJ-NP-TV-Z]")) {
             return true;
