@@ -34,7 +34,7 @@ public class SQLiteDoctor implements DoctorManager {
         boolean doctorCreated = false;
         try {
 
-            String query = "SELECT * FROM doctors WHERE doctors.doc_id = ?"; //doctorId todavia no existe en patient
+            String query = "SELECT * FROM doctors WHERE doctors.doc_id = ?";
             PreparedStatement st = c.prepareStatement(query);
             st.setString(1, id);
             ResultSet rs = st.executeQuery();

@@ -124,8 +124,7 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
 
     private void SignUpButtonActions() {
         userPassword.SaveInfo();
-
-        if (validateNIF(userPassword.getUsername())) {
+        if (dbManager.getDoctorManager().doctorExists(userPassword.getUsername()) == false && validateNIF(userPassword.getUsername())) {
             userPassword.setVisible(false);
             newAccount.setVisible(true);
 
@@ -134,8 +133,10 @@ public class LoginWindow extends javax.swing.JFrame implements ActionListener {
             PrincipalPanel.add(newAccount, BorderLayout.CENTER);
             pack();
             manageButtons();
-        } else {
+        } else if (!validateNIF(userPassword.getUsername())) {
             JOptionPane.showMessageDialog(null, "Please, enter a valid NIF. It should have 8 numbers followed by an uppercase letter. ", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        } else if (dbManager.getDoctorManager().doctorExists(userPassword.getUsername())) {
+            JOptionPane.showMessageDialog(null, "The specified ID already has an account, please sign in. ", "Warning", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
