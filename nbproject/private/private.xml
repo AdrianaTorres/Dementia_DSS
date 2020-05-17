@@ -9,9 +9,11 @@
             <file>file:/D:/DSS/Dementia_DSS/src/db/sqlite/SQLiteDoctor.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/db/interfaces/PatientManager.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Motor_Symptoms.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Welcome_Window.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Parkinson_Phase.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/LoginWindow.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/Principal_Window.java</file>
+            <file>file:/D:/DSS/Dementia_DSS/src/userInterface/DeleteDoctor.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/db/interfaces/DoctorManager.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/userInterface/General_Symptoms.java</file>
             <file>file:/D:/DSS/Dementia_DSS/src/db/sqlite/SQLiteManager.java</file>
